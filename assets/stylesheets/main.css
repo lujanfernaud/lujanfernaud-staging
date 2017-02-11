@@ -18,6 +18,7 @@ body {
     font-size: 24px;
   }
 }
+
 .wrapper-outer {
   display: table;
   position: absolute;
@@ -35,9 +36,6 @@ body {
   padding-left: 10%;
   padding-right: 10%;
 }
+
 .message {
-
-}
-.links {
-
 }
