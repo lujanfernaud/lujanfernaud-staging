@@ -1,0 +1,21 @@
+.wrapper-outer {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.wrapper-middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+.wrapper-inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 22%;
+}
+.message {
+
+}
+.links {
+
+}
