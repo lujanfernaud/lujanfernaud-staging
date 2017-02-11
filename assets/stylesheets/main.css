@@ -1,6 +1,7 @@
 body {
   font-family: Georgia, serif;
   font-size: 18px;
+  color: #303030;
 }
 @media (min-width: 767px) {
   body {
