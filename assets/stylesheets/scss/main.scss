@@ -106,7 +106,11 @@ body {
   position: absolute;
   height: 100vh;
   width: 100vw;
-  padding: .4rem;
+  padding: .5rem;
+
+  @include media($medium-devices) {
+    padding: .9rem;
+  }
 }
 
 .cover-decoration-border {
@@ -126,7 +130,7 @@ body {
   }
 
   @include media($large-devices) {
-    font-size: 6rem;
+    font-size: 5rem;
   }
 }
 
@@ -141,7 +145,8 @@ body {
   }
 
   @include media($large-devices) {
-    width: 25rem;
+    width: 21rem;
+    margin: 1.4rem;
   }
 }
 
@@ -156,7 +161,7 @@ body {
   }
 
   @include media($large-devices) {
-    margin-top: 1.45rem;
-    font-size: 2.47rem;
+    margin-top: 1.35rem;
+    font-size: 2.1rem;
   }
 }
