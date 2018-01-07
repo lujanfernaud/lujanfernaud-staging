@@ -1,48 +1,162 @@
 @import "normalize";
 
+
+// Variables
+
+
+$dejavu-serif: "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+$dejavu-sans: "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+
+$brand-color: #544d8a;
+$dark-violet: #403d78;
+$light-violet: #8b81e6;
+$pinkish-violet: #705a9e;
+$purple: #bb8af3;
+
+$light-grey: #fbfafc;
+$white: #fff;
+
+$medium-devices: 767px;
+$large-devices: 991px;
+$very-large-devices: 1199px;
+
+
+// Mixins
+
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin media($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin background-gradient {
+  background: -webkit-linear-gradient(-45deg, $pinkish-violet 0, $brand-color 100%);
+  background: -moz-linear-gradient(135deg, $pinkish-violet 0, $brand-color 100%);
+  background: linear-gradient(135deg, $pinkish-violet 0, $brand-color 100%);
+  background-position: 50% 50%;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+}
+
+
+// Initial Setup
+
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Georgia, serif;
+  font-family: $dejavu-serif;
   font-size: 18px;
   color: #303030;
-}
 
-@media (min-width: 767px) {
-  body {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 991px) {
-  body {
+  @include media($medium-devices) {
     font-size: 22px;
   }
-}
 
-@media (min-width: 1199px) {
-  body {
-    font-size: 24px;
+  @include media($large-devices) {
+    font-size: 26px;
+  }
+
+  @include media($very-large-devices) {
+    font-size: 32px;
   }
 }
 
-.wrapper-outer {
-  display: table;
-  position: absolute;
-  height: 100%;
+.main-container {
+  @include flex-column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+// Cover
+
+
+.cover {
+  @include flex-column;
+  height: 100vh;
   width: 100%;
+  padding: 1rem;
+  color: $light-grey;
+  @include background-gradient;
+
+  @include media($very-large-devices) {
+    width: 100vw;
+  }
 }
 
-.wrapper-middle {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+.cover-decoration {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  padding: .4rem;
 }
 
-.wrapper-inner {
-  text-align: left;
-  display: inline-block;
-  padding-left: 10%;
-  padding-right: 10%;
+.cover-decoration-border {
+  width: 100%;
+  height: 100%;
+  border: 1px solid $purple;
 }
 
-.message {
+.cover-introduction {
+  margin-bottom: .5rem;
+  font-style: italic;
+  font-size: 2rem;
+  font-weight: 600;
+
+  @include media($medium-devices) {
+    font-size: 4rem;
+  }
+
+  @include media($large-devices) {
+    font-size: 6rem;
+  }
+}
+
+.hr-small {
+  width: 13.1rem;
+  height: 1px;
+  background-color: $light-grey;
+  border: 0;
+
+  @include media($medium-devices) {
+    width: 17rem;
+  }
+
+  @include media($large-devices) {
+    width: 25rem;
+  }
+}
+
+.cover-short-description {
+  margin-top: .78rem;
+  font-family: $dejavu-sans;
+  font-size: 1.2rem;
+
+  @include media($medium-devices) {
+    margin-top: 1.15rem;
+    font-size: 1.7rem;
+  }
+
+  @include media($large-devices) {
+    margin-top: 1.45rem;
+    font-size: 2.47rem;
+  }
 }
