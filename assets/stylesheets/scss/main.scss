@@ -108,10 +108,10 @@ body {
   left: 0;
   height: 100vh;
   width: 100vw;
-  padding: .5rem;
+  padding: .4rem;
 
   @include media($medium-devices) {
-    padding: .9rem;
+    padding: .7rem;
   }
 }
 
@@ -147,7 +147,7 @@ body {
   }
 
   @include media($large-devices) {
-    width: 21rem;
+    width: 20.6rem;
     margin: 1.4rem;
   }
 }
