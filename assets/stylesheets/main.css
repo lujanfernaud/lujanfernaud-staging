@@ -381,7 +381,7 @@ body {
 @media (min-width: 767px) {
   .cover-icons {
     bottom: 3.1rem;
-    width: 10.1rem;
+    width: 10.9rem;
   }
 }
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
@@ -391,6 +391,9 @@ body {
 }
 
 .link-icon {
+  padding-top: .4rem;
+  padding-left: .4rem;
+  padding-right: .4rem;
   opacity: .71;
   transition: opacity .2s;
 }

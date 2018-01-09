@@ -187,7 +187,7 @@ body {
 
   @include media($medium-devices) {
     bottom: 3.1rem;
-    width: 10.1rem;
+    width: 10.9rem;
   }
 
   @include media-iphone-large {
@@ -196,6 +196,9 @@ body {
 }
 
 .link-icon {
+  padding-top: .4rem;
+  padding-left: .4rem;
+  padding-right: .4rem;
   opacity: .71;
   transition: opacity .2s;
 }
