@@ -37,6 +37,12 @@ $very-large-devices: 1199px;
   }
 }
 
+@mixin media-iphone-large {
+  @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+      @content;
+  }
+}
+
 @mixin background-gradient {
   background: -webkit-linear-gradient(-45deg, $pinkish-violet 0, $brand-color 100%);
   background: -moz-linear-gradient(135deg, $pinkish-violet 0, $brand-color 100%);
@@ -122,13 +128,17 @@ body {
 }
 
 .cover-introduction {
-  margin-bottom: .5rem;
+  margin-bottom: .6rem;
   font-style: italic;
   font-size: 2rem;
   font-weight: 600;
 
   @include media($medium-devices) {
     font-size: 4rem;
+  }
+
+  @include media-iphone-large {
+    margin-top: -1.65rem;
   }
 
   @include media($large-devices) {
@@ -165,5 +175,40 @@ body {
   @include media($large-devices) {
     margin-top: 1.35rem;
     font-size: 2.1rem;
+  }
+}
+
+.cover-icons {
+  position: absolute;
+  bottom: 1.74rem;
+  display: flex;
+  justify-content: space-between;
+  width: 8rem;
+
+  @include media($medium-devices) {
+    bottom: 3.1rem;
+    width: 10.1rem;
+  }
+
+  @include media-iphone-large {
+    bottom: 2.1rem;
+  }
+}
+
+.link-icon {
+  opacity: .71;
+  transition: opacity .2s;
+}
+
+.link-icon:hover,
+.link-icon:focus {
+  opacity: 1;
+}
+
+.icon {
+  width: 1.6rem;
+
+  @include media($medium-devices) {
+    width: 2rem;
   }
 }
