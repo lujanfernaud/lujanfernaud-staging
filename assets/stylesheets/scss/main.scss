@@ -182,14 +182,14 @@ body {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  bottom: 1.74rem;
-  left: calc(50% - 4rem); // 50% minus half of the width.
-  width: 8rem;
+  bottom: 1.54rem;
+  left: calc(50% - 4.35rem); // 50% minus half of the width.
+  width: 8.7rem;
 
   @include media($medium-devices) {
     bottom: 3.1rem;
-    left: calc(50% - 5.45rem); // 50% minus half of the width.
-    width: 10.9rem;
+    left: calc(50% - 5.55rem); // 50% minus half of the width.
+    width: 11.1rem;
   }
 
   @include media-iphone-large {
@@ -198,11 +198,16 @@ body {
 }
 
 .link-icon {
-  padding-top: .4rem;
-  padding-left: .4rem;
-  padding-right: .4rem;
+  padding-top: .5rem;
+  padding-bottom: .2rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
   opacity: .71;
   transition: opacity .2s;
+
+  @include media($medium-devices) {
+    padding-bottom: 0;
+  }
 }
 
 .link-icon:hover,
