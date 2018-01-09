@@ -401,11 +401,11 @@ body {
 }
 
 .icon {
-  width: 1.6rem;
+  width: 1.5rem;
 }
 @media (min-width: 767px) {
   .icon {
-    width: 2rem;
+    width: 1.7rem;
   }
 }
 
