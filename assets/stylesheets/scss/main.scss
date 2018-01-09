@@ -179,14 +179,16 @@ body {
 }
 
 .cover-icons {
-  position: absolute;
-  bottom: 1.74rem;
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  bottom: 1.74rem;
+  left: calc(50% - 4rem); // 50% minus half of the width.
   width: 8rem;
 
   @include media($medium-devices) {
     bottom: 3.1rem;
+    left: calc(50% - 5.45rem); // 50% minus half of the width.
     width: 10.9rem;
   }
 
