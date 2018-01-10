@@ -482,6 +482,7 @@ body {
 
 .icon {
   width: 1.5rem;
+  color: transparent;
 }
 @media (min-width: 767px) {
   .icon {

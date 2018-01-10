@@ -295,6 +295,7 @@ body {
 
 .icon {
   width: 1.5rem;
+  color: transparent;
 
   @include media($medium-devices) {
     width: 1.7rem;
