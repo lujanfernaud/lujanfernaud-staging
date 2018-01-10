@@ -16,6 +16,7 @@ $purple: #bf8bf5;
 $light-grey: #fbfafc;
 $white: #fff;
 
+$small-devices: 479px;
 $medium-devices: 767px;
 $large-devices: 991px;
 $very-large-devices: 1199px;
@@ -127,22 +128,99 @@ body {
   border: 1px solid $purple;
 }
 
-.cover-introduction {
+.cover-name-container {
+  position: relative;
+  cursor: help;
+}
+
+.name-question-mark {
+  position: absolute;
+  top: -1.85rem;
+  right: calc(50% - 1.4rem);
+  padding: 1rem 1rem 1.5rem 1rem;
+  font-size: 1rem;
+  opacity: .71;
+  transition: opacity .5s;
+
+  @include media($medium-devices) {
+    top: -.8rem;
+    right: -3.5rem;
+    padding: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  @include media($large-devices) {
+    top: 0;
+    right: -4rem;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+.opacity-hidden {
+  opacity: 0;
+}
+
+.cover-name {
+  position: relative;
   margin-bottom: .6rem;
   font-style: italic;
   font-size: 2rem;
   font-weight: 600;
+  transition: all .5s;
 
   @include media($medium-devices) {
     font-size: 4rem;
   }
 
-  @include media-iphone-large {
-    margin-top: -1.65rem;
-  }
-
   @include media($large-devices) {
     font-size: 5rem;
+  }
+}
+
+.flip {
+  backface-visibility: hidden !important;
+  animation: 1s flip forwards;
+}
+
+@keyframes flip {
+  0% {
+    opacity: 1;
+    transform: perspective(400px) rotate3d(1, 0, 0, 0deg);
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    transform: perspective(400px) rotate3d(1, 0, 0, -90deg);
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -360deg);
+  }
+
+  90% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -345deg);
+  }
+
+  95% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -360deg);
+  }
+
+  97% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -355deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: perspective(400px) rotate3d(1, 0, 0, -360deg);
   }
 }
 

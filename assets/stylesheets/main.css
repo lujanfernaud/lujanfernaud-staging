@@ -313,28 +313,97 @@ body {
   border: 1px solid #bf8bf5;
 }
 
-.cover-introduction {
+.cover-name-container {
+  position: relative;
+  cursor: help;
+}
+
+.name-question-mark {
+  position: absolute;
+  top: -1.85rem;
+  right: calc(50% - 1.4rem);
+  padding: 1rem 1rem 1.5rem 1rem;
+  font-size: 1rem;
+  opacity: .71;
+  transition: opacity .5s;
+}
+@media (min-width: 767px) {
+  .name-question-mark {
+    top: -.8rem;
+    right: -3.5rem;
+    padding: 1.5rem;
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 991px) {
+  .name-question-mark {
+    top: 0;
+    right: -4rem;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+.opacity-hidden {
+  opacity: 0;
+}
+
+.cover-name {
+  position: relative;
   margin-bottom: .6rem;
   font-style: italic;
   font-size: 2rem;
   font-weight: 600;
+  transition: all .5s;
 }
 @media (min-width: 767px) {
-  .cover-introduction {
+  .cover-name {
     font-size: 4rem;
   }
 }
-@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-  .cover-introduction {
-    margin-top: -1.65rem;
-  }
-}
 @media (min-width: 991px) {
-  .cover-introduction {
+  .cover-name {
     font-size: 5rem;
   }
 }
 
+.flip {
+  backface-visibility: hidden !important;
+  animation: 1s flip forwards;
+}
+
+@keyframes flip {
+  0% {
+    opacity: 1;
+    transform: perspective(400px) rotate3d(1, 0, 0, 0deg);
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    transform: perspective(400px) rotate3d(1, 0, 0, -90deg);
+  }
+  75% {
+    opacity: 1;
+  }
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -360deg);
+  }
+  90% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -345deg);
+  }
+  95% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -360deg);
+  }
+  97% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -355deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(400px) rotate3d(1, 0, 0, -360deg);
+  }
+}
 .hr-small {
   width: 13.1rem;
   height: 1px;
