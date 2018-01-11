@@ -307,10 +307,60 @@ body {
   }
 }
 
-.cover-decoration-border {
-  width: 100%;
-  height: 100%;
-  border: 1px solid #bf8bf5;
+.cover-decoration-top {
+  width: calc(100vw - 3rem);
+  height: 1px;
+  border-top: 1px solid #bf8bf5;
+}
+@media (min-width: 767px) {
+  .cover-decoration-top {
+    right: .7rem;
+    width: calc(100vw - 6rem);
+  }
+}
+
+.cover-decoration-right {
+  position: absolute;
+  top: 2.6rem;
+  right: .4rem;
+  height: calc(100vh - 3rem);
+  width: 1px;
+  border-right: 1px solid #bf8bf5;
+}
+@media (min-width: 767px) {
+  .cover-decoration-right {
+    top: 5.3rem;
+    right: .7rem;
+    height: calc(100vh - 6rem);
+  }
+}
+
+.cover-decoration-bottom {
+  position: absolute;
+  bottom: .4rem;
+  left: 2.6rem;
+  width: calc(100vw - 3rem);
+  height: 1px;
+  border-bottom: 1px solid #bf8bf5;
+}
+@media (min-width: 767px) {
+  .cover-decoration-bottom {
+    bottom: .7rem;
+    left: 5.3rem;
+    width: calc(100vw - 6rem);
+  }
+}
+
+.cover-decoration-left {
+  height: calc(100vh - 3rem);
+  width: 1px;
+  border-left: 1px solid #bf8bf5;
+}
+@media (min-width: 767px) {
+  .cover-decoration-left {
+    bottom: .7rem;
+    height: calc(100vh - 6rem);
+  }
 }
 
 .cover-name-container {
