@@ -1,17 +1,22 @@
 @import "normalize";
 
 
+//
 // Variables
+//
 
 
 $dejavu-serif: "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 $dejavu-sans: "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 
 $brand-color: #544d8a;
+$brand-color-saturated: #43388a;
 $dark-violet: #403d78;
 $light-violet: #8b81e6;
 $pinkish-violet: #705a9e;
 $purple: #bf8bf5;
+
+$yellow: #ffe808;
 
 $light-grey: #fbfafc;
 $white: #fff;
@@ -22,7 +27,9 @@ $large-devices: 991px;
 $very-large-devices: 1199px;
 
 
+//
 // Mixins
+//
 
 
 @mixin flex-column {
@@ -58,7 +65,9 @@ $very-large-devices: 1199px;
 }
 
 
+//
 // Initial Setup
+//
 
 
 *,
@@ -88,12 +97,29 @@ body {
 .main-container {
   @include flex-column;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid;
+  color: $dark-violet;
+}
+
+a:hover,
+a:focus {
+  color: $brand-color;
 }
 
 
+//
 // Cover
+//
 
 
 .cover {
@@ -105,7 +131,7 @@ body {
   @include background-gradient;
 
   @include media($very-large-devices) {
-    width: 100vw;
+    width: 100%;
   }
 }
 
@@ -114,7 +140,7 @@ body {
   top: 0;
   left: 0;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   padding: .4rem;
 
   @include media($medium-devices) {
@@ -123,13 +149,13 @@ body {
 }
 
 .cover-decoration-top {
-  width: calc(100vw - 3rem);
+  width: calc(100% - 3rem);
   height: 1px;
   border-top: 1px solid $purple;
 
   @include media($medium-devices) {
     right: .7rem;
-    width: calc(100vw - 6rem);
+    width: calc(100% - 6rem);
   }
 }
 
@@ -152,14 +178,14 @@ body {
   position: absolute;
   bottom: .4rem;
   left: 2.6rem;
-  width: calc(100vw - 3rem);
+  width: calc(100% - 3rem);
   height: 1px;
   border-bottom: 1px solid $purple;
 
   @include media($medium-devices) {
     bottom: .7rem;
     left: 5.3rem;
-    width: calc(100vw - 6rem);
+    width: calc(100% - 6rem);
   }
 }
 
@@ -302,7 +328,7 @@ body {
   }
 }
 
-.cover-icons {
+.cover-icons-container {
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -327,6 +353,7 @@ body {
   padding-left: .5rem;
   padding-right: .5rem;
   opacity: .71;
+  border: none;
   transition: opacity .2s;
 
   @include media($medium-devices) {
@@ -339,11 +366,245 @@ body {
   opacity: 1;
 }
 
-.icon {
+.cover-icon {
   width: 1.5rem;
-  color: transparent;
 
   @include media($medium-devices) {
     width: 1.7rem;
   }
+}
+
+.icon {
+  color: transparent;
+}
+
+
+//
+// Selected Projects
+//
+
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 2.5rem;
+  color: $brand-color-saturated;
+  background-color: $yellow;
+
+  @include media($medium-devices) {
+    padding-bottom: 7rem;
+  }
+}
+
+.projects-main-title {
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
+
+  @include media($medium-devices) {
+    margin-top: 6.3rem;
+    margin-bottom: 7.8rem;
+  }
+}
+
+.projects-main-title-text {
+  margin-bottom: 1.3rem;
+  font-size: 1.8rem;
+  font-style: italic;
+  color: $brand-color-saturated;
+
+  @include media($medium-devices) {
+    margin-bottom: 2.2rem;
+    font-size: 4.3rem;
+  }
+}
+
+.projects-main-title-hr {
+  width: 3.6rem;
+  border-top: none;
+  border-bottom: 1px dotted #8b81e6;
+
+  @include media($medium-devices) {
+    width: 8.2rem;
+  }
+}
+
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+
+  @include media($medium-devices) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 700px;
+    padding: 0;
+  }
+
+  @include media($large-devices) {
+    width: 900px;
+  }
+
+  @include media($very-large-devices) {
+    width: 1000px;
+  }
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  position: relative;
+  margin-bottom: 5.1rem;
+
+  @include media($medium-devices) {
+    flex-basis: 45%;
+    margin-bottom: 7rem;
+  }
+}
+
+.project-image-container {
+  position: relative;
+}
+
+.project-image {
+  border-top: 1px solid $brand-color;
+  border-right: 1px solid $brand-color;
+  border-bottom: .4rem solid $brand-color;
+  border-left: 1px solid $brand-color;
+  background-color: $brand-color;
+}
+
+.project-image-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 8rem 8rem 0;
+  border-color: transparent $brand-color-saturated transparent transparent;
+
+  @include media($medium-devices) {
+    border-width: 0 9rem 9rem 0;
+  }
+}
+
+.project-icon {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.4rem;
+  width: 1.75rem;
+
+  @include media($medium-devices) {
+    top: 1.4rem;
+    right: 1.4rem;
+    width: 2.25rem;
+  }
+}
+
+.project-title {
+  margin-top: 1.2rem;
+  margin-bottom: 1.1rem;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: $brand-color-saturated;
+
+  @include media($medium-devices) {
+    margin-top: 1.4rem;
+    margin-bottom: 1.3rem;
+    font-size: 2.1rem;
+  }
+}
+
+.project-description {
+  margin-bottom: 0;
+
+  p {
+    margin: 0 auto;
+    font-family: $dejavu-sans;
+  }
+
+  @include media($medium-devices) {
+    margin-bottom: 1.7rem;
+    font-size: 1.4rem;
+  }
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  margin-top: 1.4rem;
+  margin-bottom: .86rem;
+
+  @include media($medium-devices) {
+    margin-bottom: .6rem;
+  }
+}
+
+.tag {
+  margin-right: .5rem;
+  margin-bottom: .5rem;
+  padding-top: .5rem;
+  padding-right: .5rem;
+  padding-bottom: .4rem;
+  padding-left: .5rem;
+  font-style: $dejavu-sans;
+  font-size: .73rem;
+  color: $brand-color-saturated;
+  text-transform: uppercase;
+  border: 1px solid $brand-color-saturated;
+
+  @include media($medium-devices) {
+    font-size: .9rem;
+  }
+}
+
+.tag:hover {
+  background-color: $brand-color-saturated;
+  color: $yellow;
+}
+
+.project-links {
+  margin-top: 0;
+}
+
+.project-link {
+  margin-right: 0.2rem;
+    font-size: 1.2rem;
+
+  @include media($medium-devices) {
+    font-size: 1.4rem;
+  }
+}
+
+
+//
+// Helpers
+//
+
+
+.btn {
+  border: 1px solid $brand-color-saturated;
+  border-bottom: .2rem solid $brand-color-saturated;
+  transition: all .5s;
+}
+
+.btn-gigantic {
+  padding: 1.5rem;
+  font-size: 1.3rem;
+
+  @include media($medium-devices) {
+    font-size: 2rem;
+  }
+}
+
+.btn:hover,
+.btn:focus {
+  color: $yellow;
+  background-color: $brand-color-saturated;
 }
