@@ -571,7 +571,7 @@ a:focus {
 }
 @media (min-width: 767px) {
   .projects {
-    padding-bottom: 7rem;
+    padding-bottom: 4rem;
   }
 }
 
@@ -599,10 +599,14 @@ a:focus {
   }
 }
 
+.projects-hr {
+  height: 1px;
+  background-color: #e6d106;
+  border: none;
+}
+
 .projects-main-title-hr {
   width: 3.6rem;
-  border-top: none;
-  border-bottom: 1px dotted #8b81e6;
 }
 @media (min-width: 767px) {
   .projects-main-title-hr {
@@ -645,7 +649,7 @@ a:focus {
 @media (min-width: 767px) {
   .project {
     flex-basis: 45%;
-    margin-bottom: 7rem;
+    margin-bottom: 0;
   }
 }
 
@@ -768,6 +772,17 @@ a:focus {
 @media (min-width: 767px) {
   .project-link {
     font-size: 1.4rem;
+  }
+}
+
+.projects-row-divisor {
+  display: none;
+}
+@media (min-width: 767px) {
+  .projects-row-divisor {
+    display: initial;
+    margin: 4rem auto;
+    width: 100%;
   }
 }
 

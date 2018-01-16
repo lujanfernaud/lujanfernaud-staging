@@ -16,6 +16,7 @@ $light-violet: #8b81e6;
 $pinkish-violet: #705a9e;
 $purple: #bf8bf5;
 
+$dark-yellow: #e6d106;
 $yellow: #ffe808;
 
 $light-grey: #fbfafc;
@@ -395,7 +396,7 @@ a:focus {
   background-color: $yellow;
 
   @include media($medium-devices) {
-    padding-bottom: 7rem;
+    padding-bottom: 4rem;
   }
 }
 
@@ -421,10 +422,14 @@ a:focus {
   }
 }
 
+.projects-hr {
+  height: 1px;
+  background-color: $dark-yellow;
+  border: none;
+}
+
 .projects-main-title-hr {
   width: 3.6rem;
-  border-top: none;
-  border-bottom: 1px dotted #8b81e6;
 
   @include media($medium-devices) {
     width: 8.2rem;
@@ -462,7 +467,7 @@ a:focus {
 
   @include media($medium-devices) {
     flex-basis: 45%;
-    margin-bottom: 7rem;
+    margin-bottom: 0;
   }
 }
 
@@ -579,6 +584,16 @@ a:focus {
 
   @include media($medium-devices) {
     font-size: 1.4rem;
+  }
+}
+
+.projects-row-divisor {
+  display: none;
+
+  @include media($medium-devices) {
+    display: initial;
+    margin: 4rem auto;
+    width: 100%;
   }
 }
 
