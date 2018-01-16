@@ -565,14 +565,8 @@ a:focus {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-bottom: 2.5rem;
   color: #43388a;
   background-color: #ffe808;
-}
-@media (min-width: 767px) {
-  .projects {
-    padding-bottom: 4rem;
-  }
 }
 
 .projects-header {
@@ -619,7 +613,7 @@ a:focus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
 }
 @media (min-width: 767px) {
   .projects-grid {
@@ -782,13 +776,42 @@ a:focus {
 @media (min-width: 767px) {
   .projects-row-divisor {
     display: initial;
-    margin: 4rem auto;
+    margin: 4.2rem auto;
     width: 100%;
   }
 }
 
 .projects-footer {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.projects-footer p {
+  margin-top: 0;
+  margin-bottom: 4.2rem;
+  padding: 1.1rem 1.1rem 1rem 1.1rem;
+  font-size: 1.3rem;
+  color: #ffe808;
+  background-color: #43388a;
+}
+@media (min-width: 767px) {
+  .projects-footer p {
+    font-size: 1.5rem;
+  }
+}
+.projects-footer a {
+  margin-bottom: 2.5rem;
+  margin-left: 1.1rem;
+  margin-right: 1.1rem;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+@media (min-width: 767px) {
+  .projects-footer a {
+    margin-bottom: 4.2rem;
+    font-size: 1.7rem;
+  }
 }
 
 .btn {

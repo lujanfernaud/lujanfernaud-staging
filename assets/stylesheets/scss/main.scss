@@ -391,13 +391,8 @@ a:focus {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-bottom: 2.5rem;
   color: $brand-color-saturated;
   background-color: $yellow;
-
-  @include media($medium-devices) {
-    padding-bottom: 4rem;
-  }
 }
 
 .projects-header {
@@ -441,7 +436,7 @@ a:focus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
 
   @include media($medium-devices) {
     flex-direction: row;
@@ -593,13 +588,42 @@ a:focus {
 
   @include media($medium-devices) {
     display: initial;
-    margin: 4rem auto;
+    margin: 4.2rem auto;
     width: 100%;
   }
 }
 
 .projects-footer {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 4.2rem;
+    padding: 1.1rem 1.1rem 1rem 1.1rem;
+    font-size: 1.3rem;
+    color: $yellow;
+    background-color: $brand-color-saturated;
+
+    @include media($medium-devices) {
+      font-size: 1.5rem;
+    }
+  }
+
+  a {
+    margin-bottom: 2.5rem;
+    margin-left: 1.1rem;
+    margin-right: 1.1rem;
+    font-size: 1.3rem;
+    font-style: italic;
+
+    @include media($medium-devices) {
+      margin-bottom: 4.2rem;
+      font-size: 1.7rem;
+    }
+  }
 }
 
 
