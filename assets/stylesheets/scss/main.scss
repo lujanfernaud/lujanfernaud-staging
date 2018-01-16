@@ -430,6 +430,7 @@ a:focus {
 
 .projects-header-hr {
   width: 3.6rem;
+  background-color: $brand-color-saturated;
 
   @include media($medium-devices) {
     width: 8.2rem;

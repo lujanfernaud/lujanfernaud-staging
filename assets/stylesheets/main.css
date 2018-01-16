@@ -607,6 +607,7 @@ a:focus {
 
 .projects-header-hr {
   width: 3.6rem;
+  background-color: #43388a;
 }
 @media (min-width: 767px) {
   .projects-header-hr {
