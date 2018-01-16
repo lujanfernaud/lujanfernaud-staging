@@ -814,6 +814,10 @@ a {
   }
 }
 
+.hr-20 {
+  width: 20%;
+}
+
 .btn {
   border: 1px solid #43388a;
   border-bottom: 0.2rem solid #43388a;
