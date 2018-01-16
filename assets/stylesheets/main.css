@@ -752,11 +752,6 @@ a:focus {
   }
 }
 
-.tag:hover {
-  background-color: #43388a;
-  color: #ffe808;
-}
-
 .project-links {
   margin-top: 0;
 }
