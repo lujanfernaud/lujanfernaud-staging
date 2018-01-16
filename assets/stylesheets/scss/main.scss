@@ -400,7 +400,7 @@ a:focus {
   }
 }
 
-.projects-main-title {
+.projects-header {
   margin-top: 1.8rem;
   margin-bottom: 1.8rem;
 
@@ -410,7 +410,7 @@ a:focus {
   }
 }
 
-.projects-main-title-text {
+.projects-header-text {
   margin-bottom: 1.3rem;
   font-size: 1.8rem;
   font-style: italic;
@@ -428,7 +428,7 @@ a:focus {
   border: none;
 }
 
-.projects-main-title-hr {
+.projects-header-hr {
   width: 3.6rem;
 
   @include media($medium-devices) {
@@ -595,6 +595,10 @@ a:focus {
     margin: 4rem auto;
     width: 100%;
   }
+}
+
+.projects-footer {
+  display: flex;
 }
 
 
