@@ -272,14 +272,12 @@ img {
 }
 
 a {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: #403d78;
   text-decoration: none;
   border-bottom: 1px solid;
-  color: #403d78;
-}
-
-a:hover,
-a:focus {
-  color: #544d8a;
+  transition: all .3s;
 }
 
 .cover {
@@ -764,6 +762,12 @@ a:focus {
   .project-link {
     font-size: 1.4rem;
   }
+}
+
+.project-link:hover,
+.project-link:focus {
+  color: #ffe808;
+  background-color: #43388a;
 }
 
 .projects-row-divisor {

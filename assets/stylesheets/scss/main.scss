@@ -107,14 +107,12 @@ img {
 }
 
 a {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: $dark-violet;
   text-decoration: none;
   border-bottom: 1px solid;
-  color: $dark-violet;
-}
-
-a:hover,
-a:focus {
-  color: $brand-color;
+  transition: all .3s;
 }
 
 
@@ -572,11 +570,17 @@ a:focus {
 
 .project-link {
   margin-right: 0.2rem;
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 
   @include media($medium-devices) {
     font-size: 1.4rem;
   }
+}
+
+.project-link:hover,
+.project-link:focus {
+  color: $yellow;
+  background-color: $brand-color-saturated;
 }
 
 .projects-row-divisor {
