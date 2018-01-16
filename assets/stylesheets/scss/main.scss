@@ -400,8 +400,8 @@ a:focus {
   margin-bottom: 1.8rem;
 
   @include media($medium-devices) {
-    margin-top: 4.2rem;
-    margin-bottom: 6.2rem;
+    margin-top: 4.5rem;
+    margin-bottom: 7.5rem;
   }
 }
 
@@ -424,6 +424,7 @@ a:focus {
 }
 
 .projects-header-hr {
+  height: 2px;
   width: 3.6rem;
   background-color: $brand-color-saturated;
 
