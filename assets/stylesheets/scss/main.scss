@@ -65,6 +65,10 @@ $very-large-devices: 1199px;
   background-size: auto auto;
 }
 
+@mixin in-circle-degrees($degrees, $circle-width) {
+  transform: rotate($degrees) translate($circle-width / 2) rotate(-$degrees);
+}
+
 
 //
 // Initial Setup
@@ -317,64 +321,14 @@ a {
   font-size: 1.2rem;
 
   @include media($medium-devices) {
-    margin-top: 1.15rem;
-    font-size: 1.7rem;
+   margin-top: 1.15rem;
+   font-size: 1.7rem;
   }
 
   @include media($large-devices) {
-    margin-top: 1.35rem;
-    font-size: 2.1rem;
+   margin-top: 1.35rem;
+   font-size: 2.1rem;
   }
-}
-
-.cover-icons-container {
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  bottom: 1.54rem;
-  left: calc(50% - 4.35rem); // 50% minus half of the width.
-  width: 8.7rem;
-
-  @include media($medium-devices) {
-    bottom: 3.1rem;
-    left: calc(50% - 5.55rem); // 50% minus half of the width.
-    width: 11.1rem;
-  }
-
-  @include media-iphone-large {
-    bottom: 2.1rem;
-  }
-}
-
-.link-icon {
-  padding-top: .5rem;
-  padding-bottom: .2rem;
-  padding-left: .5rem;
-  padding-right: .5rem;
-  opacity: .71;
-  border: none;
-  transition: opacity .2s;
-
-  @include media($medium-devices) {
-    padding-bottom: 0;
-  }
-}
-
-.link-icon:hover,
-.link-icon:focus {
-  opacity: 1;
-}
-
-.cover-icon {
-  width: 1.5rem;
-
-  @include media($medium-devices) {
-    width: 1.7rem;
-  }
-}
-
-.icon {
-  color: transparent;
 }
 
 
@@ -628,9 +582,239 @@ a {
 
 
 //
+// Back Cover
+//
+
+
+.back-cover {
+  position: relative;
+  @include flex-column;
+  height: 100vh;
+  width: 100%;
+  padding: 1rem;
+  color: $brand-color-saturated;
+  background-color: $light-grey;
+
+  @include media($very-large-devices) {
+    width: 100%;
+  }
+}
+
+.lets-talk-container {
+  position: relative;
+}
+
+.lets-talk-link:hover,
+.lets-talk-link:focus {
+  outline: none;
+}
+
+.lets-talk-link:focus > .lets-talk::after {
+  content: "";
+  position: absolute;
+  top: -0.26rem;
+  left: -0.26rem;
+  width: 12.52rem;
+  height: 12.52rem;
+  outline: none;
+  border: 1px dotted $brand-color-saturated;
+  border-radius: 100%;
+
+  @include media($medium-devices) {
+    top: -0.65rem;
+    left: -0.65rem;
+    width: 31.3rem;
+    height: 31.3rem;
+  }
+
+  @include media-iphone-large {
+    top: -0.26rem;
+    left: -0.26rem;
+    width: 12.52rem;
+    height: 12.52rem;
+  }
+}
+
+.lets-talk {
+  position: relative;
+  width: 12rem;
+  height: 12rem;
+  color: $light-grey;
+  @include background-gradient;
+  cursor: pointer;
+  border-radius: 100%;
+  z-index: 1;
+
+  @include media($medium-devices) {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  @include media-iphone-large {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
+.lets-talk-text {
+  position: absolute;
+  top: -.84rem;
+  left: 1.88rem;
+  width: 71%;
+  font-size: 3.2rem;
+  font-weight: bold;
+  font-style: italic;
+  opacity: 1;
+  transition: opacity .25s;
+
+  @include media($medium-devices) {
+    top: -2.1rem;
+    left: 4.7rem;
+    font-size: 8rem;
+  }
+
+  @include media-iphone-large {
+    top: -.84rem;
+    left: 1.88rem;
+    font-size: 3.2rem;
+  }
+}
+
+.lets-talk:hover > .lets-talk-text {
+  opacity: 0;
+}
+
+.lets-talk-mail {
+  position: absolute;
+  top: calc(50% - 3.64rem);
+  left: calc(50% - 3.6rem);
+  width: 7.35rem;
+  opacity: 0;
+  transition: opacity .25s;
+
+  @include media($medium-devices) {
+    top: calc(50% - 9.2rem);
+    left: calc(50% - 9.1rem);
+    width: 18.4rem;
+  }
+
+  @include media-iphone-large {
+    top: calc(50% - 3.64rem);
+    left: calc(50% - 3.6rem);
+    width: 7.35rem;
+  }
+}
+
+.lets-talk:hover > .lets-talk-mail {
+  opacity: 1;
+}
+
+.cover-icons-container {
+  position: absolute;
+  top: -.86rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  @include media($medium-devices) {
+    top: -.95rem;
+  }
+
+  @include media-iphone-large {
+    top: -.86rem;
+  }
+}
+
+.cover-icon {
+  width: 1.5rem;
+
+  @include media($medium-devices) {
+    width: 3rem;
+  }
+
+  @include media-iphone-large {
+    width: 1.5rem;
+  }
+}
+
+.link-icon {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -0.41rem;
+  padding: .25rem .2rem .01rem .2rem;
+  opacity: .9;
+  border: 1px dotted transparent;
+  border-radius: 100%;
+  transition: all .2s;
+
+  @include media($medium-devices) {
+    margin: -1.5rem; // Half of the cover icon width.
+    padding: .5rem .5rem .05rem .5rem;
+  }
+
+  @include media-iphone-large {
+    margin: -0.41rem;
+    padding: .25rem .2rem .01rem .2rem;
+  }
+}
+
+.link-icon:hover,
+.link-icon:focus {
+  outline: none;
+}
+
+.link-icon:focus {
+  outline: none;
+  border: 1px dotted $brand-color-saturated;
+}
+
+.link-icon-twitter {
+  @include in-circle-degrees($degrees: -40deg, $circle-width: 14rem);
+
+  @include media($medium-devices) {
+    @include in-circle-degrees($degrees: -45deg, $circle-width: 35rem);
+  }
+
+  @include media-iphone-large {
+    @include in-circle-degrees($degrees: -40deg, $circle-width: 14rem);
+  }
+}
+
+.link-icon-github {
+  @include in-circle-degrees($degrees: -15deg, $circle-width: 14rem);
+
+  @include media($medium-devices) {
+    @include in-circle-degrees($degrees: -25deg, $circle-width: 35rem);
+  }
+
+  @include media-iphone-large {
+    @include in-circle-degrees($degrees: -15deg, $circle-width: 14rem);
+  }
+}
+
+.link-icon-exercism {
+  @include in-circle-degrees($degrees: 10deg, $circle-width: 14rem);
+
+  @include media($medium-devices) {
+    @include in-circle-degrees($degrees: -5deg, $circle-width: 35rem);
+  }
+
+  @include media-iphone-large {
+    @include in-circle-degrees($degrees: 10deg, $circle-width: 14rem);
+  }
+}
+
+
+//
 // Helpers
 //
 
+
+.icon {
+  color: transparent;
+}
 
 .hr-20 {
   width: 20%;
