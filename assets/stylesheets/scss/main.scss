@@ -9,12 +9,14 @@
 $dejavu-serif: "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 $dejavu-sans: "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 
-$brand-color: #544d8a;
-$brand-color-saturated: #43388a;
-$dark-violet: #403d78;
-$light-violet: #8b81e6;
-$pinkish-violet: #705a9e;
-$purple: #bf8bf5;
+$brand-color: #4b3f8a;
+$brand-color-saturated: #45388a;
+
+$dark-violet: #423d78;
+$light-violet: #8f81e6;
+
+$pinkish-violet: #6e459e;
+$purple: #c28bf5;
 
 $dark-yellow: #e6d106;
 $yellow: #ffe808;
@@ -121,11 +123,11 @@ a {
 
 
 //
-// Cover
+// Front Cover
 //
 
 
-.cover {
+.front-cover {
   @include flex-column;
   height: 100vh;
   width: 100%;
@@ -138,84 +140,19 @@ a {
   }
 }
 
-.cover-decoration {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  padding: .4rem;
-
-  @include media($medium-devices) {
-    padding: .7rem;
-  }
-}
-
-.cover-decoration-top {
-  width: calc(100% - 3rem);
-  height: 1px;
-  border-top: 1px solid $purple;
-
-  @include media($medium-devices) {
-    right: .7rem;
-    width: calc(100% - 6rem);
-  }
-}
-
-.cover-decoration-right {
-  position: absolute;
-  top: 2.6rem;
-  right: .4rem;
-  height: calc(100vh - 3rem);
-  width: 1px;
-  border-right: 1px solid $purple;
-
-  @include media($medium-devices) {
-    top: 5.3rem;
-    right: .7rem;
-    height: calc(100vh - 6rem);
-  }
-}
-
-.cover-decoration-bottom {
-  position: absolute;
-  bottom: .4rem;
-  left: 2.6rem;
-  width: calc(100% - 3rem);
-  height: 1px;
-  border-bottom: 1px solid $purple;
-
-  @include media($medium-devices) {
-    bottom: .7rem;
-    left: 5.3rem;
-    width: calc(100% - 6rem);
-  }
-}
-
-.cover-decoration-left {
-  height: calc(100vh - 3rem);
-  width: 1px;
-  border-left: 1px solid $purple;
-
-  @include media($medium-devices) {
-    bottom: .7rem;
-    height: calc(100vh - 6rem);
-  }
-}
-
 .cover-name-container {
   position: relative;
-  cursor: help;
 }
 
 .name-question-mark {
   position: absolute;
-  top: -1.85rem;
+  top: -1.91rem;
   right: calc(50% - 1.4rem);
   padding: 1rem 1rem 1.5rem 1rem;
   font-size: 1rem;
   opacity: .55;
   transition: opacity .5s;
+  cursor: help;
 
   @include media($medium-devices) {
     top: -.8rem;
@@ -238,7 +175,7 @@ a {
 
 .cover-name {
   position: relative;
-  margin-bottom: .6rem;
+  margin-bottom: .7rem;
   font-style: italic;
   font-size: 2rem;
   font-weight: 600;
@@ -300,17 +237,18 @@ a {
 }
 
 .hr-small {
-  width: 13.1rem;
-  height: 1px;
+  width: 12.9rem;
+  height: 2px;
   background-color: $light-grey;
   border: 0;
 
   @include media($medium-devices) {
-    width: 17rem;
+    margin: 1.25rem;
+    width: 16.4rem;
   }
 
   @include media($large-devices) {
-    width: 20.6rem;
+    width: 20.2rem;
     margin: 1.4rem;
   }
 }
@@ -321,14 +259,39 @@ a {
   font-size: 1.2rem;
 
   @include media($medium-devices) {
-   margin-top: 1.15rem;
-   font-size: 1.7rem;
+    margin-top: 1.01rem;
+    font-size: 1.7rem;
   }
 
   @include media($large-devices) {
-   margin-top: 1.35rem;
-   font-size: 2.1rem;
+    margin-top: 1.35rem;
+    font-size: 2.1rem;
   }
+}
+
+.chevron-down {
+  position: absolute;
+  bottom: 0.35rem;
+  padding: 1rem;
+  width: 3.8rem;
+  opacity: .8;
+  border: 0;
+  transition: opacity .5s;
+
+  @include media($medium-devices) {
+    bottom: 0.9rem;
+    width: 5.1rem;
+  }
+
+  @include media-iphone-large {
+    bottom: 0.7rem;
+    width: 4.4rem;
+  }
+}
+
+.chevron-down:hover,
+.chevron-down:focus {
+  opacity: 1;
 }
 
 

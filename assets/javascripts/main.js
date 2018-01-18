@@ -1,18 +1,14 @@
 class NameFlipper {
 
   constructor() {
-    this.nameContainer = document.querySelector(".cover-name-container");
-    this.name          = document.querySelector(".cover-name");
-    this.questionMark  = document.querySelector(".name-question-mark");
-    this.nameAndMark   = [this.nameContainer, this.questionMark];
-    this.running       = false;
+    this.questionMark = document.querySelector(".name-question-mark");
+    this.name         = document.querySelector(".cover-name");
+    this.running      = false;
   }
 
   watch() {
-    this.nameAndMark.forEach(element => {
-      element.addEventListener("mouseover", () => {
-        this.flipName();
-      });
+    this.questionMark.addEventListener("mouseover", () => {
+      this.flipName();
     });
   }
 

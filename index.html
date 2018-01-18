@@ -12,23 +12,20 @@
 <body>
 
   <main class="main-container">
-    <section class="cover">
-      <div class="cover-decoration">
-        <div class="cover-decoration-top"></div>
-        <div class="cover-decoration-right"></div>
-        <div class="cover-decoration-bottom"></div>
-        <div class="cover-decoration-left"></div>
-      </div>
 
+    <section class="front-cover">
       <div class="cover-name-container">
         <div class="name-question-mark">?</div>
         <h1 class="cover-name">Luján Fernaud</h1>
       </div>
       <hr class="hr-small">
       <p class="cover-short-description">WEB DEVELOPER</p>
+      <a data-scroll class="chevron-down" href="#selected-projects">
+        <img src="assets/images/icons/chevron-down.svg" class="icon chevron-down-icon">
+      </a>
     </section>
 
-    <section class="projects">
+    <section id="selected-projects" class="projects">
       <header class="projects-header">
         <h2 class="projects-header-text">Selected Projects</h2>
         <hr class="projects-hr projects-header-hr">
@@ -194,7 +191,7 @@
         <a class="lets-talk-link" href="mailto:hello@lujanfernaud.com" title="Email">
           <div class="lets-talk">
             <p class="lets-talk-text">Let&rsquo;s talk!</p>
-            <img src="assets/images/icons/email_icon.svg" class="lets-talk-mail"></img>
+            <img src="assets/images/icons/email_icon.svg" class="lets-talk-mail">
           </div>
         </a>
 
@@ -211,8 +208,15 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <script src="assets/javascripts/main.js"></script>
+  <script src="assets/javascripts/smooth-scroll.polyfills.min.js"></script>
+  <script>
+    var scroll = new SmoothScroll("[data-scroll]", {
+      easing: "easeInOutQuad"
+    });
+  </script>
 </body>
 </html>
