@@ -289,9 +289,9 @@ a {
   width: 100%;
   padding: 1rem;
   color: #fbfafc;
-  background: -webkit-linear-gradient(-45deg, #6e459e 0, #4b3f8a 100%);
-  background: -moz-linear-gradient(135deg, #6e459e 0, #4b3f8a 100%);
-  background: linear-gradient(135deg, #6e459e 0, #4b3f8a 100%);
+  background: -webkit-linear-gradient(-45deg, #71459e 0, #4b3f8a 100%);
+  background: -moz-linear-gradient(135deg, #71459e 0, #4b3f8a 100%);
+  background: linear-gradient(135deg, #71459e 0, #4b3f8a 100%);
   background-position: 50% 50%;
   -webkit-background-origin: padding-box;
   background-origin: padding-box;
@@ -716,9 +716,9 @@ a {
   align-items: center;
   margin-top: 3.2rem;
   width: 100%;
-  background: -webkit-linear-gradient(-45deg, #6e459e 0, #4b3f8a 100%);
-  background: -moz-linear-gradient(135deg, #6e459e 0, #4b3f8a 100%);
-  background: linear-gradient(135deg, #6e459e 0, #4b3f8a 100%);
+  background: -webkit-linear-gradient(-45deg, #71459e 0, #4b3f8a 100%);
+  background: -moz-linear-gradient(135deg, #71459e 0, #4b3f8a 100%);
+  background: linear-gradient(135deg, #71459e 0, #4b3f8a 100%);
   background-position: 50% 50%;
   -webkit-background-origin: padding-box;
   background-origin: padding-box;
@@ -806,9 +806,9 @@ a {
   width: 12rem;
   height: 12rem;
   color: #fbfafc;
-  background: -webkit-linear-gradient(-45deg, #6e459e 0, #4b3f8a 100%);
-  background: -moz-linear-gradient(135deg, #6e459e 0, #4b3f8a 100%);
-  background: linear-gradient(135deg, #6e459e 0, #4b3f8a 100%);
+  background: -webkit-linear-gradient(-45deg, #71459e 0, #4b3f8a 100%);
+  background: -moz-linear-gradient(135deg, #71459e 0, #4b3f8a 100%);
+  background: linear-gradient(135deg, #71459e 0, #4b3f8a 100%);
   background-position: 50% 50%;
   -webkit-background-origin: padding-box;
   background-origin: padding-box;
@@ -1020,9 +1020,9 @@ a {
 .btn:hover,
 .btn:focus {
   color: #ffe808;
-  background: -webkit-linear-gradient(-45deg, #6e459e 0, #4b3f8a 100%);
-  background: -moz-linear-gradient(135deg, #6e459e 0, #4b3f8a 100%);
-  background: linear-gradient(135deg, #6e459e 0, #4b3f8a 100%);
+  background: -webkit-linear-gradient(-45deg, #71459e 0, #4b3f8a 100%);
+  background: -moz-linear-gradient(135deg, #71459e 0, #4b3f8a 100%);
+  background: linear-gradient(135deg, #71459e 0, #4b3f8a 100%);
   background-position: 50% 50%;
   -webkit-background-origin: padding-box;
   background-origin: padding-box;
