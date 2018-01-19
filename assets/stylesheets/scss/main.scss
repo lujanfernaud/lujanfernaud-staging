@@ -10,7 +10,7 @@ $dejavu-serif: "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georg
 $dejavu-sans: "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 
 $brand-color: #4b3f8a;
-$brand-color-saturated: #45388a;
+$brand-color-saturated: #4d3e94;
 
 $dark-violet: #423d78;
 $light-violet: #8f81e6;
@@ -21,7 +21,8 @@ $purple: #c28bf5;
 $dark-yellow: #e6d106;
 $yellow: #ffe808;
 
-$light-grey: #fbfafc;
+$light-grey-1: #fbfafc;
+$light-grey-2: #f9f5ff;
 $white: #fff;
 
 $small-devices: 479px;
@@ -132,7 +133,7 @@ a {
   height: 100vh;
   width: 100%;
   padding: 1rem;
-  color: $light-grey;
+  color: $light-grey-1;
   @include background-gradient;
 
   @include media($very-large-devices) {
@@ -167,10 +168,6 @@ a {
     padding: 1.5rem;
     font-size: 1.5rem;
   }
-}
-
-.opacity-hidden {
-  opacity: 0;
 }
 
 .cover-name {
@@ -239,7 +236,7 @@ a {
 .hr-small {
   width: 12.9rem;
   height: 2px;
-  background-color: $light-grey;
+  background-color: $light-grey-1;
   border: 0;
 
   @include media($medium-devices) {
@@ -300,6 +297,16 @@ a {
 //
 
 
+// Section Variables
+
+$projects-spacing: 4.5rem;
+$projects-spacing-half: $projects-spacing / 2;
+$projects-spacing-third: $projects-spacing / 3;
+$projects-spacing-additional: .95rem;
+
+
+// Section Styling
+
 .projects {
   display: flex;
   flex-direction: column;
@@ -311,24 +318,40 @@ a {
 }
 
 .projects-header {
-  margin-top: 1.8rem;
-  margin-bottom: 1.8rem;
+  position: relative;
+  margin-top: $projects-spacing-half;
+  margin-bottom: $projects-spacing-third * 2 + $projects-spacing-third;
 
   @include media($medium-devices) {
-    margin-top: 4.5rem;
-    margin-bottom: 7.5rem;
+    margin-top: $projects-spacing + $projects-spacing-half;
+    margin-bottom: $projects-spacing * 2 + $projects-spacing-third;
   }
 }
 
+.projects-header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $brand-color-saturated;
+  transform: skew(-10deg);
+}
+
 .projects-header-text {
-  margin-bottom: 1.3rem;
+  position: relative;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: .8rem;
   font-size: 1.8rem;
   font-style: italic;
-  color: $brand-color-saturated;
+  color: $yellow;
+  z-index: 1;
 
   @include media($medium-devices) {
-    margin-bottom: 2.2rem;
-    font-size: 4.3rem;
+    margin-bottom: .8rem;
+    font-size: 3.5rem;
   }
 }
 
@@ -375,12 +398,24 @@ a {
   flex-direction: column;
   flex-basis: 100%;
   position: relative;
-  margin-bottom: 5.1rem;
+  margin-top: $projects-spacing-half + $projects-spacing-additional;
+  padding-bottom: $projects-spacing-half + $projects-spacing-additional;
+  border-bottom: 1px solid $dark-yellow;
 
   @include media($medium-devices) {
     flex-basis: 45%;
-    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    border: none;
   }
+}
+
+.first-project {
+  margin-top: 0;
+}
+
+.last-project {
+  border-bottom: 1px solid transparent;
 }
 
 .project-image-container {
@@ -388,11 +423,8 @@ a {
 }
 
 .project-image {
-  border-top: 1px solid $brand-color;
-  border-right: 1px solid $brand-color;
-  border-bottom: .4rem solid $brand-color;
-  border-left: 1px solid $brand-color;
-  background-color: $brand-color;
+  border-bottom: .4rem solid $brand-color-saturated;
+  background-color: $brand-color-saturated;
 }
 
 .project-image-corner {
@@ -486,8 +518,10 @@ a {
 }
 
 .project-link {
-  margin-right: 0.2rem;
+  padding-top: 3px;
+  margin-right: .3rem;
   font-size: 1.2rem;
+  color: $brand-color-saturated;
 
   @include media($medium-devices) {
     font-size: 1.4rem;
@@ -495,9 +529,10 @@ a {
 }
 
 .project-link:hover,
-.project-link:focus {
+.project-link:focus{
   color: $yellow;
   background-color: $brand-color-saturated;
+  border-bottom: 1px solid $brand-color-saturated;
 }
 
 .projects-row-divisor {
@@ -505,7 +540,7 @@ a {
 
   @include media($medium-devices) {
     display: initial;
-    margin: 4.2rem auto;
+    margin: $projects-spacing auto;
     width: 100%;
   }
 }
@@ -515,29 +550,23 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: $projects-spacing-half + $projects-spacing-additional;
+  width: 100%;
+  @include background-gradient;
 
-  p {
-    margin-top: 0;
-    margin-bottom: 4.2rem;
-    padding: 1.1rem 1.1rem 1rem 1.1rem;
-    font-size: 1.3rem;
-    color: $yellow;
-    background-color: $brand-color-saturated;
-
-    @include media($medium-devices) {
-      font-size: 1.5rem;
-    }
+  @include media($medium-devices) {
+    margin-top: $projects-spacing-half;
   }
 
   a {
-    margin-bottom: 2.5rem;
-    margin-left: 1.1rem;
-    margin-right: 1.1rem;
-    font-size: 1.3rem;
+    margin: ($projects-spacing + $projects-spacing-half) 1.1rem;
+    font-size: 1.4rem;
     font-style: italic;
+    text-align: center;
+    line-height: 1.4;
 
     @include media($medium-devices) {
-      margin-bottom: 4.2rem;
+      margin: ($projects-spacing * 2 + $projects-spacing-half) auto;
       font-size: 1.7rem;
     }
   }
@@ -556,7 +585,7 @@ a {
   width: 100%;
   padding: 1rem;
   color: $brand-color-saturated;
-  background-color: $light-grey;
+  background-color: $light-grey-2;
 
   @include media($very-large-devices) {
     width: 100%;
@@ -602,7 +631,7 @@ a {
   position: relative;
   width: 12rem;
   height: 12rem;
-  color: $light-grey;
+  color: $light-grey-1;
   @include background-gradient;
   cursor: pointer;
   border-radius: 100%;
@@ -775,6 +804,10 @@ a {
 //
 
 
+.opacity-hidden {
+  opacity: 0;
+}
+
 .icon {
   color: transparent;
 }
@@ -789,17 +822,31 @@ a {
   transition: all .5s;
 }
 
-.btn-gigantic {
-  padding: 1.5rem;
-  font-size: 1.3rem;
-
-  @include media($medium-devices) {
-    font-size: 2rem;
-  }
-}
-
 .btn:hover,
 .btn:focus {
   color: $yellow;
-  background-color: $brand-color-saturated;
+  @include background-gradient;
+}
+
+.btn-yellow {
+  color: $yellow;
+  border: 1px solid $yellow;
+  border-bottom: .2rem solid $yellow;
+  transition: all .5s;
+}
+
+.btn-yellow:hover,
+.btn-yellow:focus {
+  color: $brand-color-saturated;
+  background-color: $yellow;
+  border-bottom: .2rem solid $white;
+}
+
+.btn-gigantic {
+  padding: 1.5rem;
+  font-size: 1.5rem !important;
+
+  @include media($medium-devices) {
+    font-size: 2.2rem !important;
+  }
 }
