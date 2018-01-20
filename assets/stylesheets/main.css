@@ -487,6 +487,17 @@ a {
   height: 100%;
   background-color: #4d3e94;
   transform: skew(-10deg);
+  transition: all 1s ease-out;
+}
+
+.projects-header-background[data-emergence=hidden] {
+  width: 0%;
+  opacity: 0;
+}
+
+.projects-header-background[data-emergence=visible] {
+  width: 100%;
+  opacity: 1;
 }
 
 .projects-header-text {
@@ -557,6 +568,7 @@ a {
   margin-top: 3.2rem;
   padding-bottom: 3.2rem;
   border-bottom: 1px solid #e6d106;
+  transition: all 1s ease-out;
 }
 @media (min-width: 767px) {
   .project {
@@ -573,6 +585,21 @@ a {
 
 .last-project {
   border-bottom: 1px solid transparent;
+}
+
+.project[data-emergence=hidden].appear-left {
+  left: -1rem;
+  opacity: 0;
+}
+
+.project[data-emergence=hidden].appear-right {
+  left: 1rem;
+  opacity: 0;
+}
+
+.project[data-emergence=visible] {
+  left: 0;
+  opacity: 1;
 }
 
 .project-image-container {
@@ -700,6 +727,7 @@ a {
 
 .projects-row-divisor {
   display: none;
+  transition: all 2s;
 }
 @media (min-width: 767px) {
   .projects-row-divisor {
@@ -707,6 +735,14 @@ a {
     margin: 4.5rem auto;
     width: 100%;
   }
+}
+
+.projects-row-divisor[data-emergence=hidden] {
+  opacity: 0;
+}
+
+.projects-row-divisor[data-emergence=visible] {
+  opacity: 1;
 }
 
 .projects-footer {
@@ -738,12 +774,19 @@ a {
   font-style: italic;
   text-align: center;
   line-height: 1.4;
+  transition: all 1s;
 }
 @media (min-width: 767px) {
   .projects-footer a {
     margin: 11.25rem auto;
     font-size: 1.7rem;
   }
+}
+.projects-footer a[data-emergence=hidden] {
+  border-color: transparent;
+}
+.projects-footer a[data-emergence=visible] {
+  border-color: unset;
 }
 
 .back-cover {
@@ -766,6 +809,18 @@ a {
 
 .lets-talk-container {
   position: relative;
+}
+
+.lets-talk-link {
+  transition: opacity 1s;
+}
+
+.lets-talk-link[data-emergence=hidden] {
+  opacity: 0;
+}
+
+.lets-talk-link[data-emergence=visible] {
+  opacity: 1;
 }
 
 .lets-talk-link:hover,
@@ -896,6 +951,8 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
+  transition: opacity 1s;
+  transition-delay: .7s;
 }
 @media (min-width: 767px) {
   .cover-icons-container {
@@ -906,6 +963,14 @@ a {
   .cover-icons-container {
     top: -.86rem;
   }
+}
+
+.cover-icons-container[data-emergence=hidden] {
+  opacity: 0;
+}
+
+.cover-icons-container[data-emergence=visible] {
+  opacity: 1;
 }
 
 .cover-icon {

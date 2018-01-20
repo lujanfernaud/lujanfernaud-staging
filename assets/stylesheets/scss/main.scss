@@ -336,6 +336,17 @@ $projects-spacing-additional: .95rem;
   height: 100%;
   background-color: $brand-color-saturated;
   transform: skew(-10deg);
+  transition: all 1s ease-out;
+}
+
+.projects-header-background[data-emergence=hidden] {
+  width: 0%;
+  opacity: 0;
+}
+
+.projects-header-background[data-emergence=visible] {
+  width: 100%;
+  opacity: 1;
 }
 
 .projects-header-text {
@@ -401,6 +412,7 @@ $projects-spacing-additional: .95rem;
   margin-top: $projects-spacing-half + $projects-spacing-additional;
   padding-bottom: $projects-spacing-half + $projects-spacing-additional;
   border-bottom: 1px solid $dark-yellow;
+  transition: all 1s ease-out;
 
   @include media($medium-devices) {
     flex-basis: 45%;
@@ -416,6 +428,22 @@ $projects-spacing-additional: .95rem;
 
 .last-project {
   border-bottom: 1px solid transparent;
+}
+
+.project[data-emergence=hidden].appear-left {
+  left: -1rem;
+  opacity: 0;
+}
+
+.project[data-emergence=hidden].appear-right {
+  left: 1rem;
+  opacity: 0;
+}
+
+
+.project[data-emergence=visible] {
+  left: 0;
+  opacity: 1;
 }
 
 .project-image-container {
@@ -537,12 +565,21 @@ $projects-spacing-additional: .95rem;
 
 .projects-row-divisor {
   display: none;
+  transition: all 2s;
 
   @include media($medium-devices) {
     display: initial;
     margin: $projects-spacing auto;
     width: 100%;
   }
+}
+
+.projects-row-divisor[data-emergence=hidden] {
+  opacity: 0;
+}
+
+.projects-row-divisor[data-emergence=visible] {
+  opacity: 1;
 }
 
 .projects-footer {
@@ -564,11 +601,20 @@ $projects-spacing-additional: .95rem;
     font-style: italic;
     text-align: center;
     line-height: 1.4;
+    transition: all 1s;
 
     @include media($medium-devices) {
       margin: ($projects-spacing * 2 + $projects-spacing-half) auto;
       font-size: 1.7rem;
     }
+  }
+
+  a[data-emergence=hidden] {
+    border-color: transparent;
+  }
+
+  a[data-emergence=visible] {
+    border-color: unset;
   }
 }
 
@@ -594,6 +640,18 @@ $projects-spacing-additional: .95rem;
 
 .lets-talk-container {
   position: relative;
+}
+
+.lets-talk-link {
+  transition: opacity 1s;
+}
+
+.lets-talk-link[data-emergence=hidden] {
+  opacity: 0;
+}
+
+.lets-talk-link[data-emergence=visible] {
+  opacity: 1;
 }
 
 .lets-talk-link:hover,
@@ -707,6 +765,8 @@ $projects-spacing-additional: .95rem;
   left: 0;
   width: 100%;
   height: 100%;
+  transition: opacity 1s;
+  transition-delay: .7s;
 
   @include media($medium-devices) {
     top: -.95rem;
@@ -715,6 +775,14 @@ $projects-spacing-additional: .95rem;
   @include media-iphone-large {
     top: -.86rem;
   }
+}
+
+.cover-icons-container[data-emergence=hidden] {
+  opacity: 0;
+}
+
+.cover-icons-container[data-emergence=visible] {
+  opacity: 1;
 }
 
 .cover-icon {

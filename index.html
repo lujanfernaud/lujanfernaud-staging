@@ -28,12 +28,12 @@
     <section id="selected-projects" class="projects">
       <header class="projects-header">
         <h2 class="projects-header-text">Selected Projects</h2>
-        <div class="projects-header-background"></div>
+        <div class="projects-header-background" data-emergence="hidden"></div>
       </header>
 
       <main class="projects-grid">
 
-        <div class="project first-project">
+        <div class="project first-project appear-left" data-emergence="hidden">
           <div class="project-image-container">
             <img src="assets/images/screenshots/draw-screenshot.png" alt="Draw App Scrennshot" class="project-image">
             <div class="project-image-corner"></div>
@@ -57,7 +57,7 @@
           </div>
         </div>
 
-        <div class="project">
+        <div class="project appear-right" data-emergence="hidden">
           <div class="project-image-container">
             <img src="assets/images/screenshots/yawo-screenshot.png" alt="YAWO App Screenshot" class="project-image">
             <div class="project-image-corner"></div>
@@ -80,9 +80,9 @@
           </div>
         </div>
 
-        <hr class="projects-hr projects-row-divisor"></hr>
+        <hr class="projects-hr projects-row-divisor"  data-emergence="hidden"></hr>
 
-        <div class="project">
+        <div class="project appear-left" data-emergence="hidden">
           <div class="project-image-container">
             <img src="assets/images/screenshots/ruby-chess-screenshot.jpg" alt="" class="project-image">
             <div class="project-image-corner"></div>
@@ -104,7 +104,7 @@
           </div>
         </div>
 
-        <div class="project">
+        <div class="project appear-right" data-emergence="hidden">
           <div class="project-image-container">
             <img src="assets/images/screenshots/ruby-mastermind-screenshot.jpg" alt="" class="project-image">
             <div class="project-image-corner"></div>
@@ -126,9 +126,9 @@
           </div>
         </div>
 
-        <hr class="projects-hr projects-row-divisor"></hr>
+        <hr class="projects-hr projects-row-divisor"  data-emergence="hidden"></hr>
 
-        <div class="project">
+        <div class="project appear-left" data-emergence="hidden">
           <div class="project-image-container">
             <img src="assets/images/screenshots/rps-screenshot.png" alt="" class="project-image">
             <div class="project-image-corner"></div>
@@ -152,7 +152,7 @@
           </div>
         </div>
 
-        <div class="project last-project">
+        <div class="project last-project appear-right" data-emergence="hidden">
           <div class="project-image-container">
             <img src="assets/images/screenshots/portfolio-screenshot.png" alt="" class="project-image">
             <div class="project-image-corner"></div>
@@ -179,7 +179,7 @@
       </main>
 
       <footer class="projects-footer">
-        <a href="https://github.com/lujanfernaud?tab=repositories" class="btn-yellow btn-gigantic">
+        <a href="https://github.com/lujanfernaud?tab=repositories" class="btn-yellow btn-gigantic" data-emergence="hidden">
           See all my repos on GitHub
         </a>
       </footer>
@@ -187,14 +187,14 @@
 
     <section class="back-cover">
       <div class="lets-talk-container">
-        <a class="lets-talk-link" href="mailto:hello@lujanfernaud.com" title="Email">
+        <a class="lets-talk-link" href="mailto:hello@lujanfernaud.com" title="Email" data-emergence="hidden">
           <div class="lets-talk">
             <p class="lets-talk-text">Let&rsquo;s talk!</p>
             <img src="assets/images/icons/email_icon.svg" class="lets-talk-mail">
           </div>
         </a>
 
-        <div class="cover-icons-container">
+        <div class="cover-icons-container" data-emergence="hidden">
           <a class="link-icon link-icon-twitter" href="https://twitter.com/nujaud">
             <img class="icon cover-icon" src="assets/images/icons/twitter_icon.svg" alt="Twitter Icon" title="Twitter">
           </a>
@@ -215,6 +215,12 @@
   <script>
     var scroll = new SmoothScroll("[data-scroll]", {
       easing: "easeInOutQuad"
+    });
+  </script>
+  <script src="assets/javascripts/emergence.min.js"></script>
+  <script>
+    emergence.init({
+      reset: false
     });
   </script>
 </body>
