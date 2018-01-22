@@ -17,12 +17,12 @@ class NameFlipper {
 
     this.running = true;
 
-    this.fadeOut(this.questionMark);
+    fader.fadeOut(this.questionMark);
     this.flipWith("lu-han fer-noh");
     this.flipBackWith("Luján Fernaud");
 
     window.setTimeout(() => {
-      this.fadeIn(this.questionMark);
+      fader.fadeIn(this.questionMark);
       this.running = false;
     }, 4700);
   }
@@ -45,14 +45,36 @@ class NameFlipper {
     }, 3700);
   }
 
-  fadeOut(element) {
-    element.classList.add("opacity-hidden");
+}
+
+class ChevronHider {
+
+  constructor() {
+    this.chevron = document.querySelector(".chevron-down");
   }
 
-  fadeIn(element) {
-    element.classList.remove("opacity-hidden");
+  watch() {
+    document.onscroll = () => {
+      let pageScrolled = window.pageYOffset ||
+                         document.documentElement.scrollTop ||
+                         document.body.scrollTop;
+
+      if (pageScrolled > 40) {
+        fader.fadeOut(this.chevron);
+      }
+
+      if (pageScrolled < 40) {
+        fader.fadeIn(this.chevron);
+      }
+    };
   }
 
 }
 
+const fader = {
+  fadeIn:  function(element) { element.classList.remove("opacity-hidden"); },
+  fadeOut: function(element) { element.classList.add("opacity-hidden"); }
+};
+
 new NameFlipper().watch();
+new ChevronHider().watch();

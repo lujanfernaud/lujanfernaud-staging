@@ -1064,6 +1064,10 @@ a {
   }
 }
 
+.display-none {
+  display: none;
+}
+
 .opacity-hidden {
   opacity: 0;
 }

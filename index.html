@@ -214,7 +214,13 @@
   <script src="assets/javascripts/smooth-scroll.polyfills.min.js"></script>
   <script>
     var scroll = new SmoothScroll("[data-scroll]", {
-      easing: "easeInOutQuad"
+      easing: "easeInOutQuad",
+      before: () => {
+        document.querySelector(".chevron-down").classList.add("display-none");
+      },
+      after: () => {
+        document.querySelector(".chevron-down").classList.remove("display-none");
+      }
     });
   </script>
   <script src="assets/javascripts/emergence.min.js"></script>
