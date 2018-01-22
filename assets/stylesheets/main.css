@@ -782,12 +782,6 @@ a {
     font-size: 1.7rem;
   }
 }
-.projects-footer a[data-emergence=hidden] {
-  border-color: transparent;
-}
-.projects-footer a[data-emergence=visible] {
-  border-color: unset;
-}
 
 .back-cover {
   position: relative;
