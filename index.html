@@ -185,8 +185,10 @@
       </footer>
     </section>
 
-    <section class="back-cover">
+    <section id="back-cover" class="back-cover overflow-hidden">
       <div class="lets-talk-container">
+        <!-- Scroll to bottom to prevent contact section height to be cut -->
+        <a data-scroll class="scroll-to-back-cover visibility-hidden" href="#back-cover"></a>
         <a class="lets-talk-link" href="mailto:hello@lujanfernaud.com" title="Email" data-emergence="hidden">
           <div class="lets-talk">
             <p class="lets-talk-text">Let&rsquo;s talk!</p>
@@ -206,6 +208,25 @@
           </a>
         </div>
       </div>
+
+      <section class="contact-section visibility-hidden">
+        <a href="#" class="contact-section-close link-no-border" alt="Close contact form" title="Close contact form">&#x2715;</a>
+
+        <form action="https://formspree.io/hello@lujanfernaud.com" method="POST" class="contact-section-form">
+          <label for="name" class="form-item form-label">Name</label>
+          <input type="text" name="name" placeholder="Your name" class="form-item form-input">
+
+          <label for="_replyto" class="form-item form-label">Email</label>
+          <input type="email" name="_replyto" placeholder="Your email" class="form-item form-input">
+
+          <label for="message" class="form-item form-label">Message</label>
+          <textarea name="message" placeholder="Your message" class="form-item form-input form-textarea" rows="7"></textarea>
+
+          <input type="submit" value="Send" class="form-item form-button btn btn-large">
+        </form>
+
+        <a href="mailto:hello@lujanfernaud.com" class="contact-section-link-email">Or use your favorite email app.</a>
+      </section>
     </section>
 
   </main>

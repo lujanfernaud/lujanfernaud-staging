@@ -73,8 +73,72 @@ class ChevronHider {
 
 const fader = {
   fadeIn:  function(element) { element.classList.remove("opacity-hidden"); },
-  fadeOut: function(element) { element.classList.add("opacity-hidden"); }
+  fadeOut: function(element) { element.classList.add("opacity-hidden"); },
+  toggle:  function(element) { element.classList.toggle("opacity-hidden"); }
 };
+
+class contactFormToggler {
+
+  constructor() {
+    this.backCover       = document.querySelector(".back-cover");
+    this.letsTalk        = document.querySelector(".lets-talk-container");
+    this.contactSection  = document.querySelector(".contact-section");
+    this.sectionOpen     = document.querySelector(".lets-talk-link");
+    this.sectionClose    = document.querySelector(".contact-section-close");
+    this.sectionTogglers = [this.sectionOpen, this.sectionClose];
+    this.showForm        = false;
+  }
+
+  watch() {
+    this.sectionTogglers.forEach(toggler => {
+      toggler.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        this.scrollToBottom();
+        this.toggleContactSection();
+      });
+    });
+  }
+
+  scrollToBottom() {
+    document.querySelector(".scroll-to-back-cover").click();
+  }
+
+  toggleContactSection() {
+    this.showForm = !this.showForm; // Switch the boolean.
+
+    this.toggleVisibility();
+    this.toggleScroll();
+
+    this.toggleLetsTalk();
+    this.toggleContactForm();
+  }
+
+  toggleVisibility() {
+    if (this.showForm) {
+      this.contactSection.classList.remove("visibility-hidden");
+    } else {
+      window.setTimeout(() => {
+        this.contactSection.classList.add("visibility-hidden");
+      }, 500); // .5 seconds, same as CSS transition duration.
+    }
+  }
+
+  toggleScroll() {
+    document.body.classList.toggle("overflow-hidden");
+    this.backCover.classList.toggle("overflow-hidden");
+  }
+
+  toggleLetsTalk() {
+    this.letsTalk.classList.toggle("lets-talk-container-hidden");
+  }
+
+  toggleContactForm() {
+    this.contactSection.classList.toggle("contact-section-revealed");
+  }
+
+}
 
 new NameFlipper().watch();
 new ChevronHider().watch();
+new contactFormToggler().watch();

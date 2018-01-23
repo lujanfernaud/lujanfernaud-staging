@@ -5,9 +5,12 @@
 // Variables
 //
 
+// Fonts
 
 $dejavu-serif: "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 $dejavu-sans: "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+
+// Colors
 
 $brand-color: #4b3f8a;
 $brand-color-saturated: #4d3e94;
@@ -24,6 +27,14 @@ $yellow: #ffe808;
 $light-grey-1: #fbfafc;
 $light-grey-2: #f9f5ff;
 $white: #fff;
+
+// Container Widths
+
+$container-width-medium-devices: 700px;
+$container-width-large-devices: 900px;
+$container-width-very-large-devices: 1000px;
+
+// Media Widths
 
 $small-devices: 479px;
 $medium-devices: 767px;
@@ -391,16 +402,16 @@ $projects-spacing-additional: .95rem;
   @include media($medium-devices) {
     flex-direction: row;
     flex-wrap: wrap;
-    width: 700px;
+    width: $container-width-medium-devices;
     padding: 0;
   }
 
   @include media($large-devices) {
-    width: 900px;
+    width: $container-width-large-devices;
   }
 
   @include media($very-large-devices) {
-    width: 1000px;
+    width: $container-width-very-large-devices;
   }
 }
 
@@ -624,6 +635,7 @@ $projects-spacing-additional: .95rem;
   padding: 1rem;
   color: $brand-color-saturated;
   background-color: $light-grey-2;
+  overflow-x: hidden;
 
   @include media($very-large-devices) {
     width: 100%;
@@ -632,6 +644,12 @@ $projects-spacing-additional: .95rem;
 
 .lets-talk-container {
   position: relative;
+  transition: right .5s;
+  right: 0;
+}
+
+.lets-talk-container-hidden {
+  right: -100%;
 }
 
 .lets-talk-link {
@@ -661,6 +679,7 @@ $projects-spacing-additional: .95rem;
   outline: none;
   border: 1px dotted $brand-color-saturated;
   border-radius: 100%;
+  z-index: -1;
 
   @include media($medium-devices) {
     top: -0.65rem;
@@ -858,6 +877,144 @@ $projects-spacing-additional: .95rem;
   }
 }
 
+// Contact Form
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  min-height: 100%;
+  padding-top: $projects-spacing;
+  padding-bottom: $projects-spacing;
+  background-color: $light-grey-1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: .8rem solid $brand-color;
+  z-index: 1;
+  transition: left .5s;
+}
+
+.contact-section-revealed {
+  left: 0;
+}
+
+.contact-section-close {
+  position: absolute;
+  top: .2rem;
+  right: .5rem;
+  padding: 1rem;
+  font-size: 2rem;
+
+  @include media($medium-devices) {
+    top: 1.2rem;
+    right: 2rem;
+    font-size: 3rem;
+  }
+}
+
+.contact-section-form {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 90%;
+  height: auto;
+  font-size: 1.1rem;
+
+  @include media($medium-devices) {
+    width: $container-width-medium-devices;
+    font-size: 1.2rem;
+  }
+
+  @include media($large-devices) {
+    width: $container-width-large-devices;
+    font-size: 1.4rem;
+  }
+
+  @include media($very-large-devices) {
+    width: $container-width-very-large-devices;
+  }
+}
+
+.form-item {
+  padding: .75rem;
+}
+
+.form-label {
+  padding-left: .15rem;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: bold;
+
+  @include media($medium-devices) {
+    font-size: 1.45rem;
+  }
+
+  @include media($large-devices) {
+    font-size: 1.65rem;
+  }
+}
+
+.form-input {
+  margin-bottom: 1rem;
+
+  @include media($medium-devices) {
+    margin-bottom: 1.2rem;
+  }
+
+  @include media($large-devices) {
+    margin-bottom: 1.4rem;
+  }
+}
+
+.form-textarea {
+  flex: 1;
+  min-height: 10rem;
+  height: auto;
+  max-width: 100%;
+}
+
+.form-button {
+  margin-top: 1rem;
+
+  @include media($medium-devices) {
+    margin-top: 1.2rem;
+  }
+
+  @include media($large-devices) {
+    margin-top: 1.4rem;
+  }
+}
+
+.contact-section-link-email {
+  padding-top: 3px;
+  margin-top: 1.4rem;
+  margin-right: .3rem;
+  font-size: 1rem;
+  color: $brand-color-saturated;
+
+  @include media($medium-devices) {
+    margin-top: 2.3rem;
+    font-size: 1.2rem;
+  }
+
+  @include media($large-devices) {
+    margin-top: 2.5rem;
+    font-size: 1.4rem;
+  }
+}
+
+.contact-section-link-email:hover,
+.contact-section-link-email:focus{
+  color: $light-grey-1;
+  background-color: $brand-color-saturated;
+  border-bottom: 1px solid $brand-color-saturated;
+}
+
 
 //
 // Helpers
@@ -868,8 +1025,20 @@ $projects-spacing-additional: .95rem;
   display: none;
 }
 
+.visibility-hidden {
+  visibility: hidden; // Not to be found by screen readers.
+}
+
 .opacity-hidden {
   opacity: 0;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-vertical-auto {
+  overflow-y: auto;
 }
 
 .icon {
@@ -880,15 +1049,22 @@ $projects-spacing-additional: .95rem;
   width: 20%;
 }
 
+.link-no-border {
+  border: 0;
+}
+
 .btn {
   border: 1px solid $brand-color-saturated;
   border-bottom: .2rem solid $brand-color-saturated;
+  color: $brand-color;
+  background-color: transparent;
+  font-style: italic;
   transition: all .5s;
 }
 
 .btn:hover,
 .btn:focus {
-  color: $yellow;
+  color: $light-grey-1;
   @include background-gradient;
 }
 
@@ -906,11 +1082,28 @@ $projects-spacing-additional: .95rem;
   border-bottom: .2rem solid $white;
 }
 
+.btn-large {
+  padding: 1.25rem;
+  font-size: 1.25rem !important;
+
+  @include media($medium-devices) {
+    font-size: 1.5rem !important;
+  }
+
+  @include media($large-devices) {
+    font-size: 1.7rem !important;
+  }
+}
+
 .btn-gigantic {
   padding: 1.5rem;
   font-size: 1.5rem !important;
 
   @include media($medium-devices) {
+    font-size: 2rem !important;
+  }
+
+  @include media($large-devices) {
     font-size: 2.2rem !important;
   }
 }
