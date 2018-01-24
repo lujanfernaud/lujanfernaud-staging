@@ -993,6 +993,7 @@ a {
   background-size: auto auto;
   cursor: pointer;
   border-radius: 100%;
+  overflow: hidden;
   z-index: 1;
 }
 @media (min-width: 767px) {
@@ -1017,7 +1018,7 @@ a {
   font-weight: bold;
   font-style: italic;
   opacity: 1;
-  transition: opacity .25s;
+  transition: all 1s;
 }
 @media (min-width: 767px) {
   .lets-talk-text {
@@ -1034,35 +1035,48 @@ a {
   }
 }
 
-.lets-talk:hover > .lets-talk-text {
+.lets-talk-text-paused,
+.lets-talk-hover-active:hover > .lets-talk-text {
+  left: 150%;
   opacity: 0;
 }
 
 .lets-talk-mail {
   position: absolute;
   top: calc(50% - 3.64rem);
-  left: calc(50% - 3.6rem);
+  left: -150%;
   width: 7.35rem;
-  opacity: 0;
-  transition: opacity .25s;
+  transition: all 1s;
 }
 @media (min-width: 767px) {
   .lets-talk-mail {
     top: calc(50% - 9.2rem);
-    left: calc(50% - 9.1rem);
     width: 18.4rem;
   }
 }
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
   .lets-talk-mail {
     top: calc(50% - 3.64rem);
-    left: calc(50% - 3.6rem);
     width: 7.35rem;
   }
 }
 
-.lets-talk:hover > .lets-talk-mail {
+.lets-talk-mail-paused,
+.lets-talk-hover-active:hover > .lets-talk-mail {
+  left: calc(50% - 3.6rem);
   opacity: 1;
+}
+@media (min-width: 767px) {
+  .lets-talk-mail-paused,
+  .lets-talk-hover-active:hover > .lets-talk-mail {
+    left: calc(50% - 9.1rem);
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .lets-talk-mail-paused,
+  .lets-talk-hover-active:hover > .lets-talk-mail {
+    left: calc(50% - 3.6rem);
+  }
 }
 
 .cover-icons-container {

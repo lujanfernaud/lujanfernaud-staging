@@ -82,6 +82,9 @@ class contactFormToggler {
   constructor() {
     this.backCover       = document.querySelector(".back-cover");
     this.letsTalk        = document.querySelector(".lets-talk-container");
+    this.letsTalkButton  = document.querySelector(".lets-talk");
+    this.letsTalkText    = document.querySelector(".lets-talk-text");
+    this.letsTalkMail    = document.querySelector(".lets-talk-mail");
     this.contactSection  = document.querySelector(".contact-section-container");
     this.sectionOpen     = document.querySelector(".lets-talk-link");
     this.sectionClose    = document.querySelector(".contact-section-close");
@@ -109,24 +112,39 @@ class contactFormToggler {
 
     this.toggleVisibility();
     this.toggleScroll();
+    this.toggleButtonAnimation();
+    this.toggleButtonHoverActive();
 
     this.toggleLetsTalk();
     this.toggleContactForm();
   }
 
   toggleVisibility() {
+    this.toggleInAndOut(this.contactSection, "visibility-hidden");
+  }
+
+  toggleInAndOut(element, klass) {
     if (this.showForm) {
-      this.contactSection.classList.remove("visibility-hidden");
+      element.classList.toggle(klass);
     } else {
       window.setTimeout(() => {
-        this.contactSection.classList.add("visibility-hidden");
-      }, 1000); // .5 seconds, same as CSS transition duration.
+        element.classList.toggle(klass);
+      }, 1000); // 1 second, same as CSS transition duration.
     }
   }
 
   toggleScroll() {
     document.body.classList.toggle("overflow-hidden");
     this.backCover.classList.toggle("overflow-hidden");
+  }
+
+  toggleButtonAnimation() {
+    this.letsTalkText.classList.toggle("lets-talk-text-paused");
+    this.letsTalkMail.classList.toggle("lets-talk-mail-paused");
+  }
+
+  toggleButtonHoverActive() {
+    this.toggleInAndOut(this.letsTalkButton, "lets-talk-hover-active");
   }
 
   toggleLetsTalk() {

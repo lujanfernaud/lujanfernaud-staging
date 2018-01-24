@@ -707,6 +707,7 @@ $projects-spacing-additional: .95rem;
   @include background-gradient;
   cursor: pointer;
   border-radius: 100%;
+  overflow: hidden;
   z-index: 1;
 
   @include media($medium-devices) {
@@ -729,7 +730,7 @@ $projects-spacing-additional: .95rem;
   font-weight: bold;
   font-style: italic;
   opacity: 1;
-  transition: opacity .25s;
+  transition: all 1s;
 
   @include media($medium-devices) {
     top: -2.1rem;
@@ -744,33 +745,42 @@ $projects-spacing-additional: .95rem;
   }
 }
 
-.lets-talk:hover > .lets-talk-text {
+.lets-talk-text-paused,
+.lets-talk-hover-active:hover > .lets-talk-text {
+  left: 150%;
   opacity: 0;
 }
 
 .lets-talk-mail {
   position: absolute;
   top: calc(50% - 3.64rem);
-  left: calc(50% - 3.6rem);
+  left: -150%;
   width: 7.35rem;
-  opacity: 0;
-  transition: opacity .25s;
+  transition: all 1s;
 
   @include media($medium-devices) {
     top: calc(50% - 9.2rem);
-    left: calc(50% - 9.1rem);
     width: 18.4rem;
   }
 
   @include media-iphone-large {
     top: calc(50% - 3.64rem);
-    left: calc(50% - 3.6rem);
     width: 7.35rem;
   }
 }
 
-.lets-talk:hover > .lets-talk-mail {
+.lets-talk-mail-paused,
+.lets-talk-hover-active:hover > .lets-talk-mail {
+  left: calc(50% - 3.6rem);
   opacity: 1;
+
+  @include media($medium-devices) {
+    left: calc(50% - 9.1rem);
+  }
+
+  @include media-iphone-large {
+    left: calc(50% - 3.6rem);
+  }
 }
 
 .cover-icons-container {
