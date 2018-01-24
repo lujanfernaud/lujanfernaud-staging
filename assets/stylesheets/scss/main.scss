@@ -644,12 +644,12 @@ $projects-spacing-additional: .95rem;
 
 .lets-talk-container {
   position: relative;
-  transition: right .5s;
+  transition: right 1s;
   right: 0;
 }
 
 .lets-talk-container-hidden {
-  right: -100%;
+  right: -200%;
 }
 
 .lets-talk-link {
@@ -879,14 +879,31 @@ $projects-spacing-additional: .95rem;
 
 // Contact Form
 
+.contact-section-container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 200%;
+  left: -200%;
+  min-height: 100%;
+  background-color: rgba($brand-color, .90);
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 1;
+  transition: left 1s;
+}
+
+.contact-section-container-revealed {
+  left: 0;
+}
+
 .contact-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0;
-  left: -100%;
+  flex-basis: 50%;
+  position: relative;
   width: 100%;
   min-height: 100%;
   padding-top: 2rem;
@@ -895,8 +912,6 @@ $projects-spacing-additional: .95rem;
   overflow-x: hidden;
   overflow-y: auto;
   border: .8rem solid $brand-color;
-  z-index: 1;
-  transition: left .5s;
 
   @include media($medium-devices) {
     padding-top: 1rem;
@@ -907,10 +922,6 @@ $projects-spacing-additional: .95rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
-}
-
-.contact-section-revealed {
-  left: 0;
 }
 
 .contact-section-close {
@@ -1010,6 +1021,45 @@ $projects-spacing-additional: .95rem;
   color: $light-grey-1;
   background-color: $brand-color-saturated;
   border-bottom: 1px solid $brand-color-saturated;
+}
+
+.contact-section-transition {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 50%;
+  position: relative;
+  width: 100%;
+}
+
+.color-column {
+  flex-basis: 16.6%;
+  height: 100%;
+}
+
+.color-column-1 {
+  background-color: rgba($brand-color, .90);
+}
+
+.color-column-2 {
+  background-color: rgba($brand-color, .75);
+}
+
+.color-column-3 {
+  background-color: rgba($brand-color, .60);
+}
+
+.color-column-4 {
+  background-color: rgba($brand-color, .45);
+}
+
+.color-column-5 {
+  background-color: rgba($brand-color, .30);
+}
+
+.color-column-6 {
+  background-color: rgba($brand-color, .15);
 }
 
 

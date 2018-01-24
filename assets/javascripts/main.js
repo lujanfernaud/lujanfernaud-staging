@@ -82,7 +82,7 @@ class contactFormToggler {
   constructor() {
     this.backCover       = document.querySelector(".back-cover");
     this.letsTalk        = document.querySelector(".lets-talk-container");
-    this.contactSection  = document.querySelector(".contact-section");
+    this.contactSection  = document.querySelector(".contact-section-container");
     this.sectionOpen     = document.querySelector(".lets-talk-link");
     this.sectionClose    = document.querySelector(".contact-section-close");
     this.sectionTogglers = [this.sectionOpen, this.sectionClose];
@@ -120,7 +120,7 @@ class contactFormToggler {
     } else {
       window.setTimeout(() => {
         this.contactSection.classList.add("visibility-hidden");
-      }, 500); // .5 seconds, same as CSS transition duration.
+      }, 1000); // .5 seconds, same as CSS transition duration.
     }
   }
 
@@ -134,7 +134,7 @@ class contactFormToggler {
   }
 
   toggleContactForm() {
-    this.contactSection.classList.toggle("contact-section-revealed");
+    this.contactSection.classList.toggle("contact-section-container-revealed");
   }
 
 }

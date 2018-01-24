@@ -804,12 +804,12 @@ a {
 
 .lets-talk-container {
   position: relative;
-  transition: right .5s;
+  transition: right 1s;
   right: 0;
 }
 
 .lets-talk-container-hidden {
-  right: -100%;
+  right: -200%;
 }
 
 .lets-talk-link {
@@ -1066,14 +1066,31 @@ a {
   }
 }
 
+.contact-section-container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 200%;
+  left: -200%;
+  min-height: 100%;
+  background-color: rgba(75, 63, 138, 0.9);
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 1;
+  transition: left 1s;
+}
+
+.contact-section-container-revealed {
+  left: 0;
+}
+
 .contact-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0;
-  left: -100%;
+  flex-basis: 50%;
+  position: relative;
   width: 100%;
   min-height: 100%;
   padding-top: 2rem;
@@ -1082,8 +1099,6 @@ a {
   overflow-x: hidden;
   overflow-y: auto;
   border: 0.8rem solid #4b3f8a;
-  z-index: 1;
-  transition: left .5s;
 }
 @media (min-width: 767px) {
   .contact-section {
@@ -1096,10 +1111,6 @@ a {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
-}
-
-.contact-section-revealed {
-  left: 0;
 }
 
 .contact-section-close {
@@ -1209,6 +1220,45 @@ a {
   color: #fbfafc;
   background-color: #4d3e94;
   border-bottom: 1px solid #4d3e94;
+}
+
+.contact-section-transition {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 50%;
+  position: relative;
+  width: 100%;
+}
+
+.color-column {
+  flex-basis: 16.6%;
+  height: 100%;
+}
+
+.color-column-1 {
+  background-color: rgba(75, 63, 138, 0.9);
+}
+
+.color-column-2 {
+  background-color: rgba(75, 63, 138, 0.75);
+}
+
+.color-column-3 {
+  background-color: rgba(75, 63, 138, 0.6);
+}
+
+.color-column-4 {
+  background-color: rgba(75, 63, 138, 0.45);
+}
+
+.color-column-5 {
+  background-color: rgba(75, 63, 138, 0.3);
+}
+
+.color-column-6 {
+  background-color: rgba(75, 63, 138, 0.15);
 }
 
 .display-none {
