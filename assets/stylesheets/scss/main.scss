@@ -1,5 +1,8 @@
 @import "normalize";
 
+// Formbase
+@import "../../../node_modules/formbase/src/styles/main.scss";
+
 
 //
 // Variables
@@ -984,6 +987,10 @@ $projects-spacing-additional: .95rem;
   }
 }
 
+.input:focus {
+  border-color: $brand-color-saturated;
+}
+
 .form-textarea {
   flex: 1;
   min-height: 10rem;
@@ -1103,7 +1110,7 @@ $opacity-per-column: $max-opacity / $color-columns-number;
 .btn:hover,
 .btn:focus {
   color: $light-grey-1;
-  @include background-gradient;
+  background-color: $brand-color-saturated;
 }
 
 .btn-yellow {
@@ -1145,11 +1152,3 @@ $opacity-per-column: $max-opacity / $color-columns-number;
     font-size: 2.2rem !important;
   }
 }
-
-
-//
-// Formbase
-//
-
-
-@import "../../../node_modules/formbase/src/styles/main.scss";
