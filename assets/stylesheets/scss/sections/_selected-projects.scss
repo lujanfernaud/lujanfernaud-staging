@@ -16,10 +16,7 @@ $projects-spacing-additional: .95rem;
 
 
 .projects {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-container(column);
   width: 100%;
   color: $brand-color-saturated;
   background-color: $yellow;
@@ -291,10 +288,7 @@ $projects-spacing-additional: .95rem;
 }
 
 .projects-footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-container(column);
   margin-top: $projects-spacing-half + $projects-spacing-additional;
   width: 100%;
   @include background-gradient;

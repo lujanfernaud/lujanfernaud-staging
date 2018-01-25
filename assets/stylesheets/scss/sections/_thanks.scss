@@ -4,10 +4,7 @@
 
 
 .thanks {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-container(column);
   min-height: 100vh;
   width: 100%;
   padding: 2rem 1rem;

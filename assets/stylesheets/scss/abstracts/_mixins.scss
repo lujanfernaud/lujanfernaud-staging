@@ -3,9 +3,9 @@
 //
 
 
-@mixin flex-column {
+@mixin flex-container($direction) {
   display: flex;
-  flex-direction: column;
+  flex-direction: $direction;
   justify-content: center;
   align-items: center;
 }

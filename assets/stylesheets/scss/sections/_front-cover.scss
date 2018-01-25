@@ -4,7 +4,7 @@
 
 
 .front-cover {
-  @include flex-column;
+  @include flex-container(column);
   height: 100vh;
   width: 100%;
   padding: 1rem;
