@@ -1097,6 +1097,7 @@ $opacity-per-column: $max-opacity / $color-columns-number;
   font-size: 3rem;
   font-style: italic;
   color: $brand-color;
+  animation: bounce-in .75s forwards, fade-in .75s forwards;
 
   @include media($medium-devices) {
     margin-bottom: 3.3rem;
@@ -1109,8 +1110,53 @@ $opacity-per-column: $max-opacity / $color-columns-number;
   }
 }
 
+// This animation comes from Animate.CSS
+@keyframes bounce-in {
+  from, 20%, 40%, 60%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(.97, .97, .97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .thanks-main {
   text-align: center;
+  animation: fade-in 1.5s forwards;
 }
 
 .thanks-emoji {
@@ -1139,6 +1185,10 @@ $opacity-per-column: $max-opacity / $color-columns-number;
   @include media-iphone-large {
     margin-bottom: 2.3rem;
   }
+}
+
+.thanks-footer {
+  animation: fade-in 1.5s forwards;
 }
 
 .thanks-link {

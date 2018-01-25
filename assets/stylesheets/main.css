@@ -1506,6 +1506,7 @@ a {
   font-size: 3rem;
   font-style: italic;
   color: #4b3f8a;
+  animation: bounce-in .75s forwards, fade-in .75s forwards;
 }
 @media (min-width: 767px) {
   .thanks-heading {
@@ -1520,8 +1521,43 @@ a {
   }
 }
 
+@keyframes bounce-in {
+  from, 20%, 40%, 60%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .thanks-main {
   text-align: center;
+  animation: fade-in 1.5s forwards;
 }
 
 .thanks-emoji {
@@ -1554,6 +1590,10 @@ a {
   .thanks-text {
     margin-bottom: 2.3rem;
   }
+}
+
+.thanks-footer {
+  animation: fade-in 1.5s forwards;
 }
 
 .thanks-link {
