@@ -1,0 +1,59 @@
+//
+// Buttons
+//
+
+
+.btn {
+  border: 1px solid $brand-color-saturated;
+  border-bottom: .2rem solid $brand-color-saturated;
+  color: $brand-color;
+  background-color: transparent;
+  font-style: italic;
+  transition: all .5s;
+}
+
+.btn:hover,
+.btn:focus {
+  color: $light-grey-1;
+  background-color: $brand-color-saturated;
+}
+
+.btn-yellow {
+  color: $yellow;
+  border: 1px solid $yellow;
+  border-bottom: .2rem solid $yellow;
+  transition: all .5s;
+}
+
+.btn-yellow:hover,
+.btn-yellow:focus {
+  color: $brand-color-saturated;
+  background-color: $yellow;
+  border-bottom: .2rem solid $white;
+}
+
+.btn-large {
+  padding: 1.25rem;
+  font-size: 1.25rem !important;
+
+  @include media($medium-devices) {
+    font-size: 1.5rem !important;
+  }
+
+  @include media($large-devices) {
+    font-size: 1.7rem !important;
+  }
+}
+
+.btn-gigantic {
+  padding: 1.5rem;
+  font-size: 1.5rem !important;
+
+  @include media($medium-devices) {
+    font-size: 2rem !important;
+  }
+
+  @include media($large-devices) {
+    font-size: 2.2rem !important;
+  }
+}

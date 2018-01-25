@@ -1,0 +1,44 @@
+//
+// Mixins
+//
+
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin media($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin media-iphone-large {
+  @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+      @content;
+  }
+}
+
+@mixin background-gradient {
+  background: -webkit-linear-gradient(-45deg, $pinkish-violet 0, $brand-color 100%);
+  background: -moz-linear-gradient(135deg, $pinkish-violet 0, $brand-color 100%);
+  background: linear-gradient(135deg, $pinkish-violet 0, $brand-color 100%);
+  background-position: 50% 50%;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;
+}
+
+@mixin in-circle-degrees($degrees, $circle-width) {
+  transform: rotate($degrees) translate($circle-width / 2) rotate(-$degrees);
+}
+
+@mixin section-frame-border {
+  border: .8rem solid $brand-color;
+}

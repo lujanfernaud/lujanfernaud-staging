@@ -1,0 +1,90 @@
+//
+// Thanks For Your Email
+//
+
+
+.thanks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem 1rem;
+  @include section-frame-border;
+}
+
+.thanks-heading {
+  margin-top: 0;
+  margin-bottom: 2.3rem;
+  font-size: 3rem;
+  font-style: italic;
+  color: $brand-color;
+  animation: bounce-in .75s forwards, fade-in .75s forwards;
+
+  @include media($medium-devices) {
+    margin-bottom: 3.3rem;
+    font-size: 5rem;
+  }
+
+  @include media-iphone-large {
+    margin-bottom: 2.3rem;
+    font-size: 3rem;
+  }
+}
+
+.thanks-main {
+  text-align: center;
+  animation: fade-in 1.5s forwards;
+}
+
+.thanks-emoji {
+  margin-bottom: 1rem;
+  width: 7rem;
+
+  @include media($medium-devices) {
+    margin-bottom: 2rem;
+    width: 9rem;
+  }
+
+  @include media-iphone-large {
+    margin-bottom: 1rem;
+    width: 7rem;
+  }
+}
+
+.thanks-text {
+  margin-top: 1rem;
+  margin-bottom: 2.3rem;
+
+  @include media($medium-devices) {
+    margin-bottom: 3.3rem;
+  }
+
+  @include media-iphone-large {
+    margin-bottom: 2.3rem;
+  }
+}
+
+.thanks-footer {
+  animation: fade-in 1.5s forwards;
+}
+
+.thanks-link {
+  font-size: 1rem;
+  font-style: italic;
+
+  @include media($medium-devices) {
+    font-size: 1.35rem;
+  }
+
+  @include media-iphone-large {
+    font-size: 1rem;
+  }
+}
+
+.thanks-link:hover,
+.thanks-link:focus {
+  color: $light-grey-1;
+  background-color: $brand-color-saturated;
+}

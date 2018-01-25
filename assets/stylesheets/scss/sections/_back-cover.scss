@@ -1,0 +1,447 @@
+//
+// Back Cover
+//
+
+
+.back-cover {
+  position: relative;
+  @include flex-column;
+  height: 100vh;
+  width: 100%;
+  padding: 1rem;
+  color: $brand-color-saturated;
+  background-color: $light-grey-2;
+  overflow-x: hidden;
+
+  @include media($very-large-devices) {
+    width: 100%;
+  }
+}
+
+.lets-talk-container {
+  position: relative;
+  transition: right 1s;
+  right: 0;
+}
+
+.lets-talk-container-hidden {
+  right: -200%;
+}
+
+.lets-talk-link {
+  transition: opacity 1s;
+}
+
+.lets-talk-link[data-emergence=hidden] {
+  opacity: 0;
+}
+
+.lets-talk-link[data-emergence=visible] {
+  opacity: 1;
+}
+
+.lets-talk-link:hover,
+.lets-talk-link:focus {
+  outline: none;
+}
+
+.lets-talk-link:focus > .lets-talk::after {
+  content: "";
+  position: absolute;
+  top: -0.26rem;
+  left: -0.26rem;
+  width: 12.52rem;
+  height: 12.52rem;
+  outline: none;
+  border: 1px dotted $brand-color-saturated;
+  border-radius: 100%;
+  z-index: -1;
+
+  @include media($medium-devices) {
+    top: -0.65rem;
+    left: -0.65rem;
+    width: 31.3rem;
+    height: 31.3rem;
+  }
+
+  @include media-iphone-large {
+    top: -0.26rem;
+    left: -0.26rem;
+    width: 12.52rem;
+    height: 12.52rem;
+  }
+}
+
+.lets-talk {
+  position: relative;
+  width: 12rem;
+  height: 12rem;
+  color: $light-grey-1;
+  @include background-gradient;
+  cursor: pointer;
+  border-radius: 100%;
+  overflow: hidden;
+  z-index: 1;
+
+  @include media($medium-devices) {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  @include media-iphone-large {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
+.lets-talk-text {
+  position: absolute;
+  top: -.84rem;
+  left: 1.88rem;
+  width: 71%;
+  font-size: 3.2rem;
+  font-weight: bold;
+  font-style: italic;
+  opacity: 1;
+  transition: all 1s;
+
+  @include media($medium-devices) {
+    top: -2.1rem;
+    left: 4.7rem;
+    font-size: 8rem;
+  }
+
+  @include media-iphone-large {
+    top: -.84rem;
+    left: 1.88rem;
+    font-size: 3.2rem;
+  }
+}
+
+.lets-talk-text-paused,
+.lets-talk-hover-active:hover > .lets-talk-text {
+  left: 150%;
+  opacity: 0;
+}
+
+.lets-talk-mail {
+  position: absolute;
+  top: calc(50% - 3.64rem);
+  left: -150%;
+  width: 7.35rem;
+  transition: all 1s;
+
+  @include media($medium-devices) {
+    top: calc(50% - 9.2rem);
+    width: 18.4rem;
+  }
+
+  @include media-iphone-large {
+    top: calc(50% - 3.64rem);
+    width: 7.35rem;
+  }
+}
+
+.lets-talk-mail-paused,
+.lets-talk-hover-active:hover > .lets-talk-mail {
+  left: calc(50% - 3.6rem);
+  opacity: 1;
+
+  @include media($medium-devices) {
+    left: calc(50% - 9.1rem);
+  }
+
+  @include media-iphone-large {
+    left: calc(50% - 3.6rem);
+  }
+}
+
+.cover-icons-container {
+  position: absolute;
+  top: -.86rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s;
+  transition-delay: .7s;
+
+  @include media($medium-devices) {
+    top: -.95rem;
+  }
+
+  @include media-iphone-large {
+    top: -.86rem;
+  }
+}
+
+.cover-icons-container[data-emergence=hidden] {
+  opacity: 0;
+}
+
+.cover-icons-container[data-emergence=visible] {
+  opacity: 1;
+}
+
+.cover-icon {
+  width: 1.5rem;
+
+  @include media($medium-devices) {
+    width: 3rem;
+  }
+
+  @include media-iphone-large {
+    width: 1.5rem;
+  }
+}
+
+.link-icon {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -0.41rem;
+  padding: .25rem .2rem .01rem .2rem;
+  opacity: .9;
+  border: 1px dotted transparent;
+  border-radius: 100%;
+  transition: all .2s;
+
+  @include media($medium-devices) {
+    margin: -1.5rem; // Half of the cover icon width.
+    padding: .5rem .5rem .05rem .5rem;
+  }
+
+  @include media-iphone-large {
+    margin: -0.41rem;
+    padding: .25rem .2rem .01rem .2rem;
+  }
+}
+
+.link-icon:hover,
+.link-icon:focus {
+  outline: none;
+}
+
+.link-icon:focus {
+  outline: none;
+  border: 1px dotted $brand-color-saturated;
+}
+
+.link-icon-twitter {
+  @include in-circle-degrees($degrees: -40deg, $circle-width: 14rem);
+
+  @include media($medium-devices) {
+    @include in-circle-degrees($degrees: -45deg, $circle-width: 35rem);
+  }
+
+  @include media-iphone-large {
+    @include in-circle-degrees($degrees: -40deg, $circle-width: 14rem);
+  }
+}
+
+.link-icon-github {
+  @include in-circle-degrees($degrees: -15deg, $circle-width: 14rem);
+
+  @include media($medium-devices) {
+    @include in-circle-degrees($degrees: -25deg, $circle-width: 35rem);
+  }
+
+  @include media-iphone-large {
+    @include in-circle-degrees($degrees: -15deg, $circle-width: 14rem);
+  }
+}
+
+.link-icon-exercism {
+  @include in-circle-degrees($degrees: 10deg, $circle-width: 14rem);
+
+  @include media($medium-devices) {
+    @include in-circle-degrees($degrees: -5deg, $circle-width: 35rem);
+  }
+
+  @include media-iphone-large {
+    @include in-circle-degrees($degrees: 10deg, $circle-width: 14rem);
+  }
+}
+
+
+//
+// Contact Form
+//
+
+
+.contact-section-container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 200%;
+  left: -200%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 1;
+  transition: left 1s;
+}
+
+.contact-section-container-revealed {
+  left: 0;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 50%;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: $light-grey-1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @include section-frame-border;
+
+  @include media($medium-devices) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  @include media-iphone-large {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.contact-section-close {
+  position: absolute;
+  top: .2rem;
+  right: .5rem;
+  padding: 1rem;
+  font-size: 2rem;
+
+  @include media($medium-devices) {
+    top: 1.2rem;
+    right: 2rem;
+    font-size: 3rem;
+  }
+
+  @include media-iphone-large {
+    top: 0;
+    right: .1rem;
+    font-size: 2rem;
+  }
+}
+
+.contact-section-form {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 90%;
+  height: auto;
+  font-size: 1.1rem;
+
+  @include media($medium-devices) {
+    width: $container-width-medium-devices;
+    font-size: 1.2rem;
+  }
+
+  @include media($large-devices) {
+    width: $container-width-large-devices;
+    font-size: 1.4rem;
+  }
+
+  @include media($very-large-devices) {
+    width: $container-width-very-large-devices;
+  }
+}
+
+.form-label {
+  margin-top: .6rem;
+  margin-bottom: .5rem;
+  padding-left: .15rem;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: bold;
+
+  @include media($medium-devices) {
+    font-size: 1.45rem;
+  }
+
+  @include media($large-devices) {
+    font-size: 1.65rem;
+  }
+}
+
+.input:focus {
+  border-color: $brand-color-saturated;
+}
+
+.form-textarea {
+  flex: 1;
+  min-height: 10rem;
+  height: auto;
+  max-width: 100%;
+}
+
+.form-button {
+  margin-top: 1rem;
+
+  @include media($medium-devices) {
+    margin-top: 1.1rem;
+  }
+}
+
+.contact-section-link-email {
+  padding-top: 3px;
+  margin-top: 1.4rem;
+  margin-right: .3rem;
+  font-size: 1rem;
+  color: $brand-color-saturated;
+
+  @include media($medium-devices) {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+
+  @include media($large-devices) {
+    font-size: 1.4rem;
+  }
+}
+
+.contact-section-link-email:hover,
+.contact-section-link-email:focus{
+  color: $light-grey-1;
+  background-color: $brand-color-saturated;
+  border-bottom: 1px solid $brand-color-saturated;
+}
+
+.contact-section-transition {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 50%;
+  position: relative;
+  width: 100%;
+}
+
+.color-column {
+  width: 100%;
+  height: 100%;
+}
+
+$color-columns-number: 29;
+$max-hue: 30%;
+$hue-per-column: $max-hue / $color-columns-number;
+$max-opacity: 1;
+$opacity-per-column: $max-opacity / $color-columns-number;
+
+@for $iteration from 1 through $color-columns-number {
+  $new-color: adjust-hue($brand-color, $hue-per-column * $iteration);
+  $opacity: $opacity-per-column * ($color-columns-number - $iteration + 1);
+
+  .color-column-#{$iteration} {
+    background-color: rgba($new-color, $opacity);
+  }
+}
