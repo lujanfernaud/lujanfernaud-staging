@@ -357,7 +357,7 @@ template {
 body {
   font-family: "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
   font-size: 18px;
-  color: #303030;
+  color: #423d78;
 }
 @media (min-width: 767px) {
   body {
@@ -383,6 +383,7 @@ body {
   align-items: center;
   width: 100%;
   height: 100%;
+  background-color: #fbfafc;
 }
 
 img {
@@ -1486,6 +1487,94 @@ a {
 
 .color-column-29 {
   background-color: rgba(113, 63, 138, 0.0344827586);
+}
+
+.thanks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem 1rem;
+  border: 0.8rem solid #4b3f8a;
+}
+
+.thanks-heading {
+  margin-top: 0;
+  margin-bottom: 2.3rem;
+  font-size: 3rem;
+  font-style: italic;
+  color: #4b3f8a;
+}
+@media (min-width: 767px) {
+  .thanks-heading {
+    margin-bottom: 3.3rem;
+    font-size: 5rem;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .thanks-heading {
+    margin-bottom: 2.3rem;
+    font-size: 3rem;
+  }
+}
+
+.thanks-main {
+  text-align: center;
+}
+
+.thanks-emoji {
+  margin-bottom: 1rem;
+  width: 7rem;
+}
+@media (min-width: 767px) {
+  .thanks-emoji {
+    margin-bottom: 2rem;
+    width: 9rem;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .thanks-emoji {
+    margin-bottom: 1rem;
+    width: 7rem;
+  }
+}
+
+.thanks-text {
+  margin-top: 1rem;
+  margin-bottom: 2.3rem;
+}
+@media (min-width: 767px) {
+  .thanks-text {
+    margin-bottom: 3.3rem;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .thanks-text {
+    margin-bottom: 2.3rem;
+  }
+}
+
+.thanks-link {
+  font-size: 1rem;
+  font-style: italic;
+}
+@media (min-width: 767px) {
+  .thanks-link {
+    font-size: 1.35rem;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .thanks-link {
+    font-size: 1rem;
+  }
+}
+
+.thanks-link:hover,
+.thanks-link:focus {
+  color: #fbfafc;
+  background-color: #4d3e94;
 }
 
 .display-none {
