@@ -45,7 +45,7 @@
   outline: none;
 }
 
-.lets-talk-link:focus > .lets-talk::after {
+.lets-talk-link:focus.lets-talk-link::after {
   content: "";
   position: absolute;
   top: -0.26rem;
@@ -55,7 +55,6 @@
   outline: none;
   border: 1px dotted $brand-color-saturated;
   border-radius: 100%;
-  z-index: -1;
 
   @include media($medium-devices) {
     top: -0.65rem;

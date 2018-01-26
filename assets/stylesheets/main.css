@@ -1076,7 +1076,7 @@ a {
   outline: none;
 }
 
-.lets-talk-link:focus > .lets-talk::after {
+.lets-talk-link:focus.lets-talk-link::after {
   content: "";
   position: absolute;
   top: -0.26rem;
@@ -1086,10 +1086,9 @@ a {
   outline: none;
   border: 1px dotted #4d3e94;
   border-radius: 100%;
-  z-index: -1;
 }
 @media (min-width: 767px) {
-  .lets-talk-link:focus > .lets-talk::after {
+  .lets-talk-link:focus.lets-talk-link::after {
     top: -0.65rem;
     left: -0.65rem;
     width: 31.3rem;
@@ -1097,7 +1096,7 @@ a {
   }
 }
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-  .lets-talk-link:focus > .lets-talk::after {
+  .lets-talk-link:focus.lets-talk-link::after {
     top: -0.26rem;
     left: -0.26rem;
     width: 12.52rem;
