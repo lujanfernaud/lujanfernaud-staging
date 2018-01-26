@@ -318,8 +318,8 @@
   font-size: 2rem;
 
   @include media($medium-devices) {
-    top: 1.2rem;
-    right: 2rem;
+    top: .8rem;
+    right: 1.4rem;
     font-size: 3rem;
   }
 
@@ -351,11 +351,28 @@
   @include media($very-large-devices) {
     width: $container-width-very-large-devices;
   }
+
+  @include media-between($min-width: $very-large-devices, $max-height: 620px) {
+    font-size: 1.3rem;
+  }
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include media($medium-devices) {
+    flex-direction: row;
+  }
+}
+
+.form-row-item {
+  flex-basis: 48.4%;
+  margin-bottom: 0.6rem;
 }
 
 .form-label {
-  margin-top: .6rem;
-  margin-bottom: .5rem;
   padding-left: .15rem;
   font-size: 1.3rem;
   font-style: italic;
@@ -368,6 +385,14 @@
   @include media($large-devices) {
     font-size: 1.65rem;
   }
+
+  @include media-between($min-width: $very-large-devices, $max-height: 620px) {
+    font-size: 1.55rem;
+  }
+}
+
+.input {
+  margin-top: .5rem;
 }
 
 .input:focus {
@@ -407,7 +432,7 @@
 }
 
 .contact-section-link-email:hover,
-.contact-section-link-email:focus{
+.contact-section-link-email:focus {
   color: $light-grey-1;
   background-color: $brand-color-saturated;
   border-bottom: 1px solid $brand-color-saturated;

@@ -22,7 +22,6 @@
   color: $yellow;
   border: 1px solid $yellow;
   border-bottom: .2rem solid $yellow;
-  transition: all .5s;
 }
 
 .btn-yellow:hover,
@@ -43,10 +42,14 @@
   @include media($large-devices) {
     font-size: 1.7rem !important;
   }
+
+  @include media-between($min-width: $very-large-devices, $max-height: 620px) {
+    padding: 1rem;
+  }
 }
 
 .btn-gigantic {
-  padding: 1.5rem;
+  padding: 1.5rem 2.5rem;
   font-size: 1.5rem !important;
 
   @include media($medium-devices) {

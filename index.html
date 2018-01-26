@@ -216,14 +216,22 @@
           <form action="https://formspree.io/hello@lujanfernaud.com" method="POST" class="contact-section-form">
             <input type="hidden" name="_next" value="http://lujanfernaud.com/portfolio-staging/thanks.html">
 
-            <label for="name" class="form-label">Name</label>
-            <input type="text" name="name" placeholder="Your name" class="input">
+            <div class="form-row">
+              <div class="form-row-item">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" name="name" placeholder="Your name" class="input">
+              </div>
 
-            <label for="email" class="form-label">Email</label>
-            <input type="email" name="email" placeholder="Your email" class="input">
+              <div class="form-row-item">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" placeholder="Your email" class="input">
+              </div>
+            </div>
 
-            <label for="message" class="form-label">Message</label>
-            <textarea name="message" placeholder="Your message" class="form-textarea input" rows="7"></textarea>
+            <div>
+              <label for="message" class="form-label">Message</label>
+              <textarea name="message" placeholder="Your message" class="form-textarea input" rows="7"></textarea>
+            </div>
 
             <input type="submit" value="Send" class="form-button btn btn-large">
           </form>
