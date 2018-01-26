@@ -993,6 +993,7 @@ a {
 }
 
 .projects-footer {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1015,7 +1016,9 @@ a {
     margin-top: 2.25rem;
   }
 }
-.projects-footer a {
+
+.projects-footer-link {
+  position: relative;
   margin: 6.75rem 1.1rem;
   font-size: 1.4rem;
   font-style: italic;
@@ -1024,10 +1027,20 @@ a {
   transition: all 1s;
 }
 @media (min-width: 767px) {
-  .projects-footer a {
+  .projects-footer-link {
     margin: 11.25rem auto;
     font-size: 1.7rem;
   }
+}
+
+.projects-footer-link[data-emergence=hidden] {
+  bottom: -1rem;
+  opacity: 0;
+}
+
+.projects-footer-link[data-emergence=visible] {
+  bottom: 0;
+  opacity: 1;
 }
 
 .back-cover {

@@ -288,6 +288,7 @@ $projects-spacing-additional: .95rem;
 }
 
 .projects-footer {
+  position: relative;
   @include flex-container(column);
   margin-top: $projects-spacing-half + $projects-spacing-additional;
   width: 100%;
@@ -296,18 +297,29 @@ $projects-spacing-additional: .95rem;
   @include media($medium-devices) {
     margin-top: $projects-spacing-half;
   }
+}
 
-  a {
-    margin: ($projects-spacing + $projects-spacing-half) 1.1rem;
-    font-size: 1.4rem;
-    font-style: italic;
-    text-align: center;
-    line-height: 1.4;
-    transition: all 1s;
+.projects-footer-link {
+  position: relative;
+  margin: ($projects-spacing + $projects-spacing-half) 1.1rem;
+  font-size: 1.4rem;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.4;
+  transition: all 1s;
 
-    @include media($medium-devices) {
-      margin: ($projects-spacing * 2 + $projects-spacing-half) auto;
-      font-size: 1.7rem;
-    }
+  @include media($medium-devices) {
+    margin: ($projects-spacing * 2 + $projects-spacing-half) auto;
+    font-size: 1.7rem;
   }
+}
+
+.projects-footer-link[data-emergence=hidden] {
+  bottom: -1rem;
+  opacity: 0;
+}
+
+.projects-footer-link[data-emergence=visible] {
+  bottom: 0;
+  opacity: 1;
 }
