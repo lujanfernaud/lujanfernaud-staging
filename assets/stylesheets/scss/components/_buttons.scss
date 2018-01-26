@@ -18,20 +18,20 @@
   background-color: $brand-color-saturated;
 }
 
-.btn-yellow {
+.btn--yellow {
   color: $yellow;
   border: 1px solid $yellow;
   border-bottom: .2rem solid $yellow;
 }
 
-.btn-yellow:hover,
-.btn-yellow:focus {
+.btn--yellow:hover,
+.btn--yellow:focus {
   color: $brand-color-saturated;
   background-color: $yellow;
   border-bottom: .2rem solid $white;
 }
 
-.btn-large {
+.btn--large {
   padding: 1.25rem;
   font-size: 1.25rem !important;
 
@@ -48,7 +48,7 @@
   }
 }
 
-.btn-gigantic {
+.btn--gigantic {
   padding: 1.5rem 2.5rem;
   font-size: 1.5rem !important;
 

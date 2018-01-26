@@ -1,8 +1,8 @@
 class NameFlipper {
 
   constructor() {
-    this.questionMark = document.querySelector(".name-question-mark");
-    this.name         = document.querySelector(".cover-name");
+    this.questionMark = document.querySelector(".cover-name__question-mark");
+    this.name         = document.querySelector(".cover-name__name");
     this.running      = false;
   }
 
@@ -50,7 +50,7 @@ class NameFlipper {
 class ChevronHider {
 
   constructor() {
-    this.chevron = document.querySelector(".chevron-down");
+    this.chevron = document.querySelector(".front-cover__chevron-down");
   }
 
   watch() {
@@ -83,11 +83,11 @@ class contactFormToggler {
     this.backCover       = document.querySelector(".back-cover");
     this.letsTalk        = document.querySelector(".lets-talk-container");
     this.letsTalkButton  = document.querySelector(".lets-talk");
-    this.letsTalkText    = document.querySelector(".lets-talk-text");
-    this.letsTalkMail    = document.querySelector(".lets-talk-mail");
+    this.letsTalkText    = document.querySelector(".lets-talk__text");
+    this.letsTalkMail    = document.querySelector(".lets-talk__mail");
     this.contactSection  = document.querySelector(".contact-section-container");
     this.sectionOpen     = document.querySelector(".lets-talk-link");
-    this.sectionClose    = document.querySelector(".contact-section-close");
+    this.sectionClose    = document.querySelector(".contact-section__close");
     this.sectionTogglers = [this.sectionOpen, this.sectionClose];
     this.showForm        = false;
   }
@@ -139,20 +139,20 @@ class contactFormToggler {
   }
 
   toggleButtonAnimation() {
-    this.letsTalkText.classList.toggle("lets-talk-text-paused");
-    this.letsTalkMail.classList.toggle("lets-talk-mail-paused");
+    this.letsTalkText.classList.toggle("lets-talk__text--paused");
+    this.letsTalkMail.classList.toggle("lets-talk__mail--paused");
   }
 
   toggleButtonHoverActive() {
-    this.toggleInAndOut(this.letsTalkButton, "lets-talk-hover-active");
+    this.toggleInAndOut(this.letsTalkButton, "lets-talk--hover-active");
   }
 
   toggleLetsTalk() {
-    this.letsTalk.classList.toggle("lets-talk-container-hidden");
+    this.letsTalk.classList.toggle("lets-talk-container--hidden");
   }
 
   toggleContactForm() {
-    this.contactSection.classList.toggle("contact-section-container-revealed");
+    this.contactSection.classList.toggle("contact-section-container--revealed");
   }
 
 }

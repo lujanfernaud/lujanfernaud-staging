@@ -34,7 +34,7 @@
   opacity: 1;
 }
 
-.lets-talk-container-hidden {
+.lets-talk-container--hidden {
   right: -200%;
 }
 
@@ -95,7 +95,7 @@
   }
 }
 
-.lets-talk-text {
+.lets-talk__text {
   position: absolute;
   top: -.84rem;
   left: 1.88rem;
@@ -119,13 +119,13 @@
   }
 }
 
-.lets-talk-text-paused,
-.lets-talk-hover-active:hover > .lets-talk-text {
+.lets-talk__text--paused,
+.lets-talk--hover-active:hover > .lets-talk__text {
   left: 150%;
   opacity: 0;
 }
 
-.lets-talk-mail {
+.lets-talk__mail {
   position: absolute;
   top: calc(50% - 3.64rem);
   left: -150%;
@@ -143,8 +143,8 @@
   }
 }
 
-.lets-talk-mail-paused,
-.lets-talk-hover-active:hover > .lets-talk-mail {
+.lets-talk__mail--paused,
+.lets-talk--hover-active:hover > .lets-talk__mail {
   left: calc(50% - 3.6rem);
   opacity: 1;
 
@@ -219,7 +219,7 @@
   border: 1px dotted $brand-color-saturated;
 }
 
-.link-icon-twitter {
+.link-icon--twitter {
   @include in-circle-degrees($degrees: -40deg, $circle-width: 14rem);
 
   @include media($medium-devices) {
@@ -231,7 +231,7 @@
   }
 }
 
-.link-icon-github {
+.link-icon--github {
   @include in-circle-degrees($degrees: -15deg, $circle-width: 14rem);
 
   @include media($medium-devices) {
@@ -243,7 +243,7 @@
   }
 }
 
-.link-icon-exercism {
+.link-icon--exercism {
   @include in-circle-degrees($degrees: 10deg, $circle-width: 14rem);
 
   @include media($medium-devices) {
@@ -274,7 +274,7 @@
   transition: left 1s;
 }
 
-.contact-section-container-revealed {
+.contact-section-container--revealed {
   left: 0;
 }
 
@@ -302,7 +302,7 @@
   }
 }
 
-.contact-section-close {
+.contact-section__close {
   position: absolute;
   top: .2rem;
   right: .5rem;
@@ -322,7 +322,7 @@
   }
 }
 
-.contact-section-form {
+.contact-section__form {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -359,7 +359,7 @@
   }
 }
 
-.form-row-item {
+.form-row__item {
   flex-basis: 48.4%;
   margin-bottom: 0.6rem;
 }
@@ -406,7 +406,7 @@
   }
 }
 
-.contact-section-link-email {
+.contact-section__link-email {
   padding-top: 3px;
   margin-top: 1.4rem;
   margin-right: .3rem;
@@ -423,8 +423,8 @@
   }
 }
 
-.contact-section-link-email:hover,
-.contact-section-link-email:focus {
+.contact-section__link-email:hover,
+.contact-section__link-email:focus {
   color: $light-grey-1;
   background-color: $brand-color-saturated;
   border-bottom: 1px solid $brand-color-saturated;

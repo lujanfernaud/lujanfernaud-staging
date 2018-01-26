@@ -11,205 +11,324 @@
 </head>
 <body>
 
+  <!-- .main-container -->
   <main class="main-container">
 
+    <!-- .front-cover -->
     <section class="front-cover">
-      <div class="cover-name-container">
-        <div class="name-question-mark">?</div>
-        <h1 class="cover-name">Luján Fernaud</h1>
+      <div class="cover-name">
+        <div class="cover-name__question-mark">?</div>
+        <h1 class="cover-name__name">Luján Fernaud</h1>
       </div>
-      <hr class="hr-small">
-      <p class="cover-short-description">WEB DEVELOPER</p>
-      <a data-scroll class="chevron-down" href="#selected-projects">
-        <img src="assets/images/icons/chevron-down.svg" class="icon chevron-down-icon">
+
+      <hr class="front-cover__hr">
+      <p class="front-cover__short-description">WEB DEVELOPER</p>
+
+      <a class="front-cover__chevron-down"
+        href="#selected-projects" data-scroll>
+        <img class="chevron-down-icon icon"
+          src="assets/images/icons/chevron-down.svg" alt="Go to next section">
       </a>
     </section>
+    <!-- /.front-cover -->
 
-    <section id="selected-projects" class="projects">
+
+    <!-- ################################################################ -->
+
+
+    <!-- .projects -->
+    <section class="projects" id="selected-projects">
+
       <header class="projects-header">
-        <h2 class="projects-header-text">Selected Projects</h2>
-        <div class="projects-header-background" data-emergence="hidden"></div>
+        <h2 class="projects-header__text">Selected Projects</h2>
+        <div class="projects-header__background" data-emergence="hidden"></div>
       </header>
 
+      <!-- .projects-grid -->
       <main class="projects-grid">
 
-        <div class="project first-project appear-left" data-emergence="hidden">
-          <div class="project-image-container">
-            <img src="assets/images/screenshots/draw-screenshot.png" alt="Draw App Scrennshot" class="project-image">
-            <div class="project-image-corner"></div>
-            <img class="icon project-icon" src="assets/images/icons/rails_icon.svg" alt="Rails" title="Rails">
-          </div>
-          <div class="project-text">
-            <h3 class="project-title">Draw</h3>
-            <div class="project-description">
-              <p>A daily new selection of reference pictures to focus on drawing practice.</p>
-            </div>
-            <div class="project-tags">
-              <span class="tag">Rails</span>
-              <span class="tag">RSpec</span>
-              <span class="tag">jQuery</span>
-              <span class="tag">Unsplash API</span>
-            </div>
-            <div class="project-links">
-              <a href="https://thedrawapp.herokuapp.com/" class="project-link">Online</a>
-              <a href="https://github.com/lujanfernaud/draw" class="project-link">GitHub</a>
-            </div>
-          </div>
-        </div>
+        <!-- .project -->
+        <div class="project project--first appear-left"
+          data-emergence="hidden">
 
+          <div class="project__image-container">
+            <img class="project__image"
+              src="assets/images/screenshots/draw-screenshot.png"
+                alt="Draw App Scrennshot">
+            <div class="project__image-corner"></div>
+            <img class="project__icon icon"
+              src="assets/images/icons/rails_icon.svg"
+                alt="Rails" title="Rails">
+          </div>
+
+          <div class="project__information">
+            <h3 class="project__title">Draw</h3>
+            <p class="project__description">A daily new selection of reference pictures to focus on drawing practice.</p>
+
+            <div class="project__tags">
+              <span class="project__tag">Rails</span>
+              <span class="project__tag">RSpec</span>
+              <span class="project__tag">jQuery</span>
+              <span class="project__tag">Unsplash API</span>
+            </div>
+
+            <div class="project__links">
+              <a class="project__link"
+                href="https://thedrawapp.herokuapp.com/">Online</a>
+              <a class="project__link"
+                href="https://github.com/lujanfernaud/draw">GitHub</a>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.project -->
+
+        <!-- .project -->
         <div class="project appear-right" data-emergence="hidden">
-          <div class="project-image-container">
-            <img src="assets/images/screenshots/yawo-screenshot.png" alt="YAWO App Screenshot" class="project-image">
-            <div class="project-image-corner"></div>
-            <img class="icon project-icon" src="assets/images/icons/rails_icon.svg" alt="Rails" title="Rails">
+
+          <div class="project__image-container">
+            <img class="project__image"
+              src="assets/images/screenshots/yawo-screenshot.png"
+                alt="YAWO App Screenshot">
+            <div class="project__image-corner"></div>
+            <img class="project__icon icon"
+              src="assets/images/icons/rails_icon.svg"
+                alt="Rails" title="Rails">
           </div>
-          <div class="project-text">
-            <h3 class="project-title">Yawo</h3>
-            <div class="project-description">
-              <p>A simple flight booker.</p>
+
+          <div class="project__information">
+            <h3 class="project__title">Yawo</h3>
+            <p class="project__description">A simple flight booker.</p>
+
+            <div class="project__tags">
+              <span class="project__tag">Rails</span>
+              <span class="project__tag">Minitest</span>
+              <span class="project__tag">jQuery</span>
             </div>
-            <div class="project-tags">
-              <span class="tag">Rails</span>
-              <span class="tag">Minitest</span>
-              <span class="tag">jQuery</span>
-            </div>
-            <div class="project-links">
-              <a href="https://yawo.herokuapp.com" class="project-link">Online</a>
-              <a href="https://github.com/lujanfernaud/yawo" class="project-link">GitHub</a>
+
+            <div class="project__links">
+              <a class="project__link"
+                href="https://yawo.herokuapp.com">Online</a>
+              <a class="project__link"
+                href="https://github.com/lujanfernaud/yawo">GitHub</a>
             </div>
           </div>
+
         </div>
+        <!-- /.project -->
 
-        <hr class="projects-hr projects-row-divisor"  data-emergence="hidden"></hr>
+        <hr class="projects__row-divisor projects__hr" data-emergence="hidden">
 
+        <!-- .project -->
         <div class="project appear-left" data-emergence="hidden">
-          <div class="project-image-container">
-            <img src="assets/images/screenshots/ruby-chess-screenshot.jpg" alt="" class="project-image">
-            <div class="project-image-corner"></div>
-            <img class="icon project-icon" src="assets/images/icons/ruby_icon.svg" alt="Rails" title="Rails">
-          </div>
-          <div class="project-text">
-            <h3 class="project-title">Ruby Chess</h3>
-            <div class="project-description">
-              <p>A two players chess game for the command line. All the rules of chess are implemented.</p>
-            </div>
-            <div class="project-tags">
-              <span class="tag">Ruby</span>
-              <span class="tag">RSpec</span>
-              <span class="tag">OOP</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/lujanfernaud/ruby-chess" class="project-link">GitHub</a>
-            </div>
-          </div>
-        </div>
 
+          <div class="project__image-container">
+            <img class="project__image"
+              src="assets/images/screenshots/ruby-chess-screenshot.jpg"
+                alt="Ruby Chess Screenshot">
+            <div class="project__image-corner"></div>
+            <img class="project__icon icon"
+              src="assets/images/icons/ruby_icon.svg"
+                alt="Rails" title="Rails">
+          </div>
+
+          <div class="project__information">
+            <h3 class="project__title">Ruby Chess</h3>
+            <p class="project__description">A two players chess game for the command line. All the rules of chess are implemented.</p>
+
+            <div class="project__tags">
+              <span class="project__tag">Ruby</span>
+              <span class="project__tag">RSpec</span>
+              <span class="project__tag">OOP</span>
+            </div>
+
+            <div class="project__links">
+              <a class="project__link"
+                href="https://github.com/lujanfernaud/ruby-chess">GitHub</a>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.project -->
+
+        <!-- .project -->
         <div class="project appear-right" data-emergence="hidden">
-          <div class="project-image-container">
-            <img src="assets/images/screenshots/ruby-mastermind-screenshot.jpg" alt="" class="project-image">
-            <div class="project-image-corner"></div>
-            <img class="icon project-icon" src="assets/images/icons/ruby_icon.svg" alt="Rails" title="Rails">
+
+          <div class="project__image-container">
+            <img class="project__image"
+              src="assets/images/screenshots/ruby-mastermind-screenshot.jpg"
+                alt="Ruby Mastermind Screenshot">
+            <div class="project__image-corner"></div>
+            <img class="project__icon icon"
+              src="assets/images/icons/ruby_icon.svg"
+                alt="Rails" title="Rails">
           </div>
-          <div class="project-text">
-            <h3 class="project-title">Ruby Mastermind</h3>
-            <div class="project-description">
-              <p>A Mastermind game for the command line. You can play against the computer!</p>
+
+          <div class="project__information">
+            <h3 class="project__title">Ruby Mastermind</h3>
+            <p class="project__description">A Mastermind game for the command line. You can play against the computer!</p>
+
+            <div class="project__tags">
+              <span class="project__tag">Ruby</span>
+              <span class="project__tag">RSpec</span>
+              <span class="project__tag">OOP</span>
             </div>
-            <div class="project-tags">
-              <span class="tag">Ruby</span>
-              <span class="tag">RSpec</span>
-              <span class="tag">OOP</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/lujanfernaud/ruby-mastermind" class="project-link">GitHub</a>
+
+            <div class="project__links">
+              <a class="project__link"
+                href="https://github.com/lujanfernaud/ruby-mastermind">
+              GitHub</a>
             </div>
           </div>
+
         </div>
+        <!-- /.project -->
 
-        <hr class="projects-hr projects-row-divisor"  data-emergence="hidden"></hr>
+        <hr class="projects__row-divisor projects__hr" data-emergence="hidden">
 
+        <!-- .project -->
         <div class="project appear-left" data-emergence="hidden">
-          <div class="project-image-container">
-            <img src="assets/images/screenshots/rps-screenshot.png" alt="" class="project-image">
-            <div class="project-image-corner"></div>
-            <img class="icon project-icon" src="assets/images/icons/javascript_icon.svg" alt="JavaScript" title="JavaScript">
-          </div>
-          <div class="project-text">
-            <h3 class="project-title">Rock, Paper, Scissors</h3>
-            <div class="project-description">
-              <p>For serious decision-makers.</p>
-            </div>
-            <div class="project-tags">
-              <span class="tag">JavaScript (ES6)</span>
-              <span class="tag">Jasmine</span>
-              <span class="tag">OOP</span>
-              <span class="tag">Sass</span>
-            </div>
-            <div class="project-links">
-              <a href="http://lujanfernaud.com/js-rock-paper-scissors/" class="project-link">Online</a>
-              <a href="https://github.com/lujanfernaud/js-rock-paper-scissors" class="project-link">GitHub</a>
-            </div>
-          </div>
-        </div>
 
-        <div class="project last-project appear-right" data-emergence="hidden">
-          <div class="project-image-container">
-            <img src="assets/images/screenshots/portfolio-screenshot.png" alt="" class="project-image">
-            <div class="project-image-corner"></div>
-            <img class="icon project-icon" src="assets/images/icons/sass_icon.svg" alt="Sass" title="Sass">
+          <div class="project__image-container">
+            <img class="project__image"
+              src="assets/images/screenshots/rps-screenshot.png"
+                alt="Rock, Paper, Scissors Screenshot">
+            <div class="project__image-corner"></div>
+            <img class="project__icon icon"
+              src="assets/images/icons/javascript_icon.svg"
+                alt="JavaScript" title="JavaScript">
           </div>
-          <div class="project-text">
-            <h3 class="project-title">This Portfolio</h3>
-            <div class="project-description">
-              <p>The portfolio that you&rsquo;re kindly reading.</p>
-            </div>
-            <div class="project-tags">
-              <span class="tag">Sass</span>
-              <span class="tag">JavaScript (ES6)</span>
-              <span class="tag">Gulp</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/lujanfernaud/lujanfernaud.github.io" class="project-link">GitHub</a>
-            </div>
-          </div>
-        </div>
 
-        <hr class="projects-hr projects-row-divisor hr-20 opacity-hidden"></hr>
+          <div class="project__information">
+            <h3 class="project__title">Rock, Paper, Scissors</h3>
+            <p class="project__description">For serious decision-makers.</p>
+
+            <div class="project__tags">
+              <span class="project__tag">JavaScript (ES6)</span>
+              <span class="project__tag">Jasmine</span>
+              <span class="project__tag">OOP</span>
+              <span class="project__tag">Sass</span>
+            </div>
+
+            <div class="project__links">
+              <a class="project__link"
+                href="http://lujanfernaud.com/js-rock-paper-scissors/">
+              Online</a>
+              <a class="project__link"
+                href="https://github.com/lujanfernaud/js-rock-paper-scissors">
+              GitHub</a>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.project -->
+
+        <!-- .project -->
+        <div class="project project--last appear-right"
+          data-emergence="hidden">
+
+          <div class="project__image-container">
+            <img class="project__image"
+              src="assets/images/screenshots/portfolio-screenshot.png"
+                alt="Portfolio Screenshot">
+            <div class="project__image-corner"></div>
+            <img class="project__icon icon"
+              src="assets/images/icons/sass_icon.svg"
+                alt="Sass" title="Sass">
+          </div>
+
+          <div class="project__information">
+            <h3 class="project__title">This Portfolio</h3>
+            <p class="project__description">The portfolio that you&rsquo;re kindly reading.</p>
+
+            <div class="project__tags">
+              <span class="project__tag">Sass</span>
+              <span class="project__tag">JavaScript (ES6)</span>
+              <span class="project__tag">Gulp</span>
+            </div>
+
+            <div class="project__links">
+              <a class="project__link"
+                href="https://github.com/lujanfernaud/lujanfernaud.github.io">GitHub</a>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.project -->
+
+        <hr class="projects__row-divisor projects__hr hr-20 opacity-hidden">
 
       </main>
+      <!-- .projects-grid -->
 
       <footer class="projects-footer">
-        <a href="https://github.com/lujanfernaud?tab=repositories" class="projects-footer-link btn-yellow btn-gigantic" data-emergence="hidden">
+        <a class="projects-footer__link btn--yellow btn--gigantic"
+          href="https://github.com/lujanfernaud?tab=repositories"
+            data-emergence="hidden">
           See all my repos on GitHub
         </a>
       </footer>
-    </section>
 
-    <section id="back-cover" class="back-cover overflow-hidden">
+    </section>
+    <!-- /.projects -->
+
+
+    <!-- ################################################################ -->
+
+
+    <!-- .back-cover -->
+    <section class="back-cover overflow-hidden" id="back-cover">
+
+      <!-- .lets-talk-container -->
       <div class="lets-talk-container" data-emergence="hidden">
-        <!-- Scroll to bottom to prevent contact section height to be cut -->
-        <a data-scroll class="scroll-to-back-cover visibility-hidden" href="#back-cover"></a>
-        <a class="lets-talk-link" href="mailto:hello@lujanfernaud.com" aria-label="Email">
-          <div class="lets-talk lets-talk-hover-active">
-            <p class="lets-talk-text">Let&rsquo;s talk!</p>
-            <img src="assets/images/icons/email_icon.svg" class="lets-talk-mail">
+
+        <!-- Scroll to bottom to prevent contact section height to be cut.
+             This is hidden and used in main.js when opening and
+             closing the contact section. -->
+        <a class="scroll-to-back-cover visibility-hidden"
+          href="#back-cover" data-scroll></a>
+
+        <!-- .lets-talk-link -->
+        <a class="lets-talk-link"
+          href="mailto:hello@lujanfernaud.com" aria-label="Email">
+          <div class="lets-talk lets-talk--hover-active">
+            <p class="lets-talk__text">Let&rsquo;s talk!</p>
+            <img class="lets-talk__mail"
+              src="assets/images/icons/email_icon.svg">
           </div>
         </a>
+        <!-- /.lets-talk-link -->
 
+        <!-- .cover-icons-container -->
         <div class="cover-icons-container">
-          <a class="link-icon link-icon-twitter" href="https://twitter.com/nujaud">
-            <svg class="icon cover-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" aria-labelledby="title">
+
+          <!-- .link-icon -->
+          <a class="link-icon link-icon--twitter"
+            href="https://twitter.com/nujaud">
+            <svg class="icon cover-icon"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"
+                aria-labelledby="title">
               <title>Twitter</title>
               <path fill="#43388a" d="M400 200c0 110.5-89.5 200-200 200S0 310.5 0 200 89.5 0 200 0s200 89.5 200 200zM163.4 305.5c88.7 0 137.2-73.5 137.2-137.2 0-2.1 0-4.2-.1-6.2 9.4-6.8 17.6-15.3 24.1-25-8.6 3.8-17.9 6.4-27.7 7.6 10-6 17.6-15.4 21.2-26.7-9.3 5.5-19.6 9.5-30.6 11.7-8.8-9.4-21.3-15.2-35.2-15.2-26.6 0-48.2 21.6-48.2 48.2 0 3.8.4 7.5 1.3 11-40.1-2-75.6-21.2-99.4-50.4-4.1 7.1-6.5 15.4-6.5 24.2 0 16.7 8.5 31.5 21.5 40.1-7.9-.2-15.3-2.4-21.8-6v.6c0 23.4 16.6 42.8 38.7 47.3-4 1.1-8.3 1.7-12.7 1.7-3.1 0-6.1-.3-9.1-.9 6.1 19.2 23.9 33.1 45 33.5-16.5 12.9-37.3 20.6-59.9 20.6-3.9 0-7.7-.2-11.5-.7 21.1 13.8 46.5 21.8 73.7 21.8"/>
             </svg>
           </a>
-          <a class="link-icon link-icon-github" href="https://github.com/lujanfernaud">
-            <svg class="icon cover-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-labelledby="title">
+          <!-- /.link-icon -->
+
+          <!-- .link-icon -->
+          <a class="link-icon link-icon--github"
+            href="https://github.com/lujanfernaud">
+            <svg class="icon cover-icon"
+              xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24" aria-labelledby="title">
               <title>GitHub</title>
               <path fill="#43388a" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
             </svg>
           </a>
-          <a class="link-icon link-icon-exercism" href="http://exercism.io/lujanfernaud">
+          <!-- /.link-icon -->
+
+          <!-- .link-icon -->
+          <a class="link-icon link-icon--exercism"
+            href="http://exercism.io/lujanfernaud">
             <svg class="icon cover-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 384" aria-labelledby="title">
               <title>Exercism</title>
               <g fill="none" fill-rule="evenodd">
@@ -218,23 +337,37 @@
               </g>
             </svg>
           </a>
+          <!-- /.link-icon -->
+
         </div>
+        <!-- /.cover-icons-container -->
+
       </div>
+      <!-- /.lets-talk-container -->
 
+      <!-- ############################################################## -->
+
+      <!-- .contact-section-container -->
       <div class="contact-section-container visibility-hidden">
-        <div class="contact-section">
-          <a href="#" class="contact-section-close link-no-border" alt="Close contact form" title="Close contact form">&#x2715;</a>
 
-          <form action="https://formspree.io/hello@lujanfernaud.com" method="POST" class="contact-section-form">
+        <!-- .contact-section -->
+        <div class="contact-section">
+          <a class="contact-section__close link-no-border" href="#"
+            alt="Close contact form" title="Close contact form">&#x2715;</a>
+
+          <!-- .contact-section-form -->
+          <form class="contact-section__form"
+            action="https://formspree.io/hello@lujanfernaud.com" method="POST">
+            <!-- Shown after email is sent. -->
             <input type="hidden" name="_next" value="http://lujanfernaud.com/portfolio-staging/thanks.html">
 
             <div class="form-row">
-              <div class="form-row-item">
+              <div class="form-row__item">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" name="name" placeholder="Your name" class="input">
               </div>
 
-              <div class="form-row-item">
+              <div class="form-row__item">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" name="email" placeholder="Your email" class="input">
               </div>
@@ -245,12 +378,16 @@
               <textarea name="message" placeholder="Your message" class="form-textarea input" rows="7"></textarea>
             </div>
 
-            <input type="submit" value="Send" class="form-button btn btn-large">
+            <input type="submit" value="Send" class="form-button btn btn--large">
           </form>
+          <!-- /.contact-section-form -->
 
-          <a href="mailto:hello@lujanfernaud.com" class="contact-section-link-email">Or use your favorite email app.</a>
+          <a class="contact-section__link-email"
+            href="mailto:hello@lujanfernaud.com">Or use your favorite email app.</a>
         </div>
+        <!-- /.contact-section -->
 
+        <!-- .contact-section-transition -->
         <div class="contact-section-transition">
           <div class="color-column color-column-1"></div>
           <div class="color-column color-column-2"></div>
@@ -282,10 +419,16 @@
           <div class="color-column color-column-28"></div>
           <div class="color-column color-column-29"></div>
         </div>
+        <!-- /.contact-section-transition -->
+
       </div>
+      <!-- /.contact-section-container -->
+
     </section>
+    <!-- /.back-cover -->
 
   </main>
+  <!-- /.main-container -->
 
   <script src="assets/javascripts/main.js"></script>
   <script src="assets/javascripts/smooth-scroll.polyfills.min.js"></script>
@@ -293,10 +436,12 @@
     var scroll = new SmoothScroll("[data-scroll]", {
       easing: "easeInOutQuad",
       before: () => {
-        document.querySelector(".chevron-down").classList.add("display-none");
+        document.querySelector(".front-cover__chevron-down")
+          .classList.add("display-none");
       },
       after: () => {
-        document.querySelector(".chevron-down").classList.remove("display-none");
+        document.querySelector(".front-cover__chevron-down")
+          .classList.remove("display-none");
       }
     });
   </script>

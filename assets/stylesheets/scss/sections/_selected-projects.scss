@@ -33,28 +33,7 @@ $projects-spacing-additional: .95rem;
   }
 }
 
-.projects-header-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $brand-color-saturated;
-  transform: skew(-10deg);
-  transition: all 1s ease-out;
-}
-
-.projects-header-background[data-emergence=hidden] {
-  width: 0%;
-  opacity: 0;
-}
-
-.projects-header-background[data-emergence=visible] {
-  width: 100%;
-  opacity: 1;
-}
-
-.projects-header-text {
+.projects-header__text {
   position: relative;
   margin-top: 1rem;
   margin-left: 1rem;
@@ -71,20 +50,25 @@ $projects-spacing-additional: .95rem;
   }
 }
 
-.projects-hr {
-  height: 1px;
-  background-color: $dark-yellow;
-  border: none;
+.projects-header__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $brand-color-saturated;
+  transform: skew(-10deg);
+  transition: all 1s ease-out;
 }
 
-.projects-header-hr {
-  height: 2px;
-  width: 3.6rem;
-  background-color: $brand-color-saturated;
+.projects-header__background[data-emergence=hidden] {
+  width: 0%;
+  opacity: 0;
+}
 
-  @include media($medium-devices) {
-    width: 8.2rem;
-  }
+.projects-header__background[data-emergence=visible] {
+  width: 100%;
+  opacity: 1;
 }
 
 .projects-grid {
@@ -127,11 +111,11 @@ $projects-spacing-additional: .95rem;
   }
 }
 
-.first-project {
+.project--first {
   margin-top: 0;
 }
 
-.last-project {
+.project--last {
   border-bottom: 1px solid transparent;
 }
 
@@ -145,22 +129,21 @@ $projects-spacing-additional: .95rem;
   opacity: 0;
 }
 
-
 .project[data-emergence=visible] {
   left: 0;
   opacity: 1;
 }
 
-.project-image-container {
+.project__image-container {
   position: relative;
 }
 
-.project-image {
+.project__image {
   border-bottom: .4rem solid $brand-color-saturated;
   background-color: $brand-color-saturated;
 }
 
-.project-image-corner {
+.project__image-corner {
   position: absolute;
   top: 0;
   right: 0;
@@ -175,7 +158,7 @@ $projects-spacing-additional: .95rem;
   }
 }
 
-.project-icon {
+.project__icon {
   position: absolute;
   top: 1.4rem;
   right: 1.4rem;
@@ -188,7 +171,7 @@ $projects-spacing-additional: .95rem;
   }
 }
 
-.project-title {
+.project__title {
   margin-top: 1.2rem;
   margin-bottom: 1.1rem;
   font-size: 1.6rem;
@@ -202,13 +185,9 @@ $projects-spacing-additional: .95rem;
   }
 }
 
-.project-description {
-  margin-bottom: 0;
-
-  p {
-    margin: 0 auto;
-    font-family: $dejavu-sans;
-  }
+.project__description {
+  margin: 0 auto;
+  font-family: $dejavu-sans;
 
   @include media($medium-devices) {
     margin-bottom: 1.7rem;
@@ -216,7 +195,7 @@ $projects-spacing-additional: .95rem;
   }
 }
 
-.project-tags {
+.project__tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
@@ -228,7 +207,7 @@ $projects-spacing-additional: .95rem;
   }
 }
 
-.tag {
+.project__tag {
   margin-right: .5rem;
   margin-bottom: .5rem;
   padding-top: .5rem;
@@ -246,11 +225,11 @@ $projects-spacing-additional: .95rem;
   }
 }
 
-.project-links {
+.project__links {
   margin-top: 0;
 }
 
-.project-link {
+.project__link {
   padding-top: 3px;
   margin-right: .3rem;
   font-size: 1.2rem;
@@ -261,14 +240,20 @@ $projects-spacing-additional: .95rem;
   }
 }
 
-.project-link:hover,
-.project-link:focus{
+.project__link:hover,
+.project__link:focus {
   color: $yellow;
   background-color: $brand-color-saturated;
   border-bottom: 1px solid $brand-color-saturated;
 }
 
-.projects-row-divisor {
+.projects__hr {
+  height: 1px;
+  background-color: $dark-yellow;
+  border: none;
+}
+
+.projects__row-divisor {
   display: none;
   transition: all 2s;
 
@@ -299,7 +284,7 @@ $projects-spacing-additional: .95rem;
   }
 }
 
-.projects-footer-link {
+.projects-footer__link {
   position: relative;
   margin: ($projects-spacing + $projects-spacing-half) 1.1rem;
   font-size: 1.4rem;
@@ -314,12 +299,12 @@ $projects-spacing-additional: .95rem;
   }
 }
 
-.projects-footer-link[data-emergence=hidden] {
+.projects-footer__link[data-emergence=hidden] {
   bottom: -1rem;
   opacity: 0;
 }
 
-.projects-footer-link[data-emergence=visible] {
+.projects-footer__link[data-emergence=visible] {
   bottom: 0;
   opacity: 1;
 }

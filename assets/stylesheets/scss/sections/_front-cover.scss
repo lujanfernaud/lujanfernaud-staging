@@ -16,11 +16,11 @@
   }
 }
 
-.cover-name-container {
+.cover-name {
   position: relative;
 }
 
-.name-question-mark {
+.cover-name__question-mark {
   position: absolute;
   top: -1.91rem;
   right: calc(50% - 1.4rem);
@@ -45,7 +45,7 @@
   }
 }
 
-.cover-name {
+.cover-name__name {
   position: relative;
   margin-bottom: .7rem;
   font-style: italic;
@@ -62,7 +62,7 @@
   }
 }
 
-.hr-small {
+.front-cover__hr {
   width: 12.9rem;
   height: 2px;
   background-color: $light-grey-1;
@@ -79,7 +79,7 @@
   }
 }
 
-.cover-short-description {
+.front-cover__short-description {
   margin-top: .88rem;
   font-family: $dejavu-sans;
   font-size: 1.2rem;
@@ -95,7 +95,7 @@
   }
 }
 
-.chevron-down {
+.front-cover__chevron-down {
   position: absolute;
   bottom: 0.35rem;
   padding: 1rem;
@@ -115,7 +115,7 @@
   }
 }
 
-.chevron-down:hover,
-.chevron-down:focus {
+.front-cover__chevron-down:hover,
+.front-cover__chevron-down:focus {
   opacity: 1;
 }
