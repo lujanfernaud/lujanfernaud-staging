@@ -75,6 +75,7 @@
 
 .lets-talk {
   position: relative;
+  @include flex-container(column);
   width: 12rem;
   height: 12rem;
   color: $light-grey-1;
@@ -96,26 +97,19 @@
 }
 
 .lets-talk__text {
-  position: absolute;
-  top: -.84rem;
-  left: 1.88rem;
-  width: 71%;
-  font-size: 3.2rem;
-  font-weight: bold;
-  font-style: italic;
+  position: relative;
+  left: 0.1rem;
+  width: 72.3%;
+  fill: $light-grey-1;
   opacity: 1;
   transition: all 1s;
 
   @include media($medium-devices) {
-    top: -2.1rem;
-    left: 4.7rem;
-    font-size: 8rem;
+    left: 0.36rem;
   }
 
   @include media-iphone-large {
-    top: -.84rem;
-    left: 1.88rem;
-    font-size: 3.2rem;
+    left: 0.15rem;
   }
 }
 

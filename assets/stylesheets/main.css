@@ -1107,6 +1107,10 @@ a {
 
 .lets-talk {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 12rem;
   height: 12rem;
   color: #fbfafc;
@@ -1139,28 +1143,21 @@ a {
 }
 
 .lets-talk__text {
-  position: absolute;
-  top: -.84rem;
-  left: 1.88rem;
-  width: 71%;
-  font-size: 3.2rem;
-  font-weight: bold;
-  font-style: italic;
+  position: relative;
+  left: 0.1rem;
+  width: 72.3%;
+  fill: #fbfafc;
   opacity: 1;
   transition: all 1s;
 }
 @media (min-width: 767px) {
   .lets-talk__text {
-    top: -2.1rem;
-    left: 4.7rem;
-    font-size: 8rem;
+    left: 0.36rem;
   }
 }
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
   .lets-talk__text {
-    top: -.84rem;
-    left: 1.88rem;
-    font-size: 3.2rem;
+    left: 0.15rem;
   }
 }
 
