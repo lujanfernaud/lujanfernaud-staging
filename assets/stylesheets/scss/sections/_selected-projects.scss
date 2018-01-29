@@ -16,107 +16,83 @@ $projects-spacing-additional: .95rem;
 
 
 .projects {
+  position: relative;
   @include flex-container(column);
   width: 100%;
   color: $brand-color-saturated;
   background-color: $yellow;
 }
 
-.projects-header {
-  position: relative;
-  margin-top: $projects-spacing-half;
-  margin-bottom: $projects-spacing-third * 2 + $projects-spacing-third;
+.project-row-container {
+  @include flex-container(row);
+  width: 100%;
 
-  @include media($medium-devices) {
-    margin-top: $projects-spacing + $projects-spacing-half;
-    margin-bottom: $projects-spacing * 2 + $projects-spacing-third;
+  @include media($very-large-devices) {
+    height: 100vh;
   }
 }
 
-.projects-header__text {
-  position: relative;
-  margin-top: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-bottom: .8rem;
-  font-size: 1.8rem;
-  font-style: italic;
-  color: $yellow;
-  z-index: 1;
-
-  @include media($medium-devices) {
-    margin-bottom: .8rem;
-    font-size: 3.5rem;
+.project-row-container:nth-child(even) {
+  @include media($very-large-devices) {
+    background-color: $light-yellow;
   }
 }
 
-.projects-header__background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $brand-color-saturated;
-  transform: skew(-10deg);
-  transition: all 1s ease-out;
-}
-
-.projects-header__background[data-emergence=hidden] {
-  width: 0%;
-  opacity: 0;
-}
-
-.projects-header__background[data-emergence=visible] {
-  width: 100%;
-  opacity: 1;
-}
-
-.projects-grid {
+.project-row {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem 1rem 0 1rem;
 
-  @include media($medium-devices) {
+  @include media($very-large-devices) {
     flex-direction: row;
-    flex-wrap: wrap;
-    width: $container-width-medium-devices;
-    padding: 0;
+    width: 69vw;
   }
 
-  @include media($large-devices) {
-    width: $container-width-large-devices;
+  @include media($extra-large-devices) {
+    flex-direction: row;
+    width: 65vw;
+  }
+}
+
+.project-container {
+  @include flex-container(column);
+  align-self: flex-start;
+  flex-basis: 45%;
+  min-height: 100vh;
+  padding: 1rem;
+
+  @include media-between-widths(
+    $min-width: $small-devices,
+    $max-width: $very-large-devices) {
+      padding: 3rem;
   }
 
   @include media($very-large-devices) {
-    width: $container-width-very-large-devices;
+    min-height: initial;
+    height: initial;
+    padding: 0;
+  }
+}
+
+.project-container:nth-child(even) {
+  background-color: $light-yellow;
+
+  @include media($very-large-devices) {
+    background-color: transparent;
   }
 }
 
 .project {
+  position: relative;
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
-  position: relative;
-  margin-top: $projects-spacing-half + $projects-spacing-additional;
-  padding-bottom: $projects-spacing-half + $projects-spacing-additional;
-  border-bottom: 1px solid $dark-yellow;
   transition: all 1s ease-out;
 
-  @include media($medium-devices) {
-    flex-basis: 45%;
-    margin-top: 0;
-    padding-bottom: 0;
-    border: none;
+  @include media-between-widths(
+    $min-width: $large-devices,
+    $max-width: $very-large-devices) {
+      width: 75%;
   }
-}
-
-.project--first {
-  margin-top: 0;
-}
-
-.project--last {
-  border-bottom: 1px solid transparent;
 }
 
 .project[data-emergence=hidden].appear-left {
@@ -183,6 +159,15 @@ $projects-spacing-additional: .95rem;
     margin-bottom: 1.3rem;
     font-size: 2.2rem;
   }
+
+  // Max viewport size in 1366x768 laptops.
+  @include media-between(
+    $min-width: $very-large-devices,
+    $max-height: 640px) {
+      margin-top: 1.35rem;
+      margin-bottom: 1.25rem;
+      font-size: 2rem;
+  }
 }
 
 .project__description {
@@ -192,6 +177,14 @@ $projects-spacing-additional: .95rem;
   @include media($medium-devices) {
     margin-bottom: 1.7rem;
     font-size: 1.4rem;
+  }
+
+  // Max viewport size in 1366x768 laptops.
+  @include media-between(
+    $min-width: $very-large-devices,
+    $max-height: 640px) {
+      margin-bottom: 1.65rem;
+      font-size: 1.2rem;
   }
 }
 
@@ -204,6 +197,13 @@ $projects-spacing-additional: .95rem;
 
   @include media($medium-devices) {
     margin-bottom: .6rem;
+  }
+
+  // Max viewport size in 1366x768 laptops.
+  @include media-between(
+    $min-width: $very-large-devices,
+    $max-height: 640px) {
+      margin-bottom: .55rem;
   }
 }
 
@@ -223,6 +223,13 @@ $projects-spacing-additional: .95rem;
   @include media($medium-devices) {
     font-size: .93rem;
   }
+
+  // Max viewport size in 1366x768 laptops.
+  @include media-between(
+    $min-width: $very-large-devices,
+    $max-height: 640px) {
+      font-size: .87rem;
+  }
 }
 
 .project__links {
@@ -237,6 +244,13 @@ $projects-spacing-additional: .95rem;
 
   @include media($medium-devices) {
     font-size: 1.4rem;
+  }
+
+  // Max viewport size in 1366x768 laptops.
+  @include media-between(
+    $min-width: $very-large-devices,
+    $max-height: 640px) {
+      font-size: 1.2rem;
   }
 }
 
@@ -253,35 +267,12 @@ $projects-spacing-additional: .95rem;
   border: none;
 }
 
-.projects__row-divisor {
-  display: none;
-  transition: all 2s;
-
-  @include media($medium-devices) {
-    display: initial;
-    margin: $projects-spacing auto;
-    width: 100%;
-  }
-}
-
-.projects-row-divisor[data-emergence=hidden] {
-  opacity: 0;
-}
-
-.projects-row-divisor[data-emergence=visible] {
-  opacity: 1;
-}
-
 .projects-footer {
   position: relative;
   @include flex-container(column);
-  margin-top: $projects-spacing-half + $projects-spacing-additional;
   width: 100%;
+  height: 100vh;
   @include background-gradient;
-
-  @include media($medium-devices) {
-    margin-top: $projects-spacing-half;
-  }
 }
 
 .projects-footer__link {
