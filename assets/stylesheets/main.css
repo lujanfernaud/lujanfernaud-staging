@@ -947,6 +947,7 @@ a {
 @media (min-width: 767px) {
   .project__tag {
     font-size: .93rem;
+    letter-spacing: 0.05rem;
   }
 }
 @media (min-width: 1199px) and (max-height: 640px) {

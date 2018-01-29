@@ -252,6 +252,7 @@ $projects-spacing-additional: .95rem;
 
   @include media($medium-devices) {
     font-size: .93rem;
+    letter-spacing: 0.05rem;
   }
 
   // Max viewport size in 1366x768 laptops.
