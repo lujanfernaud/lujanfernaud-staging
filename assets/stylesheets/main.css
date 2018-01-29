@@ -832,7 +832,17 @@ a {
 }
 @media (min-width: 767px) {
   .project__image-corner {
-    border-width: 0 9rem 9rem 0;
+    border-width: 0 13rem 13rem 0;
+  }
+}
+@media (min-width: 1199px) and (max-height: 640px) {
+  .project__image-corner {
+    border-width: 0 9.5rem 9.5rem 0;
+  }
+}
+@media (min-width: 1400px) and (max-height: 900px) {
+  .project__image-corner {
+    border-width: 0 10.5rem 10.5rem 0;
   }
 }
 
@@ -844,9 +854,23 @@ a {
 }
 @media (min-width: 767px) {
   .project__icon {
+    top: 1.95rem;
+    right: 1.95rem;
+    width: 3.25rem;
+  }
+}
+@media (min-width: 1199px) and (max-height: 640px) {
+  .project__icon {
     top: 1.4rem;
     right: 1.4rem;
-    width: 2.25rem;
+    width: 2.5rem;
+  }
+}
+@media (min-width: 1400px) and (max-height: 900px) {
+  .project__icon {
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 2.75rem;
   }
 }
 
