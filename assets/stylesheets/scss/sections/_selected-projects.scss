@@ -96,12 +96,12 @@ $projects-spacing-additional: .95rem;
 }
 
 .project[data-emergence=hidden].appear-left {
-  left: -1rem;
+  left: -$emergence-offset;
   opacity: 0;
 }
 
 .project[data-emergence=hidden].appear-right {
-  left: 1rem;
+  left: $emergence-offset;
   opacity: 0;
 }
 
@@ -314,6 +314,10 @@ $projects-spacing-additional: .95rem;
   border: none;
 }
 
+
+// Section Footer
+
+
 .projects-footer {
   position: relative;
   @include flex-container(column);
@@ -338,7 +342,7 @@ $projects-spacing-additional: .95rem;
 }
 
 .projects-footer__link[data-emergence=hidden] {
-  bottom: -1rem;
+  bottom: -$emergence-offset;
   opacity: 0;
 }
 

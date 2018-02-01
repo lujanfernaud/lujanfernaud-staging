@@ -9,10 +9,15 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: $dejavu-serif;
   font-size: 18px;
   color: $dark-violet;
+  overflow-x: hidden;
 
   @include media($medium-devices) {
     font-size: 22px;

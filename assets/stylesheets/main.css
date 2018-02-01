@@ -386,10 +386,15 @@ template {
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
   font-size: 18px;
   color: #423d78;
+  overflow-x: hidden;
 }
 @media (min-width: 767px) {
   body {
@@ -797,12 +802,12 @@ a {
 }
 
 .project[data-emergence=hidden].appear-left {
-  left: -1rem;
+  left: -1.5rem;
   opacity: 0;
 }
 
 .project[data-emergence=hidden].appear-right {
-  left: 1rem;
+  left: 1.5rem;
   opacity: 0;
 }
 
@@ -1059,7 +1064,7 @@ a {
 }
 
 .projects-footer__link[data-emergence=hidden] {
-  bottom: -1rem;
+  bottom: -1.5rem;
   opacity: 0;
 }
 
@@ -1094,7 +1099,7 @@ a {
 }
 
 .lets-talk-container[data-emergence=hidden] {
-  bottom: -1rem;
+  bottom: -1.5rem;
   opacity: 0;
 }
 

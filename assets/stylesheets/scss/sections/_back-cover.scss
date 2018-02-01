@@ -25,7 +25,7 @@
 }
 
 .lets-talk-container[data-emergence=hidden] {
-  bottom: -1rem;
+  bottom: -$emergence-offset;
   opacity: 0;
 }
 
