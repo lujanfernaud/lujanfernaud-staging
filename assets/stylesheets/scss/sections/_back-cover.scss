@@ -415,13 +415,14 @@
   @include media($large-devices) {
     font-size: 1.4rem;
   }
-}
 
-.contact-section__link-email:hover,
-.contact-section__link-email:focus {
-  color: $light-grey-1;
-  background-color: $brand-color-saturated;
-  border-bottom: 1px solid $brand-color-saturated;
+  &:hover,
+  &:focus {
+    color: $light-grey-1;
+    border-bottom: 1px solid $brand-color-saturated;
+  }
+
+  @include background-hover-animation;
 }
 
 .contact-section-transition {

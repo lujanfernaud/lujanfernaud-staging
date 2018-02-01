@@ -979,6 +979,9 @@ a {
   margin-right: .3rem;
   font-size: 1.2rem;
   color: #4d3e94;
+  position: relative;
+  transition: all .25s;
+  z-index: 0;
 }
 @media (min-width: 767px) {
   .project__link {
@@ -990,12 +993,27 @@ a {
     font-size: 1.2rem;
   }
 }
-
-.project__link:hover,
-.project__link:focus {
+.project__link:hover, .project__link:focus {
   color: #ffe808;
   background-color: #4d3e94;
   border-bottom: 1px solid #4d3e94;
+}
+.project__link:hover, .project__link:focus {
+  background-color: transparent;
+}
+.project__link::before {
+  content: "";
+  position: absolute;
+  bottom: -2%;
+  left: 0;
+  right: 0;
+  height: 0%;
+  background-color: #4d3e94;
+  transition: all .25s;
+  z-index: -10;
+}
+.project__link:hover::before, .project__link:focus::before {
+  height: 104%;
 }
 
 .projects__hr {
@@ -1503,6 +1521,9 @@ a {
   margin-right: .3rem;
   font-size: 1rem;
   color: #4d3e94;
+  position: relative;
+  transition: all .25s;
+  z-index: 0;
 }
 @media (min-width: 767px) {
   .contact-section__link-email {
@@ -1515,12 +1536,26 @@ a {
     font-size: 1.4rem;
   }
 }
-
-.contact-section__link-email:hover,
-.contact-section__link-email:focus {
+.contact-section__link-email:hover, .contact-section__link-email:focus {
   color: #fbfafc;
-  background-color: #4d3e94;
   border-bottom: 1px solid #4d3e94;
+}
+.contact-section__link-email:hover, .contact-section__link-email:focus {
+  background-color: transparent;
+}
+.contact-section__link-email::before {
+  content: "";
+  position: absolute;
+  bottom: -2%;
+  left: 0;
+  right: 0;
+  height: 0%;
+  background-color: #4d3e94;
+  transition: all .25s;
+  z-index: -10;
+}
+.contact-section__link-email:hover::before, .contact-section__link-email:focus::before {
+  height: 104%;
 }
 
 .contact-section-transition {
@@ -1730,6 +1765,9 @@ a {
 .thanks-link {
   font-size: 1rem;
   font-style: italic;
+  position: relative;
+  transition: all .25s;
+  z-index: 0;
 }
 @media (min-width: 767px) {
   .thanks-link {
@@ -1741,11 +1779,26 @@ a {
     font-size: 1rem;
   }
 }
-
-.thanks-link:hover,
-.thanks-link:focus {
+.thanks-link:hover, .thanks-link:focus {
   color: #fbfafc;
+  border-bottom: 1px solid #4d3e94;
+}
+.thanks-link:hover, .thanks-link:focus {
+  background-color: transparent;
+}
+.thanks-link::before {
+  content: "";
+  position: absolute;
+  bottom: -2%;
+  left: 0;
+  right: 0;
+  height: 0%;
   background-color: #4d3e94;
+  transition: all .25s;
+  z-index: -10;
+}
+.thanks-link:hover::before, .thanks-link:focus::before {
+  height: 104%;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -3,12 +3,19 @@
 //
 
 
+// Container
+
+
 @mixin flex-container($direction) {
   display: flex;
   flex-direction: $direction;
   justify-content: center;
   align-items: center;
 }
+
+
+// Media
+
 
 @mixin media($width) {
   @media (min-width: $width) {
@@ -34,6 +41,10 @@
   }
 }
 
+
+// Background
+
+
 @mixin background-gradient {
   background: -webkit-linear-gradient(-45deg, $pinkish-violet 0, $brand-color 100%);
   background: -moz-linear-gradient(135deg, $pinkish-violet 0, $brand-color 100%);
@@ -46,6 +57,38 @@
   -webkit-background-size: auto auto;
   background-size: auto auto;
 }
+
+@mixin background-hover-animation {
+  position: relative;
+  transition: all .25s;
+  z-index: 0;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -2%;
+    left: 0;
+    right: 0;
+    height: 0%;
+    background-color: $brand-color-saturated;
+    transition: all .25s;
+    z-index: -10;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    height: 104%;
+  }
+}
+
+
+// Various
+
 
 @mixin in-circle-degrees($degrees, $circle-width) {
   transform: rotate($degrees) translate($circle-width / 2) rotate(-$degrees);

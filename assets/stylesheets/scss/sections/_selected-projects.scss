@@ -297,13 +297,15 @@ $projects-spacing-additional: .95rem;
     $max-height: 640px) {
       font-size: 1.2rem;
   }
-}
 
-.project__link:hover,
-.project__link:focus {
-  color: $yellow;
-  background-color: $brand-color-saturated;
-  border-bottom: 1px solid $brand-color-saturated;
+  &:hover,
+  &:focus {
+    color: $yellow;
+    background-color: $brand-color-saturated;
+    border-bottom: 1px solid $brand-color-saturated;
+  }
+
+  @include background-hover-animation;
 }
 
 .projects__hr {

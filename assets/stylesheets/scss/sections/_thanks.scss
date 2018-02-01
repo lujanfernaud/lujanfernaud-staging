@@ -78,10 +78,12 @@
   @include media-iphone-large {
     font-size: 1rem;
   }
-}
 
-.thanks-link:hover,
-.thanks-link:focus {
-  color: $light-grey-1;
-  background-color: $brand-color-saturated;
+  &:hover,
+  &:focus {
+    color: $light-grey-1;
+    border-bottom: 1px solid $brand-color-saturated;
+  }
+
+  @include background-hover-animation;
 }
