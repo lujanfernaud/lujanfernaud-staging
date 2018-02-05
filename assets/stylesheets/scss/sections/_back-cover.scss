@@ -82,6 +82,7 @@
   @include background-gradient;
   cursor: pointer;
   border-radius: 100%;
+  @include diagonal-box-shadow(0.35rem);
   overflow: hidden;
   z-index: 1;
 

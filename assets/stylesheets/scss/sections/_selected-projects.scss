@@ -113,7 +113,7 @@ $projects-spacing-additional: .95rem;
 .project__image-container {
   position: relative;
   margin-bottom: 0.5rem;
-  box-shadow: 0.25rem 0.25rem 0 rgba(black, .1);
+  @include diagonal-box-shadow(0.35rem);
 }
 
 .project__image-container::after {
@@ -278,6 +278,7 @@ $projects-spacing-additional: .95rem;
   color: $brand-color-saturated;
   text-transform: uppercase;
   border: 1px solid $brand-color-saturated;
+  @include diagonal-box-shadow(0.25rem);
 
   @include media($medium-devices) {
     font-size: .93rem;
@@ -348,6 +349,7 @@ $projects-spacing-additional: .95rem;
   font-style: italic;
   text-align: center;
   line-height: 1.4;
+  @include diagonal-box-shadow(0.35rem);
   transition: all 1s;
 
   @include media($medium-devices) {

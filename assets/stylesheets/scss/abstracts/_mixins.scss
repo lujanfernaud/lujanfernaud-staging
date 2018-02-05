@@ -65,6 +65,14 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1);
 }
 
+@mixin diagonal-box-shadow($amount) {
+  box-shadow: $amount $amount 0 rgba(black, .1);
+}
+
+@mixin diagonal-text-shadow($amount) {
+  text-shadow: $amount $amount 0 rgba(black, .1);
+}
+
 @mixin background-hover-animation {
   position: relative;
   transition: all .25s;
