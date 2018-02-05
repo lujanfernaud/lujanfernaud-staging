@@ -4,9 +4,9 @@
 
 
 .btn {
+  color: $brand-color;
   border: 1px solid $brand-color-saturated;
   border-bottom: .2rem solid $brand-color-saturated;
-  color: $brand-color;
   background-color: transparent;
   font-style: italic;
   transition: all .5s;
@@ -16,6 +16,21 @@
 .btn:focus {
   color: $light-grey-1;
   background-color: $brand-color-saturated;
+}
+
+.btn-outline {
+  color: $light-grey-1;
+  border: 1px solid $light-grey-1;
+  border-bottom: .2rem solid $light-grey-1;
+  background-color: transparent;
+  font-style: italic;
+  transition: all .5s;
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+  color: $brand-color-saturated;
+  background-color: $light-grey-1;
 }
 
 .btn--yellow {
