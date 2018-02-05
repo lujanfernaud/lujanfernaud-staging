@@ -313,15 +313,6 @@ $projects-spacing-additional: .95rem;
     $max-height: 640px) {
       font-size: 1.2rem;
   }
-
-  &:hover,
-  &:focus {
-    color: $light-grey-1;
-    background-color: $brand-color-saturated;
-    border-bottom: 1px solid $brand-color-saturated;
-  }
-
-  @include background-hover-animation;
 }
 
 .projects__hr {
