@@ -798,7 +798,7 @@ a {
 }
 
 .project-container:nth-child(even) {
-  background-color: #ffef54;
+  background-color: #f3f0f6;
 }
 @media (min-width: 1199px) {
   .project-container:nth-child(even) {

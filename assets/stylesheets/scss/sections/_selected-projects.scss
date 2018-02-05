@@ -75,7 +75,7 @@ $projects-spacing-additional: .95rem;
 }
 
 .project-container:nth-child(even) {
-  background-color: $light-yellow;
+  background-color: darken($light-grey-1, 3%);
 
   @include media($very-large-devices) {
     background-color: transparent;
