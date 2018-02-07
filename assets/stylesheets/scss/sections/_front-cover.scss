@@ -52,7 +52,6 @@
   font-size: 2rem;
   font-weight: 600;
   transition: all .5s;
-  @include diagonal-text-shadow(0.25rem);
 
   @include media($medium-devices) {
     font-size: 4rem;
@@ -84,7 +83,6 @@
   margin-top: .88rem;
   font-family: $dejavu-sans;
   font-size: 1.2rem;
-  @include diagonal-text-shadow(0.15rem);
 
   @include media($medium-devices) {
     margin-top: 1.01rem;
