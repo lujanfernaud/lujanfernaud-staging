@@ -10,8 +10,12 @@
   width: 100%;
   padding: 1rem;
   color: $brand-color-saturated;
-  background-color: $light-grey-2;
   overflow-x: hidden;
+  @include background-polka-dots(
+    $background: $light-grey-2,
+    $dots-1:     $brand-color,
+    $dots-2:     $pinkish-violet,
+    $opacity:    .018);
 
   @include media($very-large-devices) {
     width: 100%;

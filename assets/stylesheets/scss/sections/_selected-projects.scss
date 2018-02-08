@@ -20,7 +20,11 @@ $projects-spacing-additional: .95rem;
   @include flex-container(column);
   width: 100%;
   color: $brand-color-saturated;
-  background-color: darken($light-grey-1, 1%);
+  @include background-polka-dots(
+    $background: darken($light-grey-1, 1%),
+    $dots-1:     $brand-color,
+    $dots-2:     $pinkish-violet,
+    $opacity:    .018);
 }
 
 .project-row-container {
@@ -34,7 +38,11 @@ $projects-spacing-additional: .95rem;
 
 .project-row-container:nth-child(even) {
   @include media($very-large-devices) {
-    background-color: darken($light-grey-1, 3%);
+    @include background-polka-dots(
+      $background: darken($light-grey-1, 3.7%),
+      $dots-1:     $brand-color,
+      $dots-2:     $pinkish-violet,
+      $opacity:    .016);
   }
 }
 
