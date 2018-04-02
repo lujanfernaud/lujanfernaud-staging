@@ -70,16 +70,17 @@ $projects-spacing-additional: .95rem;
   @include media-between-widths(
     $min-width: $large-devices,
     $max-width: $very-large-devices) {
-      width: 75vw;
+      width: 65vw;
   }
 
   @include media($very-large-devices) {
     flex-direction: row;
-    width: 79vw;
+    width: 84vw;
   }
 
   @include media($extra-large-devices) {
-    width: 67vw;
+    width: 70vw;
+    max-width: 1400px;
   }
 }
 
@@ -96,7 +97,7 @@ $projects-spacing-additional: .95rem;
 .project__image-container {
   flex-basis: 50%;
   position: relative;
-  @include diagonal-box-shadow(0.35rem);
+  @include diagonal-box-shadow(.35rem);
 }
 
 .project__image-container::after {
@@ -189,6 +190,17 @@ $projects-spacing-additional: .95rem;
   }
 }
 
+.project__separator {
+  display: none;
+
+  @include media-between-widths(
+    $min-width: $large-devices,
+    $max-width: $very-large-devices) {
+      display: block;
+      height: 1.9rem;
+  }
+}
+
 .project__information {
   display: flex;
   flex-direction: column;
@@ -198,15 +210,15 @@ $projects-spacing-additional: .95rem;
 
 .project__title {
   margin-top: 1.75rem;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.2rem;
   font-size: 1.6rem;
   font-style: italic;
   color: $brand-color-saturated;
 
   @include media($medium-devices) {
     margin-top: 2.1rem;
-    margin-bottom: 1.58rem;
-    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 2.7rem;
   }
 
   @include media($large-devices) {
@@ -217,8 +229,8 @@ $projects-spacing-additional: .95rem;
   @include media-between(
     $min-width: $very-large-devices,
     $max-height: 640px) {
-      margin-bottom: 1.37rem;
-      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-size: 2.1rem;
   }
 }
 
@@ -246,26 +258,35 @@ $projects-spacing-additional: .95rem;
   flex-wrap: wrap;
   justify-content: start;
   margin-top: 1.5rem;
-  margin-bottom: .96rem;
-
-  @include media($medium-devices) {
-    margin-bottom: 1.4rem;
-  }
-
-  @include media($large-devices) {
-    margin-bottom: .8rem;
-  }
+  margin-bottom: 1.95rem;
 
   // Max viewport size in 1366x768 laptops.
   @include media-between(
     $min-width: $very-large-devices,
     $max-height: 640px) {
       margin-top: 0;
-      margin-bottom: .5rem;
+      margin-bottom: 1.2rem;
   }
 }
 
-.project__tag {
+.project__tags--text {
+  margin: 0 auto;
+  font-family: $dejavu-sans;
+  width: 100%;
+
+  @include media($medium-devices) {
+    font-size: 1.4rem;
+  }
+
+  // Max viewport size in 1366x768 laptops.
+  @include media-between(
+    $min-width: $very-large-devices,
+    $max-height: 640px) {
+      font-size: 1.2rem;
+  }
+}
+
+.project__tags--box {
   margin-right: .77rem;
   margin-bottom: .6rem;
   padding-top: .5rem;
@@ -299,6 +320,7 @@ $projects-spacing-additional: .95rem;
 .project__link {
   padding-top: 3px;
   margin-right: .3rem;
+  font-family: $dejavu-sans;
   font-size: 1.2rem;
   color: $brand-color-saturated;
 
