@@ -813,7 +813,7 @@ a {
 .project__image-container {
   flex-basis: 50%;
   position: relative;
-  box-shadow: 0.35rem 0.35rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0.41rem 0.41rem 0 rgba(0, 0, 0, 0.1);
 }
 
 .project__image-container::after {
@@ -1077,7 +1077,7 @@ a {
   font-style: italic;
   text-align: center;
   line-height: 1.4;
-  box-shadow: 0.35rem 0.35rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0.41rem 0.41rem 0 rgba(0, 0, 0, 0.1);
   transition: all 1s;
 }
 @media (min-width: 767px) {
@@ -1197,7 +1197,7 @@ a {
   background-size: auto auto;
   cursor: pointer;
   border-radius: 100%;
-  box-shadow: 0.35rem 0.35rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0.41rem 0.41rem 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
   z-index: 1;
 }

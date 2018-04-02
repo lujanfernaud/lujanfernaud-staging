@@ -97,7 +97,7 @@ $projects-spacing-additional: .95rem;
 .project__image-container {
   flex-basis: 50%;
   position: relative;
-  @include diagonal-box-shadow(.35rem);
+  @include diagonal-box-shadow(.41rem);
 }
 
 .project__image-container::after {
@@ -361,7 +361,7 @@ $projects-spacing-additional: .95rem;
   font-style: italic;
   text-align: center;
   line-height: 1.4;
-  @include diagonal-box-shadow(0.35rem);
+  @include diagonal-box-shadow(.41rem);
   transition: all 1s;
 
   @include media($medium-devices) {
