@@ -919,7 +919,12 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-basis: 46.5%;
+  flex-basis: 45.5%;
+}
+@media (min-width: 1199px) {
+  .project__information {
+    margin-left: 5.4%;
+  }
 }
 
 .project__title {
