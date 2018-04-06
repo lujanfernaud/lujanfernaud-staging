@@ -79,8 +79,7 @@ $projects-spacing-additional: .95rem;
   }
 
   @include media($extra-large-devices) {
-    width: 70vw;
-    max-width: 1400px;
+    max-width: 1350px;
   }
 }
 
@@ -145,13 +144,6 @@ $projects-spacing-additional: .95rem;
     border-width: 0 13rem 13rem 0;
   }
 
-  // Max viewport size in 1366x768 laptops.
-  @include media-between(
-    $min-width: $very-large-devices,
-    $max-height: 640px) {
-      border-width: 0 9.5rem 9.5rem 0;
-  }
-
   @include media-between(
     $min-width: $extra-large-devices,
     $max-height: 900px) {
@@ -170,15 +162,6 @@ $projects-spacing-additional: .95rem;
     top: 1.95rem;
     right: 1.95rem;
     width: 3.25rem;
-  }
-
-  // Max viewport size in 1366x768 laptops.
-  @include media-between(
-    $min-width: $very-large-devices,
-    $max-height: 640px) {
-      top: 1.4rem;
-      right: 1.4rem;
-      width: 2.5rem;
   }
 
   @include media-between(
@@ -208,7 +191,7 @@ $projects-spacing-additional: .95rem;
   flex-basis: 45.5%;
 
   @include media($very-large-devices) {
-    margin-left: 5.4%;
+    margin-left: 5.2%;
   }
 }
 
@@ -221,20 +204,16 @@ $projects-spacing-additional: .95rem;
 
   @include media($medium-devices) {
     margin-top: 2.1rem;
-    margin-bottom: 2.5rem;
-    font-size: 2.7rem;
+    margin-bottom: 2.6rem;
+    font-size: 2.6rem;
   }
 
   @include media($large-devices) {
     margin-top: 0;
   }
 
-  // Max viewport size in 1366x768 laptops.
-  @include media-between(
-    $min-width: $very-large-devices,
-    $max-height: 640px) {
-      margin-bottom: 2rem;
-      font-size: 2.1rem;
+  @include media($extra-large-devices) {
+    font-size: 2.8rem;
   }
 }
 
@@ -245,15 +224,11 @@ $projects-spacing-additional: .95rem;
 
   @include media($medium-devices) {
     margin-bottom: .4rem;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
 
-  // Max viewport size in 1366x768 laptops.
-  @include media-between(
-    $min-width: $very-large-devices,
-    $max-height: 640px) {
-      margin-bottom: 1.65rem;
-      font-size: 1.2rem;
+  @include media($extra-large-devices) {
+    font-size: 1.45rem;
   }
 }
 
@@ -261,16 +236,8 @@ $projects-spacing-additional: .95rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
-  margin-top: 1.5rem;
-  margin-bottom: 1.95rem;
-
-  // Max viewport size in 1366x768 laptops.
-  @include media-between(
-    $min-width: $very-large-devices,
-    $max-height: 640px) {
-      margin-top: 0;
-      margin-bottom: 1.2rem;
-  }
+  margin-top: 1.4rem;
+  margin-bottom: 1.85rem;
 }
 
 .project__tags--text {
@@ -279,14 +246,11 @@ $projects-spacing-additional: .95rem;
   width: 100%;
 
   @include media($medium-devices) {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
 
-  // Max viewport size in 1366x768 laptops.
-  @include media-between(
-    $min-width: $very-large-devices,
-    $max-height: 640px) {
-      font-size: 1.2rem;
+  @include media($extra-large-devices) {
+    font-size: 1.45rem;
   }
 }
 
@@ -308,13 +272,6 @@ $projects-spacing-additional: .95rem;
     font-size: .93rem;
     letter-spacing: 0.05rem;
   }
-
-  // Max viewport size in 1366x768 laptops.
-  @include media-between(
-    $min-width: $very-large-devices,
-    $max-height: 640px) {
-      font-size: .87rem;
-  }
 }
 
 .project__links {
@@ -329,14 +286,11 @@ $projects-spacing-additional: .95rem;
   color: $brand-color-saturated;
 
   @include media($medium-devices) {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
 
-  // Max viewport size in 1366x768 laptops.
-  @include media-between(
-    $min-width: $very-large-devices,
-    $max-height: 640px) {
-      font-size: 1.2rem;
+  @include media($extra-large-devices) {
+    font-size: 1.45rem;
   }
 }
 
