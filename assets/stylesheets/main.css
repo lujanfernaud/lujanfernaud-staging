@@ -799,16 +799,6 @@ a {
   }
 }
 
-.project[data-emergence=hidden] {
-  bottom: -1.95rem;
-  opacity: 0;
-}
-
-.project[data-emergence=visible] {
-  bottom: 0;
-  opacity: 1;
-}
-
 .project__image-container {
   flex-basis: 50%;
   position: relative;
@@ -1066,16 +1056,6 @@ a {
   }
 }
 
-.projects-footer__link[data-emergence=hidden] {
-  bottom: -1.95rem;
-  opacity: 0;
-}
-
-.projects-footer__link[data-emergence=visible] {
-  bottom: 0;
-  opacity: 1;
-}
-
 .back-cover {
   position: relative;
   display: flex;
@@ -1102,16 +1082,6 @@ a {
   position: relative;
   transition: right 1s, opacity 1s, bottom 1s;
   right: 0;
-}
-
-.lets-talk-container[data-emergence=hidden] {
-  bottom: -1.95rem;
-  opacity: 0;
-}
-
-.lets-talk-container[data-emergence=visible] {
-  bottom: 0;
-  opacity: 1;
 }
 
 .lets-talk-container--hidden {

@@ -28,16 +28,6 @@
   right: 0;
 }
 
-.lets-talk-container[data-emergence=hidden] {
-  bottom: -$emergence-offset;
-  opacity: 0;
-}
-
-.lets-talk-container[data-emergence=visible] {
-  bottom: 0;
-  opacity: 1;
-}
-
 .lets-talk-container--hidden {
   right: -200%;
 }

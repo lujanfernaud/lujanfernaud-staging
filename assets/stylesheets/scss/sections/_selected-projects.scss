@@ -83,16 +83,6 @@ $projects-spacing-additional: .95rem;
   }
 }
 
-.project[data-emergence=hidden] {
-  bottom: -$emergence-offset;
-  opacity: 0;
-}
-
-.project[data-emergence=visible] {
-  bottom: 0;
-  opacity: 1;
-}
-
 .project__image-container {
   flex-basis: 50%;
   position: relative;
@@ -326,14 +316,4 @@ $projects-spacing-additional: .95rem;
     margin: ($projects-spacing * 2 + $projects-spacing-half) auto;
     font-size: 1.7rem;
   }
-}
-
-.projects-footer__link[data-emergence=hidden] {
-  bottom: -$emergence-offset;
-  opacity: 0;
-}
-
-.projects-footer__link[data-emergence=visible] {
-  bottom: 0;
-  opacity: 1;
 }
