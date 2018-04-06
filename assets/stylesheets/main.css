@@ -812,6 +812,7 @@ a {
 .project__image-container {
   flex-basis: 50%;
   position: relative;
+  border-bottom: 0.4rem solid #4d3e94;
   box-shadow: 0.41rem 0.41rem 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -833,7 +834,6 @@ a {
 .project__image {
   display: block;
   background-color: #4d3e94;
-  border-bottom: 0.4rem solid #4d3e94;
 }
 
 .project__image-overlay {
