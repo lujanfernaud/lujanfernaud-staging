@@ -150,13 +150,13 @@ class ContactFormToggler {
 
   constructor() {
     this.formIsOpen      = false;
-    this.backCover       = document.querySelector(".back-cover");
     this.contactSection  = document.querySelector(".contact-section-container");
     this.sectionOpener   = document.querySelector(".lets-talk-link");
     this.sectionCloser   = document.querySelector(".contact-section__close");
     this.sectionTogglers = [this.sectionOpener, this.sectionCloser];
 
     this.delayedToggler  = new DelayedClassToggler();
+    this.scrollToggler   = new ScrollToggler();
     this.letsTalkToggler = new LetsTalkElementsToggler();
   }
 
@@ -193,8 +193,7 @@ class ContactFormToggler {
   }
 
   toggleScroll() {
-    document.body.classList.toggle("overflow-hidden");
-    this.backCover.classList.toggle("overflow-hidden");
+    this.scrollToggler.toggle();
   }
 
   toggleLetsTalk() {
@@ -203,6 +202,22 @@ class ContactFormToggler {
 
   toggleContactForm() {
     this.contactSection.classList.toggle("contact-section-container--revealed");
+  }
+
+}
+
+class ScrollToggler {
+
+  constructor() {
+    this.html = document.getElementsByTagName("html")[0];
+    this.body = document.body;
+    this.backCover = document.querySelector(".back-cover");
+  }
+
+  toggle() {
+    this.html.classList.toggle("overflow-hidden");
+    this.body.classList.toggle("overflow-hidden");
+    this.backCover.classList.toggle("overflow-hidden");
   }
 
 }
