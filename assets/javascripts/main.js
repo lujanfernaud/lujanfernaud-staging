@@ -81,7 +81,7 @@ class LetsTalkAnimator {
 
   watch() {
     let backCover    = document.querySelector(".back-cover");
-    let letsTalk     = new LetsTalkElementsToggler();
+    let letsTalk     = new LetsTalkToggler();
     let pixelsOffset = { offset: -100 };
 
     inViewport(backCover, pixelsOffset, animateLetsTalkWithDelay);
@@ -96,7 +96,7 @@ class LetsTalkAnimator {
 
 }
 
-class LetsTalkElementsToggler {
+class LetsTalkToggler {
 
   constructor() {
     this.letsTalk       = document.querySelector(".lets-talk-container");
@@ -157,7 +157,7 @@ class ContactFormToggler {
 
     this.delayedToggler  = new DelayedClassToggler();
     this.scrollToggler   = new ScrollToggler();
-    this.letsTalkToggler = new LetsTalkElementsToggler();
+    this.letsTalkToggler = new LetsTalkToggler();
   }
 
   watch() {
