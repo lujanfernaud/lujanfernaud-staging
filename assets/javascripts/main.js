@@ -80,18 +80,19 @@ const fader = {
 class LetsTalkAnimator {
 
   watch() {
-    let backCover    = document.querySelector(".back-cover");
-    let letsTalk     = new LetsTalkToggler();
-    let pixelsOffset = { offset: -100 };
+    let letsTalk = new LetsTalkToggler();
 
-    inViewport(backCover, pixelsOffset, animateLetsTalkWithDelay);
+    inView.threshold(0.9);
 
-    function animateLetsTalkWithDelay() {
-      window.setTimeout(() => {
+    inView(".back-cover")
+      .on("enter", () => {
         letsTalk.toggleAnimation();
         letsTalk.toggleHoverActive();
-      }, 1300);
-    }
+      })
+      .on("exit", () => {
+        letsTalk.toggleAnimation();
+        letsTalk.toggleHoverActive();
+      });
   }
 
 }

@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "formbase": "^6.0.3"
+    "formbase": "^6.0.3",
+    "in-view": "^0.6.1"
   }
 }
