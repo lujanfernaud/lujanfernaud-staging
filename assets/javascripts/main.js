@@ -54,19 +54,15 @@ class ChevronHider {
   }
 
   watch() {
-    document.onscroll = () => {
-      let pageScrolled = window.pageYOffset ||
-                         document.documentElement.scrollTop ||
-                         document.body.scrollTop;
+    inView.threshold(0.9);
 
-      if (pageScrolled > 40) {
-        fader.fadeOut(this.chevron);
-      }
-
-      if (pageScrolled < 40) {
+    inView(".front-cover")
+      .on("enter", () => {
         fader.fadeIn(this.chevron);
-      }
-    };
+      })
+      .on("exit", () => {
+        fader.fadeOut(this.chevron);
+      });
   }
 
 }
