@@ -1,0 +1,86 @@
+draw:
+  title: Draw
+  description: A daily selection of reference pictures to focus on drawing practice.
+  tags: "Built with: Rails, RSpec, jQuery, Unsplash API"
+  links:
+    - {title: Online, src: "https://thedrawapp.herokuapp.com"}
+    - {title: GitHub, src: "https://github.com/lujanfernaud/draw"}
+  image:
+    src: assets/images/screenshots/draw-screenshot.png
+    alt: Draw App Screenshot
+  icon:
+    src: assets/images/icons/rails_icon.svg
+    alt: Rails
+    title: Rails
+
+yawo:
+  title: Yawo
+  description: A simple flight booker with journey visualization and other niceties.
+  tags: "Built with: Rails, Minitest, jQuery, Leaflet API"
+  links:
+    - {title: Online, src: "https://yawo.herokuapp.com"}
+    - {title: GitHub, src: "https://github.com/lujanfernaud/yawo"}
+  image:
+    src: assets/images/screenshots/yawo-screenshot.png
+    alt: YAWO App Screenshot
+  icon:
+    src: assets/images/icons/rails_icon.svg
+    alt: Rails
+    title: Rails
+
+ruby_chess:
+  title: Ruby Chess
+  description: A two players chess game for the command line. All the rules of chess are implemented.
+  tags: "Built with: Ruby, RSpec, OOP"
+  links:
+    - {title: GitHub, src: "https://github.com/lujanfernaud/ruby-chess"}
+  image:
+    src: assets/images/screenshots/ruby-chess-screenshot.jpg
+    alt: Ruby Chess Screenshot
+  icon:
+    src: assets/images/icons/ruby_icon.svg
+    alt: Ruby
+    title: Ruby
+
+ruby_mastermind:
+  title: Ruby Mastermind
+  description: A Mastermind game for the command line. You can play against the computer!
+  tags: "Built with: Ruby, RSpec, OOP"
+  links:
+    - {title: GitHub, src: "https://github.com/lujanfernaud/ruby-mastermind"}
+  image:
+    src: assets/images/screenshots/ruby-mastermind-screenshot.jpg
+    alt: Ruby Mastermind Screenshot
+  icon:
+    src: assets/images/icons/ruby_icon.svg
+    alt: Ruby
+    title: Ruby
+
+rock_paper_scissors:
+  title: Rock, Paper, Scissors
+  description: The essential tool for serious decision-makers, with a fully responsive design.
+  tags: "Built with: JavaScript (ES6), Flexbox, Sass"
+  links:
+    - {title: Online, src: "http://lujanfernaud.com/js-rock-paper-scissors"}
+    - {title: GitHub, src: "https://github.com/lujanfernaud/js-rock-paper-scissors"}
+  image:
+    src: assets/images/screenshots/rps-screenshot.png
+    alt: Rock, Paper, Scissors Screenshot
+  icon:
+    src: assets/images/icons/javascript_icon.svg
+    alt: JavaScript
+    title: JavaScript
+
+portfolio:
+  title: This Portfolio
+  description: "The hand-crafted portfolio that you&rsquo;re kindly reading."
+  tags: "Built with: Middleman, Sass, Flexbox, JavaScript (ES6)"
+  links:
+    - {title: GitHub, src: "https://github.com/lujanfernaud/lujanfernaud.github.io"}
+  image:
+    src: assets/images/screenshots/portfolio-screenshot.png
+    alt: Portfolio Screenshot
+  icon:
+    src: assets/images/icons/sass_icon.svg
+    alt: Sass
+    title: Sass

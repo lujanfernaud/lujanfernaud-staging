@@ -1,0 +1,47 @@
+<section class="projects" id="selected-projects">
+
+  <%= partial "partials/projects/project",
+    locals: {
+      project: data.projects.draw
+    }
+  %>
+
+  <%= partial "partials/projects/project",
+    locals: {
+      project: data.projects.yawo
+    }
+  %>
+
+  <%= partial "partials/projects/project",
+    locals: {
+      project: data.projects.ruby_chess
+    }
+  %>
+
+  <%= partial "partials/projects/project",
+    locals: {
+      project: data.projects.ruby_mastermind
+    }
+  %>
+
+  <%= partial "partials/projects/project",
+    locals: {
+      project: data.projects.rock_paper_scissors
+    }
+  %>
+
+  <%= partial "partials/projects/project",
+    locals: {
+      project: data.projects.portfolio
+    }
+  %>
+
+  <footer class="projects-footer">
+    <a class="projects-footer__link btn-outline btn--gigantic"
+      href="https://github.com/lujanfernaud?tab=repositories"
+       >
+      See all my repos on GitHub
+    </a>
+  </footer>
+
+</section>

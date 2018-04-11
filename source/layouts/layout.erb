@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google" content="notranslate">
+    <meta name="description" content="Full-stack web developer passionate about creating great products with Ruby, CSS, and JavaScript. Moved by clean and SOLID code, clean design, and user experience.">
+    <link rel="icon" type="image/png" href="assets/images/favicon-64.png">
+    <title><%= current_page.data.title %></title>
+    <%= stylesheet_link_tag "main" %>
+    <%= stylesheet_link_tag "fonts" %>
+  </head>
+  <body>
+    <%= yield %>
+
+    <%= javascript_include_tag "main" %>
+    <script>
+      var scroll = new SmoothScroll("[data-scroll]", {
+        easing: "easeInOutQuad",
+        before: () => {
+          document.querySelector(".front-cover__chevron-down")
+            .classList.add("display-none");
+        },
+        after: () => {
+          document.querySelector(".front-cover__chevron-down")
+            .classList.remove("display-none");
+        }
+      });
+    </script>
+  </body>
+</html>
