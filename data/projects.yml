@@ -59,7 +59,7 @@ ruby_mastermind:
 rock_paper_scissors:
   title: Rock, Paper, Scissors
   description: The essential tool for serious decision-makers, with a fully responsive design.
-  tags: "Built with: JavaScript (ES6), Flexbox, Sass"
+  tags: "Built with: ES6, Flexbox, Sass"
   links:
     - {title: Online, src: "http://lujanfernaud.com/js-rock-paper-scissors"}
     - {title: GitHub, src: "https://github.com/lujanfernaud/js-rock-paper-scissors"}
@@ -74,7 +74,7 @@ rock_paper_scissors:
 portfolio:
   title: This Portfolio
   description: "The hand-crafted portfolio that you&rsquo;re kindly reading."
-  tags: "Built with: Middleman, Sass, Flexbox, JavaScript (ES6)"
+  tags: "Built with: Middleman, Sass, Flexbox, ES6"
   links:
     - {title: GitHub, src: "https://github.com/lujanfernaud/lujanfernaud.github.io"}
   image:
