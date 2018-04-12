@@ -97,7 +97,10 @@
 
 .front-cover__chevron-down {
   position: absolute;
+  left: 0;
+  right: 0;
   bottom: 0.35rem;
+  margin: auto;
   padding: 1rem;
   width: 3.8rem;
   opacity: .8;
