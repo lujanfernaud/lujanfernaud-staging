@@ -16,8 +16,19 @@ var NameFlipper = (function () {
   _createClass(NameFlipper, [{
     key: "watch",
     value: function watch() {
+      if (Modernizr.backgroundcliptext) {
+        this.toggleQuestionMark();
+      } else {
+        return console.log("backgroundcliptext not supported");
+      }
+    }
+  }, {
+    key: "toggleQuestionMark",
+    value: function toggleQuestionMark() {
       var _this = this;
 
+      this.questionMark.classList.toggle("visibility-hidden");
+      this.questionMark.classList.toggle("opacity-hidden");
       this.questionMark.addEventListener("mouseover", function () {
         _this.flipName();
       });
