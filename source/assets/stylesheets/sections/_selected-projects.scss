@@ -87,6 +87,7 @@ $projects-spacing-additional: .95rem;
   flex-basis: 50%;
   position: relative;
   border-bottom: .4rem solid $brand-color-saturated;
+  background-color: $brand-color-saturated;
   @include diagonal-box-shadow(.41rem);
 }
 
