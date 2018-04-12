@@ -7,6 +7,16 @@ class NameFlipper {
   }
 
   watch() {
+    if (Modernizr.backgroundcliptext) {
+      this.toggleQuestionMark();
+    } else {
+      return console.log("backgroundcliptext not supported");
+    }
+  }
+
+  toggleQuestionMark() {
+    this.questionMark.classList.toggle("visibility-hidden");
+    this.questionMark.classList.toggle("opacity-hidden");
     this.questionMark.addEventListener("mouseover", () => {
       this.flipName();
     });
