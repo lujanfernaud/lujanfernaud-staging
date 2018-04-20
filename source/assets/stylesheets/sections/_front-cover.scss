@@ -60,6 +60,10 @@
   @include media($large-devices) {
     font-size: 5rem;
   }
+
+  @include media($extra-large-devices) {
+    font-size: 6rem;
+  }
 }
 
 .front-cover__hr {
@@ -76,6 +80,10 @@
   @include media($large-devices) {
     width: 20.2rem;
     margin: 1.4rem;
+  }
+
+  @include media($extra-large-devices) {
+    width: 23rem;
   }
 }
 
