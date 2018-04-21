@@ -212,6 +212,7 @@ $projects-spacing-additional: .95rem;
   margin: 0 auto;
   font-family: $dejavu-sans;
   width: 100%;
+  line-height: 1.518;
 
   @include media($medium-devices) {
     margin-bottom: .4rem;
