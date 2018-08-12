@@ -1,38 +1,48 @@
 <section class="projects" id="selected-projects">
 
+  <header class="projects-header">
+    <h1 class="projects-header__title">Selected Projects</h1>
+  </header>
+
   <%= partial "partials/projects/project",
     locals: {
-      project: data.projects.draw
+      project: data.projects.draw,
+      id: "draw",
     }
   %>
 
   <%= partial "partials/projects/project",
     locals: {
-      project: data.projects.yawo
+      project: data.projects.yawo,
+      id: "yawo"
     }
   %>
 
   <%= partial "partials/projects/project",
     locals: {
-      project: data.projects.ruby_chess
+      project: data.projects.ruby_chess,
+      id: "ruby-chess"
     }
   %>
 
   <%= partial "partials/projects/project",
     locals: {
-      project: data.projects.ruby_mastermind
+      project: data.projects.ruby_mastermind,
+      id: "ruby-mastermind"
     }
   %>
 
   <%= partial "partials/projects/project",
     locals: {
-      project: data.projects.rock_paper_scissors
+      project: data.projects.rock_paper_scissors,
+      id: "rock-paper-scissors"
     }
   %>
 
   <%= partial "partials/projects/project",
     locals: {
-      project: data.projects.portfolio
+      project: data.projects.portfolio,
+      id: "portfolio"
     }
   %>
 
