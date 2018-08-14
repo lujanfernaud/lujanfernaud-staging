@@ -1,6 +1,7 @@
 // Vendors
 
 @import "vendors/normalize";
+@import "vendors/tippy";
 @import "vendors/formbase/main";
 
 // Variables, Mixins & Helpers
@@ -12,13 +13,15 @@
 // General Styling
 
 @import "base/initial-setup";
-@import "components/buttons";
 @import "components/animations";
+@import "components/buttons";
+@import "components/tooltips";
 
 // Page Sections
 
 @import "sections/front-cover";
 @import "sections/about";
+@import "sections/stats";
 @import "sections/selected-projects";
 @import "sections/back-cover";
 @import "sections/thanks";

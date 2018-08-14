@@ -1,0 +1,64 @@
+//
+// Tooltips
+//
+
+
+// Variables
+
+
+$dark-tooltip-background: $dark-violet;
+
+
+// Trigger
+
+
+.note-tooltip-trigger {
+  position: relative;
+  margin: 0 -.75rem;
+  padding: 0 .75rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 15px;
+    height: 24px;
+    border-bottom: 1px dotted;
+
+    @include media($medium-devices) {
+      left: 9px;
+      width: 17px;
+      height: 28px;
+    }
+  }
+}
+
+
+// Themes
+
+
+.tippy-tooltip.dark-theme {
+  padding: 1rem;
+  font-size: 1.05rem;
+  font-family: $dejavu-sans;
+  color: $light-grey-1;
+  background-color: $dark-tooltip-background;
+
+  @include media($medium-devices) {
+    font-size: 1.35rem;
+  }
+
+  @include media($extra-large-devices) {
+    width: 26rem;
+    font-size: 1.45rem;
+  }
+
+  .tippy-roundarrow {
+    fill: $dark-tooltip-background;
+  }
+}
+
+.tippy-tooltip.shadow-theme {
+  box-shadow: 0 2px 15px rgba(#ccc, .9);
+}

@@ -12,11 +12,23 @@
     <div class="about__text sans">
       <h2 class="about__heading serif">Hola! My name is Luján.</h2>
 
-      <p>I'm a <em>Full Stack Rails Developer</em> with <em>four years of remote work experience</em>. I've been learning web development on my own for the last two years; averaging three hours per day, <em>consistently</em>.</p>
+      <p>I'm a <em>Full Stack Rails Developer</em> with <em>four years of remote work experience</em>.<span class="note-tooltip-trigger" data-behavior="tooltip" title="As a Search Engine Evaluator.">*</span> I've been learning web development on my own for the last two years; averaging three hours per day, <%= link_to "consistently", "#" %>.</p>
 
       <p>I'm fluent in <em>Object Oriented Programming</em>, <em>Ruby</em>, <em>Rails</em>, <em>CSS</em>, <em>Sass</em> and <em>Git</em>, and can speak <em>JavaScript</em> and <em>SQL</em>.</p>
 
       <p>I love building products from end to end, and I'm passionate about <em>clean code</em>, <em>testing</em>, <em>refactoring</em>, <em>clean design</em>, and <em>user experience</em>.</p>
+
+      <!--
+      Added tooltip content as HTML so it doesn't break the text in two lines,
+      and Popper.js keeps positioning the element correctly.
+
+      If we just set the tooltip content as 'inline-block' or try to adjust the width manually, the tooltip would overflow the viewport when
+      placed close to the viewport border.
+       -->
+      <div id="note-tooltip-content"
+        style="display: none; margin: 0; padding: 0;">
+        <p style="margin: 0; padding: 0;">As a Search Engine Evaluator.</p>
+      </div>
     </div>
 
   </div>
