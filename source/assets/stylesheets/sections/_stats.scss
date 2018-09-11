@@ -1,0 +1,18 @@
+//
+// Stats
+//
+
+
+.stats-container {
+  position: relative;
+  @include flex-container(column);
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.stats__img {
+  border: 1px solid rgba(#ddd, .6);
+  box-shadow: 0 3px 16px rgba(#ccc, .5);
+}

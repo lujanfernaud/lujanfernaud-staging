@@ -12,7 +12,7 @@
     <div class="about__text sans">
       <h2 class="about__heading serif">Hola! My name is Luján.</h2>
 
-      <p>I'm a <em>Full Stack Rails Developer</em> with <em>four years of remote work experience</em>.<span class="note-tooltip-trigger" data-behavior="tooltip" title="As a Search Engine Evaluator.">*</span> I've been learning web development on my own for the last two years; averaging three hours per day, <%= link_to "consistently", "#" %>.</p>
+      <p>I'm a <em>Full Stack Rails Developer</em> with <em>four years of remote work experience</em>.<span class="note-tooltip-trigger" data-behavior="tooltip" title="As a Search Engine Evaluator.">*</span> I've been learning web development on my own for the last two years; averaging three hours per day, <%= link_to "consistently", "#about", data: { behavior: "open-modal", modal: "modal-stats" } %>.</p>
 
       <p>I'm fluent in <em>Object Oriented Programming</em>, <em>Ruby</em>, <em>Rails</em>, <em>CSS</em>, <em>Sass</em> and <em>Git</em>, and can speak <em>JavaScript</em> and <em>SQL</em>.</p>
 
@@ -28,6 +28,53 @@
       <div id="note-tooltip-content"
         style="display: none; margin: 0; padding: 0;">
         <p style="margin: 0; padding: 0;">As a Search Engine Evaluator.</p>
+      </div>
+    </div>
+
+    <!-- Stats Modal -->
+
+    <div id="modal-stats" class="modal" aria-label="modal" tabindex="-1" role="dialog">
+      <div class="modal-background" data-behavior="close-modal"></div>
+      <div class="modal-card">
+        <header class="modal-card-head flex-end">
+          <button class="delete is-large" aria-label="close" data-behavior="close-modal">x</button>
+        </header>
+
+        <section class="modal-card-body stats">
+          <div class="stats-container">
+            <h2>Web Development Stats</h2>
+
+            <div class="stats__hours">
+              <h2 class="stats__hours__heading">Hours</h2>
+
+              <h3>2018</h3>
+                <img src="assets/images/stats/hours_2018.png" alt="Hours in 2018" class="stats__img">
+
+              <h3>2017</h3>
+                <img src="assets/images/stats/hours_2017.png" alt="Hours in 2017" class="stats__img">
+
+              <h3>2016</h3>
+                <img src="assets/images/stats/hours_2016.png" alt="Hours in 2016" class="stats__img">
+            </div>
+
+            <div class="stats__commits">
+              <h2 class="stats__commits__heading">Commits</h2>
+
+              <h3>2018</h3>
+                <img src="assets/images/stats/commits_last_year.png" alt="Commits in 2018" class="stats__img">
+
+              <h3>2017</h3>
+                <img src="assets/images/stats/commits_2017.png" alt="Commits in 2017" class="stats__img">
+
+              <h3>2016</h3>
+                <img src="assets/images/stats/commits_2016.png" alt="Commits in 2016" class="stats__img">
+            </div>
+          </div>
+        </section>
+
+        <footer class="modal-card-foot flex-end">
+          <button class="button is-medium" data-behavior="close-modal">Close</button>
+        </footer>
       </div>
     </div>
 

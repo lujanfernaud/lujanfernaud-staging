@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+bulma@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.7.1.tgz#73c2e3b2930c90cc272029cbd19918b493fca486"
+
 formbase@^6.0.3:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/formbase/-/formbase-6.0.3.tgz#8d32c1f15351371866786e110eda2de26aa279af"

@@ -4,6 +4,11 @@
 @import "vendors/tippy";
 @import "vendors/formbase/main";
 
+@import "../../../node_modules/bulma/sass/utilities/_all";
+@import "../../../node_modules/bulma/sass/elements/button";
+@import "../../../node_modules/bulma/sass/elements/other";
+@import "../../../node_modules/bulma/sass/components/modal";
+
 // Variables, Mixins & Helpers
 
 @import "abstracts/variables";
