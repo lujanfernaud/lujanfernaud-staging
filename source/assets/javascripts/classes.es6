@@ -1,7 +1,7 @@
 class NameFlipper {
   constructor() {
-    this.questionMark = document.querySelector(".cover-name__question-mark");
-    this.name         = document.querySelector(".cover-name__name");
+    this.questionMark = document.querySelector('.cover-name__question-mark');
+    this.name         = document.querySelector('.cover-name__name');
     this.running      = false;
   }
 
@@ -9,14 +9,14 @@ class NameFlipper {
     if (Modernizr.backgroundcliptext) {
       this.toggleQuestionMark();
     } else {
-      return console.log("backgroundcliptext not supported");
+      return console.log('backgroundcliptext not supported');
     }
   }
 
   toggleQuestionMark() {
-    this.questionMark.classList.toggle("visibility-hidden");
-    this.questionMark.classList.toggle("opacity-hidden");
-    this.questionMark.addEventListener("mouseover", () => {
+    this.questionMark.classList.toggle('visibility-hidden');
+    this.questionMark.classList.toggle('opacity-hidden');
+    this.questionMark.addEventListener('mouseover', () => {
       this.flipName();
     });
   }
@@ -27,8 +27,8 @@ class NameFlipper {
     this.running = true;
 
     fader.fadeOut(this.questionMark);
-    this.flipWith("lu-han fer-noh");
-    this.flipBackWith("Luján Fernaud");
+    this.flipWith('lu-han fer-noh');
+    this.flipBackWith('Luján Fernaud');
 
     window.setTimeout(() => {
       fader.fadeIn(this.questionMark);
@@ -37,14 +37,14 @@ class NameFlipper {
   }
 
   flipWith(message) {
-    this.name.classList.toggle("flip");
+    this.name.classList.toggle('flip');
 
     window.setTimeout(() => {
       this.name.innerText = message;
     }, 500);
 
     window.setTimeout(() => {
-      this.name.classList.toggle("flip");
+      this.name.classList.toggle('flip');
     }, 1000);
   }
 
@@ -57,26 +57,26 @@ class NameFlipper {
 
 class ChevronHider {
   constructor() {
-    this.chevron = document.querySelector(".front-cover__chevron-down");
+    this.chevron = document.querySelector('.front-cover__chevron-down');
   }
 
   watch() {
     inView.threshold(0.9);
 
-    inView(".front-cover")
-      .on("enter", () => {
+    inView('.front-cover')
+      .on('enter', () => {
         fader.fadeIn(this.chevron);
       })
-      .on("exit", () => {
+      .on('exit', () => {
         fader.fadeOut(this.chevron);
       });
   }
 }
 
 const fader = {
-  fadeIn:  function(element) { element.classList.remove("opacity-hidden"); },
-  fadeOut: function(element) { element.classList.add("opacity-hidden"); },
-  toggle:  function(element) { element.classList.toggle("opacity-hidden"); }
+  fadeIn:  function(element) { element.classList.remove('opacity-hidden'); },
+  fadeOut: function(element) { element.classList.add('opacity-hidden'); },
+  toggle:  function(element) { element.classList.toggle('opacity-hidden'); }
 };
 
 class LetsTalkAnimator {
@@ -85,12 +85,12 @@ class LetsTalkAnimator {
 
     inView.threshold(0.9);
 
-    inView(".back-cover")
-      .on("enter", () => {
+    inView('.back-cover')
+      .on('enter', () => {
         letsTalk.toggleAnimation();
         letsTalk.toggleHoverActive();
       })
-      .on("exit", () => {
+      .on('exit', () => {
         letsTalk.toggleAnimation();
         letsTalk.toggleHoverActive();
       });
@@ -99,10 +99,10 @@ class LetsTalkAnimator {
 
 class LetsTalkToggler {
   constructor() {
-    this.letsTalk       = document.querySelector(".lets-talk-container");
-    this.letsTalkButton = document.querySelector(".lets-talk");
-    this.letsTalkText   = document.querySelector(".lets-talk__text");
-    this.letsTalkMail   = document.querySelector(".lets-talk__mail");
+    this.letsTalk       = document.querySelector('.lets-talk-container');
+    this.letsTalkButton = document.querySelector('.lets-talk');
+    this.letsTalkText   = document.querySelector('.lets-talk__text');
+    this.letsTalkMail   = document.querySelector('.lets-talk__mail');
 
     this.delayedToggler = new DelayedClassToggler();
   }
@@ -114,20 +114,20 @@ class LetsTalkToggler {
   }
 
   toggleAnimation() {
-    this.letsTalkText.classList.toggle("lets-talk__text--paused");
-    this.letsTalkMail.classList.toggle("lets-talk__mail--paused");
+    this.letsTalkText.classList.toggle('lets-talk__text--paused');
+    this.letsTalkMail.classList.toggle('lets-talk__mail--paused');
   }
 
   toggleHoverActive(formIsOpen = false) {
     this.delayedToggler.toggle({
       element:    this.letsTalkButton,
-      klass:      "lets-talk--hover-active",
+      klass:      'lets-talk--hover-active',
       formIsOpen: formIsOpen
     });
   }
 
   toggleContainer() {
-    this.letsTalk.classList.toggle("lets-talk-container--hidden");
+    this.letsTalk.classList.toggle('lets-talk-container--hidden');
   }
 }
 
@@ -146,9 +146,9 @@ class DelayedClassToggler {
 class ContactFormToggler {
   constructor() {
     this.formIsOpen      = false;
-    this.contactSection  = document.querySelector(".contact-section-container");
-    this.sectionOpener   = document.querySelector(".lets-talk-link");
-    this.sectionCloser   = document.querySelector(".contact-section__close");
+    this.contactSection  = document.querySelector('.contact-section-container');
+    this.sectionOpener   = document.querySelector('.lets-talk-link');
+    this.sectionCloser   = document.querySelector('.contact-section__close');
     this.sectionTogglers = [this.sectionOpener, this.sectionCloser];
 
     this.delayedToggler  = new DelayedClassToggler();
@@ -158,7 +158,7 @@ class ContactFormToggler {
 
   watch() {
     this.sectionTogglers.forEach(toggler => {
-      toggler.addEventListener("click", (event) => {
+      toggler.addEventListener('click', (event) => {
         event.preventDefault();
 
         this.scrollToBottom();
@@ -168,7 +168,7 @@ class ContactFormToggler {
   }
 
   scrollToBottom() {
-    document.querySelector(".scroll-to-back-cover").click();
+    document.querySelector('.scroll-to-back-cover').click();
   }
 
   toggleContactSection() {
@@ -183,7 +183,7 @@ class ContactFormToggler {
   toggleVisibility() {
     this.delayedToggler.toggle({
       element:    this.contactSection,
-      klass:      "visibility-hidden",
+      klass:      'visibility-hidden',
       formIsOpen: this.formIsOpen
     });
   }
@@ -197,29 +197,29 @@ class ContactFormToggler {
   }
 
   toggleContactForm() {
-    this.contactSection.classList.toggle("contact-section-container--revealed");
+    this.contactSection.classList.toggle('contact-section-container--revealed');
   }
 }
 
 class ScrollToggler {
   constructor() {
-    this.html = document.getElementsByTagName("html")[0];
+    this.html = document.getElementsByTagName('html')[0];
     this.body = document.body;
-    this.backCover = document.querySelector(".back-cover");
+    this.backCover = document.querySelector('.back-cover');
   }
 
   toggle() {
-    this.html.classList.toggle("overflow-hidden");
-    this.body.classList.toggle("overflow-hidden");
-    this.backCover.classList.toggle("overflow-hidden");
+    this.html.classList.toggle('overflow-hidden');
+    this.body.classList.toggle('overflow-hidden');
+    this.backCover.classList.toggle('overflow-hidden');
   }
 }
 
 class ModalToggler {
   constructor() {
-    this.html = document.querySelector("html")
-    this.openers = document.querySelectorAll("[data-behavior='open-modal']")
-    this.closers = document.querySelectorAll("[data-behavior='close-modal']")
+    this.html = document.querySelector('html')
+    this.openers = document.querySelectorAll('[data-behavior="open-modal"]')
+    this.closers = document.querySelectorAll('[data-behavior="close-modal"]')
     this.modalIsOpen = false
   }
 
@@ -233,12 +233,12 @@ class ModalToggler {
 
   _watchOpeners() {
     this.openers.forEach(toggler => {
-      toggler.addEventListener("click", event => {
+      toggler.addEventListener('click', event => {
         const modalId = event.target.dataset.modal
         const modal = document.getElementById(modalId)
 
-        modal.classList.add("is-active")
-        this.html.classList.add("overflow-hidden")
+        modal.classList.add('is-active')
+        this.html.classList.add('overflow-hidden')
         this.modalIsOpen = true
       })
     })
@@ -246,17 +246,17 @@ class ModalToggler {
 
   _watchClosers() {
     this.closers.forEach(toggler => {
-      toggler.addEventListener("click", () => {
+      toggler.addEventListener('click', () => {
         this._closeModal()
       })
     })
   }
 
   _closeModal() {
-    const modal = document.querySelector(".modal.is-active")
+    const modal = document.querySelector('.modal.is-active')
 
-    modal.classList.remove("is-active")
-    this.html.classList.remove("overflow-hidden")
+    modal.classList.remove('is-active')
+    this.html.classList.remove('overflow-hidden')
     this.modalIsOpen = false
   }
 
@@ -266,8 +266,8 @@ class ModalToggler {
 
       let isEscape = false
 
-      if ("key" in event) {
-        isEscape = (event.key === "Escape" || event.key === "Esc")
+      if ('key' in event) {
+        isEscape = (event.key === 'Escape' || event.key === 'Esc')
       } else {
         isEscape = (event.keyCode === 27)
       }

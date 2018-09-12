@@ -1,12 +1,12 @@
 // Select and configure tooltips.
 
-tippy("[data-behavior='tooltip']", {
-  html:      "#note-tooltip-content",
-  theme:     "dark shadow",
+tippy('[data-behavior="tooltip"]', {
+  html:      '#note-tooltip-content',
+  theme:     'dark shadow',
   arrow:     true,
-  arrowType: "round",
-  placement: "top",
-  size:      "large"
+  arrowType: 'round',
+  placement: 'top',
+  size:      'large'
 });
 
 // Hide tooltips on scroll.
