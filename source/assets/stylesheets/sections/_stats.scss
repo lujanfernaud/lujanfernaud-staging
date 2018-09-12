@@ -3,16 +3,47 @@
 //
 
 
+$stats-gutter: 2rem;
+$stats-gutter-medium: 2.5rem;
+$stats-gutter-large: 3rem;
+
+
 .stats-container {
   position: relative;
   @include flex-container(column);
   min-height: 100vh;
   width: 100%;
   max-width: 1200px;
-  padding: 2rem;
+  padding: 0 0 1rem 0;
+
+  @include media($medium-devices) {
+    padding: 1rem 1rem $stats-gutter 1rem;
+  }
+
+  @include media($large-devices) {
+    padding: 1rem 1rem $stats-gutter-large 1rem;
+  }
 }
 
-.stats__img {
-  border: 1px solid rgba(#ddd, .6);
-  box-shadow: 0 3px 16px rgba(#ccc, .5);
+.stats {
+  &__h2 {
+    margin-top: $stats-gutter;
+
+    &:first-child {
+      margin-top: .6rem;
+    }
+
+    @include media($medium-devices) {
+      margin-top: $stats-gutter-medium;
+    }
+
+    @include media($large-devices) {
+      margin-top: $stats-gutter-large;
+    }
+  }
+
+  &__img {
+    border: 1px solid rgba(#ddd, .6);
+    box-shadow: 0 3px 16px rgba(#ccc, .5);
+  }
 }
