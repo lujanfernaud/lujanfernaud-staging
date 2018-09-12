@@ -1,5 +1,4 @@
 class NameFlipper {
-
   constructor() {
     this.questionMark = document.querySelector(".cover-name__question-mark");
     this.name         = document.querySelector(".cover-name__name");
@@ -54,11 +53,9 @@ class NameFlipper {
       this.flipWith(message);
     }, 3700);
   }
-
 }
 
 class ChevronHider {
-
   constructor() {
     this.chevron = document.querySelector(".front-cover__chevron-down");
   }
@@ -74,7 +71,6 @@ class ChevronHider {
         fader.fadeOut(this.chevron);
       });
   }
-
 }
 
 const fader = {
@@ -84,7 +80,6 @@ const fader = {
 };
 
 class LetsTalkAnimator {
-
   watch() {
     let letsTalk = new LetsTalkToggler();
 
@@ -100,11 +95,9 @@ class LetsTalkAnimator {
         letsTalk.toggleHoverActive();
       });
   }
-
 }
 
 class LetsTalkToggler {
-
   constructor() {
     this.letsTalk       = document.querySelector(".lets-talk-container");
     this.letsTalkButton = document.querySelector(".lets-talk");
@@ -136,11 +129,9 @@ class LetsTalkToggler {
   toggleContainer() {
     this.letsTalk.classList.toggle("lets-talk-container--hidden");
   }
-
 }
 
 class DelayedClassToggler {
-
   toggle({element, klass, formIsOpen = false}) {
     if (formIsOpen) {
       element.classList.toggle(klass);
@@ -150,11 +141,9 @@ class DelayedClassToggler {
       }, 1000); // 1 second, same as CSS transition duration.
     }
   }
-
 }
 
 class ContactFormToggler {
-
   constructor() {
     this.formIsOpen      = false;
     this.contactSection  = document.querySelector(".contact-section-container");
@@ -210,11 +199,9 @@ class ContactFormToggler {
   toggleContactForm() {
     this.contactSection.classList.toggle("contact-section-container--revealed");
   }
-
 }
 
 class ScrollToggler {
-
   constructor() {
     this.html = document.getElementsByTagName("html")[0];
     this.body = document.body;
@@ -226,11 +213,9 @@ class ScrollToggler {
     this.body.classList.toggle("overflow-hidden");
     this.backCover.classList.toggle("overflow-hidden");
   }
-
 }
 
 class ModalToggler {
-
   constructor() {
     this.html = document.querySelector("html")
     this.openers = document.querySelectorAll("[data-behavior='open-modal']")
@@ -292,7 +277,6 @@ class ModalToggler {
       }
     }
   }
-
 }
 
 new NameFlipper().watch();
