@@ -77,7 +77,7 @@ const fader = {
   fadeIn:  function(element) { element.classList.remove('opacity-hidden') },
   fadeOut: function(element) { element.classList.add('opacity-hidden') },
   toggle:  function(element) { element.classList.toggle('opacity-hidden') }
-};
+}
 
 class LetsTalkAnimator {
   watch() {
@@ -123,7 +123,7 @@ class LetsTalkToggler {
       element:    this.letsTalkButton,
       klass:      'lets-talk--hover-active',
       formIsOpen: formIsOpen
-    });
+    })
   }
 
   toggleContainer() {
@@ -185,7 +185,7 @@ class ContactFormToggler {
       element:    this.contactSection,
       klass:      'visibility-hidden',
       formIsOpen: this.formIsOpen
-    });
+    })
   }
 
   toggleScroll() {
