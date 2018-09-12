@@ -22,7 +22,7 @@ class NameFlipper {
   }
 
   flipName() {
-    if (this.running == true) return false
+    if (this.running === true) return false
 
     this.running = true
 
