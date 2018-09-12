@@ -8,6 +8,18 @@
   margin-bottom: 0;
 }
 
+.modal-card-body {
+  padding: 20px;
+
+  @include media($medium-devices) {
+    padding: 26px;
+  }
+
+  @include media($large-devices) {
+    padding: 30px;
+  }
+}
+
 .modal-card-foot {
   padding: .3rem;
 }
