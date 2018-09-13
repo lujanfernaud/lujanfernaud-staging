@@ -236,7 +236,9 @@ class ModalToggler {
       toggler.addEventListener('click', event => {
         const modalId = event.target.dataset.modal
         const modal = document.getElementById(modalId)
+        const modalBody = modal.querySelector('.modal-card-body')
 
+        modalBody.scrollTop = 0
         modal.classList.add('is-active')
         this.html.classList.add('overflow-hidden')
         this.modalIsOpen = true
