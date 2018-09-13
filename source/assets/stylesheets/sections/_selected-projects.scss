@@ -82,6 +82,10 @@ $projects-spacing-additional: .95rem;
       padding: 3rem;
   }
 
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(#ddd, .9);
+  }
+
   &:nth-child(even) {
     @include background-gradient(
       darken($light-grey-1, 1%),
