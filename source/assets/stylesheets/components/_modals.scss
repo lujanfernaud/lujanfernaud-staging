@@ -24,6 +24,11 @@
 .modal-header-title {
   margin-top: .2rem;
   margin-bottom: 0;
+  font-size: 1.25rem;
+
+  @include media($medium-devices) {
+    font-size: 1.5rem;
+  }
 }
 
 .modal-card-body {
