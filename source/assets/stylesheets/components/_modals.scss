@@ -30,11 +30,11 @@
   padding: 20px;
 
   @include media($medium-devices) {
-    padding: 26px;
+    padding: 30px;
   }
 
   @include media($large-devices) {
-    padding: 30px;
+    padding: 34px;
   }
 }
 
