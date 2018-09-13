@@ -46,4 +46,18 @@ $stats-gutter-large: 3rem;
     border: 1px solid rgba(#ddd, .6);
     box-shadow: 0 3px 16px rgba(#ccc, .5);
   }
+
+  &__p {
+    margin-top: 1.2rem;
+    margin-bottom: 0;
+    font-family: $dejavu-sans;
+
+    @include media($medium-devices) {
+      margin-top: $stats-gutter-medium;
+    }
+
+    @include media($large-devices) {
+      margin-top: $stats-gutter-large;
+    }
+  }
 }
