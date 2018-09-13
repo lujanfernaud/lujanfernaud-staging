@@ -120,7 +120,6 @@ $projects-spacing-additional: .95rem;
 .project__image-container {
   flex-basis: 50%;
   position: relative;
-  border-bottom: .4rem solid $brand-color-saturated;
   background-color: $brand-color-saturated;
   @include diagonal-box-shadow(.41rem);
 }
@@ -150,7 +149,7 @@ $projects-spacing-additional: .95rem;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(saturate($brand-color-saturated, 100%), .07);
+  background-color: rgba(saturate($brand-color-saturated, 100%), .05);
   z-index: 0;
 }
 
