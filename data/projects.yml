@@ -42,19 +42,20 @@ ruby_chess:
     alt: Ruby
     title: Ruby
 
-ruby_mastermind:
-  title: Ruby Mastermind
-  description: A Mastermind game for the command line. You can play against the computer!
-  tags: "Built with: Ruby, RSpec, OOP"
+weather_compare:
+  title: Weather Compare
+  description: A simple web app to compare the weather of two places.
+  tags: "Built with: React, Weatherbit API, Local Storage"
   links:
-    - {title: GitHub, src: "https://github.com/lujanfernaud/ruby-mastermind"}
+    - {title: Online, src: "http://lujanfernaud.com/react-weather-compare"}
+    - {title: GitHub, src: "https://github.com/lujanfernaud/react-weather-compare"}
   image:
-    src: assets/images/screenshots/ruby-mastermind-screenshot.jpg
-    alt: Ruby Mastermind Screenshot
+    src: assets/images/screenshots/weather-compare-screenshot.png
+    alt: Weather Compare Screenshot
   icon:
-    src: assets/images/icons/ruby_icon.svg
-    alt: Ruby
-    title: Ruby
+    src: assets/images/icons/react_icon.svg
+    alt: React
+    title: React
 
 rock_paper_scissors:
   title: Rock, Paper, Scissors
