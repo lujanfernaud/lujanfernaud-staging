@@ -52,11 +52,6 @@ $projects-spacing-additional: .95rem;
   @include flex-container(column);
   width: 100%;
   color: $brand-color-saturated;
-  @include background-polka-dots(
-    $background: darken($light-grey-1, 1%),
-    $dots-1:     $brand-color,
-    $dots-2:     $pinkish-violet,
-    $opacity:    .017);
 }
 
 .project-row-container {
@@ -76,20 +71,23 @@ $projects-spacing-additional: .95rem;
   width: 100vw;
   min-height: 100vh;
   padding: 1rem;
+  @include background-gradient(
+    $white,
+    darken($light-grey-1, 1.875%)
+  );
 
   @include media-between-widths(
     $min-width: $small-devices,
     $max-width: $very-large-devices) {
       padding: 3rem;
   }
-}
 
-.project-container:nth-child(even) {
-  @include background-polka-dots(
-    $background: darken($light-grey-1, 3.75%),
-    $dots-1:     $brand-color,
-    $dots-2:     $pinkish-violet,
-    $opacity:    .014);
+  &:nth-child(even) {
+    @include background-gradient(
+      darken($light-grey-1, 1%),
+      darken($light-grey-1, 3.75%)
+    );
+  }
 }
 
 .project {

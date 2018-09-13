@@ -45,10 +45,10 @@
 // Background
 
 
-@mixin background-gradient {
-  background: -webkit-linear-gradient(-45deg, $pinkish-violet 0, $brand-color 100%);
-  background: -moz-linear-gradient(135deg, $pinkish-violet 0, $brand-color 100%);
-  background: linear-gradient(135deg, $pinkish-violet 0, $brand-color 100%);
+@mixin background-gradient($from: $pinkish-violet, $to: $brand-color) {
+  background: -webkit-linear-gradient(-45deg, $from 0, $to 100%);
+  background: -moz-linear-gradient(135deg, $from 0, $to 100%);
+  background: linear-gradient(135deg, $from 0, $to 100%);
   background-position: 50% 50%;
   -webkit-background-origin: padding-box;
   background-origin: padding-box;
@@ -57,6 +57,7 @@
   -webkit-background-size: auto auto;
   background-size: auto auto;
 }
+
 
 @mixin background-shine-gradient {
   background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
