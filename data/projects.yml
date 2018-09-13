@@ -1,3 +1,18 @@
+prevy:
+  title: Prevy
+  description: Private comunities that revolve around private events.
+  tags: "Built with: Rails, Minitest, Coffeescript, Leaflet API"
+  links:
+    - {title: Online, src: "https://prevy.herokuapp.com"}
+    - {title: GitHub, src: "https://github.com/lujanfernaud/prevy"}
+  image:
+    src: assets/images/screenshots/prevy-screenshot.png
+    alt: Prevy App Screenshot
+  icon:
+    src: assets/images/icons/rails_icon.svg
+    alt: Rails
+    title: Rails
+
 draw:
   title: Draw
   description: A daily selection of reference pictures to focus on drawing practice.
@@ -8,21 +23,6 @@ draw:
   image:
     src: assets/images/screenshots/draw-screenshot.png
     alt: Draw App Screenshot
-  icon:
-    src: assets/images/icons/rails_icon.svg
-    alt: Rails
-    title: Rails
-
-yawo:
-  title: Yawo
-  description: A simple flight booker with journey visualization and other niceties.
-  tags: "Built with: Rails, Minitest, jQuery, Leaflet API"
-  links:
-    - {title: Online, src: "https://yawo.herokuapp.com"}
-    - {title: GitHub, src: "https://github.com/lujanfernaud/yawo"}
-  image:
-    src: assets/images/screenshots/yawo-screenshot.png
-    alt: YAWO App Screenshot
   icon:
     src: assets/images/icons/rails_icon.svg
     alt: Rails
