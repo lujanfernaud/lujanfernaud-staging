@@ -83,7 +83,7 @@ $projects-spacing-additional: .95rem;
   }
 
   &:not(:last-child) {
-    border-bottom: 1px solid rgba(#ddd, .9);
+    border-bottom: 1px solid #ddd;
   }
 
   &:nth-child(even) {
