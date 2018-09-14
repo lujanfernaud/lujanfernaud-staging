@@ -357,7 +357,7 @@ $projects-spacing-additional: .95rem;
 .image-container--prevy::after,
 .image-container--weather-compare::after,
 .image-container--rock-paper-scissors::after {
-  opacity: 0.09;
+  opacity: 0.08;
 }
 
 .image-container--this-portfolio::after {
@@ -365,7 +365,7 @@ $projects-spacing-additional: .95rem;
 }
 
 .image--weather-compare {
-  filter: grayscale(.9);
+  filter: grayscale(0.88) hue-rotate(95deg);
 }
 
 .image--rock-paper-scissors {
