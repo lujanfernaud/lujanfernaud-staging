@@ -3,7 +3,7 @@
 
     <div class="project__image-container">
       <div class="project__image-overlay"></div>
-      <img class="project__image"
+      <img class="project__image image-<%= parameterize(project.title) %>"
         src="<%= project.image.src %>"
         alt="<%= project.image.alt %>">
       <div class="project__image-corner"></div>
