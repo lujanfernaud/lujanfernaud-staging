@@ -59,7 +59,7 @@ weather_compare:
 
 rock_paper_scissors:
   title: Rock, Paper, Scissors
-  description: The classic game implemented with a fully responsive design.
+  description: The classic game implemented with a clean UI and a fully responsive design.
   tags: "Built with: ES6, Flexbox, Sass"
   links:
     - {title: Online, src: "http://lujanfernaud.com/js-rock-paper-scissors"}
