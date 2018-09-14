@@ -123,6 +123,10 @@ $projects-spacing-additional: .95rem;
   background-color: $brand-color-saturated;
   overflow: hidden;
   @include diagonal-box-shadow(.41rem);
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #d2d2d2;
+  border-bottom: 1px solid #d2d2d2;
 }
 
 .project__image-container::after {
