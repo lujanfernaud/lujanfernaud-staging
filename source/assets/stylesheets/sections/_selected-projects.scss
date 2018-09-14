@@ -121,6 +121,7 @@ $projects-spacing-additional: .95rem;
   flex-basis: 50%;
   position: relative;
   background-color: $brand-color-saturated;
+  overflow: hidden;
   @include diagonal-box-shadow(.41rem);
 }
 
@@ -132,8 +133,8 @@ $projects-spacing-additional: .95rem;
   width: 100%;
   height: 100%;
   @include background-shine-gradient;
-  opacity: 0.03;
-  z-index: 1;
+  opacity: 0.02;
+  z-index: 5;
 }
 
 .project__image {
@@ -150,7 +151,7 @@ $projects-spacing-additional: .95rem;
   width: 100%;
   height: 100%;
   background-color: rgba(saturate($brand-color-saturated, 100%), .05);
-  z-index: 0;
+  z-index: 1;
 }
 
 .project__image-corner {
@@ -343,6 +344,28 @@ $projects-spacing-additional: .95rem;
   height: 1px;
   background-color: $dark-yellow;
   border: none;
+}
+
+
+// Individual Project Image Adjustments
+
+
+.image-container--prevy::after,
+.image-container--weather-compare::after,
+.image-container--rock-paper-scissors::after {
+  opacity: 0.09;
+}
+
+.image-container--this-portfolio::after {
+  opacity: 0.03;
+}
+
+.image--weather-compare {
+  filter: grayscale(.9);
+}
+
+.image--rock-paper-scissors {
+  transform: scale(1.15);
 }
 
 
