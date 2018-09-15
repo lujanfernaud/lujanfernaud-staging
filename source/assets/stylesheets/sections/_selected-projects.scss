@@ -129,12 +129,13 @@ $project-image-transition: all .3s ease-in-out;
   border-right: 1px solid #d2d2d2;
   border-bottom: 1px solid #d2d2d2;
   transition: $project-image-transition;
+  transform: scale(0.955);
   transform-origin: bottom right;
 
   @include media($very-large-devices) {
     &:hover {
       @include diagonal-box-shadow(.7rem);
-      transform: scale(1.045);
+      transform: scale(1);
 
       &::after {
         opacity: 0;
