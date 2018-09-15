@@ -18,7 +18,7 @@ draw:
   description: A daily selection of reference pictures to focus on drawing practice.
   tags: "Built with: Rails, RSpec, jQuery, Unsplash API"
   links:
-    - {title: Online, src: "https://thedrawapp.herokuapp.com"}
+    - {title: Online, src: "https://drawdaily.herokuapp.com"}
     - {title: GitHub, src: "https://github.com/lujanfernaud/draw"}
   image:
     src: assets/images/screenshots/draw-screenshot.png
