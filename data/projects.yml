@@ -44,7 +44,7 @@ ruby_chess:
 
 weather_compare:
   title: Weather Compare
-  description: A simple web app to compare the weather of two places.
+  description: Easily compare the current weather information of two places.
   tags: "Built with: React, Weatherbit API, Local Storage"
   links:
     - {title: Online, src: "http://lujanfernaud.com/react-weather-compare"}
