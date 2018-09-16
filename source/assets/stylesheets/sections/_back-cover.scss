@@ -414,6 +414,7 @@
   margin-top: 1.4rem;
   margin-right: .3rem;
   font-size: 1rem;
+  font-weight: normal;
   color: $brand-color-saturated;
 
   @include media($medium-devices) {
@@ -428,7 +429,7 @@
   &:hover,
   &:focus {
     color: $light-grey-1;
-    border-bottom: 1px solid $brand-color-saturated;
+    border-bottom: 2px solid $brand-color-saturated;
   }
 
   @include background-hover-animation;
