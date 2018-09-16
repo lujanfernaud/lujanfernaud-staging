@@ -42,6 +42,28 @@ $project-image-transition: all .3s ease-in-out;
   @include media($very-large-devices) {
     font-size: 6rem;
   }
+
+  &--selected {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+
+    &::after {
+      content: "SELECTED";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 0%;
+      height: 100%;
+      padding-left: 1.1rem;
+      color: $brand-color-saturated;
+      background-color: $light-grey-1;
+      white-space: nowrap;
+      overflow: hidden;
+      opacity: 0;
+    }
+  }
 }
 
 
