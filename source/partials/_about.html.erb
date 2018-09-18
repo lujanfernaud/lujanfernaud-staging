@@ -25,6 +25,7 @@
       If we just set the tooltip content as 'inline-block' or try to adjust the width manually, the tooltip would overflow the viewport when
       placed close to the viewport border.
        -->
+
       <div id="note-tooltip-content"
         style="display: none; margin: 0; padding: 0;">
         <p style="margin: 0; padding: 0;">As a Search Engine Evaluator.</p>
@@ -33,55 +34,40 @@
 
     <!-- Stats Modal -->
 
-    <div id="modal-stats" class="modal" aria-label="modal"
-      tabindex="-1" role="dialog">
-      <div class="modal-background" data-behavior="close-modal"></div>
-      <div class="modal-card">
-        <header class="modal-card-head">
-          <p class="modal-card-title sans">
-            Development Stats
+    <% partial "partials/modal",
+      locals: { id: "modal-stats", title: "Development Stats" } do %>
+      <div class="stats-container">
+        <div class="stats__data">
+          <h2 class="stats__h2">2018</h2>
+
+          <h3>Hours</h3>
+          <img src="assets/images/stats/hours_2018.png" alt="Hours in 2018" class="stats__img">
+
+          <h3>Commits</h3>
+          <img src="assets/images/stats/commits_last_year.png" alt="Commits in 2018" class="stats__img">
+
+          <h2 class="stats__h2">2017</h2>
+
+          <h3>Hours</h3>
+          <img src="assets/images/stats/hours_2017.png" alt="Hours in 2017" class="stats__img">
+
+          <h3>Commits</h3>
+          <img src="assets/images/stats/commits_2017.png" alt="Commits in 2017" class="stats__img">
+
+          <h2 class="stats__h2">2016</h2>
+
+          <h3>Hours</h3>
+          <img src="assets/images/stats/hours_2016.png" alt="Hours in 2016" class="stats__img">
+
+          <h3>Commits</h3>
+          <img src="assets/images/stats/commits_2016.png" alt="Commits in 2016" class="stats__img">
+
+          <p class="stats__p about__text">
+            * Stats last updated on September 12 2018.
           </p>
-          <button class="modal-card-close" alt="Close modal" aria-label="close"
-            data-behavior="close-modal">
-            &#x2715;
-          </button>
-        </header>
-
-        <section class="modal-card-body">
-          <div class="stats-container">
-            <div class="stats__data">
-              <h2 class="stats__h2">2018</h2>
-
-              <h3>Hours</h3>
-              <img src="assets/images/stats/hours_2018.png" alt="Hours in 2018" class="stats__img">
-
-              <h3>Commits</h3>
-              <img src="assets/images/stats/commits_last_year.png" alt="Commits in 2018" class="stats__img">
-
-              <h2 class="stats__h2">2017</h2>
-
-              <h3>Hours</h3>
-              <img src="assets/images/stats/hours_2017.png" alt="Hours in 2017" class="stats__img">
-
-              <h3>Commits</h3>
-              <img src="assets/images/stats/commits_2017.png" alt="Commits in 2017" class="stats__img">
-
-              <h2 class="stats__h2">2016</h2>
-
-              <h3>Hours</h3>
-              <img src="assets/images/stats/hours_2016.png" alt="Hours in 2016" class="stats__img">
-
-              <h3>Commits</h3>
-              <img src="assets/images/stats/commits_2016.png" alt="Commits in 2016" class="stats__img">
-
-              <p class="stats__p about__text">
-                * Stats last updated on September 12 2018.
-              </p>
-            </div>
-          </div>
-        </section>
+        </div>
       </div>
-    </div>
+    <% end %>
 
   </div>
 

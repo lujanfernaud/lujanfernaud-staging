@@ -1,0 +1,19 @@
+<div id="<%= id %>" class="modal" aria-label="modal"
+  tabindex="-1" role="dialog">
+  <div class="modal-background" data-behavior="close-modal"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title sans">
+        <%= title %>
+      </p>
+      <button class="modal-card-close" alt="Close modal" aria-label="close"
+        data-behavior="close-modal">
+        &#x2715;
+      </button>
+    </header>
+
+    <section class="modal-card-body">
+      <%= yield %>
+    </section>
+  </div>
+</div>
