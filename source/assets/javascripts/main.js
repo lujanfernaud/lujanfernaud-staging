@@ -3,5 +3,8 @@
 //= require smooth-scroll.polyfills.min
 //= require tippy.min
 
+//= require name-flipper
+
+//= require app
 //= require classes
 //= require tooltips
