@@ -5,6 +5,7 @@
 
 //= require fader
 //= require name-flipper
+//= require chevron-hider
 
 //= require app
 //= require classes
