@@ -428,6 +428,7 @@ $project-image-transition: all .3s ease-in-out;
 
 .image--rock-paper-scissors {
   transform: scale(1.15);
+  filter: grayscale(.15);
 }
 
 
