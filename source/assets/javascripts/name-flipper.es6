@@ -7,28 +7,30 @@ class NameFlipper {
 
   watch() {
     if (Modernizr.backgroundcliptext) {
-      this.toggleQuestionMark()
+      this._toggleQuestionMark()
     } else {
       return console.log('backgroundcliptext not supported')
     }
   }
 
-  toggleQuestionMark() {
+  // private
+
+  _toggleQuestionMark() {
     this.questionMark.classList.toggle('visibility-hidden')
     this.questionMark.classList.toggle('opacity-hidden')
     this.questionMark.addEventListener('mouseover', () => {
-      this.flipName()
+      this._flipName()
     })
   }
 
-  flipName() {
+  _flipName() {
     if (this.running === true) return false
 
     this.running = true
 
     fader.fadeOut(this.questionMark)
-    this.flipWith('lu-han fer-noh')
-    this.flipBackWith('Luján Fernaud')
+    this._flipWith('lu-han fer-noh')
+    this._flipBackWith('Luján Fernaud')
 
     window.setTimeout(() => {
       fader.fadeIn(this.questionMark)
@@ -36,7 +38,7 @@ class NameFlipper {
     }, 4700)
   }
 
-  flipWith(message) {
+  _flipWith(message) {
     this.name.classList.toggle('flip')
 
     window.setTimeout(() => {
@@ -48,9 +50,9 @@ class NameFlipper {
     }, 1000)
   }
 
-  flipBackWith(message) {
+  _flipBackWith(message) {
     window.setTimeout(() => {
-      this.flipWith(message)
+      this._flipWith(message)
     }, 3700)
   }
 }
