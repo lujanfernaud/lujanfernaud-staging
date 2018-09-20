@@ -3,6 +3,7 @@
 //= require smooth-scroll.polyfills.min
 //= require tippy.min
 
+//= require fader
 //= require name-flipper
 
 //= require app
