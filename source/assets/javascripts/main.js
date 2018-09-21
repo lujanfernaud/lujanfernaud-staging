@@ -6,6 +6,7 @@
 //= require fader
 //= require name-flipper
 //= require chevron-hider
+//= require text-selector
 
 //= require app
 //= require classes

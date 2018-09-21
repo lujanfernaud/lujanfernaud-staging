@@ -4,6 +4,7 @@ class App {
   run() {
     new NameFlipper().watch()
     new ChevronHider().watch()
+    new TextSelector().watch()
   }
 }
 
