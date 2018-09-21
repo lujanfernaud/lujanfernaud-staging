@@ -3,8 +3,8 @@
 //= require smooth-scroll.polyfills.min
 //= require tippy.min
 
-//= require fader
-//= require delayed-class-toggler
+//= require helpers/fader
+//= require helpers/delayed-class-toggler
 
 //= require name-flipper
 //= require chevron-hider
