@@ -5,6 +5,7 @@ class App {
     new NameFlipper().watch()
     new ChevronHider().watch()
     new TextSelector().watch()
+    new LetsTalkAnimator().watch()
   }
 }
 
