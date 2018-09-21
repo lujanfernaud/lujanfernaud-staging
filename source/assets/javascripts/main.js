@@ -1,7 +1,7 @@
-//= require modernizr-custom
-//= require in-view.min
-//= require smooth-scroll.polyfills.min
-//= require tippy.min
+//= require vendor/modernizr-custom
+//= require vendor/smooth-scroll.polyfills.min
+//= require vendor/in-view.min
+//= require vendor/tippy.min
 
 //= require app
 //= require tooltips
