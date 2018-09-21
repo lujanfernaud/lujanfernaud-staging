@@ -6,6 +6,7 @@ class App {
     new ChevronHider().watch()
     new TextSelector().watch()
     new LetsTalkAnimator().watch()
+    new ContactFormToggler().watch()
   }
 }
 

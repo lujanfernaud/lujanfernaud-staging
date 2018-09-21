@@ -10,6 +10,7 @@
 //= require chevron-hider
 //= require text-selector
 //= require lets-talk-animator
+//= require contact-form-toggler
 
 //= require app
 //= require classes
