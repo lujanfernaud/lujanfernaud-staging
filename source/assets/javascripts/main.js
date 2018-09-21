@@ -4,6 +4,8 @@
 //= require tippy.min
 
 //= require fader
+//= require delayed-class-toggler
+
 //= require name-flipper
 //= require chevron-hider
 //= require text-selector
