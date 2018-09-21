@@ -16,26 +16,28 @@ class ContactFormToggler {
       toggler.addEventListener('click', (event) => {
         event.preventDefault()
 
-        this.scrollToBottom()
-        this.toggleContactSection()
+        this._scrollToBottom()
+        this._toggleContactSection()
       })
     })
   }
 
-  scrollToBottom() {
+  // private
+
+  _scrollToBottom() {
     document.querySelector('.scroll-to-back-cover').click()
   }
 
-  toggleContactSection() {
+  _toggleContactSection() {
     this.formIsOpen = !this.formIsOpen // Switch the boolean.
 
-    this.toggleVisibility()
-    this.toggleScroll()
-    this.toggleLetsTalk()
-    this.toggleContactForm()
+    this._toggleVisibility()
+    this._toggleScroll()
+    this._toggleLetsTalk()
+    this._toggleContactForm()
   }
 
-  toggleVisibility() {
+  _toggleVisibility() {
     this.delayedToggler.toggle({
       element:    this.contactSection,
       klass:      'visibility-hidden',
@@ -43,15 +45,15 @@ class ContactFormToggler {
     })
   }
 
-  toggleScroll() {
+  _toggleScroll() {
     this.scrollToggler.toggle()
   }
 
-  toggleLetsTalk() {
+  _toggleLetsTalk() {
     this.letsTalkToggler.toggle(this.formIsOpen)
   }
 
-  toggleContactForm() {
+  _toggleContactForm() {
     this.contactSection.classList.toggle('contact-section-container--revealed')
   }
 }
