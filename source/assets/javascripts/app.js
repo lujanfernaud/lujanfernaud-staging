@@ -7,6 +7,7 @@ class App {
     new TextSelector().watch()
     new LetsTalkAnimator().watch()
     new ContactFormToggler().watch()
+    new ModalToggler().watch()
   }
 }
 

@@ -11,7 +11,7 @@
 //= require text-selector
 //= require lets-talk-animator
 //= require contact-form-toggler
+//= require modal-toggler
 
 //= require app
-//= require classes
 //= require tooltips

@@ -63,5 +63,3 @@ class ModalToggler {
     }
   }
 }
-
-new ModalToggler().watch()
