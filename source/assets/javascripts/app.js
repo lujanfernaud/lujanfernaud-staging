@@ -7,6 +7,7 @@
 //= require lets-talk-animator
 //= require contact-form-toggler
 //= require modal-toggler
+//= require note-tooltip
 
 class App {
   run() {
@@ -16,6 +17,7 @@ class App {
     new LetsTalkAnimator().watch()
     new ContactFormToggler().watch()
     new ModalToggler().watch()
+    new NoteTooltip().run()
   }
 }
 
