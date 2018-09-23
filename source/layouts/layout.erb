@@ -16,18 +16,5 @@
     <%= yield %>
 
     <%= javascript_include_tag "main" %>
-    <script>
-      var scroll = new SmoothScroll("[data-scroll]", {
-        easing: "easeInOutQuad",
-        before: () => {
-          document.querySelector(".front-cover__chevron-down")
-            .classList.add("display-none");
-        },
-        after: () => {
-          document.querySelector(".front-cover__chevron-down")
-            .classList.remove("display-none");
-        }
-      });
-    </script>
   </body>
 </html>

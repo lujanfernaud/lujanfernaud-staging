@@ -103,30 +103,20 @@
   }
 }
 
-.front-cover__chevron-down {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0.35rem;
-  margin: auto;
-  padding: 1rem;
+.front-cover__navigation.navigation {
+  display: block;
+  opacity: 1;
+}
+
+.front-cover__chevron {
   width: 3.8rem;
   opacity: .8;
-  border: 0;
-  transition: opacity .5s;
 
   @include media($medium-devices) {
-    bottom: 0.9rem;
     width: 5.1rem;
   }
 
   @include media-iphone-large {
-    bottom: 0.7rem;
     width: 4.4rem;
   }
-}
-
-.front-cover__chevron-down:hover,
-.front-cover__chevron-down:focus {
-  opacity: 1;
 }

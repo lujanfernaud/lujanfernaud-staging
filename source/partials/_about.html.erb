@@ -1,4 +1,12 @@
-<section class="about" id="about">
+<section class="about screen" id="about">
+  <div class="screen-anchor" id="screen-2"></div>
+
+  <%= partial "partials/navigation_top",
+    locals: {
+      destination_id: 1,
+      style: "dark"
+    }
+  %>
 
   <div class="about-container">
 
@@ -70,5 +78,12 @@
     <% end %>
 
   </div>
+
+  <%= partial "partials/navigation_bottom",
+    locals: {
+      destination_id: 3,
+      style: "dark"
+    }
+  %>
 
 </section>

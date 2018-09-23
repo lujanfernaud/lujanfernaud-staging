@@ -1,4 +1,13 @@
-<div class="project-container" id="<%= id %>">
+<div class="project-container screen" id="<%= id %>">
+  <div class="screen-anchor" id="screen-<%= screen_id %>"></div>
+
+  <%= partial "partials/navigation_top",
+    locals: {
+      destination_id: navigation_previous_id,
+      style: navigation_style
+    }
+  %>
+
   <div class="project">
 
     <div class="project__image-container
@@ -31,4 +40,12 @@
     </div>
 
   </div>
+
+  <%= partial "partials/navigation_bottom",
+    locals: {
+      destination_id: navigation_next_id,
+      style: navigation_style
+    }
+  %>
+
 </div>

@@ -2,8 +2,6 @@ class LetsTalkAnimator {
   watch() {
     let letsTalk = new LetsTalkToggler()
 
-    inView.threshold(0.9)
-
     inView('.back-cover')
       .on('enter', () => {
         letsTalk.toggleAnimation()

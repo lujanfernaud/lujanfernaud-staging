@@ -4,6 +4,7 @@
     "bulma-modal-fx": "^1.1.1",
     "formbase": "^6.0.3",
     "in-view": "^0.6.1",
+    "scrolldir": "^1.4.0",
     "tippy.js": "^2.5.4"
   },
   "devDependencies": {

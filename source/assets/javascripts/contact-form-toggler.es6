@@ -32,6 +32,7 @@ class ContactFormToggler {
     this.formIsOpen = !this.formIsOpen // Switch the boolean.
 
     this._toggleVisibility()
+    this._toggleNavigation()
     this._toggleScroll()
     this._toggleLetsTalk()
     this._toggleContactForm()
@@ -42,6 +43,24 @@ class ContactFormToggler {
       element:    this.contactSection,
       klass:      'visibility-hidden',
       formIsOpen: this.formIsOpen
+    })
+  }
+
+  _toggleNavigation() {
+    let backCover  = document.querySelector('.back-cover')
+    let navigation = backCover.querySelector('.navigation')
+
+    if (this.formIsOpen) {
+      navigation.style.display = 'none'
+    } else {
+      navigation.style.display = 'block'
+    }
+
+    this.delayedToggler.toggle({
+      element:     navigation,
+      klass:       'navigation--hidden',
+      formIsOpen:  this.formIsOpen,
+      miliseconds: 300
     })
   }
 

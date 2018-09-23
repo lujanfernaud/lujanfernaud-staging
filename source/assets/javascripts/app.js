@@ -2,7 +2,8 @@
 //= require helpers/delayed-class-toggler
 
 //= require name-flipper
-//= require chevron-hider
+//= require scroll-smoother
+//= require navigation-toggler
 //= require text-selector
 //= require lets-talk-animator
 //= require contact-form-toggler
@@ -12,7 +13,8 @@
 class App {
   run() {
     new NameFlipper().watch()
-    new ChevronHider().watch()
+    new ScrollSmoother().run()
+    new NavigationToggler().watch()
     new TextSelector().watch()
     new LetsTalkAnimator().watch()
     new ContactFormToggler().watch()

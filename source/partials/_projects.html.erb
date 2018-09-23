@@ -1,18 +1,38 @@
 <section class="projects" id="selected-projects">
 
-  <header class="projects-header">
+  <header class="projects-header screen" id="selected-projects-header">
+    <div class="screen-anchor" id="screen-3"></div>
+
+    <%= partial "partials/navigation_top",
+      locals: {
+        destination_id: 2,
+        style: "light"
+      }
+    %>
+
     <h1 class="projects-header__title projects-header__title--selected">
       SELECTED
     </h1>
     <h1 class="projects-header__title">
       PROJECTS
     </h1>
+
+    <%= partial "partials/navigation_bottom",
+      locals: {
+        destination_id: 4,
+        style: "light"
+      }
+    %>
   </header>
 
   <%= partial "partials/projects/project",
     locals: {
       project: data.projects.prevy,
-      id: "prevy"
+      id: "prevy",
+      screen_id: 4,
+      navigation_previous_id: 3,
+      navigation_next_id: 5,
+      navigation_style: "dark"
     }
   %>
 
@@ -20,43 +40,79 @@
     locals: {
       project: data.projects.draw,
       id: "draw",
+      screen_id: 5,
+      navigation_previous_id: 4,
+      navigation_next_id: 6,
+      navigation_style: "dark"
     }
   %>
 
   <%= partial "partials/projects/project",
     locals: {
       project: data.projects.ruby_chess,
-      id: "ruby-chess"
+      id: "ruby-chess",
+      screen_id: 6,
+      navigation_previous_id: 5,
+      navigation_next_id: 7,
+      navigation_style: "dark"
     }
   %>
 
   <%= partial "partials/projects/project",
     locals: {
       project: data.projects.weather_compare,
-      id: "weather-compare"
+      id: "weather-compare",
+      screen_id: 7,
+      navigation_previous_id: 6,
+      navigation_next_id: 8,
+      navigation_style: "dark"
     }
   %>
 
   <%= partial "partials/projects/project",
     locals: {
       project: data.projects.rock_paper_scissors,
-      id: "rock-paper-scissors"
+      id: "rock-paper-scissors",
+      screen_id: 8,
+      navigation_previous_id: 7,
+      navigation_next_id: 9,
+      navigation_style: "dark"
     }
   %>
 
   <%= partial "partials/projects/project",
     locals: {
       project: data.projects.portfolio,
-      id: "portfolio"
+      id: "portfolio",
+      screen_id: 9,
+      navigation_previous_id: 8,
+      navigation_next_id: 10,
+      navigation_style: "dark"
     }
   %>
 
-  <footer class="projects-footer">
+  <footer class="projects-footer screen" id="all-repos">
+    <div class="screen-anchor" id="screen-10"></div>
+
+    <%= partial "partials/navigation_top",
+      locals: {
+        destination_id: 9,
+        style: "light"
+      }
+    %>
+
     <a class="projects-footer__link btn-outline btn--gigantic"
       href="https://github.com/lujanfernaud?tab=repositories"
        >
       See all my repos on GitHub
     </a>
+
+    <%= partial "partials/navigation_bottom",
+      locals: {
+        destination_id: 11,
+        style: "light"
+      }
+    %>
   </footer>
 
 </section>
