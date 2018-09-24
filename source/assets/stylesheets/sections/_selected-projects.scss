@@ -143,6 +143,8 @@ $project-image-transition: all .3s ease-in-out;
 .project__image-container {
   flex-basis: 50%;
   position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
   background-color: #ddd;
   overflow: hidden;
   @include diagonal-box-shadow(.41rem);
@@ -153,6 +155,7 @@ $project-image-transition: all .3s ease-in-out;
   transition: $project-image-transition;
   transform: scale(0.955);
   transform-origin: bottom right;
+  outline-offset: .75rem;
 
   @include media($very-large-devices) {
     &:hover {

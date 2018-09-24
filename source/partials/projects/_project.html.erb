@@ -10,7 +10,8 @@
 
   <div class="project">
 
-    <div class="project__image-container
+    <a href="<%= project.links.first.src %>" target="_blank"
+      class="project__image-container
       image-container--<%= parameterize(project.title) %>">
       <div class="project__image-overlay"></div>
       <img class="project__image image--<%= parameterize(project.title) %>"
@@ -20,7 +21,7 @@
       <img class="project__icon icon icon-<%= project.icon.alt.downcase %>"
         src="<%= project.icon.src %>"
         alt="<%= project.icon.alt %>" title="<%= project.icon.title %>">
-    </div>
+    </a>
 
     <div class="project__separator"></div>
 
