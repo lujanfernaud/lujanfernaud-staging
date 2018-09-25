@@ -11,6 +11,10 @@
 //= require note-tooltip
 
 class App {
+  constructor() {
+    inView.threshold(0.75)
+  }
+
   run() {
     new NameFlipper().watch()
     new ScrollSmoother().run()

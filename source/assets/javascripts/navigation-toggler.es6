@@ -4,8 +4,6 @@ class NavigationToggler {
   }
 
   watch() {
-    inView.threshold(0.75)
-
     inView('.screen')
       .on('enter', element => {
         let navigationTop    = this._select(element, '.navigation--top')
