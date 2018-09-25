@@ -51,9 +51,6 @@ class NavigationToggler {
     navigationControls.forEach(navigationControl => {
       navigationControl.addEventListener('click', () => {
         navigationControl.classList.add('display-none')
-
-        // Remove class added by _switchNavigationOnHover.
-        navigationControl.classList.remove('opacity-hidden')
       })
     })
   }
