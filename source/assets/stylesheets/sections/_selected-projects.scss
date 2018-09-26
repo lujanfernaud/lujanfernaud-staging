@@ -153,9 +153,17 @@ $project-image-transition: all .3s ease-in-out;
   border-right: 1px solid #d2d2d2;
   border-bottom: 1px solid #d2d2d2;
   transition: $project-image-transition;
+  outline-offset: .75rem;
+
   transform: scale(0.955);
   transform-origin: bottom right;
-  outline-offset: .75rem;
+  // The image takes less space when scaling it down.
+  // It also moves to the right bottom, as we are using
+  // 'transform-origin: bottom right'.
+  // This adjustments are necessary to correct this.
+  min-width: 51.98%;
+  top: -2%;
+  margin-left: -2.38%;
 
   @include media($very-large-devices) {
     &:hover {
