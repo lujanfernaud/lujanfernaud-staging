@@ -3,6 +3,7 @@
     "bulma": "^0.7.1",
     "bulma-modal-fx": "^1.1.1",
     "formbase": "^6.0.3",
+    "hotkeys-js": "^3.3.8",
     "in-view": "^0.6.1",
     "scrolldir": "^1.4.0",
     "tippy.js": "^2.5.4"
