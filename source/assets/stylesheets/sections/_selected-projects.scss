@@ -220,7 +220,7 @@ $project-image-transition: all .3s ease-in-out;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(saturate($brand-color-saturated, 100%), .05);
+  background-color: rgba(saturate($brand-color-saturated, 100%), .07);
   z-index: 1;
   transition: $project-image-transition;
 }
