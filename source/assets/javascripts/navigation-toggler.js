@@ -6,6 +6,8 @@ class NavigationToggler {
   watch() {
     inView('.screen')
       .on('enter', element => {
+        element.classList.add('active')
+
         let navigationTop    = this._select(element, '.navigation--top')
         let navigationBottom = this._select(element, '.navigation--bottom')
 
@@ -14,6 +16,8 @@ class NavigationToggler {
         this._hideNavigationOnClick(navigationTop, navigationBottom)
       })
       .on('exit', element => {
+        element.classList.remove('active')
+
         let navigationTop    = this._select(element, '.navigation--top')
         let navigationBottom = this._select(element, '.navigation--bottom')
 

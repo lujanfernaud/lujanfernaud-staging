@@ -4,6 +4,7 @@
 //= require name-flipper
 //= require scroll-smoother
 //= require navigation-toggler
+//= require keyboard-navigator
 //= require text-selector
 //= require lets-talk-animator
 //= require contact-form-toggler
@@ -19,6 +20,7 @@ class App {
     new NameFlipper().watch()
     new ScrollSmoother().run()
     new NavigationToggler().watch()
+    new KeyboardNavigator().watch()
     new TextSelector().watch()
     new LetsTalkAnimator().watch()
     new ContactFormToggler().watch()
