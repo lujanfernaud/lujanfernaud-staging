@@ -3,9 +3,9 @@
 //
 
 
-$stats-gutter: 2rem;
-$stats-gutter-medium: 2.5rem;
-$stats-gutter-large: 3rem;
+$stats-gutter: 2.6rem;
+$stats-gutter-medium: 3.1rem;
+$stats-gutter-large: 3.6rem;
 
 
 .stats-container {
@@ -17,20 +17,20 @@ $stats-gutter-large: 3rem;
   padding: 0 0 1rem 0;
 
   @include media($medium-devices) {
-    padding: 1rem 1rem $stats-gutter 1rem;
+    padding: .5rem .5rem $stats-gutter .5rem;
   }
 
   @include media($large-devices) {
-    padding: 1rem 1rem $stats-gutter-large 1rem;
+    padding: .5rem .5rem $stats-gutter-large .5rem;
   }
 }
 
 .stats {
-  &__h2 {
+  &__h3 {
     margin-top: $stats-gutter;
 
     &:first-child {
-      margin-top: .6rem;
+      margin-top: .3rem;
     }
 
     @include media($medium-devices) {
