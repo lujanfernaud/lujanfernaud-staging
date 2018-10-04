@@ -59,8 +59,7 @@ class ContactFormToggler {
     this.delayedToggler.toggle({
       element:     navigation,
       klass:       'navigation--hidden',
-      formIsOpen:  this.formIsOpen,
-      miliseconds: 300
+      formIsOpen:  this.formIsOpen
     })
   }
 
