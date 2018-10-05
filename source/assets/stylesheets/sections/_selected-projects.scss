@@ -165,29 +165,31 @@ $project-image-transition: all .3s ease-in-out;
   top: -2%;
   margin-left: -2.38%;
 
-  @include media($very-large-devices) {
-    &:hover {
-      @include diagonal-box-shadow(.7rem);
-      transform: scale(1);
+  &--hover {
+    @include media($very-large-devices) {
+      &:hover {
+        @include diagonal-box-shadow(.7rem);
+        transform: scale(1);
 
-      &::after {
-        opacity: 0;
-      }
+        &::after {
+          opacity: 0;
+        }
 
-      .project__image-corner {
-        transform: translate(100%, -100%);
-      }
+        .project__image-corner {
+          transform: translate(100%, -100%);
+        }
 
-      .project__icon {
-        transform: translate(300%, -300%);
-      }
+        .project__icon {
+          transform: translate(300%, -300%);
+        }
 
-      .project__image-overlay {
-        background-color: rgba(saturate($brand-color-saturated, 100%), .03);
-      }
+        .project__image-overlay {
+          background-color: rgba(saturate($brand-color-saturated, 100%), .03);
+        }
 
-      .project__image {
-        filter: grayscale(0) hue-rotate(0);
+        .project__image {
+          filter: grayscale(0) hue-rotate(0);
+        }
       }
     }
   }

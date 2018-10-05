@@ -6,6 +6,7 @@
 //= require navigation-toggler
 //= require navigator
 //= require text-selector
+//= require image-hover-toggler
 //= require lets-talk-animator
 //= require contact-form-toggler
 //= require modal-toggler
@@ -22,6 +23,7 @@ class App {
     new NavigationToggler().watch()
     new Navigator().watch()
     new TextSelector().watch()
+    new ImageHoverToggler().watch()
     new LetsTalkAnimator().watch()
     new ContactFormToggler().watch()
     new ModalToggler().watch()
