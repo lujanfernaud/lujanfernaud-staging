@@ -223,6 +223,7 @@ $project-image-transition: all .3s ease-in-out;
   display: block;
   background-color: $brand-color-saturated;
   transition: $project-image-transition;
+  filter: grayscale(.15);
 }
 
 .project__image-overlay {
@@ -445,7 +446,7 @@ $project-image-transition: all .3s ease-in-out;
 .image-container--prevy::after,
 .image-container--weather-compare::after,
 .image-container--rock-paper-scissors::after {
-  opacity: 0.08;
+  opacity: 0.09;
 }
 
 .image-container--this-portfolio::after {
@@ -453,12 +454,11 @@ $project-image-transition: all .3s ease-in-out;
 }
 
 .image--weather-compare {
-  filter: grayscale(0.88) hue-rotate(95deg);
+  filter: grayscale(.65);
 }
 
 .image--rock-paper-scissors {
   transform: scale(1.15);
-  filter: grayscale(.15);
 }
 
 
