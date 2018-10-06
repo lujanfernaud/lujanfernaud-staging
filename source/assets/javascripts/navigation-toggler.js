@@ -8,47 +8,60 @@ class NavigationToggler {
       .on('enter', element => {
         element.classList.add('active')
 
-        let navigationTop    = this._select(element, '.navigation--top')
-        let navigationBottom = this._select(element, '.navigation--bottom')
+        let navigation = this._selectNavigationControls(element)
 
-        this._toggleNavigationOpacity(navigationTop, navigationBottom)
-        this._switchNavigationOnHover(navigationTop, navigationBottom)
-        this._hideNavigationOnClick(navigationTop, navigationBottom)
+        this._toggleNavigationOpacity(navigation)
+        this._switchNavigationOnHover(navigation)
+        this._hideNavigationOnClick(navigation)
       })
       .on('exit', element => {
         element.classList.remove('active')
 
-        let navigationTop    = this._select(element, '.navigation--top')
-        let navigationBottom = this._select(element, '.navigation--bottom')
+        let navigation = this._selectNavigationControls(element)
 
-        this._toggleNavigationOpacity(navigationTop, navigationBottom)
-        this._restoreNavigation(navigationTop, navigationBottom)
+        this._toggleNavigationOpacity(navigation)
+        this._restoreNavigation(navigation)
       })
   }
 
   // private
 
+  _selectNavigationControls(element) {
+    let top    = this._select(element, '.navigation--top')
+    let left   = this._select(element, '.navigation--left')
+    let bottom = this._select(element, '.navigation--bottom')
+
+    return { top, left, bottom }
+  }
+
   _select(element, klass) {
     return element.querySelector(klass) || this.nullElement
   }
 
-  _toggleNavigationOpacity(navigationTop, navigationBottom) {
-    navigationTop.classList.toggle('opacity-hidden')
-    navigationBottom.classList.toggle('opacity-hidden')
-  }
+  _toggleNavigationOpacity(navigation) {
+    let navigationControls = [
+      navigation.top, navigation.left, navigation.bottom
+    ]
 
-  _switchNavigationOnHover(navigationTop, navigationBottom) {
-    navigationBottom.addEventListener('mouseover', () => {
-      navigationTop.classList.add('opacity-hidden')
-    })
-
-    navigationBottom.addEventListener('mouseout', () => {
-      navigationTop.classList.remove('opacity-hidden')
+    navigationControls.forEach(navigationControl => {
+      navigationControl.classList.toggle('opacity-hidden')
     })
   }
 
-  _hideNavigationOnClick(navigationTop, navigationBottom) {
-    let navigationControls = [navigationTop, navigationBottom]
+  _switchNavigationOnHover(navigation) {
+    navigation.bottom.addEventListener('mouseover', () => {
+      navigation.top.classList.add('opacity-hidden')
+    })
+
+    navigation.bottom.addEventListener('mouseout', () => {
+      navigation.top.classList.remove('opacity-hidden')
+    })
+  }
+
+  _hideNavigationOnClick(navigation) {
+    let navigationControls = [
+      navigation.top, navigation.left, navigation.bottom
+    ]
 
     navigationControls.forEach(navigationControl => {
       navigationControl.addEventListener('click', () => {
@@ -57,8 +70,10 @@ class NavigationToggler {
     })
   }
 
-  _restoreNavigation(navigationTop, navigationBottom) {
-    let navigationControls = [navigationTop, navigationBottom]
+  _restoreNavigation(navigation) {
+    let navigationControls = [
+      navigation.top, navigation.left, navigation.bottom
+    ]
 
     navigationControls.forEach(navigationControl => {
       navigationControl.classList.remove('display-none')

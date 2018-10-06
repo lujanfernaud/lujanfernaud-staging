@@ -65,6 +65,10 @@
     @include media($very-large-devices) {
       left: 0.9rem;
     }
+
+    @include media-between($very-large-devices, 630px) {
+      left: 0.25rem;
+    }
   }
 }
 
@@ -124,6 +128,10 @@
 
   &-icon--top {
     vertical-align: top;
+  }
+
+  &-icon--left {
+    vertical-align: middle;
   }
 
   &-icon--bottom {

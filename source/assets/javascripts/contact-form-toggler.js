@@ -4,9 +4,12 @@ class ContactFormToggler {
   constructor() {
     this.formIsOpen      = false
     this.contactSection  = document.querySelector('.contact-section-container')
-    this.sectionOpener   = document.querySelector('.lets-talk-link')
-    this.sectionCloser   = document.querySelector('.contact-section__close')
-    this.sectionTogglers = [this.sectionOpener, this.sectionCloser]
+    this.linkOpener      = document.querySelector('.lets-talk-link')
+    this.navOpener       = document.querySelector('.navigation--left')
+    this.linkCloser      = document.querySelector('.contact-section__close')
+    this.sectionTogglers = [
+      this.linkOpener, this.navOpener, this.linkCloser
+    ]
 
     this.delayedToggler  = new DelayedClassToggler()
     this.scrollToggler   = new ScrollToggler()
@@ -16,36 +19,38 @@ class ContactFormToggler {
   }
 
   watch() {
-    this._watchKeyboard()
+    this._watchKeyboardTogglers()
     this._watchUITogglers()
   }
 
   // private
 
-  _watchKeyboard() {
-    hotkeys('esc', event => {
-      let backCoverIsActive = document.querySelector('#back-cover.active')
-      if (!backCoverIsActive) { return }
+  _watchKeyboardTogglers() {
+    hotkeys('esc, right', event => {
+      this._toggleContactSectionIf(this.formIsOpen, event)
+    })
 
-      let formIsOpen = document.querySelector(this.contactSectionRevealed)
-      if (!formIsOpen) { return }
-
-      event.preventDefault()
-
-      this._scrollToBottom()
-      this._toggleContactSection()
+    hotkeys('left', event => {
+      this._toggleContactSectionIf(!this.formIsOpen, event)
     })
   }
 
-  _watchUITogglers() {
-    this.sectionTogglers.forEach(toggler => {
-      toggler.addEventListener('click', event => {
-        event.preventDefault()
+  _toggleContactSectionIf(formIsOpen, event) {
+    if (!this._backCoverIsActive()) { return }
+    if (!formIsOpen) { return }
 
-        this._scrollToBottom()
-        this._toggleContactSection()
-      })
-    })
+    this._runSectionToggler(event)
+  }
+
+  _backCoverIsActive() {
+    return document.querySelector('.back-cover.active')
+  }
+
+  _runSectionToggler(event) {
+    event.preventDefault()
+
+    this._scrollToBottom()
+    this._toggleContactSection()
   }
 
   _scrollToBottom() {
@@ -72,18 +77,25 @@ class ContactFormToggler {
 
   _toggleNavigation() {
     let backCover  = document.querySelector('.back-cover')
-    let navigation = backCover.querySelector('.navigation')
+    let navigation = backCover.querySelectorAll('.navigation')
 
     if (this.formIsOpen) {
-      navigation.style.display = 'none'
+      navigation.forEach(navigationControl => {
+        navigationControl.style.display = 'none'
+      })
     } else {
-      navigation.style.display = 'block'
+      navigation.forEach(navigationControl => {
+        navigationControl.classList.remove('display-none')
+        navigationControl.style.display = 'block'
+      })
     }
 
-    this.delayedToggler.toggle({
-      element:     navigation,
-      klass:       'navigation--hidden',
-      formIsOpen:  this.formIsOpen
+    navigation.forEach(navigationControl => {
+      this.delayedToggler.toggle({
+        element:     navigationControl,
+        klass:       'navigation--hidden',
+        formIsOpen:  this.formIsOpen
+      })
     })
   }
 
@@ -97,6 +109,14 @@ class ContactFormToggler {
 
   _toggleContactForm() {
     this.contactSection.classList.toggle('contact-section-container--revealed')
+  }
+
+  _watchUITogglers() {
+    this.sectionTogglers.forEach(toggler => {
+      toggler.addEventListener('click', event => {
+        this._runSectionToggler(event)
+      })
+    })
   }
 }
 
