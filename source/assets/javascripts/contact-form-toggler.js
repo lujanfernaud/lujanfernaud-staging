@@ -1,3 +1,5 @@
+//= require vendor/hotkeys.min
+
 class ContactFormToggler {
   constructor() {
     this.formIsOpen      = false
@@ -9,11 +11,35 @@ class ContactFormToggler {
     this.delayedToggler  = new DelayedClassToggler()
     this.scrollToggler   = new ScrollToggler()
     this.letsTalkToggler = new LetsTalkToggler()
+
+    this.contactSectionRevealed = '.contact-section-container--revealed'
   }
 
   watch() {
+    this._watchKeyboard()
+    this._watchUITogglers()
+  }
+
+  // private
+
+  _watchKeyboard() {
+    hotkeys('esc', event => {
+      let backCoverIsActive = document.querySelector('#back-cover.active')
+      if (!backCoverIsActive) { return }
+
+      let formIsOpen = document.querySelector(this.contactSectionRevealed)
+      if (!formIsOpen) { return }
+
+      event.preventDefault()
+
+      this._scrollToBottom()
+      this._toggleContactSection()
+    })
+  }
+
+  _watchUITogglers() {
     this.sectionTogglers.forEach(toggler => {
-      toggler.addEventListener('click', (event) => {
+      toggler.addEventListener('click', event => {
         event.preventDefault()
 
         this._scrollToBottom()
@@ -21,8 +47,6 @@ class ContactFormToggler {
       })
     })
   }
-
-  // private
 
   _scrollToBottom() {
     document.querySelector('.scroll-to-back-cover').click()
