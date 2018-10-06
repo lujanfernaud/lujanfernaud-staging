@@ -178,7 +178,8 @@ $project-image-transition: all .3s ease-in-out;
 
   &--hover {
     @include media($very-large-devices) {
-      &:hover {
+      &:hover,
+      &:focus {
         @include diagonal-box-shadow(.7rem);
         transform: scale(1);
 
