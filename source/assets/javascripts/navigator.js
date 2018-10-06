@@ -29,10 +29,26 @@ class Navigator {
   }
 
   _watchWheelUp() {
+    let modalIsActive = document.querySelector('.modal.is-active')
+
+    if (modalIsActive) {
+      return this.wheelIndicator.setOptions({ preventMouse: false })
+    }
+
+    this.wheelIndicator.setOptions({ preventMouse: true })
+
     this._watchDirection('up', this.wheelUpDisabled, '.navigation--top')
   }
 
   _watchWheelDown() {
+    let modalIsActive = document.querySelector('.modal.is-active')
+
+    if (modalIsActive) {
+      return this.wheelIndicator.setOptions({ preventMouse: false })
+    }
+
+    this.wheelIndicator.setOptions({ preventMouse: true })
+
     this._watchDirection('down', this.wheelDownDisabled, '.navigation--bottom')
   }
 
@@ -40,11 +56,9 @@ class Navigator {
     if (directionDisabled) { return }
 
     let activeScreen = document.querySelector('.screen.active')
-
     if (!activeScreen) { return }
 
     let navigationControl = activeScreen.querySelector(navigationClass)
-
     if (!navigationControl) { return }
 
     directionDisabled = true
@@ -63,6 +77,9 @@ class Navigator {
 
   _watchKey(key, keyDisabled, navigationClass) {
     hotkeys(key, event => {
+      let modalIsActive = document.querySelector('.modal.is-active')
+      if (modalIsActive) { return }
+
       event.preventDefault()
 
       this._watchDirection(key, keyDisabled, navigationClass)
