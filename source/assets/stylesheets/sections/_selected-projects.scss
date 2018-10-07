@@ -244,10 +244,21 @@ $project-image-transition: all .3s ease-in-out;
   z-index: 1;
   transition: $project-image-transition;
 
+  &--solid {
+    display: none;
+  }
+
   @supports (mix-blend-mode: hue) {
     background-color: $brand-color-saturated;
     mix-blend-mode: hue;
     opacity: .86;
+
+    &--solid {
+      display: block;
+      background-color: $brand-color-saturated;
+      mix-blend-mode: color;
+      opacity: .27;
+    }
   }
 }
 
