@@ -20,20 +20,34 @@ class App {
   }
 
   run() {
-    new NameFlipper().watch()
-    new ScrollSmoother().run()
-    new NavigationToggler().watch()
-    new Navigator(this).watch()
-    this.textSelector.watch()
-    new ImageHoverToggler().watch()
-    new LetsTalkAnimator().watch()
-    new ContactFormToggler().watch()
-    new ModalToggler().watch()
-    new NoteTooltip().run()
+    this._main()
+    this._animators()
+    this._togglers()
   }
 
   reset() {
     this.textSelector.reset()
+  }
+
+  // private
+
+  _main() {
+    new Navigator(this).watch()
+    new ScrollSmoother().run()
+    new NoteTooltip().run()
+  }
+
+  _animators() {
+    this.textSelector.watch()
+    new NameFlipper().watch()
+    new LetsTalkAnimator().watch()
+  }
+
+  _togglers() {
+    new NavigationToggler().watch()
+    new ModalToggler().watch()
+    new ImageHoverToggler().watch()
+    new ContactFormToggler().watch()
   }
 }
 
