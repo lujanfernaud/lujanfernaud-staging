@@ -12,6 +12,9 @@ class Navigator {
     this.upKeyDisabled = false
     this.downKeyDisabled = false
 
+    this.modalIsActive = '.modal.is-active'
+    this.navTop = '.navigation--top'
+    this.navBottom = '.navigation--bottom'
     this.backToTop = document.querySelector('.back-to-top')
   }
 
@@ -33,7 +36,7 @@ class Navigator {
   }
 
   _watchWheelUp() {
-    let modalIsActive = document.querySelector('.modal.is-active')
+    let modalIsActive = document.querySelector(this.modalIsActive)
 
     if (modalIsActive) {
       return this.wheelIndicator.setOptions({ preventMouse: false })
@@ -41,11 +44,11 @@ class Navigator {
 
     this.wheelIndicator.setOptions({ preventMouse: true })
 
-    this._watchDirection('up', this.wheelUpDisabled, '.navigation--top')
+    this._watchDirection('up', this.wheelUpDisabled, this.navTop)
   }
 
   _watchWheelDown() {
-    let modalIsActive = document.querySelector('.modal.is-active')
+    let modalIsActive = document.querySelector(this.modalIsActive)
 
     if (modalIsActive) {
       return this.wheelIndicator.setOptions({ preventMouse: false })
@@ -53,7 +56,7 @@ class Navigator {
 
     this.wheelIndicator.setOptions({ preventMouse: true })
 
-    this._watchDirection('down', this.wheelDownDisabled, '.navigation--bottom')
+    this._watchDirection('down', this.wheelDownDisabled, this.navBottom)
   }
 
   _watchDirection(direction, directionDisabled, navigationClass) {
@@ -75,14 +78,14 @@ class Navigator {
   }
 
   _watchKeyboard() {
-    this._watchKey('up', this.upKeyDisabled, '.navigation--top')
-    this._watchKey('down', this.downKeyDisabled, '.navigation--bottom')
+    this._watchKey('up', this.upKeyDisabled, this.navTop)
+    this._watchKey('down', this.downKeyDisabled, this.navBottom)
     this._watchHomeKey()
   }
 
   _watchKey(key, keyDisabled, navigationClass) {
     hotkeys(key, event => {
-      let modalIsActive = document.querySelector('.modal.is-active')
+      let modalIsActive = document.querySelector(this.modalIsActive)
       if (modalIsActive) { return }
 
       event.preventDefault()
@@ -93,7 +96,7 @@ class Navigator {
 
   _watchHomeKey() {
     hotkeys('home', event => {
-      let modalIsActive = document.querySelector('.modal.is-active')
+      let modalIsActive = document.querySelector(this.modalIsActive)
       if (modalIsActive) { return }
 
       event.preventDefault()
