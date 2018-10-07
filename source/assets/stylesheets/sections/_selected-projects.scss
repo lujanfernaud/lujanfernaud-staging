@@ -155,15 +155,22 @@ $project-image-transition: all .3s ease-in-out;
   transition: $project-image-transition;
   outline-offset: .75rem;
 
-  transform: scale(0.955);
-  transform-origin: bottom right;
+  // *** Zoom image and increase shadow on hover
+  // -------------------------------------------
+  // Deactivated because the image appears blurred when the scale
+  // is different than 1. Couldn't find a way to sort it out.
+  // -------------------------------------------
+  // transform: scale(0.955);
+  // transform-origin: bottom right;
+  // -------------------------------------------
   // The image takes less space when scaling it down.
   // It also moves to the right bottom, as we are using
   // 'transform-origin: bottom right'.
-  // This adjustments are necessary to correct this.
-  min-width: 51.98%;
-  top: -2%;
-  margin-left: -2.38%;
+  // The following adjustments are necessary to correct that.
+  // -------------------------------------------
+  // min-width: 51.98%;
+  // top: -2%;
+  // margin-left: -2.38%;
 
   &-bottom {
     position: absolute;
@@ -181,8 +188,10 @@ $project-image-transition: all .3s ease-in-out;
     @include media($very-large-devices) {
       &:hover,
       &:focus {
-        @include diagonal-box-shadow(.7rem);
-        transform: scale(1);
+        // *** Zoom image and increase shadow on hover
+        // -------------------------------------------
+        // @include diagonal-box-shadow(.7rem);
+        // transform: scale(1);
 
         .project__image-container-bottom {
           bottom: -1rem;
