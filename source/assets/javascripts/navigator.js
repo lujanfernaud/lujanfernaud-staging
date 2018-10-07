@@ -10,6 +10,8 @@ class Navigator {
     this.wheelDownDisabled = false
     this.upKeyDisabled = false
     this.downKeyDisabled = false
+
+    this.backToTop = document.querySelector('.back-to-top')
   }
 
   watch() {
@@ -73,6 +75,7 @@ class Navigator {
   _watchKeyboard() {
     this._watchKey('up', this.upKeyDisabled, '.navigation--top')
     this._watchKey('down', this.downKeyDisabled, '.navigation--bottom')
+    this._watchHomeKey()
   }
 
   _watchKey(key, keyDisabled, navigationClass) {
@@ -83,6 +86,17 @@ class Navigator {
       event.preventDefault()
 
       this._watchDirection(key, keyDisabled, navigationClass)
+    })
+  }
+
+  _watchHomeKey() {
+    hotkeys('home', event => {
+      let modalIsActive = document.querySelector('.modal.is-active')
+      if (modalIsActive) { return }
+
+      event.preventDefault()
+
+      this.backToTop.children[0].click()
     })
   }
 }
