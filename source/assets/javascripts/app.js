@@ -14,6 +14,8 @@
 
 class App {
   constructor() {
+    this.textSelector = new TextSelector()
+
     inView.threshold(0.75)
   }
 
@@ -21,13 +23,17 @@ class App {
     new NameFlipper().watch()
     new ScrollSmoother().run()
     new NavigationToggler().watch()
-    new Navigator().watch()
-    new TextSelector().watch()
+    new Navigator(this).watch()
+    this.textSelector.watch()
     new ImageHoverToggler().watch()
     new LetsTalkAnimator().watch()
     new ContactFormToggler().watch()
     new ModalToggler().watch()
     new NoteTooltip().run()
+  }
+
+  reset() {
+    this.textSelector.reset()
   }
 }
 

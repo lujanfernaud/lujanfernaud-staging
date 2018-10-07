@@ -2,10 +2,11 @@
 //= require vendor/wheel-indicator
 
 class Navigator {
-  constructor() {
-    this.scrollDisabledTimeout = 325
+  constructor(app) {
+    this.app = app
     this.wheelIndicator = new WheelIndicator()
 
+    this.scrollDisabledTimeout = 325
     this.wheelUpDisabled = false
     this.wheelDownDisabled = false
     this.upKeyDisabled = false
@@ -17,6 +18,7 @@ class Navigator {
   watch() {
     this._watchMouseWheel()
     this._watchKeyboard()
+    this._watchBackToTop()
   }
 
   // private
@@ -96,7 +98,14 @@ class Navigator {
 
       event.preventDefault()
 
+      this.app.reset()
       this.backToTop.children[0].click()
+    })
+  }
+
+  _watchBackToTop() {
+    this.backToTop.addEventListener('click', () => {
+      this.app.reset()
     })
   }
 }

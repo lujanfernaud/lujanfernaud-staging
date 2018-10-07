@@ -10,4 +10,10 @@ class DelayedClassToggler {
       }, miliseconds)
     }
   }
+
+  remove({ element, klass, miliseconds = 1000 }) {
+    window.setTimeout(() => {
+      element.classList.remove(klass)
+    }, miliseconds)
+  }
 }
