@@ -57,6 +57,12 @@
     }
   }
 
+  &--bottom-right {
+    top: initial !important;
+    bottom: 0;
+    right: 0.35rem;
+  }
+
   &--left {
     top: initial !important;
     bottom: initial !important;
