@@ -146,7 +146,6 @@ $project-image-transition: all .3s ease-in-out;
   padding-top: 0;
   padding-bottom: 0;
   background-color: $medium-grey-1;
-  overflow: hidden;
   @include diagonal-box-shadow(.31rem);
   border-top: 1px solid darken($medium-grey-1, 1%);
   border-left: 1px solid darken($medium-grey-1, 1%);
@@ -174,6 +173,10 @@ $project-image-transition: all .3s ease-in-out;
 
   @include media($medium-devices) {
     @include diagonal-box-shadow(.41rem);
+  }
+
+  @include media($very-large-devices) {
+    overflow: hidden;
   }
 
   @include media($extra-large-devices) {
