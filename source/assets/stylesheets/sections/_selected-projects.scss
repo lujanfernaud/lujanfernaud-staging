@@ -236,7 +236,8 @@ $project-image-transition: all .3s ease-in-out;
 
 .project__image {
   display: block;
-  background-color: $brand-color-saturated;
+  color: $medium-grey-1;
+  background-color: $medium-grey-1;
   transition: $project-image-transition;
   filter: grayscale(.15);
 }
