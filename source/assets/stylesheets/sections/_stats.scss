@@ -58,8 +58,8 @@ $stats-gutter-large: 3.6rem;
   }
 
   &__img {
-    border: 1px solid rgba(#ddd, .6);
-    box-shadow: 0 3px 16px rgba(#ccc, .5);
+    border: 1px solid rgba($medium-grey-1, .6);
+    box-shadow: 0 3px 16px rgba($medium-grey-3, .5);
   }
 
   &__p {
