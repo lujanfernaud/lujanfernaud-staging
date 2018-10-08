@@ -17,6 +17,10 @@ $stats-gutter-large: 3.6rem;
   padding: 0;
 
   @include media($medium-devices) {
+    padding: .25rem;
+  }
+
+  @include media($large-devices) {
     padding: .5rem;
   }
 
@@ -27,6 +31,10 @@ $stats-gutter-large: 3.6rem;
     padding: 0 0 1rem 0;
 
     @include media($medium-devices) {
+      padding: .25rem .25rem 2rem .25rem;
+    }
+
+    @include media($large-devices) {
       padding: .5rem .5rem $stats-gutter .5rem;
     }
   }
@@ -37,7 +45,7 @@ $stats-gutter-large: 3.6rem;
     margin-top: $stats-gutter;
 
     &:first-child {
-      margin-top: .3rem;
+      margin-top: .4rem;
     }
 
     @include media($medium-devices) {
