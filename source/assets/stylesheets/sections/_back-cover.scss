@@ -90,13 +90,18 @@
   @include background-gradient;
   cursor: pointer;
   border-radius: 100%;
-  @include diagonal-box-shadow(.41rem);
+  @include diagonal-box-shadow(.31rem);
   overflow: hidden;
   z-index: 1;
 
   @include media($medium-devices) {
     width: 30rem;
     height: 30rem;
+    @include diagonal-box-shadow(.41rem);
+  }
+
+  @include media($extra-large-devices) {
+    @include diagonal-box-shadow(.51rem);
   }
 
   @include media-iphone-large {

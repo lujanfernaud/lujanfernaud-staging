@@ -147,7 +147,7 @@ $project-image-transition: all .3s ease-in-out;
   padding-bottom: 0;
   background-color: $medium-grey-1;
   overflow: hidden;
-  @include diagonal-box-shadow(.41rem);
+  @include diagonal-box-shadow(.31rem);
   border-top: 1px solid darken($medium-grey-1, 1%);
   border-left: 1px solid darken($medium-grey-1, 1%);
   border-right: 1px solid darken($medium-grey-2, 1%);
@@ -171,6 +171,14 @@ $project-image-transition: all .3s ease-in-out;
   // min-width: 51.98%;
   // top: -2%;
   // margin-left: -2.38%;
+
+  @include media($medium-devices) {
+    @include diagonal-box-shadow(.41rem);
+  }
+
+  @include media($extra-large-devices) {
+    @include diagonal-box-shadow(.51rem);
+  }
 
   &-bottom {
     position: absolute;
@@ -508,11 +516,16 @@ $project-image-transition: all .3s ease-in-out;
   font-weight: normal;
   text-align: center;
   line-height: 1.4;
-  @include diagonal-box-shadow(.41rem);
+  @include diagonal-box-shadow(.31rem);
   transition: all 1s;
 
   @include media($medium-devices) {
     margin: ($projects-spacing * 2 + $projects-spacing-half) auto;
     font-size: 1.7rem;
+    @include diagonal-box-shadow(.41rem);
+  }
+
+  @include media($extra-large-devices) {
+    @include diagonal-box-shadow(.51rem);
   }
 }
