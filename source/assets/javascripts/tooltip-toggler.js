@@ -1,6 +1,6 @@
 //= require vendor/tippy.min
 
-class NoteTooltip {
+class TooltipToggler {
   run() {
     this._setupTippy()
     this._watchScroll()

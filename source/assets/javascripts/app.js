@@ -3,13 +3,13 @@
 
 //= require navigator
 //= require scroll-smoother
-//= require note-tooltip
 
 //= require text-selector
 //= require name-flipper
 //= require lets-talk-animator
 
 //= require navigation-toggler
+//= require tooltip-toggler
 //= require modal-toggler
 //= require image-hover-toggler
 //= require contact-form-toggler
@@ -36,7 +36,6 @@ class App {
   _main() {
     new Navigator(this).watch()
     new ScrollSmoother().run()
-    new NoteTooltip().run()
   }
 
   _animators() {
@@ -47,6 +46,7 @@ class App {
 
   _togglers() {
     new NavigationToggler().watch()
+    new TooltipToggler().run()
     new ModalToggler().watch()
     new ImageHoverToggler().watch()
     new ContactFormToggler().watch()
