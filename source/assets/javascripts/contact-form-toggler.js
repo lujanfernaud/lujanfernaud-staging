@@ -93,16 +93,28 @@ class ContactFormToggler {
     let navigation = this.backCover.querySelectorAll('.navigation')
 
     if (this.formIsOpen) {
-      navigation.forEach(navigationControl => {
-        navigationControl.style.display = 'none'
-      })
+      this._removeNavigation(navigation)
     } else {
-      navigation.forEach(navigationControl => {
-        navigationControl.classList.remove('display-none')
-        navigationControl.style.display = 'block'
-      })
+      this._restoreNavigation(navigation)
     }
 
+    this._toggleNavigationVisibility(navigation)
+  }
+
+  _removeNavigation(navigation) {
+    navigation.forEach(navigationControl => {
+      navigationControl.style.display = 'none'
+    })
+  }
+
+  _restoreNavigation(navigation) {
+    navigation.forEach(navigationControl => {
+      navigationControl.classList.remove('display-none')
+      navigationControl.style.display = 'block'
+    })
+  }
+
+  _toggleNavigationVisibility(navigation) {
     navigation.forEach(navigationControl => {
       this.delayedToggler.toggle({
         element:     navigationControl,
