@@ -1,16 +1,18 @@
 //= require helpers/fader
 //= require helpers/delayed-class-toggler
 
-//= require name-flipper
-//= require scroll-smoother
-//= require navigation-toggler
 //= require navigator
-//= require text-selector
-//= require image-hover-toggler
-//= require lets-talk-animator
-//= require contact-form-toggler
-//= require modal-toggler
+//= require scroll-smoother
 //= require note-tooltip
+
+//= require text-selector
+//= require name-flipper
+//= require lets-talk-animator
+
+//= require navigation-toggler
+//= require modal-toggler
+//= require image-hover-toggler
+//= require contact-form-toggler
 
 class App {
   constructor() {
