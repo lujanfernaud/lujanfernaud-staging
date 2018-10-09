@@ -8,6 +8,7 @@ class ContactFormToggler {
     this.letsTalkToggler = new LetsTalkToggler()
     this.formIsOpen      = false
 
+    this.backCover      = document.querySelector('.back-cover')
     this.contactSection = document.querySelector('.contact-section-container')
     this.linkOpener     = document.querySelector('.lets-talk-link')
     this.navOpener      = document.querySelector('.navigation--left')
@@ -89,8 +90,7 @@ class ContactFormToggler {
   }
 
   _toggleNavigation() {
-    let backCover  = document.querySelector('.back-cover')
-    let navigation = backCover.querySelectorAll('.navigation')
+    let navigation = this.backCover.querySelectorAll('.navigation')
 
     if (this.formIsOpen) {
       navigation.forEach(navigationControl => {
@@ -113,7 +113,7 @@ class ContactFormToggler {
   }
 
   _toggleScroll() {
-    this.scrollToggler.toggle()
+    this.scrollToggler.toggle(this.backCover)
   }
 
   _toggleLetsTalk() {
