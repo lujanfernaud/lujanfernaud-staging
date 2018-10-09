@@ -13,6 +13,7 @@ class Navigator {
     this.downKeyDisabled = false
 
     this.modalIsActive = '.modal.is-active'
+    this.formIsActive = '.contact-section-container--revealed'
     this.navTop = '.navigation--top'
     this.navBottom = '.navigation--bottom'
     this.backToTop = document.querySelector('.back-to-top')
@@ -37,8 +38,9 @@ class Navigator {
 
   _watchWheelUp() {
     let modalIsActive = document.querySelector(this.modalIsActive)
+    let formIsActive = document.querySelector(this.formIsActive)
 
-    if (modalIsActive) {
+    if (modalIsActive || formIsActive) {
       return this.wheelIndicator.setOptions({ preventMouse: false })
     }
 
@@ -86,7 +88,9 @@ class Navigator {
   _watchKey(key, keyDisabled, navigationClass) {
     hotkeys(key, event => {
       let modalIsActive = document.querySelector(this.modalIsActive)
-      if (modalIsActive) { return }
+      let formIsActive = document.querySelector(this.formIsActive)
+
+      if (modalIsActive || formIsActive) { return }
 
       event.preventDefault()
 
@@ -97,7 +101,9 @@ class Navigator {
   _watchHomeKey() {
     hotkeys('home', event => {
       let modalIsActive = document.querySelector(this.modalIsActive)
-      if (modalIsActive) { return }
+      let formIsActive = document.querySelector(this.formIsActive)
+
+      if (modalIsActive || formIsActive) { return }
 
       event.preventDefault()
 
