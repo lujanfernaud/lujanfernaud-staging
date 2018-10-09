@@ -15,7 +15,9 @@ class ContactFormToggler {
     this.scrollToggler   = new ScrollToggler()
     this.letsTalkToggler = new LetsTalkToggler()
 
-    this.contactSectionRevealed = '.contact-section-container--revealed'
+    this.contactSectionRevealed   = '.contact-section-container--revealed'
+    this.linkCloserAnimationLeft  = 'contact-section__close--opening'
+    this.linkCloserAnimationRight = 'contact-section__close--closing'
   }
 
   watch() {
@@ -27,11 +29,23 @@ class ContactFormToggler {
 
   _watchKeyboardTogglers() {
     hotkeys('esc, right', event => {
+      this._toggleCloseLinkAnimationRight()
       this._toggleContactSectionIf(this.formIsOpen, event)
     })
 
     hotkeys('left', event => {
       this._toggleContactSectionIf(!this.formIsOpen, event)
+    })
+  }
+
+  _toggleCloseLinkAnimationRight() {
+    if (!this.formIsOpen) { return }
+
+    this.linkCloser.classList.add(this.linkCloserAnimationRight)
+
+    this.delayedToggler.remove({
+      element: this.linkCloser,
+      klass:   this.linkCloserAnimationRight
     })
   }
 
@@ -65,6 +79,7 @@ class ContactFormToggler {
     this._toggleScroll()
     this._toggleLetsTalk()
     this._toggleContactForm()
+    this._toggleCloseLinkAnimationLeft()
   }
 
   _toggleVisibility() {
@@ -109,6 +124,13 @@ class ContactFormToggler {
 
   _toggleContactForm() {
     this.contactSection.classList.toggle('contact-section-container--revealed')
+  }
+
+  _toggleCloseLinkAnimationLeft() {
+    this.delayedToggler.toggle({
+      element: this.linkCloser,
+      klass:   this.linkCloserAnimationLeft
+    })
   }
 
   _watchUITogglers() {

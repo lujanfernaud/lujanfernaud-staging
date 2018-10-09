@@ -311,22 +311,160 @@
 }
 
 .contact-section__close {
+  $closing-icon-height: 4px;
+  $closing-icon-width: 30px;
+  $closing-icon-left: 28px;
+  $closing-icon-top: 32px;
+
   position: absolute;
   top: .2rem;
   right: .5rem;
   padding: 1rem;
   font-size: 2rem;
+  color: transparent;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: $closing-icon-height;
+    width: $closing-icon-width;
+    margin-top: -3px;
+    margin-left: -$closing-icon-width/2;
+    transform: rotate(-45deg);
+    background-color: $brand-color-saturated;
+    transition: all .2s ease-out;
+  }
+
+  &:after {
+    transform: rotate(45deg);
+  }
+
+  &--closing,
+  &:hover,
+  &:focus {
+    &:before,
+    &:after {
+      width: $closing-icon-width/2;
+      margin-left: -$closing-icon-width/4;
+      transform-origin: right;
+    }
+
+    &:before {
+      left: $closing-icon-left;
+      top: $closing-icon-top;
+    }
+  }
+
+  &--opening {
+    &:before,
+    &:after {
+      width: $closing-icon-width/2;
+      margin-left: -$closing-icon-width/4;
+      transform-origin: left;
+    }
+
+    &:after {
+      left: $closing-icon-left;
+      top: $closing-icon-top;
+    }
+  }
 
   @include media($medium-devices) {
+    $closing-icon-height: 6px;
+    $closing-icon-width: 46px;
+    $closing-icon-left: 36px;
+    $closing-icon-top: 39px;
+
     top: .8rem;
     right: 1.4rem;
     font-size: 3rem;
+
+    &:before,
+    &:after {
+      height: $closing-icon-height;
+      width: $closing-icon-width;
+      margin-top: -4px;
+      margin-left: -$closing-icon-width/2;
+    }
+
+    &--closing,
+    &:hover,
+    &:focus {
+      &:before,
+      &:after {
+        width: $closing-icon-width/2;
+        margin-left: -$closing-icon-width/4;
+      }
+
+      &:before {
+        left: $closing-icon-left;
+        top: $closing-icon-top;
+      }
+    }
+
+    &--opening {
+      &:before,
+      &:after {
+        width: $closing-icon-width/2;
+        margin-left: -$closing-icon-width/4;
+      }
+
+      &:after {
+        left: $closing-icon-left;
+        top: $closing-icon-top;
+      }
+    }
   }
 
   @include media-iphone-large {
+    $closing-icon-height: 4px;
+    $closing-icon-width: 30px;
+    $closing-icon-left: 28px;
+    $closing-icon-top: 32px;
+
     top: 0;
     right: .1rem;
     font-size: 2rem;
+
+    &:before,
+    &:after {
+      height: $closing-icon-height;
+      width: $closing-icon-width;
+      margin-top: -4px;
+      margin-left: -$closing-icon-width/2;
+    }
+
+    &--closing,
+    &:hover,
+    &:focus {
+      &:before,
+      &:after {
+        width: $closing-icon-width/2;
+        margin-left: -$closing-icon-width/4;
+      }
+
+      &:before {
+        left: $closing-icon-left;
+        top: $closing-icon-top;
+      }
+    }
+
+    &--opening {
+      &:before,
+      &:after {
+        width: $closing-icon-width/2;
+        margin-left: -$closing-icon-width/4;
+      }
+
+      &:after {
+        left: $closing-icon-left;
+        top: $closing-icon-top;
+      }
+    }
   }
 }
 
