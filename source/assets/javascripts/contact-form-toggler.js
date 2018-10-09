@@ -2,20 +2,17 @@
 
 class ContactFormToggler {
   constructor() {
-    this.formIsOpen      = false
-    this.contactSection  = document.querySelector('.contact-section-container')
-    this.linkOpener      = document.querySelector('.lets-talk-link')
-    this.navOpener       = document.querySelector('.navigation--left')
-    this.linkCloser      = document.querySelector('.contact-section__close')
-    this.sectionTogglers = [
-      this.linkOpener, this.navOpener, this.linkCloser
-    ]
-
     this.delayedToggler  = new DelayedClassToggler()
     this.scrollToggler   = new ScrollToggler()
     this.letsTalkToggler = new LetsTalkToggler()
+    this.formIsOpen      = false
 
-    this.contactSectionRevealed   = '.contact-section-container--revealed'
+    this.contactSection = document.querySelector('.contact-section-container')
+    this.linkOpener     = document.querySelector('.lets-talk-link')
+    this.navOpener      = document.querySelector('.navigation--left')
+    this.linkCloser     = document.querySelector('.contact-section__close')
+
+    this.contactSectionRevealed   = 'contact-section-container--revealed'
     this.linkCloserAnimationLeft  = 'contact-section__close--opening'
     this.linkCloserAnimationRight = 'contact-section__close--closing'
   }
@@ -123,7 +120,7 @@ class ContactFormToggler {
   }
 
   _toggleContactForm() {
-    this.contactSection.classList.toggle('contact-section-container--revealed')
+    this.contactSection.classList.toggle(this.contactSectionRevealed)
   }
 
   _toggleCloseLinkAnimationLeft() {
@@ -134,7 +131,9 @@ class ContactFormToggler {
   }
 
   _watchUITogglers() {
-    this.sectionTogglers.forEach(toggler => {
+    let sectionTogglers = [this.linkOpener, this.navOpener, this.linkCloser]
+
+    sectionTogglers.forEach(toggler => {
       toggler.addEventListener('click', event => {
         this._runSectionToggler(event)
       })
