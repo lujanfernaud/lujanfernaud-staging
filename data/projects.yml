@@ -58,7 +58,7 @@ weather_compare:
     title: React
 
 rock_paper_scissors:
-  title: Rock, Paper, Scissors
+  title: Rock, Paper...
   description: The classic game implemented with a clean UI and a fully responsive design.
   tags: "Built with: ES6, Flexbox, Sass"
   links:
