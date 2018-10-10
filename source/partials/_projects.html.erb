@@ -10,12 +10,15 @@
       }
     %>
 
-    <h1 class="projects-header__title projects-header__title--selected">
-      SELECTED
-    </h1>
-    <h1 class="projects-header__title">
-      PROJECTS
-    </h1>
+    <div class="projects-header__title-container">
+      <h1 class="projects-header__title projects-header__title--first
+        projects-header__title--selected">
+        SELECTED
+      </h1>
+      <h1 class="projects-header__title projects-header__title--second">
+        PROJECTS
+      </h1>
+    </div>
 
     <%= partial "partials/navigation_bottom",
       locals: {

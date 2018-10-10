@@ -24,9 +24,22 @@ $project-image-transition: all .3s ease-in-out;
   @include background-gradient;
 }
 
+.projects-header__title-container {
+  padding: .9rem .9rem .65rem .9rem;
+  border: 1px solid $light-grey-1;
+
+  @include media($medium-devices) {
+    padding: 1.7rem 1.7rem 1.4rem 1.7rem;
+  }
+
+  @include media($very-large-devices) {
+    padding: 2.25rem 2.25rem 2rem 2.25rem;
+  }
+}
+
 .projects-header__title {
   position: relative;
-  margin: 2rem;
+  margin: 0;
   font-size: 2rem;
   font-style: italic;
   color: $light-grey-1;
@@ -42,27 +55,66 @@ $project-image-transition: all .3s ease-in-out;
   @include media($very-large-devices) {
     font-size: 6rem;
   }
+}
 
-  &--selected {
+.projects-header__title--first {
+  margin-bottom: .6rem;
+  letter-spacing: .06rem;
+
+  @include media($medium-devices) {
+    margin-bottom: 1.05rem;
+    letter-spacing: .03rem;
+  }
+
+  @include media($very-large-devices) {
+    margin-bottom: 1.5rem;
+    letter-spacing: .06rem;
+  }
+}
+
+.projects-header__title--selected {
+  padding-left: .4rem;
+  padding-right: .4rem;
+
+  @include media($medium-devices) {
+    padding-top: .15rem;
     padding-left: 1.1rem;
     padding-right: 1.1rem;
+  }
 
-    &::after {
-      content: "SELECTED";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 0%;
-      height: 100%;
-      padding-left: 1.1rem;
-      color: $brand-color-saturated;
-      white-space: nowrap;
-      overflow: hidden;
-      opacity: 0;
-      @include background-gradient(lighten($light-grey-1, 10%), $light-grey-2);
+  &::after {
+    content: "SELECTED";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 0%;
+    height: 100%;
+    padding-top: 0;
+    padding-left: .5rem;
+    color: $brand-color-saturated;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0;
+    @include background-gradient(lighten($light-grey-1, 10%), $light-grey-2);
+
+    @include media($medium-devices) {
+      padding-top: .15rem;
+      padding-left: 1.2rem;
     }
+  }
+}
+
+.projects-header__title--second {
+  letter-spacing: .2rem;
+
+  @include media($medium-devices) {
+    letter-spacing: .4rem;
+  }
+
+  @include media($very-large-devices) {
+    letter-spacing: .46rem;
   }
 }
 
