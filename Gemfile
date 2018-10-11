@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.5.0'
 
-gem 'middleman',              '~> 4.2'
+gem 'middleman',              '~> 4.2', '>= 4.2.1'
 gem 'middleman-autoprefixer', '~> 2.9'
 gem 'middleman-minify-html',  '~> 3.4', '>= 3.4.1'
 gem "middleman-imageoptim",
