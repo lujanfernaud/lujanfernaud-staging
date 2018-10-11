@@ -1,0 +1,36 @@
+'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var TextSelector = (function () {
+  function TextSelector() {
+    _classCallCheck(this, TextSelector);
+
+    this.delayedClassToggler = new DelayedClassToggler();
+    this.text = document.querySelector('.projects-header__title--selected');
+  }
+
+  _createClass(TextSelector, [{
+    key: 'watch',
+    value: function watch() {
+      var _this = this;
+
+      inView('.projects-header').on('enter', function () {
+        _this.text.classList.add('select-text');
+      });
+    }
+  }, {
+    key: 'reset',
+    value: function reset() {
+      this.delayedClassToggler.remove({
+        element: this.text,
+        klass: 'select-text',
+        miliseconds: 1300
+      });
+    }
+  }]);
+
+  return TextSelector;
+})();

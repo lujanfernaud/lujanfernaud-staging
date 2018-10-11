@@ -1,0 +1,13 @@
+'use strict';
+
+var fader = {
+  fadeIn: function fadeIn(element) {
+    element.classList.remove('opacity-hidden');
+  },
+  fadeOut: function fadeOut(element) {
+    element.classList.add('opacity-hidden');
+  },
+  toggle: function toggle(element) {
+    element.classList.toggle('opacity-hidden');
+  }
+};

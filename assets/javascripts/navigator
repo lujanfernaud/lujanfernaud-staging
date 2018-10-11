@@ -1,0 +1,164 @@
+//= require vendor/hotkeys.min
+//= require vendor/wheel-indicator
+
+'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var Navigator = (function () {
+  function Navigator(app) {
+    _classCallCheck(this, Navigator);
+
+    this.app = app;
+    this.wheelIndicator = new WheelIndicator();
+
+    this.scrollDisabledTimeout = 325;
+    this.wheelUpDisabled = false;
+    this.wheelDownDisabled = false;
+    this.upKeyDisabled = false;
+    this.downKeyDisabled = false;
+
+    this.modalIsActive = '.modal.is-active';
+    this.formIsActive = '.contact-section-container--revealed';
+    this.navTop = '.navigation--top';
+    this.navBottom = '.navigation--bottom';
+    this.backToTop = document.querySelector('.back-to-top');
+  }
+
+  _createClass(Navigator, [{
+    key: 'watch',
+    value: function watch() {
+      this._watchMouseWheel();
+      this._watchKeyboard();
+      this._watchBackToTop();
+    }
+
+    // private
+
+  }, {
+    key: '_watchMouseWheel',
+    value: function _watchMouseWheel() {
+      var _this = this;
+
+      this.wheelIndicator.setOptions({
+        callback: function callback(scroll) {
+          if (scroll.direction === 'up') {
+            _this._watchWheelUp();
+          }
+          if (scroll.direction === 'down') {
+            _this._watchWheelDown();
+          }
+        }
+      });
+    }
+  }, {
+    key: '_watchWheelUp',
+    value: function _watchWheelUp() {
+      var modalIsActive = document.querySelector(this.modalIsActive);
+      var formIsActive = document.querySelector(this.formIsActive);
+
+      if (modalIsActive || formIsActive) {
+        return this.wheelIndicator.setOptions({ preventMouse: false });
+      }
+
+      this.wheelIndicator.setOptions({ preventMouse: true });
+
+      this._watchDirection('up', this.wheelUpDisabled, this.navTop);
+    }
+  }, {
+    key: '_watchWheelDown',
+    value: function _watchWheelDown() {
+      var modalIsActive = document.querySelector(this.modalIsActive);
+
+      if (modalIsActive) {
+        return this.wheelIndicator.setOptions({ preventMouse: false });
+      }
+
+      this.wheelIndicator.setOptions({ preventMouse: true });
+
+      this._watchDirection('down', this.wheelDownDisabled, this.navBottom);
+    }
+  }, {
+    key: '_watchDirection',
+    value: function _watchDirection(direction, directionDisabled, navigationClass) {
+      if (directionDisabled) {
+        return;
+      }
+
+      var activeScreen = document.querySelector('.screen.active');
+      if (!activeScreen) {
+        return;
+      }
+
+      var navigationControl = activeScreen.querySelector(navigationClass);
+      if (!navigationControl) {
+        return;
+      }
+
+      directionDisabled = true;
+
+      window.setTimeout(function () {
+        directionDisabled = false;
+      }, this.disabledTimeout);
+
+      navigationControl.children[0].click();
+    }
+  }, {
+    key: '_watchKeyboard',
+    value: function _watchKeyboard() {
+      this._watchKey('up', this.upKeyDisabled, this.navTop);
+      this._watchKey('down', this.downKeyDisabled, this.navBottom);
+      this._watchHomeKey();
+    }
+  }, {
+    key: '_watchKey',
+    value: function _watchKey(key, keyDisabled, navigationClass) {
+      var _this2 = this;
+
+      hotkeys(key, function (event) {
+        var modalIsActive = document.querySelector(_this2.modalIsActive);
+        var formIsActive = document.querySelector(_this2.formIsActive);
+
+        if (modalIsActive || formIsActive) {
+          return;
+        }
+
+        event.preventDefault();
+
+        _this2._watchDirection(key, keyDisabled, navigationClass);
+      });
+    }
+  }, {
+    key: '_watchHomeKey',
+    value: function _watchHomeKey() {
+      var _this3 = this;
+
+      hotkeys('home', function (event) {
+        var modalIsActive = document.querySelector(_this3.modalIsActive);
+        var formIsActive = document.querySelector(_this3.formIsActive);
+
+        if (modalIsActive || formIsActive) {
+          return;
+        }
+
+        event.preventDefault();
+
+        _this3.app.reset();
+        _this3.backToTop.children[0].click();
+      });
+    }
+  }, {
+    key: '_watchBackToTop',
+    value: function _watchBackToTop() {
+      var _this4 = this;
+
+      this.backToTop.addEventListener('click', function () {
+        _this4.app.reset();
+      });
+    }
+  }]);
+
+  return Navigator;
+})();

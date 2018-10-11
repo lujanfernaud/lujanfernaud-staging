@@ -1,0 +1,198 @@
+//= require vendor/hotkeys.min
+//= require scroll-toggler
+
+'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var ContactFormToggler = (function () {
+  function ContactFormToggler() {
+    _classCallCheck(this, ContactFormToggler);
+
+    this.delayedToggler = new DelayedClassToggler();
+    this.scrollToggler = new ScrollToggler();
+    this.letsTalkToggler = new LetsTalkToggler();
+    this.formIsOpen = false;
+
+    this.backCover = document.querySelector('.back-cover');
+    this.contactSection = document.querySelector('.contact-section-container');
+    this.linkOpener = document.querySelector('.lets-talk-link');
+    this.navOpener = document.querySelector('.navigation--left');
+    this.linkCloser = document.querySelector('.contact-section__close');
+
+    this.contactSectionRevealed = 'contact-section-container--revealed';
+    this.linkCloserAnimationLeft = 'contact-section__close--opening';
+    this.linkCloserAnimationRight = 'contact-section__close--closing';
+  }
+
+  _createClass(ContactFormToggler, [{
+    key: 'watch',
+    value: function watch() {
+      this._watchKeyboardTogglers();
+      this._watchUITogglers();
+    }
+
+    // private
+
+  }, {
+    key: '_watchKeyboardTogglers',
+    value: function _watchKeyboardTogglers() {
+      var _this = this;
+
+      hotkeys('esc, right', function (event) {
+        _this._toggleCloseLinkAnimationRight();
+        _this._toggleContactSectionIf(_this.formIsOpen, event);
+      });
+
+      hotkeys('left', function (event) {
+        _this._toggleContactSectionIf(!_this.formIsOpen, event);
+      });
+    }
+  }, {
+    key: '_toggleCloseLinkAnimationRight',
+    value: function _toggleCloseLinkAnimationRight() {
+      if (!this.formIsOpen) {
+        return;
+      }
+
+      this.linkCloser.classList.add(this.linkCloserAnimationRight);
+
+      this.delayedToggler.remove({
+        element: this.linkCloser,
+        klass: this.linkCloserAnimationRight
+      });
+    }
+  }, {
+    key: '_toggleContactSectionIf',
+    value: function _toggleContactSectionIf(formIsOpen, event) {
+      if (!this._backCoverIsActive()) {
+        return;
+      }
+      if (!formIsOpen) {
+        return;
+      }
+
+      this._runSectionToggler(event);
+    }
+  }, {
+    key: '_backCoverIsActive',
+    value: function _backCoverIsActive() {
+      return document.querySelector('.back-cover.active');
+    }
+  }, {
+    key: '_runSectionToggler',
+    value: function _runSectionToggler(event) {
+      event.preventDefault();
+
+      this._scrollToBottom();
+      this._toggleContactSection();
+    }
+  }, {
+    key: '_scrollToBottom',
+    value: function _scrollToBottom() {
+      document.querySelector('.scroll-to-back-cover').click();
+    }
+  }, {
+    key: '_toggleContactSection',
+    value: function _toggleContactSection() {
+      this.formIsOpen = !this.formIsOpen; // Switch the boolean.
+
+      this._toggleVisibility();
+      this._toggleNavigation();
+      this._toggleScroll();
+      this._toggleLetsTalk();
+      this._toggleContactForm();
+      this._toggleCloseLinkAnimationLeft();
+    }
+  }, {
+    key: '_toggleVisibility',
+    value: function _toggleVisibility() {
+      this.delayedToggler.toggle({
+        element: this.contactSection,
+        klass: 'visibility-hidden',
+        formIsOpen: this.formIsOpen
+      });
+    }
+  }, {
+    key: '_toggleNavigation',
+    value: function _toggleNavigation() {
+      var navigation = this.backCover.querySelectorAll('.navigation');
+
+      if (this.formIsOpen) {
+        this._removeNavigation(navigation);
+      } else {
+        this._restoreNavigation(navigation);
+      }
+
+      this._toggleNavigationVisibility(navigation);
+    }
+  }, {
+    key: '_removeNavigation',
+    value: function _removeNavigation(navigation) {
+      navigation.forEach(function (navigationControl) {
+        navigationControl.style.display = 'none';
+      });
+    }
+  }, {
+    key: '_restoreNavigation',
+    value: function _restoreNavigation(navigation) {
+      navigation.forEach(function (navigationControl) {
+        navigationControl.classList.remove('display-none');
+        navigationControl.style.display = 'block';
+      });
+    }
+  }, {
+    key: '_toggleNavigationVisibility',
+    value: function _toggleNavigationVisibility(navigation) {
+      var _this2 = this;
+
+      navigation.forEach(function (navigationControl) {
+        _this2.delayedToggler.toggle({
+          element: navigationControl,
+          klass: 'navigation--hidden',
+          formIsOpen: _this2.formIsOpen
+        });
+      });
+    }
+  }, {
+    key: '_toggleScroll',
+    value: function _toggleScroll() {
+      this.scrollToggler.toggle(this.backCover);
+    }
+  }, {
+    key: '_toggleLetsTalk',
+    value: function _toggleLetsTalk() {
+      this.letsTalkToggler.toggle(this.formIsOpen);
+    }
+  }, {
+    key: '_toggleContactForm',
+    value: function _toggleContactForm() {
+      this.contactSection.classList.toggle(this.contactSectionRevealed);
+    }
+  }, {
+    key: '_toggleCloseLinkAnimationLeft',
+    value: function _toggleCloseLinkAnimationLeft() {
+      this.delayedToggler.toggle({
+        element: this.linkCloser,
+        klass: this.linkCloserAnimationLeft
+      });
+    }
+  }, {
+    key: '_watchUITogglers',
+    value: function _watchUITogglers() {
+      var _this3 = this;
+
+      var sectionTogglers = [this.linkOpener, this.navOpener, this.linkCloser];
+
+      sectionTogglers.forEach(function (toggler) {
+        toggler.addEventListener('click', function (event) {
+          _this3._runSectionToggler(event);
+        });
+      });
+    }
+  }]);
+
+  return ContactFormToggler;
+})();

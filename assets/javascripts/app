@@ -1,0 +1,74 @@
+//= require helpers/fader
+//= require helpers/delayed-class-toggler
+
+//= require navigator
+//= require scroll-smoother
+
+//= require text-selector
+//= require name-flipper
+//= require lets-talk-animator
+
+//= require navigation-toggler
+//= require tooltip-toggler
+//= require modal-toggler
+//= require image-hover-toggler
+//= require contact-form-toggler
+
+"use strict";
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var App = (function () {
+  function App() {
+    _classCallCheck(this, App);
+
+    this.textSelector = new TextSelector();
+
+    inView.threshold(0.75);
+  }
+
+  _createClass(App, [{
+    key: "run",
+    value: function run() {
+      this._main();
+      this._animators();
+      this._togglers();
+    }
+  }, {
+    key: "reset",
+    value: function reset() {
+      this.textSelector.reset();
+    }
+
+    // private
+
+  }, {
+    key: "_main",
+    value: function _main() {
+      new Navigator(this).watch();
+      new ScrollSmoother().run();
+    }
+  }, {
+    key: "_animators",
+    value: function _animators() {
+      this.textSelector.watch();
+      new NameFlipper().watch();
+      new LetsTalkAnimator().watch();
+    }
+  }, {
+    key: "_togglers",
+    value: function _togglers() {
+      new NavigationToggler().watch();
+      new TooltipToggler().run();
+      new ModalToggler().watch();
+      new ImageHoverToggler().watch();
+      new ContactFormToggler().watch();
+    }
+  }]);
+
+  return App;
+})();
+
+new App().run();

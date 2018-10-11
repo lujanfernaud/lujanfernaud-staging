@@ -1,0 +1,47 @@
+// Delays toggling of CSS classes.
+
+"use strict";
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var DelayedClassToggler = (function () {
+  function DelayedClassToggler() {
+    _classCallCheck(this, DelayedClassToggler);
+  }
+
+  _createClass(DelayedClassToggler, [{
+    key: "toggle",
+    value: function toggle(_ref) {
+      var element = _ref.element;
+      var klass = _ref.klass;
+      var _ref$formIsOpen = _ref.formIsOpen;
+      var formIsOpen = _ref$formIsOpen === undefined ? false : _ref$formIsOpen;
+      var _ref$miliseconds = _ref.miliseconds;
+      var miliseconds = _ref$miliseconds === undefined ? 1000 : _ref$miliseconds;
+
+      if (formIsOpen) {
+        element.classList.toggle(klass);
+      } else {
+        window.setTimeout(function () {
+          element.classList.toggle(klass);
+        }, miliseconds);
+      }
+    }
+  }, {
+    key: "remove",
+    value: function remove(_ref2) {
+      var element = _ref2.element;
+      var klass = _ref2.klass;
+      var _ref2$miliseconds = _ref2.miliseconds;
+      var miliseconds = _ref2$miliseconds === undefined ? 1000 : _ref2$miliseconds;
+
+      window.setTimeout(function () {
+        element.classList.remove(klass);
+      }, miliseconds);
+    }
+  }]);
+
+  return DelayedClassToggler;
+})();

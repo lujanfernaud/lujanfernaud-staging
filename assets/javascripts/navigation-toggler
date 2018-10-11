@@ -1,0 +1,96 @@
+'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var NavigationToggler = (function () {
+  function NavigationToggler() {
+    _classCallCheck(this, NavigationToggler);
+
+    this.nullElement = document.querySelector('.null-element');
+  }
+
+  _createClass(NavigationToggler, [{
+    key: 'watch',
+    value: function watch() {
+      var _this = this;
+
+      inView('.screen').on('enter', function (element) {
+        element.classList.add('active');
+
+        var navigation = _this._selectNavigationControls(element);
+
+        _this._toggleNavigationOpacity(navigation);
+        _this._switchNavigationOnHover(navigation);
+        _this._hideNavigationOnClick(navigation);
+      }).on('exit', function (element) {
+        element.classList.remove('active');
+
+        var navigation = _this._selectNavigationControls(element);
+
+        _this._toggleNavigationOpacity(navigation);
+        _this._restoreNavigation(navigation);
+      });
+    }
+
+    // private
+
+  }, {
+    key: '_selectNavigationControls',
+    value: function _selectNavigationControls(element) {
+      var top = this._select(element, '.navigation--top');
+      var left = this._select(element, '.navigation--left');
+      var bottom = this._select(element, '.navigation--bottom');
+
+      return { top: top, left: left, bottom: bottom };
+    }
+  }, {
+    key: '_select',
+    value: function _select(element, klass) {
+      return element.querySelector(klass) || this.nullElement;
+    }
+  }, {
+    key: '_toggleNavigationOpacity',
+    value: function _toggleNavigationOpacity(navigation) {
+      var navigationControls = [navigation.top, navigation.left, navigation.bottom];
+
+      navigationControls.forEach(function (navigationControl) {
+        navigationControl.classList.toggle('opacity-hidden');
+      });
+    }
+  }, {
+    key: '_switchNavigationOnHover',
+    value: function _switchNavigationOnHover(navigation) {
+      navigation.bottom.addEventListener('mouseover', function () {
+        navigation.top.classList.add('opacity-hidden');
+      });
+
+      navigation.bottom.addEventListener('mouseout', function () {
+        navigation.top.classList.remove('opacity-hidden');
+      });
+    }
+  }, {
+    key: '_hideNavigationOnClick',
+    value: function _hideNavigationOnClick(navigation) {
+      var navigationControls = [navigation.top, navigation.left, navigation.bottom];
+
+      navigationControls.forEach(function (navigationControl) {
+        navigationControl.addEventListener('click', function () {
+          navigationControl.classList.add('display-none');
+        });
+      });
+    }
+  }, {
+    key: '_restoreNavigation',
+    value: function _restoreNavigation(navigation) {
+      var navigationControls = [navigation.top, navigation.left, navigation.bottom];
+
+      navigationControls.forEach(function (navigationControl) {
+        navigationControl.classList.remove('display-none');
+      });
+    }
+  }]);
+
+  return NavigationToggler;
+})();

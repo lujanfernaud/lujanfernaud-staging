@@ -1,0 +1,76 @@
+'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var LetsTalkAnimator = (function () {
+  function LetsTalkAnimator() {
+    _classCallCheck(this, LetsTalkAnimator);
+  }
+
+  _createClass(LetsTalkAnimator, [{
+    key: 'watch',
+    value: function watch() {
+      var letsTalk = new LetsTalkToggler();
+
+      inView('.back-cover').on('enter', function () {
+        letsTalk.toggleAnimation();
+        letsTalk.toggleHoverActive();
+      }).on('exit', function () {
+        letsTalk.toggleAnimation();
+        letsTalk.toggleHoverActive();
+      });
+    }
+  }]);
+
+  return LetsTalkAnimator;
+})();
+
+var LetsTalkToggler = (function () {
+  function LetsTalkToggler() {
+    _classCallCheck(this, LetsTalkToggler);
+
+    this.letsTalk = document.querySelector('.lets-talk-container');
+    this.letsTalkButton = document.querySelector('.lets-talk');
+    this.letsTalkText = document.querySelector('.lets-talk__text');
+    this.letsTalkMail = document.querySelector('.lets-talk__mail');
+
+    this.delayedToggler = new DelayedClassToggler();
+  }
+
+  _createClass(LetsTalkToggler, [{
+    key: 'toggle',
+    value: function toggle() {
+      var formIsOpen = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
+
+      this.toggleAnimation();
+      this.toggleHoverActive(formIsOpen);
+      this.toggleContainer();
+    }
+  }, {
+    key: 'toggleAnimation',
+    value: function toggleAnimation() {
+      this.letsTalkText.classList.toggle('lets-talk__text--paused');
+      this.letsTalkMail.classList.toggle('lets-talk__mail--paused');
+    }
+  }, {
+    key: 'toggleHoverActive',
+    value: function toggleHoverActive() {
+      var formIsOpen = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
+
+      this.delayedToggler.toggle({
+        element: this.letsTalkButton,
+        klass: 'lets-talk--hover-active',
+        formIsOpen: formIsOpen
+      });
+    }
+  }, {
+    key: 'toggleContainer',
+    value: function toggleContainer() {
+      this.letsTalk.classList.toggle('lets-talk-container--hidden');
+    }
+  }]);
+
+  return LetsTalkToggler;
+})();

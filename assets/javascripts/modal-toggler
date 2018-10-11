@@ -1,0 +1,89 @@
+'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var ModalToggler = (function () {
+  function ModalToggler() {
+    _classCallCheck(this, ModalToggler);
+
+    this.html = document.querySelector('html');
+    this.openers = document.querySelectorAll('[data-behavior="open-modal"]');
+    this.closers = document.querySelectorAll('[data-behavior="close-modal"]');
+    this.modalIsOpen = false;
+  }
+
+  _createClass(ModalToggler, [{
+    key: 'watch',
+    value: function watch() {
+      this._watchOpeners();
+      this._watchClosers();
+      this._watchEscKey();
+    }
+
+    // private
+
+  }, {
+    key: '_watchOpeners',
+    value: function _watchOpeners() {
+      var _this = this;
+
+      this.openers.forEach(function (toggler) {
+        toggler.addEventListener('click', function (event) {
+          var modalId = event.target.dataset.modal;
+          var modal = document.getElementById(modalId);
+          var modalBody = modal.querySelector('.modal-card-body');
+
+          modalBody.scrollTop = 0;
+          modal.classList.add('is-active');
+          _this.html.classList.add('overflow-hidden');
+          _this.modalIsOpen = true;
+        });
+      });
+    }
+  }, {
+    key: '_watchClosers',
+    value: function _watchClosers() {
+      var _this2 = this;
+
+      this.closers.forEach(function (toggler) {
+        toggler.addEventListener('click', function () {
+          _this2._closeModal();
+        });
+      });
+    }
+  }, {
+    key: '_closeModal',
+    value: function _closeModal() {
+      var modal = document.querySelector('.modal.is-active');
+
+      modal.classList.remove('is-active');
+      this.html.classList.remove('overflow-hidden');
+      this.modalIsOpen = false;
+    }
+  }, {
+    key: '_watchEscKey',
+    value: function _watchEscKey() {
+      var _this3 = this;
+
+      document.onkeydown = function (event) {
+        event = event || window.event;
+
+        var isEscape = false;
+
+        if ('key' in event) {
+          isEscape = event.key === 'Escape' || event.key === 'Esc';
+        } else {
+          isEscape = event.keyCode === 27;
+        }
+
+        if (isEscape && _this3.modalIsOpen) {
+          _this3._closeModal();
+        }
+      };
+    }
+  }]);
+
+  return ModalToggler;
+})();

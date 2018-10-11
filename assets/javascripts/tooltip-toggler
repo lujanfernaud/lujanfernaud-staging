@@ -1,0 +1,73 @@
+//= require vendor/tippy.min
+
+'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var TooltipToggler = (function () {
+  function TooltipToggler() {
+    _classCallCheck(this, TooltipToggler);
+  }
+
+  _createClass(TooltipToggler, [{
+    key: 'run',
+    value: function run() {
+      this._setupTippy();
+      this._watchScroll();
+    }
+
+    // private
+
+  }, {
+    key: '_setupTippy',
+    value: function _setupTippy() {
+      tippy('[data-behavior="tooltip"]', {
+        html: '#note-tooltip-content',
+        theme: 'dark shadow',
+        arrow: true,
+        arrowType: 'round',
+        placement: 'top',
+        size: 'large'
+      });
+    }
+  }, {
+    key: '_watchScroll',
+    value: function _watchScroll() {
+      window.addEventListener('scroll', function () {
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+          for (var _iterator = document.querySelectorAll('.tippy-popper')[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var popper = _step.value;
+
+            var instance = popper._tippy;
+
+            if (instance.state.visible) {
+              instance.popperInstance.disableEventListeners();
+              instance.hide();
+            }
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator['return']) {
+              _iterator['return']();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+      });
+    }
+  }]);
+
+  return TooltipToggler;
+})();
