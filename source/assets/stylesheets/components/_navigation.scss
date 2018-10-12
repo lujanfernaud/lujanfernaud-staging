@@ -92,11 +92,13 @@
   opacity: 1;
 }
 
-.navigation--top:hover {
+.navigation--top:hover,
+.navigation--top:focus {
   opacity: 1 !important;
 }
 
-.navigation--bottom:hover {
+.navigation--bottom:hover,
+.navigation--bottom:focus {
   opacity: 1 !important;
 }
 

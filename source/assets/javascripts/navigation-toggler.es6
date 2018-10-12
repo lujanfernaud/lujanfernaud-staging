@@ -9,6 +9,7 @@ class NavigationToggler {
     this._toggleNavigationOpacity(navigation)
     this._switchNavigationOnHover(navigation)
     this._hideNavigationOnClick(navigation)
+    this._showNavigationOnFocus(navigation)
   }
 
   deactivate(element) {
@@ -60,6 +61,20 @@ class NavigationToggler {
     navigationControls.forEach(navigationControl => {
       navigationControl.addEventListener('click', () => {
         navigationControl.classList.add('display-none')
+      })
+    })
+  }
+
+  _showNavigationOnFocus(navigation) {
+    let navigationControls = [navigation.top, navigation.bottom]
+
+    navigationControls.forEach(navigationControl => {
+      navigationControl.addEventListener('focusin', () => {
+        navigationControl.classList.add('opacity-visible')
+      })
+
+      navigationControl.addEventListener('focusout', () => {
+        navigationControl.classList.remove('opacity-visible')
       })
     })
   }
