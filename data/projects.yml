@@ -77,7 +77,7 @@ portfolio:
   description: "The hand-crafted portfolio that you&rsquo;re kindly exploring."
   tags: "Built with: Middleman, Sass, ES6, Flexbox"
   links:
-    - {title: GitHub, src: "https://github.com/lujanfernaud/lujanfernaud.github.io"}
+    - {title: GitHub, src: "https://github.com/lujanfernaud/portfolio"}
   image:
     src: assets/images/screenshots/portfolio-screenshot.png
     alt: Portfolio Screenshot
