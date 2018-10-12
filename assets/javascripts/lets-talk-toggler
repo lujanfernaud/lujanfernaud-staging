@@ -4,39 +4,16 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var LetsTalkAnimator = (function () {
-  function LetsTalkAnimator() {
-    _classCallCheck(this, LetsTalkAnimator);
-  }
-
-  _createClass(LetsTalkAnimator, [{
-    key: 'watch',
-    value: function watch() {
-      var letsTalk = new LetsTalkToggler();
-
-      inView('.back-cover').on('enter', function () {
-        letsTalk.toggleAnimation();
-        letsTalk.toggleHoverActive();
-      }).on('exit', function () {
-        letsTalk.toggleAnimation();
-        letsTalk.toggleHoverActive();
-      });
-    }
-  }]);
-
-  return LetsTalkAnimator;
-})();
-
 var LetsTalkToggler = (function () {
   function LetsTalkToggler() {
     _classCallCheck(this, LetsTalkToggler);
+
+    this.delayedToggler = new DelayedClassToggler();
 
     this.letsTalk = document.querySelector('.lets-talk-container');
     this.letsTalkButton = document.querySelector('.lets-talk');
     this.letsTalkText = document.querySelector('.lets-talk__text');
     this.letsTalkMail = document.querySelector('.lets-talk__mail');
-
-    this.delayedToggler = new DelayedClassToggler();
   }
 
   _createClass(LetsTalkToggler, [{
@@ -46,7 +23,7 @@ var LetsTalkToggler = (function () {
 
       this.toggleAnimation();
       this.toggleHoverActive(formIsOpen);
-      this.toggleContainer();
+      this._toggleContainer();
     }
   }, {
     key: 'toggleAnimation',
@@ -65,9 +42,12 @@ var LetsTalkToggler = (function () {
         formIsOpen: formIsOpen
       });
     }
+
+    // private
+
   }, {
-    key: 'toggleContainer',
-    value: function toggleContainer() {
+    key: '_toggleContainer',
+    value: function _toggleContainer() {
       this.letsTalk.classList.toggle('lets-talk-container--hidden');
     }
   }]);

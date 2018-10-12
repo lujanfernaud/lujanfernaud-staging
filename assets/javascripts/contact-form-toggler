@@ -8,15 +8,17 @@ var _createClass = (function () { function defineProperties(target, props) { for
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var ContactFormToggler = (function () {
-  function ContactFormToggler() {
+  function ContactFormToggler(focusTrapper) {
     _classCallCheck(this, ContactFormToggler);
 
+    this.focusTrapper = focusTrapper;
     this.delayedToggler = new DelayedClassToggler();
     this.scrollToggler = new ScrollToggler();
     this.letsTalkToggler = new LetsTalkToggler();
     this.formIsOpen = false;
 
     this.backCover = document.querySelector('.back-cover');
+    this.backCoverContainer = document.querySelector('.back-cover-container');
     this.contactSection = document.querySelector('.contact-section-container');
     this.linkOpener = document.querySelector('.lets-talk-link');
     this.navOpener = document.querySelector('.navigation--left');
@@ -105,6 +107,7 @@ var ContactFormToggler = (function () {
       this._toggleLetsTalk();
       this._toggleContactForm();
       this._toggleCloseLinkAnimationLeft();
+      this._toggleFocus();
     }
   }, {
     key: '_toggleVisibility',
@@ -178,6 +181,12 @@ var ContactFormToggler = (function () {
         element: this.linkCloser,
         klass: this.linkCloserAnimationLeft
       });
+    }
+  }, {
+    key: '_toggleFocus',
+    value: function _toggleFocus() {
+      this.focusTrapper.toggle(this.backCoverContainer);
+      this.focusTrapper.toggle(this.contactSection);
     }
   }, {
     key: '_watchUITogglers',

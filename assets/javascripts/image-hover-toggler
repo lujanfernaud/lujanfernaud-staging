@@ -9,23 +9,22 @@ var ImageHoverToggler = (function () {
     _classCallCheck(this, ImageHoverToggler);
 
     this.delayedToggler = new DelayedClassToggler();
+
     this.projectImageContainer = '.project__image-container';
     this.imageHoverActive = 'project__image-container--hover';
     this.miliseconds = 200;
   }
 
   _createClass(ImageHoverToggler, [{
-    key: 'watch',
-    value: function watch() {
-      var _this = this;
+    key: 'toggle',
+    value: function toggle(element) {
+      var projectImage = element.querySelector(this.projectImageContainer);
 
-      inView(this.projectImageContainer).on('enter', function (element) {
-        _this._toggleHoverActive(element);
-      });
+      if (!projectImage) {
+        return;
+      }
 
-      inView(this.projectImageContainer).on('exit', function (element) {
-        _this._toggleHoverActive(element);
-      });
+      this._toggleHoverActive(projectImage);
     }
 
     // private

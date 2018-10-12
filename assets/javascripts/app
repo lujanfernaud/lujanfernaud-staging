@@ -1,17 +1,16 @@
 //= require helpers/fader
 //= require helpers/delayed-class-toggler
 
+//= require focus-trapper
+//= require screen-actionator
 //= require navigator
 //= require scroll-smoother
 
 //= require text-selector
 //= require name-flipper
-//= require lets-talk-animator
 
-//= require navigation-toggler
 //= require tooltip-toggler
 //= require modal-toggler
-//= require image-hover-toggler
 //= require contact-form-toggler
 
 "use strict";
@@ -24,9 +23,8 @@ var App = (function () {
   function App() {
     _classCallCheck(this, App);
 
+    this.focusTrapper = new FocusTrapper();
     this.textSelector = new TextSelector();
-
-    inView.threshold(0.75);
   }
 
   _createClass(App, [{
@@ -47,6 +45,9 @@ var App = (function () {
   }, {
     key: "_main",
     value: function _main() {
+      this.focusTrapper.run();
+
+      new ScreenActionator(this.focusTrapper).run();
       new Navigator(this).watch();
       new ScrollSmoother().run();
     }
@@ -55,16 +56,13 @@ var App = (function () {
     value: function _animators() {
       this.textSelector.watch();
       new NameFlipper().watch();
-      new LetsTalkAnimator().watch();
     }
   }, {
     key: "_togglers",
     value: function _togglers() {
-      new NavigationToggler().watch();
       new TooltipToggler().run();
       new ModalToggler().watch();
-      new ImageHoverToggler().watch();
-      new ContactFormToggler().watch();
+      new ContactFormToggler(this.focusTrapper).watch();
     }
   }]);
 

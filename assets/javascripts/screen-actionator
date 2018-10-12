@@ -1,0 +1,62 @@
+//= require vendor/in-view.min
+
+//= require navigation-toggler
+//= require image-hover-toggler
+//= require lets-talk-toggler
+
+'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var ScreenActionator = (function () {
+  function ScreenActionator(focusTrapper) {
+    _classCallCheck(this, ScreenActionator);
+
+    this.focusTrapper = focusTrapper;
+    this.navigation = new NavigationToggler();
+    this.imageHover = new ImageHoverToggler();
+    this.letsTalk = new LetsTalkToggler();
+
+    inView.threshold(0.75);
+  }
+
+  _createClass(ScreenActionator, [{
+    key: 'run',
+    value: function run() {
+      var _this = this;
+
+      inView('.screen').on('enter', function (element) {
+        element.classList.add('active');
+
+        _this.navigation.activate(element);
+        _this.focusTrapper.toggle(element);
+        _this.imageHover.toggle(element);
+        _this._toggleLetsTalk(element);
+      }).on('exit', function (element) {
+        element.classList.remove('active');
+
+        _this.navigation.deactivate(element);
+        _this.focusTrapper.toggle(element);
+        _this.imageHover.toggle(element);
+        _this._toggleLetsTalk(element);
+      });
+    }
+
+    // private
+
+  }, {
+    key: '_toggleLetsTalk',
+    value: function _toggleLetsTalk(element) {
+      if (!element.classList.contains('back-cover')) {
+        return;
+      }
+
+      this.letsTalk.toggleAnimation();
+      this.letsTalk.toggleHoverActive();
+    }
+  }]);
+
+  return ScreenActionator;
+})();

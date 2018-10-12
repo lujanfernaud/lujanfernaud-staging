@@ -12,26 +12,21 @@ var NavigationToggler = (function () {
   }
 
   _createClass(NavigationToggler, [{
-    key: 'watch',
-    value: function watch() {
-      var _this = this;
+    key: 'activate',
+    value: function activate(element) {
+      var navigation = this._selectNavigationControls(element);
 
-      inView('.screen').on('enter', function (element) {
-        element.classList.add('active');
+      this._toggleNavigationOpacity(navigation);
+      this._switchNavigationOnHover(navigation);
+      this._hideNavigationOnClick(navigation);
+    }
+  }, {
+    key: 'deactivate',
+    value: function deactivate(element) {
+      var navigation = this._selectNavigationControls(element);
 
-        var navigation = _this._selectNavigationControls(element);
-
-        _this._toggleNavigationOpacity(navigation);
-        _this._switchNavigationOnHover(navigation);
-        _this._hideNavigationOnClick(navigation);
-      }).on('exit', function (element) {
-        element.classList.remove('active');
-
-        var navigation = _this._selectNavigationControls(element);
-
-        _this._toggleNavigationOpacity(navigation);
-        _this._restoreNavigation(navigation);
-      });
+      this._toggleNavigationOpacity(navigation);
+      this._restoreNavigation(navigation);
     }
 
     // private
