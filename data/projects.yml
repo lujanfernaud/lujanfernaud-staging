@@ -75,7 +75,7 @@ rock_paper_scissors:
 portfolio:
   title: This Portfolio
   description: "The hand-crafted portfolio that you&rsquo;re kindly exploring."
-  tags: "Built with: Middleman, Sass, Flexbox, ES6"
+  tags: "Built with: Middleman, Sass, ES6, Flexbox"
   links:
     - {title: GitHub, src: "https://github.com/lujanfernaud/lujanfernaud.github.io"}
   image:
