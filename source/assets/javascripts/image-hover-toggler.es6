@@ -1,19 +1,18 @@
 class ImageHoverToggler {
   constructor() {
     this.delayedToggler = new DelayedClassToggler()
+
     this.projectImageContainer = '.project__image-container'
-    this.imageHoverActive = 'project__image-container--hover'
-    this.miliseconds = 200
+    this.imageHoverActive      = 'project__image-container--hover'
+    this.miliseconds           = 200
   }
 
-  watch() {
-    inView(this.projectImageContainer).on('enter', element => {
-      this._toggleHoverActive(element)
-    })
+  toggle(element) {
+    let projectImage = element.querySelector(this.projectImageContainer)
 
-    inView(this.projectImageContainer).on('exit', element => {
-      this._toggleHoverActive(element)
-    })
+    if (!projectImage) { return }
+
+    this._toggleHoverActive(projectImage)
   }
 
   // private

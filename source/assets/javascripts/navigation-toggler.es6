@@ -3,21 +3,19 @@ class NavigationToggler {
     this.nullElement = document.querySelector('.null-element')
   }
 
-  watch() {
-    inView('.screen')
-      .on('enter', element => {
-        let navigation = this._selectNavigationControls(element)
+  activate(element) {
+    let navigation = this._selectNavigationControls(element)
 
-        this._toggleNavigationOpacity(navigation)
-        this._switchNavigationOnHover(navigation)
-        this._hideNavigationOnClick(navigation)
-      })
-      .on('exit', element => {
-        let navigation = this._selectNavigationControls(element)
+    this._toggleNavigationOpacity(navigation)
+    this._switchNavigationOnHover(navigation)
+    this._hideNavigationOnClick(navigation)
+  }
 
-        this._toggleNavigationOpacity(navigation)
-        this._restoreNavigation(navigation)
-      })
+  deactivate(element) {
+    let navigation = this._selectNavigationControls(element)
+
+    this._toggleNavigationOpacity(navigation)
+    this._restoreNavigation(navigation)
   }
 
   // private

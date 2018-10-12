@@ -7,16 +7,6 @@ class FocusTrapper {
     inertElements.forEach(element => {
       element.inert = true
     })
-
-    inView('.screen')
-      .on('enter', element => {
-        element.classList.add('active')
-        this.toggle(element)
-      })
-      .on('exit', element => {
-        element.classList.remove('active')
-        this.toggle(element)
-      })
   }
 
   toggle(element) {

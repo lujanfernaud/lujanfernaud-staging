@@ -2,25 +2,21 @@
 //= require helpers/delayed-class-toggler
 
 //= require focus-trapper
+//= require screen-actionator
 //= require navigator
 //= require scroll-smoother
 
 //= require text-selector
 //= require name-flipper
-//= require lets-talk-animator
 
-//= require navigation-toggler
 //= require tooltip-toggler
 //= require modal-toggler
-//= require image-hover-toggler
 //= require contact-form-toggler
 
 class App {
   constructor() {
     this.focusTrapper = new FocusTrapper()
     this.textSelector = new TextSelector()
-
-    inView.threshold(0.75)
   }
 
   run() {
@@ -37,6 +33,8 @@ class App {
 
   _main() {
     this.focusTrapper.run()
+
+    new ScreenActionator(this.focusTrapper).run()
     new Navigator(this).watch()
     new ScrollSmoother().run()
   }
@@ -44,14 +42,11 @@ class App {
   _animators() {
     this.textSelector.watch()
     new NameFlipper().watch()
-    new LetsTalkAnimator().watch()
   }
 
   _togglers() {
-    new NavigationToggler().watch()
     new TooltipToggler().run()
     new ModalToggler().watch()
-    new ImageHoverToggler().watch()
     new ContactFormToggler(this.focusTrapper).watch()
   }
 }

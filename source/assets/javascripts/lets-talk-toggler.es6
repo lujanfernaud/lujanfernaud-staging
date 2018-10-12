@@ -1,33 +1,17 @@
-class LetsTalkAnimator {
-  watch() {
-    let letsTalk = new LetsTalkToggler()
-
-    inView('.back-cover')
-      .on('enter', () => {
-        letsTalk.toggleAnimation()
-        letsTalk.toggleHoverActive()
-      })
-      .on('exit', () => {
-        letsTalk.toggleAnimation()
-        letsTalk.toggleHoverActive()
-      })
-  }
-}
-
 class LetsTalkToggler {
   constructor() {
+    this.delayedToggler = new DelayedClassToggler()
+
     this.letsTalk       = document.querySelector('.lets-talk-container')
     this.letsTalkButton = document.querySelector('.lets-talk')
     this.letsTalkText   = document.querySelector('.lets-talk__text')
     this.letsTalkMail   = document.querySelector('.lets-talk__mail')
-
-    this.delayedToggler = new DelayedClassToggler()
   }
 
   toggle(formIsOpen = false) {
     this.toggleAnimation()
     this.toggleHoverActive(formIsOpen)
-    this.toggleContainer()
+    this._toggleContainer()
   }
 
   toggleAnimation() {
@@ -43,7 +27,9 @@ class LetsTalkToggler {
     })
   }
 
-  toggleContainer() {
+  // private
+
+  _toggleContainer() {
     this.letsTalk.classList.toggle('lets-talk-container--hidden')
   }
 }
