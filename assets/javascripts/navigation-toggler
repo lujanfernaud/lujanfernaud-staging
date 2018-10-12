@@ -19,6 +19,7 @@ var NavigationToggler = (function () {
       this._toggleNavigationOpacity(navigation);
       this._switchNavigationOnHover(navigation);
       this._hideNavigationOnClick(navigation);
+      this._showNavigationOnFocus(navigation);
     }
   }, {
     key: 'deactivate',
@@ -73,6 +74,21 @@ var NavigationToggler = (function () {
       navigationControls.forEach(function (navigationControl) {
         navigationControl.addEventListener('click', function () {
           navigationControl.classList.add('display-none');
+        });
+      });
+    }
+  }, {
+    key: '_showNavigationOnFocus',
+    value: function _showNavigationOnFocus(navigation) {
+      var navigationControls = [navigation.top, navigation.bottom];
+
+      navigationControls.forEach(function (navigationControl) {
+        navigationControl.addEventListener('focusin', function () {
+          navigationControl.classList.add('opacity-visible');
+        });
+
+        navigationControl.addEventListener('focusout', function () {
+          navigationControl.classList.remove('opacity-visible');
         });
       });
     }
