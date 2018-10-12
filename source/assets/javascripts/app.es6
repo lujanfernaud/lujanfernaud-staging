@@ -1,6 +1,7 @@
 //= require helpers/fader
 //= require helpers/delayed-class-toggler
 
+//= require focus-trapper
 //= require navigator
 //= require scroll-smoother
 
@@ -16,6 +17,7 @@
 
 class App {
   constructor() {
+    this.focusTrapper = new FocusTrapper()
     this.textSelector = new TextSelector()
 
     inView.threshold(0.75)
@@ -34,6 +36,7 @@ class App {
   // private
 
   _main() {
+    this.focusTrapper.run()
     new Navigator(this).watch()
     new ScrollSmoother().run()
   }
@@ -49,7 +52,7 @@ class App {
     new TooltipToggler().run()
     new ModalToggler().watch()
     new ImageHoverToggler().watch()
-    new ContactFormToggler().watch()
+    new ContactFormToggler(this.focusTrapper).watch()
   }
 }
 

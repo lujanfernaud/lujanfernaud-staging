@@ -6,8 +6,6 @@ class NavigationToggler {
   watch() {
     inView('.screen')
       .on('enter', element => {
-        element.classList.add('active')
-
         let navigation = this._selectNavigationControls(element)
 
         this._toggleNavigationOpacity(navigation)
@@ -15,8 +13,6 @@ class NavigationToggler {
         this._hideNavigationOnClick(navigation)
       })
       .on('exit', element => {
-        element.classList.remove('active')
-
         let navigation = this._selectNavigationControls(element)
 
         this._toggleNavigationOpacity(navigation)

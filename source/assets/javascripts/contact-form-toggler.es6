@@ -2,13 +2,15 @@
 //= require scroll-toggler
 
 class ContactFormToggler {
-  constructor() {
+  constructor(focusTrapper) {
+    this.focusTrapper    = focusTrapper
     this.delayedToggler  = new DelayedClassToggler()
     this.scrollToggler   = new ScrollToggler()
     this.letsTalkToggler = new LetsTalkToggler()
     this.formIsOpen      = false
 
     this.backCover      = document.querySelector('.back-cover')
+    this.backCoverContainer = document.querySelector('.back-cover-container')
     this.contactSection = document.querySelector('.contact-section-container')
     this.linkOpener     = document.querySelector('.lets-talk-link')
     this.navOpener      = document.querySelector('.navigation--left')
@@ -79,6 +81,7 @@ class ContactFormToggler {
     this._toggleLetsTalk()
     this._toggleContactForm()
     this._toggleCloseLinkAnimationLeft()
+    this._toggleFocus()
   }
 
   _toggleVisibility() {
@@ -141,6 +144,11 @@ class ContactFormToggler {
       element: this.linkCloser,
       klass:   this.linkCloserAnimationLeft
     })
+  }
+
+  _toggleFocus() {
+    this.focusTrapper.toggle(this.backCoverContainer)
+    this.focusTrapper.toggle(this.contactSection)
   }
 
   _watchUITogglers() {
