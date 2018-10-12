@@ -28,6 +28,10 @@ body {
   }
 
   @include media($very-large-devices) {
+    font-size: 30px;
+  }
+
+  @include media($extra-large-devices) {
     font-size: 32px;
   }
 }

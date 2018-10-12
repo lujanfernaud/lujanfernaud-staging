@@ -33,6 +33,10 @@ $project-image-transition: all .3s ease-in-out;
   }
 
   @include media($very-large-devices) {
+    padding: 2.25rem 2.25rem 1.9rem 2.25rem;
+  }
+
+  @include media($extra-large-devices) {
     padding: 2.25rem 2.25rem 2rem 2.25rem;
   }
 }
@@ -53,6 +57,10 @@ $project-image-transition: all .3s ease-in-out;
   }
 
   @include media($very-large-devices) {
+    font-size: 5.5rem;
+  }
+
+  @include media($extra-large-devices) {
     font-size: 6rem;
   }
 }
@@ -67,6 +75,11 @@ $project-image-transition: all .3s ease-in-out;
   }
 
   @include media($very-large-devices) {
+    margin-bottom: 1.3rem;
+    letter-spacing: .06rem;
+  }
+
+  @include media($extra-large-devices) {
     margin-bottom: 1.5rem;
     letter-spacing: .06rem;
   }
@@ -228,10 +241,12 @@ $project-image-transition: all .3s ease-in-out;
   }
 
   @include media($very-large-devices) {
+    flex-basis: 53%;
     overflow: hidden;
   }
 
   @include media($extra-large-devices) {
+    flex-basis: 55%;
     @include diagonal-box-shadow(.51rem);
   }
 
@@ -424,7 +439,13 @@ $project-image-transition: all .3s ease-in-out;
     margin-top: 0;
   }
 
+  @include media($very-large-devices) {
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+  }
+
   @include media($extra-large-devices) {
+    margin-bottom: 2.6rem;
     font-size: 2.95rem;
   }
 }
@@ -437,11 +458,15 @@ $project-image-transition: all .3s ease-in-out;
 
   @include media($medium-devices) {
     margin-bottom: .4rem;
-    font-size: 1.35rem;
+    font-size: $font-size-medium;
+  }
+
+  @include media($very-large-devices) {
+    font-size: $font-size-very-large;
   }
 
   @include media($extra-large-devices) {
-    font-size: 1.45rem;
+    font-size: $font-size-extra-large;
   }
 }
 
@@ -459,11 +484,15 @@ $project-image-transition: all .3s ease-in-out;
   width: 100%;
 
   @include media($medium-devices) {
-    font-size: 1.35rem;
+    font-size: $font-size-medium;
+  }
+
+  @include media($very-large-devices) {
+    font-size: $font-size-very-large;
   }
 
   @include media($extra-large-devices) {
-    font-size: 1.45rem;
+    font-size: $font-size-extra-large;
   }
 }
 
@@ -499,11 +528,15 @@ $project-image-transition: all .3s ease-in-out;
   color: $brand-color-saturated;
 
   @include media($medium-devices) {
-    font-size: 1.35rem;
+    font-size: $font-size-medium;
+  }
+
+  @include media($very-large-devices) {
+    font-size: $font-size-very-large;
   }
 
   @include media($extra-large-devices) {
-    font-size: 1.45rem;
+    font-size: $font-size-extra-large;
   }
 }
 
@@ -558,6 +591,10 @@ $project-image-transition: all .3s ease-in-out;
     margin: ($projects-spacing * 2 + $projects-spacing-half) auto;
     font-size: 1.7rem;
     @include diagonal-box-shadow(.41rem);
+  }
+
+  @include media($very-large-devices) {
+    font-size: 1.7rem;
   }
 
   @include media($extra-large-devices) {

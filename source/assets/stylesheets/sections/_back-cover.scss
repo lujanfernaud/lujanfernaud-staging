@@ -74,6 +74,16 @@
     height: 31.3rem;
   }
 
+  @include media($very-large-devices) {
+    width: 26.2rem;
+    height: 26.2rem;
+  }
+
+  @include media($extra-large-devices) {
+    width: 31.3rem;
+    height: 31.3rem;
+  }
+
   @include media-iphone-large {
     top: -0.26rem;
     left: -0.26rem;
@@ -101,7 +111,14 @@
     @include diagonal-box-shadow(.41rem);
   }
 
+  @include media($very-large-devices) {
+    width: 25rem;
+    height: 25rem;
+  }
+
   @include media($extra-large-devices) {
+    width: 30rem;
+    height: 30rem;
     @include diagonal-box-shadow(.51rem);
   }
 
@@ -146,6 +163,16 @@
     width: 18.4rem;
   }
 
+  @include media($very-large-devices) {
+    top: calc(50% - 8rem);
+    width: 16rem;
+  }
+
+  @include media($extra-large-devices) {
+    top: calc(50% - 9.2rem);
+    width: 18.4rem;
+  }
+
   @include media-iphone-large {
     top: calc(50% - 3.64rem);
     width: 7.35rem;
@@ -158,6 +185,14 @@
   opacity: 1;
 
   @include media($medium-devices) {
+    left: calc(50% - 9.1rem);
+  }
+
+  @include media($very-large-devices) {
+    left: calc(50% - 8.1rem);
+  }
+
+  @include media($extra-large-devices) {
     left: calc(50% - 9.1rem);
   }
 
@@ -178,6 +213,16 @@
     top: -.95rem;
   }
 
+  @include media($very-large-devices) {
+    top: -.62rem;
+  }
+
+  @include media($extra-large-devices) {
+    top: -.95rem;
+    width: 100%;
+    height: 100%;
+  }
+
   @include media-iphone-large {
     top: -.86rem;
   }
@@ -187,6 +232,14 @@
   width: 1.5rem;
 
   @include media($medium-devices) {
+    width: 3rem;
+  }
+
+  @include media($very-large-devices) {
+    width: 2.6rem;
+  }
+
+  @include media($extra-large-devices) {
     width: 3rem;
   }
 
@@ -235,6 +288,14 @@
     @include in-circle-degrees($degrees: -45deg, $circle-width: 35rem);
   }
 
+  @include media($very-large-devices) {
+    @include in-circle-degrees($degrees: -45deg, $circle-width: 29.6rem);
+  }
+
+  @include media($extra-large-devices) {
+    @include in-circle-degrees($degrees: -45deg, $circle-width: 35rem);
+  }
+
   @include media-iphone-large {
     @include in-circle-degrees($degrees: -40deg, $circle-width: 14rem);
   }
@@ -247,6 +308,14 @@
     @include in-circle-degrees($degrees: -25deg, $circle-width: 35rem);
   }
 
+  @include media($very-large-devices) {
+    @include in-circle-degrees($degrees: -25deg, $circle-width: 29.6rem);
+  }
+
+  @include media($extra-large-devices) {
+    @include in-circle-degrees($degrees: -25deg, $circle-width: 35rem);
+  }
+
   @include media-iphone-large {
     @include in-circle-degrees($degrees: -15deg, $circle-width: 14rem);
   }
@@ -256,6 +325,14 @@
   @include in-circle-degrees($degrees: 10deg, $circle-width: 14rem);
 
   @include media($medium-devices) {
+    @include in-circle-degrees($degrees: -5deg, $circle-width: 35rem);
+  }
+
+  @include media($very-large-devices) {
+    @include in-circle-degrees($degrees: -5deg, $circle-width: 29.6rem);
+  }
+
+  @include media($extra-large-devices) {
     @include in-circle-degrees($degrees: -5deg, $circle-width: 35rem);
   }
 
@@ -484,17 +561,14 @@
     font-size: 1.2rem;
   }
 
-  @include media($large-devices) {
-    width: $container-width-large-devices;
-    font-size: 1.4rem;
-  }
-
   @include media($very-large-devices) {
     width: $container-width-very-large-devices;
+    font-size: $font-size-very-large;
   }
 
-  @include media-between($min-width: $very-large-devices, $max-height: 620px) {
-    font-size: 1.3rem;
+  @include media($extra-large-devices) {
+    width: $container-width-very-large-devices;
+    font-size: 1.4rem;
   }
 }
 
@@ -523,12 +597,8 @@
     font-size: 1.45rem;
   }
 
-  @include media($large-devices) {
+  @include media($extra-large-devices) {
     font-size: 1.65rem;
-  }
-
-  @include media-between($min-width: $very-large-devices, $max-height: 620px) {
-    font-size: 1.55rem;
   }
 }
 
@@ -568,7 +638,11 @@
     font-size: 1.2rem;
   }
 
-  @include media($large-devices) {
+  @include media($very-large-devices) {
+    font-size: $font-size-very-large;
+  }
+
+  @include media($extra-large-devices) {
     font-size: 1.4rem;
   }
 

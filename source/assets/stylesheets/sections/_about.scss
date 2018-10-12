@@ -22,6 +22,9 @@
     @include flex-container(row);
     flex-basis: 50%;
     padding: 0;
+  }
+
+  @include media($extra-large-devices) {
     max-width: 1350px;
   }
 }
@@ -87,15 +90,16 @@
   line-height: 1.518;
 
   @include media($medium-devices) {
-    font-size: 1.35rem;
-  }
-
-  @include media($extra-large-devices) {
-    font-size: 1.45rem;
+    font-size: $font-size-medium;
   }
 
   @include media($very-large-devices) {
     flex-basis: 85%;
     padding-right: 4rem;
+    font-size: $font-size-very-large;
+  }
+
+  @include media($extra-large-devices) {
+    font-size: $font-size-extra-large;
   }
 }

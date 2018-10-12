@@ -54,7 +54,7 @@
     font-size: 1.5rem !important;
   }
 
-  @include media($large-devices) {
+  @include media($extra-large-devices) {
     font-size: 1.7rem !important;
   }
 
@@ -71,7 +71,7 @@
     font-size: 2rem !important;
   }
 
-  @include media($large-devices) {
+  @include media($extra-large-devices) {
     font-size: 2.2rem !important;
   }
 }
