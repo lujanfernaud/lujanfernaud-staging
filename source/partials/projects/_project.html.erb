@@ -39,6 +39,7 @@
         <% project.links.each do |link| %>
           <%= link_to link.title, link.src,
             class: "text-link project__link",
+            target: "_blank",
             title: project_link_title(link) %>
         <% end %>
       </div>
