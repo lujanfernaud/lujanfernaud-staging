@@ -38,7 +38,8 @@
       <div class="project__links">
         <% project.links.each do |link| %>
           <%= link_to link.title, link.src,
-            class: "project__link", title: project_link_title(link) %>
+            class: "text-link project__link",
+            title: project_link_title(link) %>
         <% end %>
       </div>
     </div>

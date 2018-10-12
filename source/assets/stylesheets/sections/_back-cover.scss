@@ -323,6 +323,8 @@
   padding: 1rem;
   font-size: 2rem;
   color: transparent;
+  outline-offset: .5rem;
+  outline-color: $brand-color;
 
   &:before,
   &:after {

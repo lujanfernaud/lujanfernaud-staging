@@ -128,10 +128,18 @@
 
   &--light {
     stroke: $light-grey-1 !important;
+
+    &:focus {
+      outline-color: $light-grey-1;
+    }
   }
 
   &--dark {
     stroke: $brand-color !important;
+
+    &:focus {
+      outline-color: $brand-color;
+    }
   }
 
   &-icon--top {
