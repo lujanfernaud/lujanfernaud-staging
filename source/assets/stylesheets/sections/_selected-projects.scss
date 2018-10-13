@@ -158,7 +158,7 @@ $project-image-transition: all .3s ease-in-out;
   align-self: flex-start;
   width: 100vw;
   min-height: 100vh;
-  padding: 1rem;
+  padding: 1.2rem;
   @include background-gradient(
     $white,
     darken($light-grey-1, 1.875%)
@@ -168,6 +168,10 @@ $project-image-transition: all .3s ease-in-out;
     $min-width: $small-devices,
     $max-width: $very-large-devices) {
       padding: 3rem;
+  }
+
+  @include media($very-large-devices) {
+    padding: 1rem;
   }
 
   &:not(:last-child) {
@@ -192,7 +196,7 @@ $project-image-transition: all .3s ease-in-out;
   @include media-between-widths(
     $min-width: $large-devices,
     $max-width: $very-large-devices) {
-      width: 65vw;
+      width: 60vw;
   }
 
   @include media($very-large-devices) {
@@ -416,30 +420,34 @@ $project-image-transition: all .3s ease-in-out;
   flex-direction: column;
   justify-content: center;
   flex-basis: 45.5%;
+  padding: 0 .1rem 0 .1rem;
 
   @include media($very-large-devices) {
     margin-left: 5.2%;
+    padding: 0;
   }
 }
 
 .project__title {
-  margin-top: 1.75rem;
-  margin-bottom: 1.2rem;
-  font-size: 1.6rem;
+  margin-top: 1.95rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
   font-style: italic;
   color: $brand-color-saturated;
 
   @include media($medium-devices) {
-    margin-top: 2.1rem;
-    margin-bottom: 2.6rem;
+    margin-top: 3.1rem;
+    margin-bottom: 2.5rem;
     font-size: 2.6rem;
   }
 
   @include media($large-devices) {
-    margin-top: 0;
+    margin-top: .7rem;
+    margin-bottom: 2.2rem;
   }
 
   @include media($very-large-devices) {
+    margin-top: 0;
     margin-bottom: 2.5rem;
     font-size: 2.5rem;
   }
@@ -475,7 +483,19 @@ $project-image-transition: all .3s ease-in-out;
   flex-wrap: wrap;
   justify-content: start;
   margin-top: 1.4rem;
-  margin-bottom: 1.85rem;
+  margin-bottom: 1.75rem;
+
+  @include media($medium-devices) {
+    margin-bottom: 2.55rem;
+  }
+
+  @include media($large-devices) {
+    margin-bottom: 2rem;
+  }
+
+  @include media($very-large-devices) {
+    margin-bottom: 1.85rem;
+  }
 }
 
 .project__tags--text {
@@ -496,33 +516,13 @@ $project-image-transition: all .3s ease-in-out;
   }
 }
 
-.project__tags--box {
-  margin-right: .77rem;
-  margin-bottom: .6rem;
-  padding-top: .5rem;
-  padding-right: .5rem;
-  padding-bottom: .4rem;
-  padding-left: .5rem;
-  font-style: $dejavu-sans;
-  font-size: .73rem;
-  color: $brand-color-saturated;
-  text-transform: uppercase;
-  border: 1px solid $brand-color-saturated;
-  @include diagonal-box-shadow(0.25rem);
-
-  @include media($medium-devices) {
-    font-size: .93rem;
-    letter-spacing: 0.05rem;
-  }
-}
-
 .project__links {
   margin-top: 0;
 }
 
 .project__link {
   padding-top: 3px;
-  margin-right: .3rem;
+  margin-right: .4rem;
   font-family: $dejavu-sans;
   font-size: 1.2rem;
   color: $brand-color-saturated;
