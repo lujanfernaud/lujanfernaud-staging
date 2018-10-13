@@ -1,26 +1,22 @@
 ---
-build/assets/images/avatar_big_transparent-59264aaf.png: 2018-10-13 13:59:10.086850483
+build/assets/images/avatar_big_transparent.png: 2018-10-13 18:40:06.950398150 +01:00
+build/assets/images/avatar_circle.png: 2018-10-13 18:40:19.053060079 +01:00
+build/assets/images/favicon-64.png: 2018-10-13 18:39:31.058479208 +01:00
+build/assets/images/screenshots/draw-screenshot.png: 2018-10-13 18:39:46.869973094
   +01:00
-build/assets/images/avatar_circle-184b1379.png: 2018-10-13 13:59:10.086850483 +01:00
-build/assets/images/favicon-64-58a3857b.png: 2018-10-13 13:59:10.086850483 +01:00
-build/assets/images/screenshots/portfolio-screenshot-ee29210b.png: 2018-10-13 13:59:10.086850483
+build/assets/images/screenshots/rps-screenshot.png: 2018-10-13 18:39:44.569465331
   +01:00
-build/assets/images/screenshots/rps-screenshot-52bb8588.png: 2018-10-13 13:59:10.090849713
+build/assets/images/screenshots/prevy-screenshot.png: 2018-10-13 18:40:16.748553462
   +01:00
-build/assets/images/screenshots/ruby-chess-screenshot-8bf11ab9.jpg: 2018-10-13 13:59:10.090849713
+build/assets/images/screenshots/ruby-chess-screenshot.jpg: 2018-10-13 18:39:22.172511002
   +01:00
-build/assets/images/screenshots/weather-compare-screenshot-33a7cacf.png: 2018-10-13
-  13:59:10.090849713 +01:00
-build/assets/images/screenshots/prevy-screenshot-bcfdd402.png: 2018-10-13 13:59:10.090849713
+build/assets/images/screenshots/weather-compare-screenshot.png: 2018-10-13 18:40:30.347541506
   +01:00
-build/assets/images/screenshots/draw-screenshot-da234359.png: 2018-10-13 13:59:10.086850483
+build/assets/images/screenshots/portfolio-screenshot.png: 2018-10-13 18:40:33.228174021
   +01:00
-build/assets/images/stats/commits_last_year-febd05e3.png: 2018-10-13 13:59:10.090849713
-  +01:00
-build/assets/images/stats/commits_2016-d889f15f.png: 2018-10-13 13:59:10.090849713
-  +01:00
-build/assets/images/stats/hours_2018-7c75e041.png: 2018-10-13 13:59:10.090849713 +01:00
-build/assets/images/stats/hours_2016-12884cd1.png: 2018-10-13 13:59:10.090849713 +01:00
-build/assets/images/stats/commits_2017-97d8d95f.png: 2018-10-13 13:59:10.090849713
-  +01:00
-build/assets/images/stats/hours_2017-97c89668.png: 2018-10-13 13:59:10.090849713 +01:00
+build/assets/images/stats/commits_2016.png: 2018-10-13 18:40:23.470030787 +01:00
+build/assets/images/stats/hours_2018.png: 2018-10-13 18:40:28.647168081 +01:00
+build/assets/images/stats/commits_last_year.png: 2018-10-13 18:40:27.538924666 +01:00
+build/assets/images/stats/hours_2016.png: 2018-10-13 18:40:39.765608980 +01:00
+build/assets/images/stats/commits_2017.png: 2018-10-13 18:40:36.804959204 +01:00
+build/assets/images/stats/hours_2017.png: 2018-10-13 18:40:41.738041797 +01:00
