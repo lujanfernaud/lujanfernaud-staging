@@ -31,7 +31,7 @@ class Navigator {
   _watchMouseWheel() {
     this.wheelIndicator.setOptions({
       callback: scroll => {
-        if (scroll.direction === 'up') { this._watchWheelUp() }
+        if (scroll.direction === 'up')   { this._watchWheelUp() }
         if (scroll.direction === 'down') { this._watchWheelDown() }
       }
     })
