@@ -14,7 +14,7 @@ var Navigator = (function () {
     this.app = app;
     this.wheelIndicator = new WheelIndicator();
 
-    this.scrollDisabledTimeout = 325;
+    this.scrollDisabledTimeout = 350;
     this.wheelUpDisabled = false;
     this.wheelDownDisabled = false;
     this.upKeyDisabled = false;
@@ -22,6 +22,7 @@ var Navigator = (function () {
 
     this.modalIsActive = '.modal.is-active';
     this.formIsActive = '.contact-section-container--revealed';
+    this.activeScreen = '.screen.active';
     this.navTop = '.navigation--top';
     this.navBottom = '.navigation--bottom';
     this.backToTop = document.querySelector('.back-to-top');
@@ -58,8 +59,9 @@ var Navigator = (function () {
     value: function _watchWheelUp() {
       var modalIsActive = document.querySelector(this.modalIsActive);
       var formIsActive = document.querySelector(this.formIsActive);
+      var screenIsNotActive = !document.querySelector(this.activeScreen);
 
-      if (modalIsActive || formIsActive) {
+      if (modalIsActive || formIsActive || screenIsNotActive) {
         return this.wheelIndicator.setOptions({ preventMouse: false });
       }
 
@@ -71,8 +73,10 @@ var Navigator = (function () {
     key: '_watchWheelDown',
     value: function _watchWheelDown() {
       var modalIsActive = document.querySelector(this.modalIsActive);
+      var formIsActive = document.querySelector(this.formIsActive);
+      var screenIsNotActive = !document.querySelector(this.activeScreen);
 
-      if (modalIsActive) {
+      if (modalIsActive || formIsActive || screenIsNotActive) {
         return this.wheelIndicator.setOptions({ preventMouse: false });
       }
 
@@ -87,7 +91,7 @@ var Navigator = (function () {
         return;
       }
 
-      var activeScreen = document.querySelector('.screen.active');
+      var activeScreen = document.querySelector(this.activeScreen);
       if (!activeScreen) {
         return;
       }

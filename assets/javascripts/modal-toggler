@@ -11,6 +11,7 @@ var ModalToggler = (function () {
     this.html = document.querySelector('html');
     this.openers = document.querySelectorAll('[data-behavior="open-modal"]');
     this.closers = document.querySelectorAll('[data-behavior="close-modal"]');
+
     this.modalIsOpen = false;
   }
 
@@ -38,6 +39,7 @@ var ModalToggler = (function () {
           modalBody.scrollTop = 0;
           modal.classList.add('is-active');
           _this.html.classList.add('overflow-hidden');
+
           _this.modalIsOpen = true;
         });
       });
@@ -60,6 +62,7 @@ var ModalToggler = (function () {
 
       modal.classList.remove('is-active');
       this.html.classList.remove('overflow-hidden');
+
       this.modalIsOpen = false;
     }
   }, {
