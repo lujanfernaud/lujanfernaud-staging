@@ -29,13 +29,13 @@ build/assets/images/screenshots/prevy-screenshot_700px.png: 2018-10-13 21:42:01.
   +01:00
 build/assets/images/screenshots/portfolio-screenshot.png: 2018-10-13 21:42:11.743842038
   +01:00
-build/assets/images/lets-talk_optimized.svg: 2018-10-13 21:42:02.259494740 +01:00
+build/assets/images/lets-talk_optimized.svg: 2018-10-13 21:54:25.509612189 +01:00
 build/assets/images/icons/email_icon.svg: 2018-10-13 21:42:02.439501348 +01:00
 build/assets/images/icons/ruby_icon.svg: 2018-10-13 21:42:08.803734581 +01:00
 build/assets/images/icons/github_icon.svg: 2018-10-13 21:42:08.807734727 +01:00
 build/assets/images/icons/if_angle-double-up_1608506.svg: 2018-10-13 21:42:12.127856061
   +01:00
-build/assets/images/icons/rails_icon.svg: 2018-10-13 21:42:12.155857082 +01:00
+build/assets/images/icons/rails_icon.svg: 2018-10-13 21:54:35.384067672 +01:00
 build/assets/images/icons/react_icon.svg: 2018-10-13 21:42:12.139856499 +01:00
 build/assets/images/icons/twitter_icon.svg: 2018-10-13 21:42:12.159857229 +01:00
 build/assets/images/icons/javascript_icon.svg: 2018-10-13 21:42:12.523870517 +01:00
@@ -43,7 +43,7 @@ build/assets/images/icons/chevron-down.svg: 2018-10-13 21:42:12.519870370 +01:00
 build/assets/images/icons/exercism_icon.svg: 2018-10-13 21:42:12.551871538 +01:00
 build/assets/images/icons/sass_icon.svg: 2018-10-13 21:42:12.563871976 +01:00
 build/assets/images/icons/chevron-left.svg: 2018-10-13 21:42:12.907884534 +01:00
-build/assets/images/icons/emoji_smile.svg: 2018-10-13 21:42:12.907884534 +01:00
+build/assets/images/icons/emoji_smile.svg: 2018-10-13 21:54:36.167946306 +01:00
 build/assets/images/stats/commits_2016.png: 2018-10-13 21:42:16.616019714 +01:00
 build/assets/images/stats/hours_2018.png: 2018-10-13 21:42:21.444195298 +01:00
 build/assets/images/stats/commits_last_year.png: 2018-10-13 21:42:16.684022191 +01:00
