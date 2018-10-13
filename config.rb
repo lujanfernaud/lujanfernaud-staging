@@ -64,6 +64,7 @@ page '/*.txt', layout: false
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
 configure :build do
+  activate :asset_hash
   activate :minify_html
   activate :minify_css
   activate :minify_javascript
