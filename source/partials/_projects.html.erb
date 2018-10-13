@@ -1,11 +1,9 @@
 <section class="projects" id="selected-projects">
 
   <header class="projects-header screen inert" id="selected-projects-header">
-    <div class="screen-anchor" id="screen-3"></div>
-
     <%= partial "partials/navigation_top",
       locals: {
-        destination_id: 2,
+        destination_id: "about",
         style: "light"
       }
     %>
@@ -22,7 +20,7 @@
 
     <%= partial "partials/navigation_bottom",
       locals: {
-        destination_id: 4,
+        destination_id: "prevy",
         style: "light"
       }
     %>
@@ -32,9 +30,8 @@
     locals: {
       project: data.projects.prevy,
       id: "prevy",
-      screen_id: 4,
-      navigation_previous_id: 3,
-      navigation_next_id: 5,
+      navigation_previous_id: "selected-projects",
+      navigation_next_id: "draw",
       navigation_style: "dark"
     }
   %>
@@ -43,9 +40,8 @@
     locals: {
       project: data.projects.draw,
       id: "draw",
-      screen_id: 5,
-      navigation_previous_id: 4,
-      navigation_next_id: 6,
+      navigation_previous_id: "prevy",
+      navigation_next_id: "ruby-chess",
       navigation_style: "dark"
     }
   %>
@@ -54,9 +50,8 @@
     locals: {
       project: data.projects.ruby_chess,
       id: "ruby-chess",
-      screen_id: 6,
-      navigation_previous_id: 5,
-      navigation_next_id: 7,
+      navigation_previous_id: "draw",
+      navigation_next_id: "weather-compare",
       navigation_style: "dark"
     }
   %>
@@ -65,9 +60,8 @@
     locals: {
       project: data.projects.weather_compare,
       id: "weather-compare",
-      screen_id: 7,
-      navigation_previous_id: 6,
-      navigation_next_id: 8,
+      navigation_previous_id: "ruby-chess",
+      navigation_next_id: "rock-paper-scissors",
       navigation_style: "dark"
     }
   %>
@@ -76,9 +70,8 @@
     locals: {
       project: data.projects.rock_paper_scissors,
       id: "rock-paper-scissors",
-      screen_id: 8,
-      navigation_previous_id: 7,
-      navigation_next_id: 9,
+      navigation_previous_id: "weather-compare",
+      navigation_next_id: "portfolio",
       navigation_style: "dark"
     }
   %>
@@ -87,19 +80,16 @@
     locals: {
       project: data.projects.portfolio,
       id: "portfolio",
-      screen_id: 9,
-      navigation_previous_id: 8,
-      navigation_next_id: 10,
+      navigation_previous_id: "rock-paper-scissors",
+      navigation_next_id: "see-all-repos",
       navigation_style: "dark"
     }
   %>
 
-  <footer class="projects-footer screen inert" id="all-repos">
-    <div class="screen-anchor" id="screen-10"></div>
-
+  <footer class="projects-footer screen inert" id="see-all-repos">
     <%= partial "partials/navigation_top",
       locals: {
-        destination_id: 9,
+        destination_id: "portfolio",
         style: "light"
       }
     %>
@@ -112,7 +102,7 @@
 
     <%= partial "partials/navigation_bottom",
       locals: {
-        destination_id: 11,
+        destination_id: "back-cover",
         style: "light"
       }
     %>
