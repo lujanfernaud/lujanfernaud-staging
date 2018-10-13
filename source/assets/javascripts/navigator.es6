@@ -6,7 +6,7 @@ class Navigator {
     this.app = app
     this.wheelIndicator = new WheelIndicator()
 
-    this.scrollDisabledTimeout = 325
+    this.scrollDisabledTimeout = 350
     this.wheelUpDisabled       = false
     this.wheelDownDisabled     = false
     this.upKeyDisabled         = false
