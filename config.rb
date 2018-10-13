@@ -3,7 +3,7 @@ require 'sprockets/es6'
 activate :livereload
 
 activate :autoprefixer do |prefix|
-  prefix.browsers = 'last 3 versions'
+  prefix.browsers = 'last 2 versions'
 end
 
 activate :sprockets do |c|
