@@ -14,6 +14,7 @@ class Navigator {
 
     this.modalIsActive = '.modal.is-active'
     this.formIsActive = '.contact-section-container--revealed'
+    this.activeScreen = '.screen.active'
     this.navTop = '.navigation--top'
     this.navBottom = '.navigation--bottom'
     this.backToTop = document.querySelector('.back-to-top')
@@ -39,8 +40,9 @@ class Navigator {
   _watchWheelUp() {
     let modalIsActive = document.querySelector(this.modalIsActive)
     let formIsActive = document.querySelector(this.formIsActive)
+    let screenIsNotActive = !document.querySelector(this.activeScreen)
 
-    if (modalIsActive || formIsActive) {
+    if (modalIsActive || formIsActive || screenIsNotActive) {
       return this.wheelIndicator.setOptions({ preventMouse: false })
     }
 
@@ -51,8 +53,10 @@ class Navigator {
 
   _watchWheelDown() {
     let modalIsActive = document.querySelector(this.modalIsActive)
+    let formIsActive = document.querySelector(this.formIsActive)
+    let screenIsNotActive = !document.querySelector(this.activeScreen)
 
-    if (modalIsActive) {
+    if (modalIsActive || formIsActive || screenIsNotActive) {
       return this.wheelIndicator.setOptions({ preventMouse: false })
     }
 
@@ -64,7 +68,7 @@ class Navigator {
   _watchDirection(direction, directionDisabled, navigationClass) {
     if (directionDisabled) { return }
 
-    let activeScreen = document.querySelector('.screen.active')
+    let activeScreen = document.querySelector(this.activeScreen)
     if (!activeScreen) { return }
 
     let navigationControl = activeScreen.querySelector(navigationClass)
