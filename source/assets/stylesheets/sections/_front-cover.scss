@@ -77,8 +77,8 @@
   border: 0;
 
   @include media($medium-devices) {
-    margin: 1.25rem;
     width: 16.4rem;
+    margin: .5rem;
   }
 
   @include media($large-devices) {
@@ -87,8 +87,8 @@
   }
 
   @include media($very-large-devices) {
-    margin: .5rem;
     width: 18rem;
+    margin: .5rem;
   }
 
   @include media($extra-large-devices) {

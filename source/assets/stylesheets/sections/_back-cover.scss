@@ -70,11 +70,11 @@
   @include media($medium-devices) {
     top: -0.65rem;
     left: -0.65rem;
-    width: 31.3rem;
-    height: 31.3rem;
+    width: 21.28rem;
+    height: 21.28rem;
   }
 
-  @include media($very-large-devices) {
+  @include media($large-devices) {
     width: 26.2rem;
     height: 26.2rem;
   }
@@ -106,12 +106,12 @@
   z-index: 1;
 
   @include media($medium-devices) {
-    width: 30rem;
-    height: 30rem;
+    width: 20rem;
+    height: 20rem;
     @include diagonal-box-shadow(.41rem);
   }
 
-  @include media($very-large-devices) {
+  @include media($large-devices) {
     width: 25rem;
     height: 25rem;
   }
@@ -159,12 +159,12 @@
   transition: all 1s;
 
   @include media($medium-devices) {
-    top: calc(50% - 9.2rem);
-    width: 18.4rem;
+    top: calc(50% - 6.7rem);
+    width: 13.4rem;
   }
 
-  @include media($very-large-devices) {
-    top: calc(50% - 8rem);
+  @include media($large-devices) {
+    top: calc(50% - 7.9rem);
     width: 16rem;
   }
 
@@ -185,11 +185,11 @@
   opacity: 1;
 
   @include media($medium-devices) {
-    left: calc(50% - 9.1rem);
+    left: calc(50% - 6.7rem);
   }
 
-  @include media($very-large-devices) {
-    left: calc(50% - 8.1rem);
+  @include media($large-devices) {
+    left: calc(50% - 8rem);
   }
 
   @include media($extra-large-devices) {
@@ -213,7 +213,7 @@
     top: -.95rem;
   }
 
-  @include media($very-large-devices) {
+  @include media($large-devices) {
     top: -.62rem;
   }
 
@@ -232,10 +232,10 @@
   width: 1.5rem;
 
   @include media($medium-devices) {
-    width: 3rem;
+    width: 2rem;
   }
 
-  @include media($very-large-devices) {
+  @include media($large-devices) {
     width: 2.6rem;
   }
 
@@ -261,6 +261,16 @@
   transition: all .2s;
 
   @include media($medium-devices) {
+    margin: -1rem; // Half of the cover icon width.
+    padding: .5rem .5rem .13rem .5rem;
+  }
+
+  @include media($large-devices) {
+    margin: -1.5rem; // Half of the cover icon width.
+    padding: .5rem .5rem .07rem .5rem;
+  }
+
+  @include media($extra-large-devices) {
     margin: -1.5rem; // Half of the cover icon width.
     padding: .5rem .5rem .05rem .5rem;
   }
@@ -285,10 +295,10 @@
   @include in-circle-degrees($degrees: -40deg, $circle-width: 14rem);
 
   @include media($medium-devices) {
-    @include in-circle-degrees($degrees: -45deg, $circle-width: 35rem);
+    @include in-circle-degrees($degrees: -45deg, $circle-width: 23.5rem);
   }
 
-  @include media($very-large-devices) {
+  @include media($large-devices) {
     @include in-circle-degrees($degrees: -45deg, $circle-width: 29.6rem);
   }
 
@@ -305,10 +315,10 @@
   @include in-circle-degrees($degrees: -15deg, $circle-width: 14rem);
 
   @include media($medium-devices) {
-    @include in-circle-degrees($degrees: -25deg, $circle-width: 35rem);
+    @include in-circle-degrees($degrees: -25deg, $circle-width: 23.5rem);
   }
 
-  @include media($very-large-devices) {
+  @include media($large-devices) {
     @include in-circle-degrees($degrees: -25deg, $circle-width: 29.6rem);
   }
 
@@ -325,10 +335,10 @@
   @include in-circle-degrees($degrees: 10deg, $circle-width: 14rem);
 
   @include media($medium-devices) {
-    @include in-circle-degrees($degrees: -5deg, $circle-width: 35rem);
+    @include in-circle-degrees($degrees: -5deg, $circle-width: 23.5rem);
   }
 
-  @include media($very-large-devices) {
+  @include media($large-devices) {
     @include in-circle-degrees($degrees: -5deg, $circle-width: 29.6rem);
   }
 

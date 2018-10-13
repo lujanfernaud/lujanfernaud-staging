@@ -51,6 +51,10 @@
   font-size: 1.25rem !important;
 
   @include media($medium-devices) {
+    font-size: 1.35rem !important;
+  }
+
+  @include media($large-devices) {
     font-size: 1.5rem !important;
   }
 
@@ -68,6 +72,10 @@
   font-size: 1.5rem !important;
 
   @include media($medium-devices) {
+    font-size: 1.8rem !important;
+  }
+
+  @include media($large-devices) {
     font-size: 2rem !important;
   }
 
