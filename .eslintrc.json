@@ -9,7 +9,11 @@
     }],
 
     "no-multi-spaces": ["error", {
-      "exceptions": { "VariableDeclarator": true }
+      "exceptions": {
+        "AssignmentExpression": true,
+        "VariableDeclarator": true,
+        "IfStatement": true
+      }
     }]
   },
 
