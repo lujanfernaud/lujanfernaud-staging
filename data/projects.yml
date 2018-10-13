@@ -6,7 +6,7 @@ prevy:
     - {title: Online, src: "https://prevy.herokuapp.com"}
     - {title: GitHub, src: "https://github.com/lujanfernaud/prevy"}
   image:
-    src: assets/images/screenshots/prevy-screenshot.png
+    src: assets/images/screenshots/prevy-screenshot_700px.png
     alt: Prevy App Screenshot
   icon:
     src: assets/images/icons/rails_icon.svg
@@ -21,7 +21,7 @@ draw:
     - {title: Online, src: "https://drawdaily.herokuapp.com"}
     - {title: GitHub, src: "https://github.com/lujanfernaud/draw"}
   image:
-    src: assets/images/screenshots/draw-screenshot.png
+    src: assets/images/screenshots/draw-screenshot_700px.png
     alt: Draw App Screenshot
   icon:
     src: assets/images/icons/rails_icon.svg
@@ -35,7 +35,7 @@ ruby_chess:
   links:
     - {title: GitHub, src: "https://github.com/lujanfernaud/ruby-chess"}
   image:
-    src: assets/images/screenshots/ruby-chess-screenshot.jpg
+    src: assets/images/screenshots/ruby-chess-screenshot_700px.jpg
     alt: Ruby Chess Screenshot
   icon:
     src: assets/images/icons/ruby_icon.svg
@@ -50,7 +50,7 @@ weather_compare:
     - {title: Online, src: "http://lujanfernaud.com/react-weather-compare"}
     - {title: GitHub, src: "https://github.com/lujanfernaud/react-weather-compare"}
   image:
-    src: assets/images/screenshots/weather-compare-screenshot.png
+    src: assets/images/screenshots/weather-compare-screenshot_700px.png
     alt: Weather Compare Screenshot
   icon:
     src: assets/images/icons/react_icon.svg
@@ -65,7 +65,7 @@ rock_paper_scissors:
     - {title: Online, src: "http://lujanfernaud.com/js-rock-paper-scissors"}
     - {title: GitHub, src: "https://github.com/lujanfernaud/js-rock-paper-scissors"}
   image:
-    src: assets/images/screenshots/rps-screenshot.png
+    src: assets/images/screenshots/rps-screenshot_700px.png
     alt: Rock, Paper, Scissors Screenshot
   icon:
     src: assets/images/icons/javascript_icon.svg
@@ -79,7 +79,7 @@ portfolio:
   links:
     - {title: GitHub, src: "https://github.com/lujanfernaud/portfolio"}
   image:
-    src: assets/images/screenshots/portfolio-screenshot.png
+    src: assets/images/screenshots/portfolio-screenshot_700px.png
     alt: Portfolio Screenshot
   icon:
     src: assets/images/icons/sass_icon.svg
