@@ -1,8 +1,9 @@
 class ModalToggler {
   constructor() {
-    this.html = document.querySelector('html')
+    this.html    = document.querySelector('html')
     this.openers = document.querySelectorAll('[data-behavior="open-modal"]')
     this.closers = document.querySelectorAll('[data-behavior="close-modal"]')
+
     this.modalIsOpen = false
   }
 
@@ -17,13 +18,14 @@ class ModalToggler {
   _watchOpeners() {
     this.openers.forEach(toggler => {
       toggler.addEventListener('click', event => {
-        const modalId = event.target.dataset.modal
-        const modal = document.getElementById(modalId)
+        const modalId   = event.target.dataset.modal
+        const modal     = document.getElementById(modalId)
         const modalBody = modal.querySelector('.modal-card-body')
 
         modalBody.scrollTop = 0
         modal.classList.add('is-active')
         this.html.classList.add('overflow-hidden')
+
         this.modalIsOpen = true
       })
     })
@@ -42,6 +44,7 @@ class ModalToggler {
 
     modal.classList.remove('is-active')
     this.html.classList.remove('overflow-hidden')
+
     this.modalIsOpen = false
   }
 

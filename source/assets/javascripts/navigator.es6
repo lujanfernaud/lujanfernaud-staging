@@ -7,17 +7,17 @@ class Navigator {
     this.wheelIndicator = new WheelIndicator()
 
     this.scrollDisabledTimeout = 325
-    this.wheelUpDisabled = false
-    this.wheelDownDisabled = false
-    this.upKeyDisabled = false
-    this.downKeyDisabled = false
+    this.wheelUpDisabled       = false
+    this.wheelDownDisabled     = false
+    this.upKeyDisabled         = false
+    this.downKeyDisabled       = false
 
     this.modalIsActive = '.modal.is-active'
-    this.formIsActive = '.contact-section-container--revealed'
-    this.activeScreen = '.screen.active'
-    this.navTop = '.navigation--top'
-    this.navBottom = '.navigation--bottom'
-    this.backToTop = document.querySelector('.back-to-top')
+    this.formIsActive  = '.contact-section-container--revealed'
+    this.activeScreen  = '.screen.active'
+    this.navTop        = '.navigation--top'
+    this.navBottom     = '.navigation--bottom'
+    this.backToTop     = document.querySelector('.back-to-top')
   }
 
   watch() {
@@ -38,8 +38,8 @@ class Navigator {
   }
 
   _watchWheelUp() {
-    let modalIsActive = document.querySelector(this.modalIsActive)
-    let formIsActive = document.querySelector(this.formIsActive)
+    let modalIsActive     = document.querySelector(this.modalIsActive)
+    let formIsActive      = document.querySelector(this.formIsActive)
     let screenIsNotActive = !document.querySelector(this.activeScreen)
 
     if (modalIsActive || formIsActive || screenIsNotActive) {
@@ -52,8 +52,8 @@ class Navigator {
   }
 
   _watchWheelDown() {
-    let modalIsActive = document.querySelector(this.modalIsActive)
-    let formIsActive = document.querySelector(this.formIsActive)
+    let modalIsActive     = document.querySelector(this.modalIsActive)
+    let formIsActive      = document.querySelector(this.formIsActive)
     let screenIsNotActive = !document.querySelector(this.activeScreen)
 
     if (modalIsActive || formIsActive || screenIsNotActive) {
@@ -92,7 +92,7 @@ class Navigator {
   _watchKey(key, keyDisabled, navigationClass) {
     hotkeys(key, event => {
       let modalIsActive = document.querySelector(this.modalIsActive)
-      let formIsActive = document.querySelector(this.formIsActive)
+      let formIsActive  = document.querySelector(this.formIsActive)
 
       if (modalIsActive || formIsActive) { return }
 
@@ -105,7 +105,7 @@ class Navigator {
   _watchHomeKey() {
     hotkeys('home', event => {
       let modalIsActive = document.querySelector(this.modalIsActive)
-      let formIsActive = document.querySelector(this.formIsActive)
+      let formIsActive  = document.querySelector(this.formIsActive)
 
       if (modalIsActive || formIsActive) { return }
 
