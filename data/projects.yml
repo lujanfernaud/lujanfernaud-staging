@@ -1,6 +1,6 @@
 prevy:
   title: Prevy
-  description: A platform to create private communities around private events.
+  description: A platform to build private communities around private events.
   tags: "Built with: Rails, Minitest, Coffeescript, Leaflet API"
   links:
     - {title: Online, src: "https://prevy.herokuapp.com"}
