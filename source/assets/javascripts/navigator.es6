@@ -1,6 +1,9 @@
 //= require vendor/hotkeys.min
 //= require vendor/wheel-indicator
 
+// Hotkeys Documentation:
+// https://github.com/jaywcjlove/hotkeys
+
 class Navigator {
   constructor(app) {
     this.app = app
@@ -11,6 +14,8 @@ class Navigator {
     this.wheelDownDisabled     = false
     this.upKeyDisabled         = false
     this.downKeyDisabled       = false
+    this.spaceKeyDisabled      = false
+    this.shiftSpaceKeyDisabled = false
 
     this.modalIsActive = '.modal.is-active'
     this.formIsActive  = '.contact-section-container--revealed'
@@ -86,6 +91,8 @@ class Navigator {
   _watchKeyboard() {
     this._watchKey('up', this.upKeyDisabled, this.navTop)
     this._watchKey('down', this.downKeyDisabled, this.navBottom)
+    this._watchKey('shift+space', this.shiftSpaceKeyDisabled, this.navTop)
+    this._watchKey('space', this.spaceKeyDisabled, this.navBottom)
     this._watchHomeKey()
   }
 
