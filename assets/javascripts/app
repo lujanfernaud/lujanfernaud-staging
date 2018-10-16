@@ -61,7 +61,7 @@ var App = (function () {
     key: "_togglers",
     value: function _togglers() {
       new TooltipToggler().run();
-      new ModalToggler().watch();
+      new ModalToggler(this.focusTrapper).watch();
       new ContactFormToggler(this.focusTrapper).watch();
     }
   }]);

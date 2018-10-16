@@ -5,8 +5,10 @@ var _createClass = (function () { function defineProperties(target, props) { for
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var ModalToggler = (function () {
-  function ModalToggler() {
+  function ModalToggler(focusTrapper) {
     _classCallCheck(this, ModalToggler);
+
+    this.focusTrapper = focusTrapper;
 
     this.html = document.querySelector('html');
     this.openers = document.querySelectorAll('[data-behavior="open-modal"]');
@@ -32,6 +34,7 @@ var ModalToggler = (function () {
 
       this.openers.forEach(function (toggler) {
         toggler.addEventListener('click', function (event) {
+          var screen = document.querySelector('.screen.active');
           var modalId = event.target.dataset.modal;
           var modal = document.getElementById(modalId);
           var modalBody = modal.querySelector('.modal-card-body');
@@ -39,6 +42,9 @@ var ModalToggler = (function () {
           modalBody.scrollTop = 0;
           modal.classList.add('is-active');
           _this.html.classList.add('overflow-hidden');
+
+          _this.focusTrapper.toggle(screen);
+          _this.focusTrapper.toggle(modal);
 
           _this.modalIsOpen = true;
         });
@@ -58,10 +64,14 @@ var ModalToggler = (function () {
   }, {
     key: '_closeModal',
     value: function _closeModal() {
+      var screen = document.querySelector('.screen.active');
       var modal = document.querySelector('.modal.is-active');
 
       modal.classList.remove('is-active');
       this.html.classList.remove('overflow-hidden');
+
+      this.focusTrapper.toggle(screen);
+      this.focusTrapper.toggle(modal);
 
       this.modalIsOpen = false;
     }
