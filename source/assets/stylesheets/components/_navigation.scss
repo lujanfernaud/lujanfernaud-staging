@@ -146,3 +146,15 @@
     vertical-align: bottom;
   }
 }
+
+.keyboard-navigation-icon {
+  display: none;
+
+  @include media($very-large-devices) {
+    display: block;
+    width: 3rem;
+    margin-left: .07rem;
+    fill: $light-grey-1;
+    opacity: .75;
+  }
+}
