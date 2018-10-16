@@ -1,5 +1,8 @@
 //= require vendor/inert.min
 
+// Inert Documentation:
+// https://github.com/wicg/inert
+
 class FocusTrapper {
   run() {
     inertElements = document.querySelectorAll('.inert')

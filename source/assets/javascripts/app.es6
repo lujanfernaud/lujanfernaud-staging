@@ -46,7 +46,7 @@ class App {
 
   _togglers() {
     new TooltipToggler().run()
-    new ModalToggler().watch()
+    new ModalToggler(this.focusTrapper).watch()
     new ContactFormToggler(this.focusTrapper).watch()
   }
 }

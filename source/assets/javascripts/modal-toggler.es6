@@ -1,5 +1,7 @@
 class ModalToggler {
-  constructor() {
+  constructor(focusTrapper) {
+    this.focusTrapper = focusTrapper
+
     this.html    = document.querySelector('html')
     this.openers = document.querySelectorAll('[data-behavior="open-modal"]')
     this.closers = document.querySelectorAll('[data-behavior="close-modal"]')
@@ -18,6 +20,7 @@ class ModalToggler {
   _watchOpeners() {
     this.openers.forEach(toggler => {
       toggler.addEventListener('click', event => {
+        const screen    = document.querySelector('.screen.active')
         const modalId   = event.target.dataset.modal
         const modal     = document.getElementById(modalId)
         const modalBody = modal.querySelector('.modal-card-body')
@@ -25,6 +28,9 @@ class ModalToggler {
         modalBody.scrollTop = 0
         modal.classList.add('is-active')
         this.html.classList.add('overflow-hidden')
+
+        this.focusTrapper.toggle(screen)
+        this.focusTrapper.toggle(modal)
 
         this.modalIsOpen = true
       })
@@ -40,10 +46,14 @@ class ModalToggler {
   }
 
   _closeModal() {
-    const modal = document.querySelector('.modal.is-active')
+    const screen = document.querySelector('.screen.active')
+    const modal  = document.querySelector('.modal.is-active')
 
     modal.classList.remove('is-active')
     this.html.classList.remove('overflow-hidden')
+
+    this.focusTrapper.toggle(screen)
+    this.focusTrapper.toggle(modal)
 
     this.modalIsOpen = false
   }

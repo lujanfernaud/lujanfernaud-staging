@@ -39,43 +39,6 @@
       </div>
     </div>
 
-    <!-- Stats Modal -->
-
-    <% partial "partials/modal",
-      locals: { id: "modal-stats", title: "Development Stats" } do %>
-      <div class="stats-container">
-        <div class="stats__data">
-          <h3 class="stats__h3">2018</h3>
-
-          <h4>Hours</h4>
-          <img src="assets/images/stats/hours_2018.png" alt="Hours in 2018" class="stats__img">
-
-          <h4>Commits</h4>
-          <img src="assets/images/stats/commits_last_year.png" alt="Commits in 2018" class="stats__img">
-
-          <h3 class="stats__h3">2017</h3>
-
-          <h4>Hours</h4>
-          <img src="assets/images/stats/hours_2017.png" alt="Hours in 2017" class="stats__img">
-
-          <h4>Commits</h4>
-          <img src="assets/images/stats/commits_2017.png" alt="Commits in 2017" class="stats__img">
-
-          <h3 class="stats__h3">2016</h3>
-
-          <h4>Hours</h4>
-          <img src="assets/images/stats/hours_2016.png" alt="Hours in 2016" class="stats__img">
-
-          <h4>Commits</h4>
-          <img src="assets/images/stats/commits_2016.png" alt="Commits in 2016" class="stats__img">
-
-          <p class="stats__p about__text">
-            * Stats last updated on October 12 2018.
-          </p>
-        </div>
-      </div>
-    <% end %>
-
   </div>
 
   <%= partial "partials/navigation_bottom",
@@ -86,3 +49,40 @@
   %>
 
 </section>
+
+<!-- Stats Modal -->
+
+<% partial "partials/modal",
+  locals: { id: "modal-stats", title: "Development Stats" } do %>
+  <div class="stats-container">
+    <div class="stats__data">
+      <h3 class="stats__h3">2018</h3>
+
+      <h4>Hours</h4>
+      <img src="assets/images/stats/hours_2018.png" alt="Hours in 2018" class="stats__img">
+
+      <h4>Commits</h4>
+      <img src="assets/images/stats/commits_last_year.png" alt="Commits in 2018" class="stats__img">
+
+      <h3 class="stats__h3">2017</h3>
+
+      <h4>Hours</h4>
+      <img src="assets/images/stats/hours_2017.png" alt="Hours in 2017" class="stats__img">
+
+      <h4>Commits</h4>
+      <img src="assets/images/stats/commits_2017.png" alt="Commits in 2017" class="stats__img">
+
+      <h3 class="stats__h3">2016</h3>
+
+      <h4>Hours</h4>
+      <img src="assets/images/stats/hours_2016.png" alt="Hours in 2016" class="stats__img">
+
+      <h4>Commits</h4>
+      <img src="assets/images/stats/commits_2016.png" alt="Commits in 2016" class="stats__img">
+
+      <p class="stats__p about__text">
+        * Stats last updated on October 12 2018.
+      </p>
+    </div>
+  </div>
+<% end %>
