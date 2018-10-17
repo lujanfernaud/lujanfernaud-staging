@@ -100,6 +100,7 @@
   margin-top: .88rem;
   font-family: $dejavu-sans;
   font-size: 1.2rem;
+  font-weight: normal;
 
   @include media($medium-devices) {
     margin-top: 1.01rem;

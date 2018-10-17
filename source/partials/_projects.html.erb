@@ -1,6 +1,6 @@
 <section class="projects" id="selected-projects">
 
-  <header class="projects-header screen inert" id="selected-projects-header">
+  <div class="projects-header screen inert" id="selected-projects-header">
     <%= partial "partials/navigation_top",
       locals: {
         destination_id: "about",
@@ -24,7 +24,7 @@
         style: "light"
       }
     %>
-  </header>
+  </div>
 
   <%= partial "partials/projects/project",
     locals: {
@@ -86,7 +86,7 @@
     }
   %>
 
-  <footer class="projects-footer screen inert" id="see-all-repos">
+  <div class="projects-footer screen inert" id="see-all-repos">
     <%= partial "partials/navigation_top",
       locals: {
         destination_id: "portfolio",
@@ -106,6 +106,6 @@
         style: "light"
       }
     %>
-  </footer>
+  </div>
 
 </section>
