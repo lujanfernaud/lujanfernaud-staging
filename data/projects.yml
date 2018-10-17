@@ -57,21 +57,6 @@ weather_compare:
     alt: React
     title: React
 
-rock_paper_scissors:
-  title: Rock, Paper...
-  description: The classic game implemented with a clean UI and a fully responsive design.
-  tags: "Built with: ES6, Flexbox, Sass"
-  links:
-    - {title: Online, src: "http://lujanfernaud.com/js-rock-paper-scissors"}
-    - {title: GitHub, src: "https://github.com/lujanfernaud/js-rock-paper-scissors"}
-  image:
-    src: assets/images/screenshots/rps-screenshot_700px.png
-    alt: Rock, Paper, Scissors Screenshot
-  icon:
-    src: assets/images/icons/javascript_icon.svg
-    alt: JavaScript
-    title: JavaScript
-
 portfolio:
   title: This Portfolio
   description: "The hand-crafted portfolio that you&rsquo;re kindly exploring."
